@@ -1,0 +1,50 @@
+/* Modern skill bubbles for About section */
+.skills-bubbles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.2rem;
+  margin-bottom: 2rem;
+}
+.skill-bubble {
+  background: linear-gradient(90deg, #6a82fb 0%, #fc5c7d 100%);
+  color: #fff;
+  padding: 0.5rem 1.2rem;
+  border-radius: 2rem;
+  font-size: 1rem;
+  font-weight: 500;
+  box-shadow: 0 2px 8px rgba(100,100,100,0.08);
+  transition: transform 0.15s;
+  cursor: default;
+}
+.skill-bubble:hover {
+  transform: scale(1.07);
+}
+
+/* Remove any leftover navigation/tab styles */
+nav, nav ul, nav li, nav a {
+  display: none !important;
+}
+
+/* General section spacing improvements */
+section {
+  margin-bottom: 2.5rem;
+}
+
+.project-card, .project-card.highlight {
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  border-radius: 1.2rem;
+  background: #f8f9fa;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+}
+
+@media (max-width: 600px) {
+  .skills-bubbles {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .project-card, .project-card.highlight {
+    padding: 1rem;
+  }
+} 
