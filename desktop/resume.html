@@ -4,123 +4,161 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shaina Slavin - Resume</title>
-    <link rel="stylesheet" href="./styles.css">
-    <script>
-        // Prevent mobile styles from loading
-        if (window.innerWidth <= 768) {
-            window.location.href = '../mobile/resume.html';
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.4;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
         }
-    </script>
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+        .header p {
+            margin: 5px 0;
+        }
+        .section {
+            margin-bottom: 20px;
+        }
+        .section-title {
+            border-bottom: 2px solid #000;
+            margin-bottom: 10px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .entry {
+            margin-bottom: 15px;
+        }
+        .entry-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+        }
+        .entry-title {
+            font-weight: bold;
+        }
+        .entry-date {
+            font-style: italic;
+        }
+        .entry-details {
+            margin-left: 20px;
+        }
+        .entry-details li {
+            margin-bottom: 5px;
+        }
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+        .skill-category h3 {
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+        .skill-category ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        .skill-category li {
+            margin-bottom: 5px;
+        }
+        @media print {
+            body {
+                padding: 0;
+            }
+        }
+    </style>
 </head>
 <body>
-    <div class="desktop-container">
-        <!-- Left Sidebar -->
-        <aside class="sidebar">
-            <div class="profile">
-                <h1>Shaina Slavin</h1>
-                <h2>Computer Science Student</h2>
-                <h3>Full-Stack & Front-End Developer</h3>
+    <div class="header">
+        <h1>Shaina Slavin</h1>
+        <p>Computer Science Student | Full-Stack & Front-End Developer</p>
+        <p>shaina.slavin@gmail.com | +972-50-3071261 | github.com/S-Slavin</p>
+    </div>
+
+    <div class="section">
+        <div class="section-title">Education</div>
+        <div class="entry">
+            <div class="entry-header">
+                <div class="entry-title">B.Sc. in Computer Science</div>
+                <div class="entry-date">2023 - Present</div>
             </div>
-            
-            <nav class="main-nav">
-                <a href="index.html#portfolio" class="nav-link">Portfolio</a>
-                <a href="resume.html" class="nav-link active">Resume</a>
-                <button onclick="window.print()" class="print-button">Download PDF</button>
-            </nav>
-
-            <div class="contact-info">
-                <p>shaina.slavin@gmail.com</p>
-                <p>+972-50-3071261</p>
-                <a href="https://github.com/S-Slavin">github.com/S-Slavin</a>
+            <div>Hebrew University of Jerusalem</div>
+            <ul class="entry-details">
+                <li>Relevant Coursework: Data Structures, Algorithms, Object-Oriented Programming, Database Systems</li>
+            </ul>
+        </div>
+        <div class="entry">
+            <div class="entry-header">
+                <div class="entry-title">Mechina Program</div>
+                <div class="entry-date">2021 - 2023</div>
             </div>
-        </aside>
+            <div>Hebrew University of Jerusalem</div>
+            <ul class="entry-details">
+                <li>Intensive preparation program for Computer Science studies</li>
+                <li>Advanced Mathematics and Physics coursework</li>
+            </ul>
+        </div>
+    </div>
 
-        <!-- Main Content -->
-        <main class="main-content">
-            <section class="content-section">
-                <h2>Education</h2>
-                <div class="resume-content">
-                    <div class="resume-item">
-                        <div class="resume-header">
-                            <h3>B.Sc. in Computer Science</h3>
-                            <p class="date">2023 - Present</p>
-                        </div>
-                        <p class="institution">Hebrew University of Jerusalem</p>
-                        <ul class="resume-details">
-                            <li>Relevant Coursework: Data Structures, Algorithms, Object-Oriented Programming, Database Systems</li>
-                        </ul>
-                    </div>
-                    <div class="resume-item">
-                        <div class="resume-header">
-                            <h3>Mechina Program</h3>
-                            <p class="date">2021 - 2023</p>
-                        </div>
-                        <p class="institution">Hebrew University of Jerusalem</p>
-                        <ul class="resume-details">
-                            <li>Intensive preparation program for Computer Science studies</li>
-                            <li>Advanced Mathematics and Physics coursework</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
+    <div class="section">
+        <div class="section-title">Technical Projects</div>
+        <div class="entry">
+            <div class="entry-header">
+                <div class="entry-title">Anti-Hallucination AI System</div>
+                <div class="entry-date">2023</div>
+            </div>
+            <ul class="entry-details">
+                <li>Developed and fine-tuned advanced language models using RAG and RLHF techniques</li>
+                <li>Implemented real-time fact-checking system with citation generation and confidence scoring</li>
+                <li>Built cross-platform clients (iOS/macOS) using Swift and Xcode</li>
+                <li>Integrated REST APIs for model serving and retrieval systems</li>
+                <li>Technologies: Python, Swift, RAG, RLHF, REST APIs, Git, CI/CD</li>
+            </ul>
+        </div>
+    </div>
 
-            <section class="content-section">
-                <h2>Technical Projects</h2>
-                <div class="resume-content">
-                    <div class="resume-item">
-                        <div class="resume-header">
-                            <h3>Anti-Hallucination AI System</h3>
-                            <p class="date">2023</p>
-                        </div>
-                        <ul class="resume-details">
-                            <li>Developed and fine-tuned advanced language models using RAG and RLHF techniques</li>
-                            <li>Implemented real-time fact-checking system with citation generation and confidence scoring</li>
-                            <li>Built cross-platform clients (iOS/macOS) using Swift and Xcode</li>
-                            <li>Integrated REST APIs for model serving and retrieval systems</li>
-                            <li>Technologies: Python, Swift, RAG, RLHF, REST APIs, Git, CI/CD</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-
-            <section class="content-section">
-                <h2>Technical Skills</h2>
-                <div class="resume-content">
-                    <div class="skills-grid">
-                        <div class="skill-category">
-                            <h3>Programming Languages</h3>
-                            <ul>
-                                <li>Python (Advanced)</li>
-                                <li>Java (Intermediate)</li>
-                                <li>JavaScript (Intermediate)</li>
-                                <li>Swift (Intermediate)</li>
-                                <li>HTML/CSS (Intermediate)</li>
-                            </ul>
-                        </div>
-                        <div class="skill-category">
-                            <h3>AI & Machine Learning</h3>
-                            <ul>
-                                <li>RAG (Retrieval-Augmented Generation)</li>
-                                <li>RLHF (Reinforcement Learning)</li>
-                                <li>Natural Language Processing</li>
-                                <li>Model Evaluation & Fine-tuning</li>
-                            </ul>
-                        </div>
-                        <div class="skill-category">
-                            <h3>Tools & Technologies</h3>
-                            <ul>
-                                <li>Git & GitHub</li>
-                                <li>VS Code</li>
-                                <li>IntelliJ IDEA</li>
-                                <li>Xcode</li>
-                                <li>REST APIs</li>
-                                <li>CI/CD</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </main>
+    <div class="section">
+        <div class="section-title">Technical Skills</div>
+        <div class="skills-grid">
+            <div class="skill-category">
+                <h3>Programming Languages</h3>
+                <ul>
+                    <li>Python (Advanced)</li>
+                    <li>Java (Intermediate)</li>
+                    <li>JavaScript (Intermediate)</li>
+                    <li>Swift (Intermediate)</li>
+                    <li>HTML/CSS (Intermediate)</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h3>AI & Machine Learning</h3>
+                <ul>
+                    <li>RAG (Retrieval-Augmented Generation)</li>
+                    <li>RLHF (Reinforcement Learning)</li>
+                    <li>Natural Language Processing</li>
+                    <li>Model Evaluation & Fine-tuning</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h3>Tools & Technologies</h3>
+                <ul>
+                    <li>Git & GitHub</li>
+                    <li>VS Code</li>
+                    <li>IntelliJ IDEA</li>
+                    <li>Xcode</li>
+                    <li>REST APIs</li>
+                    <li>CI/CD</li>
+                </ul>
+            </div>
+        </div>
     </div>
 </body>
 </html> 
