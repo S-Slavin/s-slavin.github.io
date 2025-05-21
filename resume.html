@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Shaina Slavin - Professional Resume">
+    <title>Shaina Slavin - Resume</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <a href="index.html" class="nav-link">Portfolio</a>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>Shaina Slavin</h1>
+                <p>Computer Science Student | Full-Stack & Front-End Developer</p>
+                <div class="contact-info">
+                    <p>Email: shaina.slavin@gmail.com</p>
+                    <p>Phone: +972-50-3071261</p>
+                    <p>GitHub: github.com/S-Slavin</p>
+                    <p>Portfolio: s-slavin.github.io</p>
+                </div>
+                <a href="Shaina Slavin resume.pdf" class="btn" download>Download PDF Resume</a>
+            </div>
+        </section>
+
+        <section class="resume-section">
+            <div class="container">
+                <div class="summary">
+                    <h2>Professional Summary</h2>
+                    <p>Creative and impact-driven developer passionate about building accessible, user-centric web and mobile applications. Skilled in React, JavaScript, Swift, and Python with a strong foundation in algorithms, data structures, and modern software development.</p>
+                </div>
+
+                <div class="education">
+                    <h2>Education</h2>
+                    <div class="education-item">
+                        <h3>Computer Science</h3>
+                        <p>University of [Your University]</p>
+                        <p>Expected Graduation: [Year]</p>
+                    </div>
+                </div>
+
+                <div class="skills-section">
+                    <h2>Technical Skills</h2>
+                    <div class="skills-grid">
+                        <div class="skill-item">
+                            <i class="devicon-javascript-plain"></i>
+                            <h3>JavaScript</h3>
+                            <p>ES6+, React, Node.js</p>
+                        </div>
+                        <div class="skill-item">
+                            <i class="devicon-python-plain"></i>
+                            <h3>Python</h3>
+                            <p>Web Development, Data Science</p>
+                        </div>
+                        <div class="skill-item">
+                            <i class="devicon-swift-plain"></i>
+                            <h3>Swift</h3>
+                            <p>iOS Development, SwiftUI</p>
+                        </div>
+                        <div class="skill-item">
+                            <i class="devicon-git-plain"></i>
+                            <h3>Version Control</h3>
+                            <p>Git, GitHub</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="projects">
+                    <h2>Software Projects</h2>
+                    <div class="project-grid">
+                        <div class="project-card">
+                            <div class="project-content">
+                                <h3>FinePrint</h3>
+                                <p>Privacy Management Web and Mobile Application</p>
+                                <ul>
+                                    <li>Built cross-platform application using React and SwiftUI</li>
+                                    <li>Implemented secure data handling and privacy controls</li>
+                                    <li>Integrated child safety features and parental controls</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="project-card">
+                            <div class="project-content">
+                                <h3>OurBigKitchen App (OBK)</h3>
+                                <p>Community Volunteer and Food Rescue Platform</p>
+                                <ul>
+                                    <li>Developed full-stack web and iOS application</li>
+                                    <li>Built volunteer management and food rescue system</li>
+                                    <li>Implemented real-time impact tracking features</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="languages">
+                    <h2>Languages</h2>
+                    <ul>
+                        <li>English (Native)</li>
+                        <li>Hebrew (Fluent)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <a href="index.html" class="btn">Back to Portfolio</a>
+            <p>&copy; 2024 Shaina Slavin. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Add bounce animation to skill items
+        document.querySelectorAll('.skill-item').forEach(item => {
+            item.addEventListener('click', function() {
+                this.style.animation = 'none';
+                this.offsetHeight; // Trigger reflow
+                this.style.animation = 'bounce 0.5s ease';
+            });
+        });
+    </script>
+</body>
+</html> 
