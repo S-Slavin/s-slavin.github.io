@@ -14,6 +14,7 @@
     --border-color: #e5e7eb;
     --card-bg: #ffffff;
     --transition: all 0.3s ease;
+    font-size: 14px; /* Base font size */
 }
 
 html, body {
@@ -29,7 +30,7 @@ body {
     background: #fff;
     color: var(--text-color);
     line-height: 1.6;
-    font-size: 16px;
+    font-size: 1rem;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
@@ -39,7 +40,7 @@ body {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 2rem;
+    padding: 1.5rem;
     overflow: visible;
 }
 
@@ -53,7 +54,7 @@ body {
 }
 
 .header h1 {
-    font-size: 2.5rem;
+    font-size: 2rem;
     font-weight: 700;
     margin-bottom: 0.5rem;
     color: var(--text-color);
@@ -61,7 +62,7 @@ body {
 }
 
 .header h2 {
-    font-size: 1.25rem;
+    font-size: 1.1rem;
     font-weight: 500;
     color: var(--light-text);
     margin-bottom: 1.25rem;
@@ -71,7 +72,7 @@ body {
 .contact-info {
     display: flex;
     justify-content: center;
-    gap: 2rem;
+    gap: 1.5rem;
     flex-wrap: wrap;
     width: 100%;
 }
@@ -81,47 +82,47 @@ body {
     align-items: center;
     gap: 0.5rem;
     color: var(--light-text);
-    font-size: 1rem;
+    font-size: 0.9rem;
 }
 
 .contact-info i {
     color: var(--primary-color);
-    font-size: 1.25rem;
+    font-size: 1rem;
 }
 
 /* Summary Section */
 .summary {
     max-width: 800px;
-    margin: 0 auto 3rem;
+    margin: 0 auto 2rem;
     text-align: center;
-    font-size: 1.1rem;
+    font-size: 1rem;
     color: var(--light-text);
     line-height: 1.6;
 }
 
 /* Skills Section */
 .skills {
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
     width: 100%;
 }
 
 .skills h2 {
     text-align: center;
     margin-bottom: 1.5rem;
-    font-size: 1.75rem;
+    font-size: 1.5rem;
     color: var(--text-color);
 }
 
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
     width: 100%;
 }
 
 .skill-card {
     background: var(--card-bg);
-    padding: 1.5rem;
+    padding: 1.25rem;
     border-radius: 0.75rem;
     text-align: center;
     transition: var(--transition);
@@ -135,7 +136,7 @@ body {
 }
 
 .skill-card i {
-    font-size: 2rem;
+    font-size: 1.75rem;
     color: var(--primary-color);
     margin-bottom: 0.75rem;
 }
@@ -143,7 +144,7 @@ body {
 .skill-card h3 {
     margin-bottom: 0.5rem;
     color: var(--text-color);
-    font-size: 1.1rem;
+    font-size: 1rem;
 }
 
 .skill-card p {
@@ -153,7 +154,7 @@ body {
 
 /* Projects Section */
 .projects {
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
 }
 
 .projects h2 {
@@ -164,7 +165,7 @@ body {
 
 .project-card {
     background: var(--card-bg);
-    padding: 1.5rem;
+    padding: 1.25rem;
     border-radius: 0.75rem;
     margin-bottom: 1.5rem;
     border: 1px solid var(--border-color);
@@ -172,19 +173,20 @@ body {
 
 .project-card h3 {
     color: var(--primary-color);
-    font-size: 1.25rem;
+    font-size: 1.1rem;
     margin-bottom: 0.5rem;
 }
 
 .project-card h4 {
     color: var(--light-text);
-    font-size: 1rem;
+    font-size: 0.9rem;
     margin-bottom: 0.75rem;
 }
 
 .project-card p {
     margin-bottom: 1rem;
     color: var(--text-color);
+    font-size: 0.9rem;
 }
 
 .project-card ul {
@@ -195,6 +197,7 @@ body {
 .project-card li {
     margin-bottom: 0.5rem;
     color: var(--light-text);
+    font-size: 0.9rem;
 }
 
 .github-link {
@@ -205,6 +208,7 @@ body {
     text-decoration: none;
     border-radius: 0.5rem;
     transition: var(--transition);
+    font-size: 0.9rem;
 }
 
 .github-link:hover {
@@ -214,18 +218,19 @@ body {
 /* Navigation */
 .main-nav {
     text-align: center;
-    margin-top: 3rem;
+    margin-top: 2rem;
 }
 
 .nav-button {
     display: inline-block;
-    padding: 1rem 2rem;
+    padding: 0.75rem 1.5rem;
     background-color: var(--primary-color);
     color: white;
     text-decoration: none;
     border-radius: 0.5rem;
     font-weight: 500;
     transition: var(--transition);
+    font-size: 0.9rem;
 }
 
 .nav-button:hover {
@@ -369,14 +374,14 @@ body {
 @media screen and (min-width: 1201px) {
     .container {
         max-width: 1200px;
-        padding: 2rem;
+        padding: 1.5rem;
     }
 }
 
 @media screen and (max-width: 1200px) {
     .container {
         max-width: 100%;
-        padding: 1.5rem;
+        padding: 1.25rem;
     }
 }
 
@@ -385,13 +390,13 @@ body {
         padding: 1rem;
     }
     .skills-grid {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     }
     .header h1 {
-        font-size: 2rem;
+        font-size: 1.75rem;
     }
     .header h2 {
-        font-size: 1.1rem;
+        font-size: 1rem;
     }
 }
 
@@ -403,10 +408,10 @@ body {
         grid-template-columns: 1fr;
     }
     .header h1 {
-        font-size: 1.75rem;
+        font-size: 1.5rem;
     }
     .header h2 {
-        font-size: 1rem;
+        font-size: 0.9rem;
     }
 }
 
