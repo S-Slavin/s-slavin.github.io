@@ -2,75 +2,114 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shaina Slavin - Portfolio</title>
-    <link rel="stylesheet" href="/S-slavin.github.io/desktop/styles.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <div class="desktop-container">
-        <!-- Left Sidebar -->
-        <aside class="sidebar">
-            <div class="profile">
-                <h1>Shaina Slavin</h1>
-                <h2>Computer Science Student</h2>
-                <h3>Full-Stack & Front-End Developer</h3>
-            </div>
-            
-            <nav class="main-nav">
-                <a href="#portfolio" class="nav-link">Portfolio</a>
-                <a href="resume.html" class="nav-link">Resume</a>
-                <a href="Shaina_Slavin_Resume.md" download class="nav-link download-btn">Download Resume</a>
-            </nav>
-
+    <div class="container">
+        <!-- Header Section -->
+        <header class="header">
+            <h1>Shaina Slavin</h1>
+            <h2>Computer Science Student | Full-Stack & Front-End Developer</h2>
             <div class="contact-info">
-                <p>shaina.slavin@gmail.com</p>
-                <p>+972-50-3071261</p>
-                <a href="https://github.com/S-Slavin">github.com/S-Slavin</a>
+                <p><i class="fas fa-envelope"></i> shaina.slavin@gmail.com</p>
+                <p><i class="fas fa-phone"></i> +972-50-3071261</p>
+                <p><i class="fab fa-github"></i> github.com/S-Slavin</p>
+                <p><i class="fas fa-globe"></i> s-slavin.github.io</p>
             </div>
-        </aside>
+        </header>
 
-        <!-- Main Content -->
-        <main class="main-content">
-            <section id="portfolio" class="content-section">
-                <h2>Portfolio</h2>
-                <div class="portfolio-content">
-                    <div class="project">
-                        <h3>Anti-Hallucination AI System</h3>
-                        <p class="project-description">
-                            Designed and implemented a robust AI platform to minimize hallucinations in language model outputs. Led end-to-end development including data engineering, advanced model integration (RAG, RLHF), real-time fact-checking, and explainable AI modules.
-                        </p>
-                        <div class="project-details">
-                            <h4>Key Achievements:</h4>
-                            <ul>
-                                <li>Developed and fine-tuned advanced language models with RAG and reinforcement learning</li>
-                                <li>Built cross-platform clients using Xcode (iOS/macOS) and Cursor for AI-powered development</li>
-                                <li>Implemented real-time fact-checking and citation systems</li>
-                                <li>Created explainable AI modules with confidence scoring</li>
-                            </ul>
-                            
-                            <h4>Technical Stack:</h4>
-                            <div class="tech-stack">
-                                <span class="tech-tag">Python</span>
-                                <span class="tech-tag">Swift</span>
-                                <span class="tech-tag">RAG</span>
-                                <span class="tech-tag">RLHF</span>
-                                <span class="tech-tag">Xcode</span>
-                                <span class="tech-tag">REST APIs</span>
-                                <span class="tech-tag">Git</span>
-                                <span class="tech-tag">CI/CD</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+        <!-- Summary Section -->
+        <section class="summary">
+            <p>Creative and impact-driven developer passionate about building accessible, user-centric web and mobile applications. Skilled in React, JavaScript, Swift, and Python with a strong foundation in algorithms, data structures, and modern software development.</p>
+        </section>
 
-            <section id="resume" class="content-section">
-                <h2>Resume</h2>
-                <div class="resume-content">
-                    <p>Resume content will go here</p>
+        <!-- Technical Skills Section -->
+        <section class="skills">
+            <h2>Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-card" data-skill="JavaScript">
+                    <i class="fab fa-js"></i>
+                    <h3>JavaScript</h3>
+                    <p>Dynamic scripting language for interactive web applications.</p>
                 </div>
-            </section>
-        </main>
+                <div class="skill-card" data-skill="React">
+                    <i class="fab fa-react"></i>
+                    <h3>React</h3>
+                    <p>JavaScript library for building modern, component-based user interfaces.</p>
+                </div>
+                <div class="skill-card" data-skill="Python">
+                    <i class="fab fa-python"></i>
+                    <h3>Python</h3>
+                    <p>Versatile programming language used for web development, automation, and data science.</p>
+                </div>
+                <div class="skill-card" data-skill="Node.js">
+                    <i class="fab fa-node-js"></i>
+                    <h3>Node.js</h3>
+                    <p>Server-side JavaScript runtime for building scalable backends.</p>
+                </div>
+                <div class="skill-card" data-skill="Express">
+                    <i class="fas fa-server"></i>
+                    <h3>Express</h3>
+                    <p>Minimalist web framework for Node.js APIs and server applications.</p>
+                </div>
+                <div class="skill-card" data-skill="Swift">
+                    <i class="fas fa-mobile-alt"></i>
+                    <h3>Swift</h3>
+                    <p>Modern language for developing iOS and macOS applications.</p>
+                </div>
+                <div class="skill-card" data-skill="Git">
+                    <i class="fab fa-git-alt"></i>
+                    <h3>Git</h3>
+                    <p>Version control system for collaborative software development.</p>
+                </div>
+                <div class="skill-card" data-skill="Figma">
+                    <i class="fab fa-figma"></i>
+                    <h3>Figma</h3>
+                    <p>Collaborative design and prototyping tool for UI/UX projects.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section class="projects">
+            <h2>Project Highlights</h2>
+            
+            <div class="project-card">
+                <h3>FinePrint</h3>
+                <h4>Privacy Management Web and Mobile Application</h4>
+                <p>A cross-platform application (React for web, SwiftUI for iOS) that empowers users and families to manage their digital privacy settings across multiple online accounts.</p>
+                <ul>
+                    <li>Designed and implemented tools for secure data handling, granular privacy controls, and robust account management.</li>
+                    <li>Built intuitive interfaces prioritizing accessibility and ease of use for all ages.</li>
+                    <li>Integrated child safety features, including parental controls and activity monitoring.</li>
+                    <li>Emphasized security best practices and user education about digital privacy.</li>
+                </ul>
+                <a href="#" class="github-link">View on GitHub</a>
+            </div>
+
+            <div class="project-card">
+                <h3>OurBigKitchen App (OBK)</h3>
+                <h4>Community Volunteer and Food Rescue Platform</h4>
+                <p>A full-stack web and iOS application connecting volunteers with meaningful community service opportunities and facilitating food rescue operations.</p>
+                <ul>
+                    <li>Developed user registration, event coordination, and real-time impact tracking features for individuals and groups.</li>
+                    <li>Built a matching system to connect surplus food from donors with local recipients, reducing food waste and supporting food-insecure families.</li>
+                    <li>Enabled organizations to manage volunteer shifts, communicate with teams, and report on community impact.</li>
+                    <li>Technologies used: React, Node.js, Express, SwiftUI, REST APIs, and cloud-based data storage.</li>
+                </ul>
+                <a href="#" class="github-link">View on GitHub</a>
+            </div>
+        </section>
+
+        <!-- Navigation -->
+        <nav class="main-nav">
+            <a href="resume.html" class="nav-button">View Resume</a>
+        </nav>
     </div>
+
+    <script src="script.js"></script>
 </body>
 </html> 
