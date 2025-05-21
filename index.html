@@ -12,6 +12,11 @@
 
         // Get the base path for GitHub Pages
         function getBasePath() {
+            // For GitHub Pages, we want to use the root path
+            if (window.location.hostname === 's-slavin.github.io') {
+                return '/';
+            }
+            // For local development, use the current path
             const path = window.location.pathname;
             return path.endsWith('/') ? path : path.substring(0, path.lastIndexOf('/') + 1);
         }
@@ -19,11 +24,11 @@
         // Redirect based on device type
         function redirect() {
             const basePath = getBasePath();
-            if (isMobile()) {
-                window.location.href = basePath + 'mobile/index.html';
-            } else {
-                window.location.href = basePath + 'desktop/index.html';
-            }
+            const targetPath = isMobile() ? 'mobile/index.html' : 'desktop/index.html';
+            const fullPath = basePath + targetPath;
+            
+            // Add a timestamp to prevent caching issues
+            window.location.href = fullPath + '?t=' + new Date().getTime();
         }
 
         // Redirect on page load
