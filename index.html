@@ -2,185 +2,49 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-    <title>Shaina Slavin</title>
-    <link rel="stylesheet" href="styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shaina Slavin - Portfolio</title>
+    <script>
+        // Function to detect if device is mobile
+        function isMobile() {
+            return window.innerWidth <= 768;
+        }
+
+        // Redirect based on device type
+        function redirect() {
+            if (isMobile()) {
+                window.location.href = 'mobile/index.html';
+            } else {
+                window.location.href = 'desktop/index.html';
+            }
+        }
+
+        // Redirect on page load
+        window.onload = redirect;
+
+        // Redirect on window resize
+        window.onresize = redirect;
+    </script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: #f8fafc;
+        }
+        .loading {
+            text-align: center;
+            color: #1f2937;
+        }
+    </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav>
-        <a href="#portfolio" class="nav-link">Portfolio</a>
-        <a href="#resume" class="nav-link">Resume</a>
-    </nav>
-
-    <!-- Portfolio Section -->
-    <section id="portfolio" class="section active">
-        <!-- Header -->
-        <header>
-            <h1>Shaina Slavin</h1>
-            <h2>Computer Science Student | Full-Stack & Front-End Developer</h2>
-            <div class="contact-info">
-                <p>shaina.slavin@gmail.com</p>
-                <p>+972-50-3071261</p>
-                <p><a href="https://github.com/S-Slavin" target="_blank">github.com/S-Slavin</a></p>
-                <p><a href="https://s-slavin.github.io" target="_blank">s-slavin.github.io</a></p>
-            </div>
-        </header>
-
-        <!-- Summary -->
-        <section class="summary-section">
-            <p>Creative and impact-driven developer passionate about building accessible, user-centric web and mobile applications. Skilled in React, JavaScript, Swift, and Python with a strong foundation in algorithms, data structures, and modern software development.</p>
-        </section>
-
-        <!-- Technical Skills -->
-        <section class="skills-section">
-            <h2>Technical Skills</h2>
-            <div class="skills-grid">
-                <div class="skill-card" onclick="bounce(this)">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" class="skill-icon" alt="JavaScript">
-                    <h3>JavaScript</h3>
-                    <p>Dynamic scripting language for interactive web applications.</p>
-                </div>
-                <div class="skill-card" onclick="bounce(this)">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" class="skill-icon" alt="React">
-                    <h3>React</h3>
-                    <p>JavaScript library for building modern, component-based user interfaces.</p>
-                </div>
-                <div class="skill-card" onclick="bounce(this)">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" class="skill-icon" alt="Python">
-                    <h3>Python</h3>
-                    <p>Versatile programming language used for web development, automation, and data science.</p>
-                </div>
-                <div class="skill-card" onclick="bounce(this)">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" class="skill-icon" alt="Node.js">
-                    <h3>Node.js</h3>
-                    <p>Server-side JavaScript runtime for building scalable backends.</p>
-                </div>
-                <div class="skill-card" onclick="bounce(this)">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" class="skill-icon" alt="Express">
-                    <h3>Express</h3>
-                    <p>Minimalist web framework for Node.js APIs and server applications.</p>
-                </div>
-                <div class="skill-card" onclick="bounce(this)">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/swift/swift-original.svg" class="skill-icon" alt="Swift">
-                    <h3>Swift</h3>
-                    <p>Modern language for developing iOS and macOS applications.</p>
-                </div>
-                <div class="skill-card" onclick="bounce(this)">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" class="skill-icon" alt="Git">
-                    <h3>Git</h3>
-                    <p>Version control system for collaborative software development.</p>
-                </div>
-                <div class="skill-card" onclick="bounce(this)">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" class="skill-icon" alt="Figma">
-                    <h3>Figma</h3>
-                    <p>Collaborative design and prototyping tool for UI/UX projects.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Projects -->
-        <section class="projects-section">
-            <h2>Projects</h2>
-            <div class="project-card">
-                <h3>FinePrint</h3>
-                <p>
-                    Privacy Management Web and Mobile Application<br>
-                    A cross-platform application (React for web, SwiftUI for iOS) that empowers users and families to manage their digital privacy settings across multiple online accounts.<br>
-                    - Designed and implemented tools for secure data handling, granular privacy controls, and robust account management.<br>
-                    - Built intuitive interfaces prioritizing accessibility and ease of use for all ages.<br>
-                    - Integrated child safety features, including parental controls and activity monitoring.<br>
-                    - Emphasized security best practices and user education about digital privacy.<br>
-                    <a href="#" target="_blank">View on GitHub</a>
-                </p>
-            </div>
-            <div class="project-card">
-                <h3>OurBigKitchen App (OBK)</h3>
-                <p>
-                    Community Volunteer and Food Rescue Platform<br>
-                    A full-stack web and iOS application connecting volunteers with meaningful community service opportunities and facilitating food rescue operations.<br>
-                    - Developed user registration, event coordination, and real-time impact tracking features for individuals and groups.<br>
-                    - Built a matching system to connect surplus food from donors with local recipients, reducing food waste and supporting food-insecure families.<br>
-                    - Enabled organizations to manage volunteer shifts, communicate with teams, and report on community impact.<br>
-                    - Technologies used: React, Node.js, Express, SwiftUI, REST APIs, and cloud-based data storage.<br>
-                    <a href="#" target="_blank">View on GitHub</a>
-                </p>
-            </div>
-        </section>
-    </section>
-
-    <!-- Resume Section -->
-    <section id="resume" class="section">
-        <div class="resume-content">
-            <h1>Shaina Slavin</h1>
-            <h2>Computer Science Student | Full-Stack & Front-End Developer</h2>
-            <p>shaina.slavin@gmail.com | +972-50-3071261 | <a href="https://github.com/S-Slavin" target="_blank">github.com/S-Slavin</a></p>
-
-            <h3>Summary</h3>
-            <p>
-                Creative and impact-driven developer with hands-on experience in React, JavaScript, Swift, and Python. Passionate about building accessible, user-centric web and mobile applications. Strong foundation in algorithms, data structures, and modern software development.
-            </p>
-
-            <h3>Education</h3>
-            <strong>B.Sc. in Computer Science</strong><br>
-            The Open University of Israel | 2024–Present<br>
-            - Advanced coursework: Data Structures, Algorithms, Web and Mobile App Development<br>
-            - Foundation in advanced mathematics and physics<br><br>
-            <strong>Mechina (Preparatory Program)</strong><br>
-            The Open University of Israel | 2021–2023<br>
-            - Intensive preparatory program supplementing advanced mathematics and physics<br>
-            - Excelled in advanced mathematics and physics courses<br>
-            - Completed foundational studies to bridge from religious high school without secular studies<br>
-            - Developed strong programming fundamentals
-            <br><br>
-
-            <h3>Technical Skills</h3>
-            <ul>
-                <li>Programming Languages: JavaScript, Python, Java, Swift, HTML5, CSS3, C++ (learning), Go (learning)</li>
-                <li>Frameworks & Libraries: React, Node.js, Express, SwiftUI</li>
-                <li>Tools & Platforms: REST APIs, Git, GitHub, Xcode, VS Code, Salesforce, Figma</li>
-                <li>Core Concepts: Algorithms, Data Structures, OOP, UI/UX Design, Debugging & Testing, Cybersecurity Fundamentals</li>
-            </ul>
-
-            <h3>Software Projects</h3>
-            <strong>FinePrint</strong><br>
-            Privacy Management Web and Mobile Application<br>
-            A cross-platform application (React for web, SwiftUI for iOS) that empowers users and families to manage their digital privacy settings across multiple online accounts.<br>
-            - Designed and implemented tools for secure data handling, granular privacy controls, and robust account management.<br>
-            - Built intuitive interfaces prioritizing accessibility and ease of use for all ages.<br>
-            - Integrated child safety features, including parental controls and activity monitoring.<br>
-            - Emphasized security best practices and user education about digital privacy.<br>
-            <a href="#" target="_blank">View on GitHub</a>
-            <br><br>
-            <strong>OurBigKitchen App (OBK)</strong><br>
-            Community Volunteer and Food Rescue Platform<br>
-            A full-stack web and iOS application connecting volunteers with meaningful community service opportunities and facilitating food rescue operations.<br>
-            - Developed user registration, event coordination, and real-time impact tracking features for individuals and groups.<br>
-            - Built a matching system to connect surplus food from donors with local recipients, reducing food waste and supporting food-insecure families.<br>
-            - Enabled organizations to manage volunteer shifts, communicate with teams, and report on community impact.<br>
-            - Technologies used: React, Node.js, Express, SwiftUI, REST APIs, and cloud-based data storage.<br>
-            <a href="#" target="_blank">View on GitHub</a>
-            <br><br>
-
-            <h3>Languages</h3>
-            English, Hebrew (fluent); Yiddish (conversational)<br><br>
-            <h3>Portfolio</h3>
-            <a href="https://s-slavin.github.io" target="_blank">s-slavin.github.io</a>
-        </div>
-    </section>
-
-    <script>
-        // Simple navigation handling
-        document.querySelectorAll('.nav-link').forEach(link => {
-            link.addEventListener('click', (e) => {
-                e.preventDefault();
-                const targetId = link.getAttribute('href').substring(1);
-                document.querySelectorAll('.section').forEach(section => {
-                    section.classList.remove('active');
-                });
-                document.getElementById(targetId).classList.add('active');
-            });
-        });
-    </script>
+    <div class="loading">
+        <h1>Loading...</h1>
+    </div>
 </body>
 </html> 
