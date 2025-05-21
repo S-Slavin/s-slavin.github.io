@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Shaina Slavin - Computer Science Student | Full-Stack & Front-End Developer">
+    <title>Shaina Slavin - Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <a href="resume.html" class="nav-link">Resume</a>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>Shaina Slavin</h1>
+                <p>Computer Science Student | Full-Stack & Front-End Developer</p>
+                <div class="contact-info">
+                    <p>Email: shaina.slavin@gmail.com</p>
+                    <p>Phone: +972-50-3071261</p>
+                    <p>GitHub: github.com/S-Slavin</p>
+                    <p>Portfolio: s-slavin.github.io</p>
+                </div>
+                <div class="summary">
+                    <p>Creative and impact-driven developer passionate about building accessible, user-centric web and mobile applications. Skilled in React, JavaScript, Swift, and Python with a strong foundation in algorithms, data structures, and modern software development.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="skills-section">
+            <div class="container">
+                <h2>Technical Skills</h2>
+                <div class="skills-grid">
+                    <div class="skill-item" data-skill="javascript">
+                        <i class="devicon-javascript-plain"></i>
+                        <h3>JavaScript</h3>
+                        <p>Dynamic scripting language for interactive web applications.</p>
+                    </div>
+                    <div class="skill-item" data-skill="react">
+                        <i class="devicon-react-original"></i>
+                        <h3>React</h3>
+                        <p>JavaScript library for building modern, component-based user interfaces.</p>
+                    </div>
+                    <div class="skill-item" data-skill="python">
+                        <i class="devicon-python-plain"></i>
+                        <h3>Python</h3>
+                        <p>Versatile programming language used for web development, automation, and data science.</p>
+                    </div>
+                    <div class="skill-item" data-skill="nodejs">
+                        <i class="devicon-nodejs-plain"></i>
+                        <h3>Node.js</h3>
+                        <p>Server-side JavaScript runtime for building scalable backends.</p>
+                    </div>
+                    <div class="skill-item" data-skill="express">
+                        <i class="devicon-express-original"></i>
+                        <h3>Express</h3>
+                        <p>Minimalist web framework for Node.js APIs and server applications.</p>
+                    </div>
+                    <div class="skill-item" data-skill="swift">
+                        <i class="devicon-swift-plain"></i>
+                        <h3>Swift</h3>
+                        <p>Modern language for developing iOS and macOS applications.</p>
+                    </div>
+                    <div class="skill-item" data-skill="git">
+                        <i class="devicon-git-plain"></i>
+                        <h3>Git</h3>
+                        <p>Version control system for collaborative software development.</p>
+                    </div>
+                    <div class="skill-item" data-skill="figma">
+                        <i class="devicon-figma-plain"></i>
+                        <h3>Figma</h3>
+                        <p>Collaborative design and prototyping tool for UI/UX projects.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="projects">
+            <div class="container">
+                <h2>Project Highlights</h2>
+                <div class="project-grid">
+                    <div class="project-card">
+                        <div class="project-content">
+                            <h3>FinePrint</h3>
+                            <p>Privacy Management Web and Mobile Application</p>
+                            <p>A cross-platform application (React for web, SwiftUI for iOS) that empowers users and families to manage their digital privacy settings across multiple online accounts.</p>
+                            <ul>
+                                <li>Designed and implemented tools for secure data handling, granular privacy controls, and robust account management.</li>
+                                <li>Built intuitive interfaces prioritizing accessibility and ease of use for all ages.</li>
+                                <li>Integrated child safety features, including parental controls and activity monitoring.</li>
+                                <li>Emphasized security best practices and user education about digital privacy.</li>
+                            </ul>
+                            <a href="https://github.com/S-Slavin/FinePrint" target="_blank" class="btn">View on GitHub</a>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-content">
+                            <h3>OurBigKitchen App (OBK)</h3>
+                            <p>Community Volunteer and Food Rescue Platform</p>
+                            <p>A full-stack web and iOS application connecting volunteers with meaningful community service opportunities and facilitating food rescue operations.</p>
+                            <ul>
+                                <li>Developed user registration, event coordination, and real-time impact tracking features for individuals and groups.</li>
+                                <li>Built a matching system to connect surplus food from donors with local recipients, reducing food waste and supporting food-insecure families.</li>
+                                <li>Enabled organizations to manage volunteer shifts, communicate with teams, and report on community impact.</li>
+                                <li>Technologies used: React, Node.js, Express, SwiftUI, REST APIs, and cloud-based data storage.</li>
+                            </ul>
+                            <a href="https://github.com/S-Slavin/OurBigKitchen" target="_blank" class="btn">View on GitHub</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <a href="resume.html" class="btn">View Resume</a>
+            <p>&copy; 2024 Shaina Slavin. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Add bounce animation to skill items
+        document.querySelectorAll('.skill-item').forEach(item => {
+            item.addEventListener('click', function() {
+                this.style.animation = 'none';
+                this.offsetHeight; // Trigger reflow
+                this.style.animation = 'bounce 0.5s ease';
+            });
+        });
+    </script>
+</body>
+</html> 
