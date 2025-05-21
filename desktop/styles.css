@@ -18,6 +18,7 @@ html, body {
     height: 100%;
     width: 100%;
     overflow-x: hidden;
+    min-width: 1024px; /* Minimum width for desktop layout */
 }
 
 body {
@@ -148,7 +149,7 @@ body {
 }
 
 /* Ensure mobile styles don't interfere */
-@media (max-width: 768px) {
+@media (max-width: 1023px) {
     .desktop-container {
         display: none !important;
     }
@@ -287,4 +288,19 @@ body {
     .print-button {
         display: none;
     }
+}
+
+.nav-link.download-btn {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    margin-top: 1rem;
+    text-align: center;
+    transition: background-color 0.2s ease;
+}
+
+.nav-link.download-btn:hover {
+    background-color: #1e40af;
+    color: white;
 } 
