@@ -17,18 +17,27 @@
     --transition: all 0.3s ease;
 }
 
+html {
+    min-width: 1024px;
+    overflow-x: auto;
+}
+
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
     line-height: 1.6;
     color: var(--text-color);
     background-color: var(--background);
     min-height: 100vh;
+    min-width: 1024px;
+    overflow-x: auto;
 }
 
 .container {
+    width: 100%;
     max-width: 1200px;
     margin: 0 auto;
     padding: 2rem;
+    min-width: 1024px;
 }
 
 /* Header Styles */
@@ -37,6 +46,7 @@ body {
     margin-bottom: 3rem;
     padding: 2rem 0;
     border-bottom: 2px solid var(--border-color);
+    width: 100%;
 }
 
 .header h1 {
@@ -220,23 +230,26 @@ body {
     animation: bounce 0.5s ease;
 }
 
-/* Responsive Design */
+/* Remove mobile media queries */
 @media (max-width: 768px) {
     .container {
-        padding: 1rem;
+        padding: 2rem;
     }
+}
 
-    .header h1 {
-        font-size: 2rem;
-    }
-
-    .contact-info {
-        flex-direction: column;
-        gap: 1rem;
+/* Desktop-specific styles */
+@media (min-width: 1024px) {
+    .container {
+        padding: 2rem 4rem;
     }
 
     .skills-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .contact-info {
+        justify-content: center;
+        gap: 3rem;
     }
 }
 
