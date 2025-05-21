@@ -37,7 +37,7 @@ body {
 /* Header */
 header {
     background-color: var(--background-color);
-    padding: 1rem 0;
+    padding: 1.5rem 0;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     position: fixed;
     width: 100%;
@@ -57,13 +57,13 @@ nav {
 }
 
 .logo {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     font-weight: bold;
 }
 
 .nav-links {
     display: flex;
-    gap: 2rem;
+    gap: 2.5rem;
     list-style: none;
     margin: 0;
     padding: 0;
@@ -74,7 +74,7 @@ nav {
     text-decoration: none;
     font-weight: 500;
     transition: var(--transition);
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     padding: 0.5rem 1rem;
     white-space: nowrap;
 }
@@ -85,7 +85,7 @@ nav {
 
 /* Hero Section */
 .hero {
-    padding: 8rem 0 4rem;
+    padding: 10rem 0 6rem;
     text-align: center;
     background: linear-gradient(135deg, #f6f9fc 0%, #ffffff 100%);
     min-height: 100vh;
@@ -96,21 +96,22 @@ nav {
 }
 
 .hero .container {
-    max-width: 1000px;
+    max-width: 1200px;
+    padding: 0 4rem;
 }
 
 .hero h1 {
-    font-size: 3.5rem;
-    margin-bottom: 1.5rem;
+    font-size: 4.5rem;
+    margin-bottom: 2rem;
     color: var(--primary-color);
     line-height: 1.2;
 }
 
 .hero p {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     color: var(--secondary-color);
-    margin-bottom: 2rem;
-    max-width: 800px;
+    margin-bottom: 3rem;
+    max-width: 900px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -182,14 +183,14 @@ nav {
 
 /* Projects Section */
 .projects {
-    padding: 4rem 0;
+    padding: 6rem 0;
 }
 
 .project-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+    margin-top: 3rem;
 }
 
 .project-card {
@@ -261,36 +262,81 @@ footer .btn {
     50% { transform: translateY(-10px); }
 }
 
-/* Responsive Design */
+/* Media Queries */
+@media (max-width: 1200px) {
+    .container {
+        max-width: 960px;
+    }
+    
+    .project-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 992px) {
+    .container {
+        max-width: 720px;
+    }
+    
+    .hero h1 {
+        font-size: 3.5rem;
+    }
+    
+    .hero p {
+        font-size: 1.5rem;
+    }
+}
+
 @media (max-width: 768px) {
+    .container {
+        max-width: 540px;
+        padding: 0 1.5rem;
+    }
+    
+    nav {
+        padding: 0 1.5rem;
+    }
+    
+    .nav-links {
+        gap: 1.5rem;
+    }
+    
+    .nav-link {
+        font-size: 1.1rem;
+    }
+    
+    .hero h1 {
+        font-size: 2.8rem;
+    }
+    
+    .hero p {
+        font-size: 1.3rem;
+    }
+    
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 576px) {
+    .container {
+        padding: 0 1rem;
+    }
+    
     nav {
         padding: 0 1rem;
     }
-
-    .nav-links {
-        gap: 1rem;
-    }
-
-    .nav-link {
-        font-size: 1rem;
-        padding: 0.5rem;
-    }
-
+    
     .hero h1 {
-        font-size: 2.5rem;
+        font-size: 2.2rem;
     }
     
     .hero p {
         font-size: 1.1rem;
-    }
-    
-    .container {
-        padding: 0 1rem;
-    }
-
-    .skills-grid,
-    .project-grid {
-        grid-template-columns: 1fr;
     }
 }
 
