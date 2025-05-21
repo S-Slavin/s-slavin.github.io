@@ -5,11 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shaina Slavin - Portfolio</title>
     <script>
-        // Use relative path for GitHub Pages compatibility
-        window.location.href = 'desktop/index.html';
+        // Use user agent to detect mobile devices
+        const isMobile = /Mobi|Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+        // Redirect based on device type
+        window.location.href = isMobile ? 'mobile/index.html' : 'desktop/index.html';
     </script>
 </head>
 <body>
-    <p>Redirecting to the desktop version...</p>
+    <p>Redirecting to the appropriate version...</p>
 </body>
 </html> 
