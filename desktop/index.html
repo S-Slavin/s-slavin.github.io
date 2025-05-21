@@ -6,8 +6,9 @@
     <title>Shaina Slavin - Portfolio</title>
     <link rel="stylesheet" href="styles.css">
     <script>
-        // Improved mobile detection with relative paths
-        if (window.innerWidth <= 768 && !window.location.pathname.includes('/mobile/')) {
+        // Use user agent to detect mobile devices, not just window width
+        const isMobile = /Mobi|Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+        if (isMobile && !window.location.pathname.includes('/mobile/')) {
             window.location.href = '../mobile/index.html';
         }
     </script>
