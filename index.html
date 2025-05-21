@@ -4,46 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shaina Slavin - Portfolio</title>
-    <link rel="stylesheet" href="/desktop/styles.css">
+    <script>
+        // Check if we're on GitHub Pages
+        if (window.location.hostname === 's-slavin.github.io') {
+            // Redirect to the desktop version
+            window.location.href = './desktop/index.html';
+        } else {
+            // Local development - redirect to desktop version
+            window.location.href = './desktop/index.html';
+        }
+    </script>
 </head>
 <body>
-    <div class="desktop-container">
-        <!-- Left Sidebar -->
-        <aside class="sidebar">
-            <div class="profile">
-                <h1>Shaina Slavin</h1>
-                <h2>Computer Science Student</h2>
-                <h3>Full-Stack & Front-End Developer</h3>
-            </div>
-            
-            <nav class="main-nav">
-                <a href="#portfolio" class="nav-link">Portfolio</a>
-                <a href="#resume" class="nav-link">Resume</a>
-            </nav>
-
-            <div class="contact-info">
-                <p>shaina.slavin@gmail.com</p>
-                <p>+972-50-3071261</p>
-                <a href="https://github.com/S-Slavin">github.com/S-Slavin</a>
-            </div>
-        </aside>
-
-        <!-- Main Content -->
-        <main class="main-content">
-            <section id="portfolio" class="content-section">
-                <h2>Portfolio</h2>
-                <div class="portfolio-content">
-                    <p>Portfolio content will go here</p>
-                </div>
-            </section>
-
-            <section id="resume" class="content-section">
-                <h2>Resume</h2>
-                <div class="resume-content">
-                    <p>Resume content will go here</p>
-                </div>
-            </section>
-        </main>
-    </div>
+    <p>Redirecting to the desktop version...</p>
 </body>
 </html> 
