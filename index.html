@@ -4,60 +4,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shaina Slavin - Portfolio</title>
-    <script>
-        // Function to detect if device is mobile
-        function isMobile() {
-            return window.innerWidth <= 768;
-        }
-
-        // Get the base path for GitHub Pages
-        function getBasePath() {
-            // For GitHub Pages, we want to use the root path
-            if (window.location.hostname === 's-slavin.github.io') {
-                return '/';
-            }
-            // For local development, use the current path
-            const path = window.location.pathname;
-            return path.endsWith('/') ? path : path.substring(0, path.lastIndexOf('/') + 1);
-        }
-
-        // Redirect based on device type
-        function redirect() {
-            const basePath = getBasePath();
-            // Always use desktop version on GitHub Pages
-            const targetPath = window.location.hostname === 's-slavin.github.io' ? 'desktop/index.html' : (isMobile() ? 'mobile/index.html' : 'desktop/index.html');
-            const fullPath = basePath + targetPath;
-            
-            // Add a timestamp to prevent caching issues
-            window.location.href = fullPath + '?t=' + new Date().getTime();
-        }
-
-        // Redirect on page load
-        window.onload = redirect;
-
-        // Redirect on window resize
-        window.onresize = redirect;
-    </script>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background-color: #f8fafc;
-        }
-        .loading {
-            text-align: center;
-            color: #1f2937;
-        }
-    </style>
+    <link rel="stylesheet" href="/desktop/styles.css">
 </head>
 <body>
-    <div class="loading">
-        <h1>Loading...</h1>
+    <div class="desktop-container">
+        <!-- Left Sidebar -->
+        <aside class="sidebar">
+            <div class="profile">
+                <h1>Shaina Slavin</h1>
+                <h2>Computer Science Student</h2>
+                <h3>Full-Stack & Front-End Developer</h3>
+            </div>
+            
+            <nav class="main-nav">
+                <a href="#portfolio" class="nav-link">Portfolio</a>
+                <a href="#resume" class="nav-link">Resume</a>
+            </nav>
+
+            <div class="contact-info">
+                <p>shaina.slavin@gmail.com</p>
+                <p>+972-50-3071261</p>
+                <a href="https://github.com/S-Slavin">github.com/S-Slavin</a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <section id="portfolio" class="content-section">
+                <h2>Portfolio</h2>
+                <div class="portfolio-content">
+                    <p>Portfolio content will go here</p>
+                </div>
+            </section>
+
+            <section id="resume" class="content-section">
+                <h2>Resume</h2>
+                <div class="resume-content">
+                    <p>Resume content will go here</p>
+                </div>
+            </section>
+        </main>
     </div>
 </body>
 </html> 
