@@ -24,7 +24,8 @@
         // Redirect based on device type
         function redirect() {
             const basePath = getBasePath();
-            const targetPath = isMobile() ? 'mobile/index.html' : 'desktop/index.html';
+            // Always use desktop version on GitHub Pages
+            const targetPath = window.location.hostname === 's-slavin.github.io' ? 'desktop/index.html' : (isMobile() ? 'mobile/index.html' : 'desktop/index.html');
             const fullPath = basePath + targetPath;
             
             // Add a timestamp to prevent caching issues
