@@ -90,6 +90,33 @@ body {
     font-size: 1rem;
 }
 
+.download-resume {
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.download-resume .download-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.download-resume .download-btn:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-2px);
+}
+
+.download-resume .download-btn i {
+    color: white;
+}
+
 /* Summary Section */
 .summary {
     max-width: 800px;
