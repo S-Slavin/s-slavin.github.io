@@ -2,499 +2,138 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-    <meta http-equiv="Pragma" content="no-cache">
-    <meta http-equiv="Expires" content="0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="HandheldFriendly" content="true">
     <title>Shaina Slavin - Portfolio</title>
-    <script>
-        // Prevent redirection loops
-        if (window.location.pathname.includes('/desktop/')) {
-            window.location.replace('/S-slavin.github.io/mobile/index.html?v=' + new Date().getTime());
-        }
-    </script>
-    <style>
-        :root {
-            --primary-color: #2c3e50;
-            --secondary-color: #3498db;
-            --text-color: #333;
-            --background-color: #f5f5f5;
-            --card-background: #ffffff;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            -webkit-text-size-adjust: 100%;
-            -webkit-tap-highlight-color: transparent;
-        }
-        
-        html {
-            font-size: 16px;
-            height: 100%;
-        }
-        
-        body {
-            margin: 0;
-            padding: 0;
-            min-height: 100%;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background-color: var(--background-color);
-            line-height: 1.6;
-            color: var(--text-color);
-            overflow-x: hidden;
-            width: 100%;
-            position: relative;
-        }
-
-        .site-header {
-            background-color: var(--primary-color);
-            color: white;
-            padding: 1rem;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            width: 100%;
-            left: 0;
-        }
-
-        .header-content {
-            width: 100%;
-            max-width: 100%;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0;
-        }
-
-        h1 {
-            font-size: 1.5rem;
-            margin: 0;
-            line-height: 1.2;
-        }
-
-        .main-nav {
-            display: flex;
-            gap: 1rem;
-        }
-
-        .nav-link {
-            color: white;
-            text-decoration: none;
-            padding: 0.5rem;
-            border-radius: 4px;
-            transition: background-color 0.3s;
-            font-size: 1rem;
-            white-space: nowrap;
-        }
-
-        .site-main {
-            width: 100%;
-            max-width: 100%;
-            margin: 0 auto;
-            padding: 1rem;
-            overflow-x: hidden;
-        }
-
-        .content-section {
-            margin-bottom: 2rem;
-            background: var(--card-background);
-            border-radius: 8px;
-            padding: 1rem;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            width: 100%;
-            overflow: hidden;
-        }
-
-        .hero {
-            text-align: center;
-            margin-bottom: 1.5rem;
-            width: 100%;
-        }
-
-        .profile-image-container {
-            width: 120px;
-            height: 120px;
-            margin: 0 auto 1.5rem;
-            border-radius: 50%;
-            overflow: hidden;
-            border: 3px solid var(--secondary-color);
-            background-color: #e0e0e0;
-            position: relative;
-        }
-
-        .profile-image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-        }
-
-        .hero h2 {
-            font-size: 1.5rem;
-            color: var(--primary-color);
-            margin-bottom: 0.5rem;
-            line-height: 1.2;
-        }
-
-        .hero h3 {
-            font-size: 1.2rem;
-            color: var(--secondary-color);
-            line-height: 1.2;
-        }
-
-        .contact-info {
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-            align-items: center;
-            margin: 1.5rem 0;
-            width: 100%;
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: var(--primary-color);
-            text-decoration: none;
-            padding: 0.75rem;
-            border-radius: 4px;
-            transition: background-color 0.3s;
-            width: 100%;
-            max-width: 300px;
-            justify-content: center;
-            font-size: 1rem;
-            background-color: rgba(0, 0, 0, 0.02);
-        }
-
-        .contact-item:active {
-            background-color: rgba(0, 0, 0, 0.05);
-        }
-
-        .projects-grid {
-            display: grid;
-            gap: 1.5rem;
-            margin-top: 2rem;
-            width: 100%;
-        }
-
-        .project-card {
-            background: var(--card-background);
-            border-radius: 8px;
-            padding: 1.5rem;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            width: 100%;
-        }
-
-        .project-card h3 {
-            color: var(--primary-color);
-            font-size: 1.3rem;
-            margin-bottom: 0.75rem;
-            line-height: 1.2;
-        }
-
-        .project-description {
-            font-size: 1rem;
-            margin-bottom: 1rem;
-            line-height: 1.5;
-        }
-
-        .project-tech {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin: 1rem 0;
-        }
-
-        .tech-tag {
-            background-color: var(--secondary-color);
-            color: white;
-            padding: 0.25rem 0.75rem;
-            border-radius: 15px;
-            font-size: 0.85rem;
-            line-height: 1.2;
-        }
-
-        .project-link {
-            display: inline-block;
-            color: var(--primary-color);
-            text-decoration: none;
-            font-weight: 500;
-            padding: 0.75rem 1.5rem;
-            border: 2px solid var(--primary-color);
-            border-radius: 4px;
-            margin-top: 1rem;
-            font-size: 1rem;
-            line-height: 1.2;
-            text-align: center;
-            min-width: 120px;
-        }
-
-        .project-link:active {
-            background-color: var(--primary-color);
-            color: white;
-        }
-
-        .resume-content {
-            width: 100%;
-        }
-
-        .profile-section {
-            text-align: center;
-            margin-bottom: 2rem;
-            width: 100%;
-        }
-
-        .profile-info h3 {
-            font-size: 1.5rem;
-            color: var(--primary-color);
-            margin-bottom: 0.5rem;
-            line-height: 1.2;
-        }
-
-        .profile-info .title {
-            font-size: 1.2rem;
-            color: var(--secondary-color);
-            margin-bottom: 0.25rem;
-            line-height: 1.2;
-        }
-
-        .profile-info .subtitle {
-            font-size: 1rem;
-            color: var(--text-color);
-            line-height: 1.2;
-        }
-
-        .resume-section {
-            margin-bottom: 2rem;
-            width: 100%;
-        }
-
-        .resume-section h3 {
-            color: var(--primary-color);
-            font-size: 1.3rem;
-            margin-bottom: 1rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 2px solid var(--secondary-color);
-            line-height: 1.2;
-        }
-
-        .resume-item {
-            margin-bottom: 1rem;
-        }
-
-        .resume-item h4 {
-            color: var(--secondary-color);
-            font-size: 1.1rem;
-            margin-bottom: 0.25rem;
-            line-height: 1.2;
-        }
-
-        .resume-item .institution {
-            font-weight: 500;
-            margin-bottom: 0.25rem;
-            line-height: 1.2;
-        }
-
-        .resume-item .date {
-            color: #666;
-            font-size: 0.9rem;
-            line-height: 1.2;
-        }
-
-        .skills-list {
-            list-style: none;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            width: 100%;
-        }
-
-        .skills-list li {
-            background-color: var(--secondary-color);
-            color: white;
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            line-height: 1.2;
-        }
-
-        @media (max-width: 480px) {
-            html {
-                font-size: 14px;
-            }
-            
-            .header-content {
-                flex-direction: column;
-                gap: 1rem;
-            }
-
-            .main-nav {
-                width: 100%;
-                justify-content: center;
-            }
-
-            .profile-image-container {
-                width: 100px;
-                height: 100px;
-            }
-
-            .contact-item {
-                padding: 1rem;
-            }
-
-            .project-card {
-                padding: 1rem;
-            }
-
-            .project-link {
-                width: 100%;
-                padding: 1rem;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <header class="site-header">
-        <div class="header-content">
+    <div class="container">
+        <!-- Header Section -->
+        <header class="header">
+            <img src="../desktop/profile.jpg" alt="Shaina Slavin" class="profile-picture" onerror="this.src='https://via.placeholder.com/80'">
             <h1>Shaina Slavin</h1>
-            <nav class="main-nav">
-                <a href="#portfolio" class="nav-link">Portfolio</a>
-                <a href="#resume" class="nav-link">Resume</a>
-            </nav>
-        </div>
-    </header>
+            <h2>Computer Science Student | Full-Stack & Front-End Developer</h2>
+            <div class="contact-info">
+                <p><i class="fas fa-envelope"></i> shaina.slavin@gmail.com</p>
+                <p><i class="fas fa-phone"></i> +972-50-3071261</p>
+                <p><i class="fab fa-github"></i> <a href="https://github.com/S-Slavin" target="_blank">github.com/S-Slavin</a></p>
+                <p><i class="fab fa-linkedin"></i> <a href="https://linkedin.com/in/shaina-slavin" target="_blank">linkedin.com/in/shaina-slavin</a></p>
+                <p><i class="fas fa-globe"></i> s-slavin.github.io</p>
+            </div>
+        </header>
 
-    <main class="site-main">
-        <section id="portfolio" class="content-section">
-            <div class="section-content">
-                <div class="hero">
-                    <div class="profile-image-container">
-                        <img src="/S-slavin.github.io/images/profile.jpg?v=3" 
-                             alt="Shaina Slavin" 
-                             class="profile-image" 
-                             onerror="this.src='/S-slavin.github.io/images/profile-placeholder.jpg?v=3'; this.onerror=null;">
-                    </div>
-                    <h2>Computer Science Student</h2>
-                    <h3>Full-Stack & Front-End Developer</h3>
+        <!-- Summary Section -->
+        <section class="summary">
+            <p>Creative and impact-driven developer passionate about building accessible, user-centric web and mobile applications. Skilled in React, JavaScript, Swift, and Python with a strong foundation in algorithms, data structures, and modern software development.</p>
+        </section>
+
+        <!-- Technical Skills Section -->
+        <section class="skills">
+            <h2>Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-card" data-skill="JavaScript">
+                    <i class="fab fa-js"></i>
+                    <h3>JavaScript</h3>
+                    <p>Dynamic scripting language for interactive web applications.</p>
                 </div>
-                
-                <div class="contact-info">
-                    <a href="mailto:shaina.slavin@gmail.com" class="contact-item">
-                        <span class="icon">✉️</span>
-                        <span>shaina.slavin@gmail.com</span>
-                    </a>
-                    <a href="tel:+972503071261" class="contact-item">
-                        <span class="icon">📱</span>
-                        <span>+972-50-3071261</span>
-                    </a>
-                    <a href="https://github.com/S-Slavin" class="contact-item" target="_blank" rel="noopener noreferrer">
-                        <span class="icon">💻</span>
-                        <span>github.com/S-Slavin</span>
-                    </a>
+                <div class="skill-card" data-skill="React">
+                    <i class="fab fa-react"></i>
+                    <h3>React</h3>
+                    <p>JavaScript library for building modern, component-based user interfaces.</p>
                 </div>
-
-                <div class="projects-grid">
-                    <div class="project-card">
-                        <h3>Portfolio Website</h3>
-                        <p class="project-description">A modern, responsive portfolio website built with HTML, CSS, and JavaScript. Features a clean design and mobile-first approach.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">HTML</span>
-                            <span class="tech-tag">CSS</span>
-                            <span class="tech-tag">JavaScript</span>
-                        </div>
-                        <a href="https://github.com/S-Slavin/S-slavin.github.io" class="project-link" target="_blank" rel="noopener noreferrer">View Project</a>
-                    </div>
-
-                    <div class="project-card">
-                        <h3>Task Management App</h3>
-                        <p class="project-description">A full-stack task management application with user authentication and real-time updates.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">React</span>
-                            <span class="tech-tag">Node.js</span>
-                            <span class="tech-tag">MongoDB</span>
-                        </div>
-                        <a href="#" class="project-link" target="_blank" rel="noopener noreferrer">View Project</a>
-                    </div>
+                <div class="skill-card" data-skill="Python">
+                    <i class="fab fa-python"></i>
+                    <h3>Python</h3>
+                    <p>Versatile programming language used for web development, automation, and data science.</p>
+                </div>
+                <div class="skill-card" data-skill="Node.js">
+                    <i class="fab fa-node-js"></i>
+                    <h3>Node.js</h3>
+                    <p>Server-side JavaScript runtime for building scalable backends.</p>
+                </div>
+                <div class="skill-card" data-skill="Express">
+                    <i class="fas fa-server"></i>
+                    <h3>Express</h3>
+                    <p>Minimalist web framework for Node.js APIs and server applications.</p>
+                </div>
+                <div class="skill-card" data-skill="Swift">
+                    <i class="fas fa-mobile-alt"></i>
+                    <h3>Swift</h3>
+                    <p>Modern language for developing iOS and macOS applications.</p>
+                </div>
+                <div class="skill-card" data-skill="Git">
+                    <i class="fab fa-git-alt"></i>
+                    <h3>Git</h3>
+                    <p>Version control system for collaborative software development.</p>
+                </div>
+                <div class="skill-card" data-skill="Figma">
+                    <i class="fab fa-figma"></i>
+                    <h3>Figma</h3>
+                    <p>Collaborative design and prototyping tool for UI/UX projects.</p>
                 </div>
             </div>
         </section>
 
-        <section id="resume" class="content-section">
-            <div class="section-content">
-                <h2>Resume</h2>
-                <div class="resume-content">
-                    <div class="profile-section">
-                        <div class="profile-image-container">
-                            <img src="/S-slavin.github.io/images/profile.jpg?v=3" 
-                                 alt="Shaina Slavin" 
-                                 class="profile-image" 
-                                 onerror="this.src='/S-slavin.github.io/images/profile-placeholder.jpg?v=3'; this.onerror=null;">
-                        </div>
-                        <div class="profile-info">
-                            <h3>Shaina Slavin</h3>
-                            <p class="title">Computer Science Student</p>
-                            <p class="subtitle">Full-Stack & Front-End Developer</p>
-                        </div>
-                    </div>
+        <!-- Projects Section -->
+        <section class="projects">
+            <h2>Project Highlights</h2>
+            
+            <div class="project-card">
+                <h3>Smart Context Companion</h3>
+                <h4>Principal Architect & Lead Engineer | Cross-Platform AI Productivity Suite</h4>
+                <p>Smart Context Companion is a next-generation, cross-platform productivity solution engineered to empower users with seamless, privacy-centric access to Google's suite of services across both iOS and Android ecosystems.</p>
+                <ul>
+                    <li>Holistic Google Service Orchestration: Unified interface for Google Drive, Calendar, Gmail, Maps, Translate, and Tasks.</li>
+                    <li>Privacy-First Architecture: On-device data processing by default, with opt-in cloud AI augmentation.</li>
+                    <li>Modular Extensibility: "Action Packs" system for rapid deployment of new features.</li>
+                    <li>Universal Accessibility: Full support for accessibility and internationalization.</li>
+                    <li>Technical Stack: Flutter, KMM, Swift/SwiftUI, Kotlin/Jetpack Compose, OAuth 2.0, Core ML, TensorFlow Lite, ML Kit, Google APIs, CI/CD, GitHub Actions, Bitrise.</li>
+                </ul>
+            </div>
 
-                    <div class="contact-details">
-                        <a href="mailto:shaina.slavin@gmail.com" class="contact-item">
-                            <span class="icon">✉️</span>
-                            <span>shaina.slavin@gmail.com</span>
-                        </a>
-                        <a href="tel:+972503071261" class="contact-item">
-                            <span class="icon">📱</span>
-                            <span>+972-50-3071261</span>
-                        </a>
-                        <a href="https://github.com/S-Slavin" class="contact-item" target="_blank" rel="noopener noreferrer">
-                            <span class="icon">💻</span>
-                            <span>github.com/S-Slavin</span>
-                        </a>
-                    </div>
+            <div class="project-card">
+                <h3>Anti-Hallucination AI System</h3>
+                <h4>AI Platform for Minimizing Hallucinations in Language Models</h4>
+                <p>Designed and implemented a robust AI platform to minimize hallucinations in language model outputs.</p>
+                <ul>
+                    <li>Developed and fine-tuned advanced language models with RAG and RLHF.</li>
+                    <li>Built cross-platform clients using Xcode (iOS/macOS) and Cursor for AI-powered development.</li>
+                    <li>Implemented real-time fact-checking and citation systems.</li>
+                    <li>Created explainable AI modules with confidence scoring.</li>
+                </ul>
+            </div>
 
-                    <div class="resume-section">
-                        <h3>Education</h3>
-                        <div class="resume-item">
-                            <h4>Computer Science</h4>
-                            <p class="institution">Tel Aviv University</p>
-                            <p class="date">2023 - Present</p>
-                        </div>
-                    </div>
+            <div class="project-card">
+                <h3>FinePrint</h3>
+                <h4>Privacy Management Web and Mobile Application</h4>
+                <p>A cross-platform application (React for web, SwiftUI for iOS) that empowers users and families to manage their digital privacy settings across multiple online accounts.</p>
+                <ul>
+                    <li>Designed and implemented tools for secure data handling, granular privacy controls, and robust account management.</li>
+                    <li>Built intuitive interfaces prioritizing accessibility and ease of use for all ages.</li>
+                    <li>Integrated child safety features, including parental controls and activity monitoring.</li>
+                    <li>Emphasized security best practices and user education about digital privacy.</li>
+                </ul>
+            </div>
 
-                    <div class="resume-section">
-                        <h3>Skills</h3>
-                        <ul class="skills-list">
-                            <li>JavaScript/TypeScript</li>
-                            <li>React</li>
-                            <li>Node.js</li>
-                            <li>HTML/CSS</li>
-                            <li>Python</li>
-                            <li>Git</li>
-                        </ul>
-                    </div>
-                </div>
+            <div class="project-card">
+                <h3>OurBigKitchen App</h3>
+                <h4>Community Volunteer and Food Rescue Platform</h4>
+                <p>A full-stack web and iOS application connecting volunteers with meaningful community service opportunities and facilitating food rescue operations.</p>
+                <ul>
+                    <li>Developed user registration, event coordination, and real-time impact tracking features for individuals and groups.</li>
+                    <li>Built a matching system to connect surplus food from donors with local recipients, reducing food waste and supporting food-insecure families.</li>
+                    <li>Enabled organizations to manage volunteer shifts, communicate with teams, and report on community impact.</li>
+                    <li>Technologies used: React, Node.js, Express, SwiftUI, REST APIs, and cloud-based data storage.</li>
+                </ul>
             </div>
         </section>
-    </main>
-    <script>
-        // Force reload if cached
-        if (window.performance && window.performance.navigation.type === window.performance.navigation.TYPE_BACK_FORWARD) {
-            window.location.reload();
-        }
-        
-        // Prevent zoom on double tap
-        document.addEventListener('touchend', function(event) {
-            event.preventDefault();
-        }, { passive: false });
-        
-        // Force mobile viewport
-        if (window.innerWidth > 600) {
-            window.location.href = '/S-slavin.github.io/desktop/index.html';
-        }
-    </script>
+
+        <!-- Navigation -->
+        <nav class="main-nav">
+            <a href="../desktop/resume.html" class="nav-button">View Resume</a>
+        </nav>
+    </div>
 </body>
 </html> 
