@@ -8,8 +8,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <script>
-        // Redirect to desktop version
-        window.location.href = 'desktop/index.html';
+        // Smooth redirect to desktop version
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                window.location.href = 'desktop/index.html';
+            }, 100);
+        });
     </script>
     <style>
         body {
@@ -22,6 +26,11 @@
             background: #f8fafc;
             color: #1f2937;
             overflow-x: hidden;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        body.loaded {
+            opacity: 1;
         }
         p {
             font-size: 1.2rem;
@@ -32,6 +41,9 @@
     </style>
 </head>
 <body>
-    <p>Redirecting to portfolio...</p>
+    <p>Loading portfolio...</p>
+    <script>
+        document.body.classList.add('loaded');
+    </script>
 </body>
 </html> 
