@@ -1,0 +1,150 @@
+body {
+  background: #fafbfc;
+  font-family: 'Inter', Arial, sans-serif;
+  color: #23272f;
+  margin: 0;
+  font-size: 19px;
+  line-height: 1.7;
+}
+
+.main-container {
+  max-width: 700px;
+  margin: 32px auto;
+  padding: 40px 32px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(30,40,60,0.06);
+}
+
+.headshot-container {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.headshot {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #fff;
+  box-shadow: 0 4px 12px rgba(30,40,60,0.1);
+}
+
+header h1 {
+  font-size: 40px;
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  font-size: 22px;
+  color: #4b5563;
+  margin-bottom: 24px;
+}
+
+.contact-info, .summary, .skills, .projects {
+  margin-bottom: 40px;
+}
+
+.skills-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.skills-list li {
+  margin-bottom: 20px;
+}
+
+.skill-btn {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font-size: 18px;
+  transition: transform 0.15s;
+}
+
+.skill-btn:active {
+  transform: scale(1.08);
+}
+
+.project-card {
+  background: #f5f6fa;
+  border-radius: 12px;
+  padding: 28px;
+  margin-bottom: 32px;
+  box-shadow: 0 2px 12px rgba(30,40,60,0.03);
+}
+
+.project-card h3 {
+  margin-top: 0;
+  margin-bottom: 8px;
+  font-size: 26px;
+}
+
+.project-card ul {
+  margin: 16px 0 0 18px;
+  padding: 0;
+}
+
+.github-link {
+  display: inline-block;
+  margin-top: 12px;
+  color: #007aff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.github-link:hover {
+  text-decoration: underline;
+}
+
+.button {
+  display: inline-block;
+  padding: 16px 32px;
+  background: #007aff;
+  color: #fff;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 600;
+  margin-top: 24px;
+  transition: background 0.2s;
+}
+
+.button:hover, .button:focus {
+  background: #005bb5;
+}
+
+.navbar {
+  width: 100%;
+  background: #fff;
+  padding: 24px 0;
+  box-shadow: 0 1px 8px rgba(30,40,60,0.04);
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-bottom: 32px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navbar a {
+  font-size: 19px;
+  font-weight: 600;
+  color: #1a1a1a;
+  text-decoration: none;
+  transition: color 0.2s;
+  padding: 8px 16px;
+  border-radius: 6px;
+}
+
+.navbar a.active,
+.navbar a:hover {
+  color: #007aff;
+  background: rgba(0, 122, 255, 0.1);
+} 
