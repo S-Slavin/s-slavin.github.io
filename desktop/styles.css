@@ -18,19 +18,23 @@ body {
     line-height: 1.6;
     color: var(--text-color);
     background-color: var(--background-color);
+    min-width: 1200px;
+    overflow-x: hidden;
 }
 
 .navbar {
     background-color: var(--background-color);
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
     position: fixed;
-    width: 100%;
+    width: 1200px;
+    left: 50%;
+    transform: translateX(-50%);
     top: 0;
     z-index: 1000;
 }
 
 .nav-content {
-    max-width: 1200px;
+    width: 1200px;
     margin: 0 auto;
     padding: 1rem;
     display: flex;
@@ -59,7 +63,7 @@ body {
 }
 
 .container {
-    max-width: 1200px;
+    width: 1200px;
     margin: 0 auto;
     padding: 6rem 1rem 2rem;
 }
@@ -94,9 +98,10 @@ h2 {
 
 .project-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
+    grid-template-columns: 380px 380px 380px;
+    gap: 30px;
     margin-top: 2rem;
+    justify-content: center;
 }
 
 .project-card {
@@ -142,29 +147,14 @@ footer {
     background-color: var(--secondary-background);
     padding: 2rem 0;
     margin-top: 4rem;
+    width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .footer-content {
-    max-width: 1200px;
+    width: 1200px;
     margin: 0 auto;
     text-align: center;
     padding: 0 1rem;
-}
-
-@media (max-width: 768px) {
-    .hero h1 {
-        font-size: 2.5rem;
-    }
-    
-    .subtitle {
-        font-size: 1.25rem;
-    }
-    
-    .nav-links {
-        display: none;
-    }
-    
-    .project-grid {
-        grid-template-columns: 1fr;
-    }
 } 

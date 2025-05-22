@@ -100,20 +100,4 @@
     color: var(--primary-color);
     position: absolute;
     left: 0;
-}
-
-@media (max-width: 768px) {
-    .resume {
-        padding: 1rem;
-    }
-
-    .contact-info {
-        flex-direction: column;
-        gap: 0.5rem;
-        align-items: center;
-    }
-
-    .skills-grid {
-        grid-template-columns: 1fr;
-    }
 } 
