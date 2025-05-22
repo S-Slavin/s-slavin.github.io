@@ -20,6 +20,16 @@
     --safe-area-inset-top: env(safe-area-inset-top, 0px);
 }
 
+@keyframes bounce {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
 html {
     font-size: 16px;
     -webkit-text-size-adjust: 100%;
@@ -112,7 +122,7 @@ body {
     display: none;
 }
 
-/* Mobile-first base styles */
+/* Header Section */
 .header {
     text-align: center;
     margin: calc(3.5rem + var(--safe-area-inset-top)) 0 1rem;
@@ -123,6 +133,7 @@ body {
     position: relative;
     overflow: hidden;
     transition: var(--transition);
+    animation: fadeIn 0.5s ease-out;
 }
 
 .header::before {
@@ -260,10 +271,27 @@ body {
     color: var(--primary-color);
 }
 
+/* Summary Section */
+.summary {
+    background: var(--card-bg);
+    padding: 1.25rem;
+    border-radius: 1rem;
+    margin-bottom: 1rem;
+    box-shadow: var(--shadow-md);
+    animation: fadeIn 0.5s ease-out;
+}
+
+.summary p {
+    color: var(--text-color);
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
 /* Skills Section */
 .skills {
     margin-bottom: 1.5rem;
     width: 100%;
+    animation: fadeIn 0.5s ease-out;
 }
 
 .skills h2 {
@@ -314,6 +342,7 @@ body {
     -webkit-tap-highlight-color: transparent;
     position: relative;
     overflow: hidden;
+    cursor: pointer;
 }
 
 .skill-card::before {
@@ -331,12 +360,6 @@ body {
 
 .skill-card:active::before {
     opacity: 0.1;
-}
-
-.skill-card:active {
-    transform: scale(0.98);
-    box-shadow: var(--shadow-md);
-    border-color: var(--primary-color);
 }
 
 .skill-card i {
@@ -373,6 +396,7 @@ body {
 .projects {
     margin-bottom: 1.5rem;
     width: 100%;
+    animation: fadeIn 0.5s ease-out;
 }
 
 .projects h2 {
@@ -415,6 +439,7 @@ body {
     -webkit-tap-highlight-color: transparent;
     position: relative;
     overflow: hidden;
+    animation: fadeIn 0.5s ease-out;
 }
 
 .project-card::before {
@@ -432,12 +457,6 @@ body {
 
 .project-card:active::before {
     opacity: 0.05;
-}
-
-.project-card:active {
-    transform: scale(0.98);
-    box-shadow: var(--shadow-md);
-    border-color: var(--primary-color);
 }
 
 .project-card h3 {
@@ -480,6 +499,28 @@ body {
     font-size: 0.9rem;
     line-height: 1.5;
     margin-bottom: 0.5rem;
+}
+
+.github-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    background: var(--gradient-primary);
+    color: white;
+    text-decoration: none;
+    border-radius: 0.75rem;
+    transition: var(--transition);
+    font-size: 0.9rem;
+    font-weight: 500;
+    box-shadow: var(--shadow-sm);
+    position: relative;
+    z-index: 1;
+}
+
+.github-link:active {
+    transform: scale(0.98);
+    box-shadow: var(--shadow-md);
 }
 
 /* Navigation */
@@ -578,32 +619,4 @@ html {
     .contact-info a:hover {
         transform: none;
     }
-}
-
-/* Add pull-to-refresh animation */
-@keyframes pull-to-refresh {
-    0% { transform: translateY(0); }
-    50% { transform: translateY(10px); }
-    100% { transform: translateY(0); }
-}
-
-/* Add loading animation */
-@keyframes loading {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
-
-/* Add fade-in animation */
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-/* Apply animations to elements */
-.header,
-.skills,
-.projects,
-.project-card,
-.skill-card {
-    animation: fadeIn 0.5s ease-out;
 } 
