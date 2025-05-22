@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="HandheldFriendly" content="true">
     <title>Shaina Slavin - Portfolio</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -11,13 +12,14 @@
     <div class="container">
         <!-- Header Section -->
         <header class="header">
+            <img src="profile.jpg" alt="Shaina Slavin" class="profile-picture" onerror="this.src='https://via.placeholder.com/80'">
             <h1>Shaina Slavin</h1>
             <h2>Computer Science Student | Full-Stack & Front-End Developer</h2>
             <div class="contact-info">
                 <p><i class="fas fa-envelope"></i> shaina.slavin@gmail.com</p>
                 <p><i class="fas fa-phone"></i> +972-50-3071261</p>
-                <p><i class="fab fa-github"></i> github.com/S-Slavin</p>
-                <p><i class="fab fa-linkedin"></i> linkedin.com/in/shaina-slavin</p>
+                <p><i class="fab fa-github"></i> <a href="https://github.com/S-Slavin" target="_blank">github.com/S-Slavin</a></p>
+                <p><i class="fab fa-linkedin"></i> <a href="https://linkedin.com/in/shaina-slavin" target="_blank">linkedin.com/in/shaina-slavin</a></p>
                 <p><i class="fas fa-globe"></i> s-slavin.github.io</p>
             </div>
         </header>
@@ -79,6 +81,31 @@
             <h2>Project Highlights</h2>
             
             <div class="project-card">
+                <h3>Smart Context Companion</h3>
+                <h4>Principal Architect & Lead Engineer | Cross-Platform AI Productivity Suite</h4>
+                <p>Smart Context Companion is a next-generation, cross-platform productivity solution engineered to empower users with seamless, privacy-centric access to Google's suite of services across both iOS and Android ecosystems.</p>
+                <ul>
+                    <li>Holistic Google Service Orchestration: Unified interface for Google Drive, Calendar, Gmail, Maps, Translate, and Tasks.</li>
+                    <li>Privacy-First Architecture: On-device data processing by default, with opt-in cloud AI augmentation.</li>
+                    <li>Modular Extensibility: "Action Packs" system for rapid deployment of new features.</li>
+                    <li>Universal Accessibility: Full support for accessibility and internationalization.</li>
+                    <li>Technical Stack: Flutter, KMM, Swift/SwiftUI, Kotlin/Jetpack Compose, OAuth 2.0, Core ML, TensorFlow Lite, ML Kit, Google APIs, CI/CD, GitHub Actions, Bitrise.</li>
+                </ul>
+            </div>
+
+            <div class="project-card">
+                <h3>Anti-Hallucination AI System</h3>
+                <h4>AI Platform for Minimizing Hallucinations in Language Models</h4>
+                <p>Designed and implemented a robust AI platform to minimize hallucinations in language model outputs.</p>
+                <ul>
+                    <li>Developed and fine-tuned advanced language models with RAG and RLHF.</li>
+                    <li>Built cross-platform clients using Xcode (iOS/macOS) and Cursor for AI-powered development.</li>
+                    <li>Implemented real-time fact-checking and citation systems.</li>
+                    <li>Created explainable AI modules with confidence scoring.</li>
+                </ul>
+            </div>
+
+            <div class="project-card">
                 <h3>FinePrint</h3>
                 <h4>Privacy Management Web and Mobile Application</h4>
                 <p>A cross-platform application (React for web, SwiftUI for iOS) that empowers users and families to manage their digital privacy settings across multiple online accounts.</p>
@@ -88,11 +115,10 @@
                     <li>Integrated child safety features, including parental controls and activity monitoring.</li>
                     <li>Emphasized security best practices and user education about digital privacy.</li>
                 </ul>
-                <a href="#" class="github-link">View on GitHub</a>
             </div>
 
             <div class="project-card">
-                <h3>OurBigKitchen App (OBK)</h3>
+                <h3>OurBigKitchen App</h3>
                 <h4>Community Volunteer and Food Rescue Platform</h4>
                 <p>A full-stack web and iOS application connecting volunteers with meaningful community service opportunities and facilitating food rescue operations.</p>
                 <ul>
@@ -101,33 +127,6 @@
                     <li>Enabled organizations to manage volunteer shifts, communicate with teams, and report on community impact.</li>
                     <li>Technologies used: React, Node.js, Express, SwiftUI, REST APIs, and cloud-based data storage.</li>
                 </ul>
-                <a href="#" class="github-link">View on GitHub</a>
-            </div>
-
-            <div class="project-card">
-                <h3>AI Hallucination Detection</h3>
-                <h4>Machine Learning Model for Detecting AI-Generated Hallucinations</h4>
-                <p>An advanced machine learning system designed to identify and flag potential hallucinations in AI-generated content, improving the reliability of AI outputs.</p>
-                <ul>
-                    <li>Developed a sophisticated model using Python and TensorFlow to analyze patterns in AI-generated text.</li>
-                    <li>Implemented natural language processing techniques to detect inconsistencies and factual inaccuracies.</li>
-                    <li>Created a comprehensive dataset of verified and hallucinated content for model training.</li>
-                    <li>Integrated with existing AI systems to provide real-time hallucination detection and feedback.</li>
-                </ul>
-                <a href="#" class="github-link">View on GitHub</a>
-            </div>
-
-            <div class="project-card">
-                <h3>Google Companion</h3>
-                <h4>AI-Powered Search Enhancement Tool</h4>
-                <p>A browser extension that enhances Google search results with AI-generated insights, summaries, and related information.</p>
-                <ul>
-                    <li>Built a Chrome extension using JavaScript and React to integrate with Google's search interface.</li>
-                    <li>Implemented AI-powered content analysis to provide additional context and insights for search results.</li>
-                    <li>Developed a user-friendly interface for displaying enhanced search information.</li>
-                    <li>Created a backend service using Node.js and Express to handle AI processing and data management.</li>
-                </ul>
-                <a href="#" class="github-link">View on GitHub</a>
             </div>
         </section>
 
