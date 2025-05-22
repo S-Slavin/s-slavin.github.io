@@ -355,12 +355,12 @@ body {
 
 /* Resume Specific Styles */
 .resume-section {
-    margin-bottom: 1.5rem;
-    padding: 1rem;
-    background: var(--card-bg);
-    border-radius: 1rem;
-    border: 1px solid var(--border-color);
-    box-shadow: var(--shadow-sm);
+    margin-bottom: 2.5rem;
+    padding: 2rem 1.5rem;
+    background: #f7f9fb;
+    border-radius: 1.25rem;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 2px 12px rgba(37,99,235,0.04);
 }
 
 .resume-section:hover {
@@ -369,16 +369,18 @@ body {
 }
 
 .resume-section h2 {
-    color: var(--primary-color);
-    font-size: 1.3rem;
-    margin-bottom: 1rem;
-    border-bottom: 2px solid var(--border-color);
+    color: #374151;
+    font-size: 1.45rem;
+    margin-bottom: 1.25rem;
+    border-bottom: 1.5px solid #e5e7eb;
     padding-bottom: 0.5rem;
-    font-weight: 600;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+    background: none;
 }
 
 .education-item, .project-item {
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
 }
 
 .education-item:last-child, .project-item:last-child {
@@ -386,49 +388,51 @@ body {
 }
 
 .education-item h3, .project-item h3 {
-    color: var(--text-color);
-    font-size: 1.1rem;
-    margin-bottom: 0.5rem;
+    color: #1f2937;
+    font-size: 1.18rem;
+    margin-bottom: 0.4rem;
     font-weight: 600;
 }
 
 .institution, .project-item h4 {
-    color: var(--light-text);
+    color: #6b7280;
     font-weight: 500;
-    margin-bottom: 0.5rem;
-    font-size: 0.9rem;
+    margin-bottom: 0.4rem;
+    font-size: 1.05rem;
 }
 
 .resume-section ul {
-    list-style-position: outside;
-    margin-left: 1.25rem;
-    margin-bottom: 1rem;
+    font-size: 1.08rem;
+    color: #374151;
+    margin-bottom: 1.25rem;
+    line-height: 1.7;
 }
 
 .resume-section li {
-    margin-bottom: 0.5rem;
-    color: var(--text-color);
-    font-size: 0.9rem;
-    line-height: 1.5;
+    margin-bottom: 0.6rem;
+    color: #374151;
+    font-size: 1.08rem;
+    line-height: 1.7;
 }
 
 .skills-list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 2rem;
+    font-size: 1.08rem;
 }
 
 .skill-category h3 {
-    color: var(--text-color);
-    font-size: 1.1rem;
+    color: #1f2937;
+    font-size: 1.13rem;
     margin-bottom: 0.5rem;
     font-weight: 600;
 }
 
 .skill-category p {
-    color: var(--light-text);
-    line-height: 1.6;
-    font-size: 0.9rem;
+    color: #4b5563;
+    line-height: 1.7;
+    font-size: 1.08rem;
 }
 
 /* Tablet and Desktop styles will be added in media queries */
@@ -568,22 +572,24 @@ a:hover {
 .nav-button, .download-btn {
     display: inline-flex;
     align-items: center;
-    gap: 0.5rem;
-    padding: 0.75rem 1.5rem;
-    background: var(--gradient-primary);
-    color: white !important;
-    text-decoration: none;
+    gap: 0.75rem;
+    background: #f7f9fb;
+    color: #2563eb;
+    border: 1.5px solid #d1d5db;
+    padding: 1rem 2rem;
     border-radius: 0.75rem;
-    font-weight: 500;
+    text-decoration: none;
+    font-weight: 600;
     transition: var(--transition);
-    font-size: 0.9rem;
-    box-shadow: var(--shadow-sm);
+    font-size: 1.08rem;
+    box-shadow: none;
 }
 
 .nav-button:hover, .download-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-md);
-    text-decoration: none !important;
+    background: #e5e7eb;
+    color: #1d4ed8;
+    border-color: #a5b4fc;
+    box-shadow: 0 2px 8px rgba(37,99,235,0.06);
 }
 
 /* Top Navigation */
