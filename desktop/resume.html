@@ -3,143 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="HandheldFriendly" content="true">
     <title>Shaina Slavin - Resume</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="resume.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
-        <!-- Top Navigation -->
-        <nav class="top-nav">
-            <a href="index.html">Portfolio</a>
-            <a href="resume.html" class="active">Resume</a>
-        </nav>
-
-        <!-- Header Section -->
-        <header class="header">
-            <div class="profile-picture">SS</div>
-            <h1>Shaina Slavin</h1>
-            <h2>Computer Science Student | Full-Stack & Front-End Developer</h2>
-            <div class="contact-info">
-                <p><i class="fas fa-envelope"></i> shaina.slavin@gmail.com</p>
-                <p><i class="fas fa-phone"></i> +972-50-3071261</p>
-                <p><i class="fab fa-github"></i> <a href="https://github.com/S-Slavin" target="_blank">github.com/S-Slavin</a></p>
-                <p><i class="fas fa-globe"></i> s-slavin.github.io</p>
+    <nav class="navbar">
+        <div class="nav-content">
+            <a href="index.html" class="nav-logo">SS</a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="resume.html" class="active">Resume</a>
             </div>
-        </header>
-
-        <!-- Download Button -->
-        <div class="download-resume">
-            <a href="../Shaina_Slavin_Resume.pdf" download class="nav-button download-btn">
-                <i class="fas fa-download"></i> Download as PDF
-            </a>
         </div>
+    </nav>
 
-        <!-- Summary Section -->
-        <section class="resume-section">
-            <h2>Summary</h2>
-            <p>Creative and impact-driven developer with hands-on experience in React, JavaScript, Swift, and Python. Passionate about building accessible, user-centric web and mobile applications. Strong foundation in algorithms, data structures, and modern software development.</p>
-        </section>
-
-        <!-- Education Section -->
-        <section class="resume-section">
-            <h2>Education</h2>
-            <div class="education-item">
-                <h3>B.Sc. in Computer Science</h3>
-                <p class="institution">The Open University of Israel | 2024–Present</p>
-                <ul>
-                    <li>Advanced coursework: Data Structures, Algorithms, Web and Mobile App Development</li>
-                    <li>Foundation in advanced mathematics and physics</li>
-                </ul>
-            </div>
-            <div class="education-item">
-                <h3>Mechina (Preparatory Program)</h3>
-                <p class="institution">The Open University of Israel | 2021–2023</p>
-                <ul>
-                    <li>Intensive preparatory program supplementing advanced mathematics and physics</li>
-                    <li>Excelled in advanced mathematics and physics courses</li>
-                    <li>Completed foundational studies to bridge from religious high school without secular studies</li>
-                    <li>Developed strong programming fundamentals</li>
-                </ul>
-            </div>
-        </section>
-
-        <!-- Technical Skills Section -->
-        <section class="resume-section">
-            <h2>Technical Skills</h2>
-            <div class="skills-list">
-                <div class="skill-category">
-                    <h3>Programming Languages</h3>
-                    <p>JavaScript, Python, Java, Swift, HTML5, CSS3, C++ (learning), Go (learning)</p>
+    <main class="container">
+        <div class="resume">
+            <header class="resume-header">
+                <h1>Shaina Slavin</h1>
+                <p class="resume-title">Software Engineer</p>
+                <div class="contact-info">
+                    <p>Email: your.email@example.com</p>
+                    <p>Location: Your Location</p>
+                    <p>LinkedIn: linkedin.com/in/yourprofile</p>
                 </div>
-                <div class="skill-category">
-                    <h3>Frameworks & Libraries</h3>
-                    <p>React, Node.js, Express, SwiftUI</p>
+            </header>
+
+            <section class="resume-section">
+                <h2>Experience</h2>
+                <div class="experience-item">
+                    <h3>Software Engineer</h3>
+                    <p class="company">Company Name</p>
+                    <p class="date">2020 - Present</p>
+                    <ul>
+                        <li>Key achievement or responsibility</li>
+                        <li>Another significant contribution</li>
+                        <li>Notable project or initiative</li>
+                    </ul>
                 </div>
-                <div class="skill-category">
-                    <h3>Tools & Platforms</h3>
-                    <p>REST APIs, Git, GitHub, Xcode, VS Code, Salesforce, Figma</p>
+                <!-- Add more experience items as needed -->
+            </section>
+
+            <section class="resume-section">
+                <h2>Education</h2>
+                <div class="education-item">
+                    <h3>Degree Name</h3>
+                    <p class="institution">University Name</p>
+                    <p class="date">2016 - 2020</p>
+                    <p>Relevant coursework or achievements</p>
                 </div>
-                <div class="skill-category">
-                    <h3>Core Concepts</h3>
-                    <p>Algorithms, Data Structures, OOP, UI/UX Design, Debugging & Testing, Cybersecurity Fundamentals</p>
+            </section>
+
+            <section class="resume-section">
+                <h2>Skills</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3>Programming Languages</h3>
+                        <ul>
+                            <li>Skill 1</li>
+                            <li>Skill 2</li>
+                            <li>Skill 3</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Technologies</h3>
+                        <ul>
+                            <li>Technology 1</li>
+                            <li>Technology 2</li>
+                            <li>Technology 3</li>
+                        </ul>
+                    </div>
                 </div>
-            </div>
-        </section>
+            </section>
+        </div>
+    </main>
 
-        <!-- Projects Section -->
-        <section class="resume-section">
-            <h2>Software Projects</h2>
-            <div class="project-item">
-                <h3>FinePrint</h3>
-                <h4>Privacy Management Web and Mobile Application</h4>
-                <p>A cross-platform application (React for web, SwiftUI for iOS) that empowers users and families to manage their digital privacy settings across multiple online accounts.</p>
-                <ul>
-                    <li>Designed and implemented tools for secure data handling, granular privacy controls, and robust account management.</li>
-                    <li>Built intuitive interfaces prioritizing accessibility and ease of use for all ages.</li>
-                    <li>Integrated child safety features, including parental controls and activity monitoring.</li>
-                    <li>Emphasized security best practices and user education about digital privacy.</li>
-                </ul>
-                <a href="https://github.com/S-Slavin/fineprint" target="_blank" class="github-link">
-                    <i class="fab fa-github"></i> View on GitHub
-                </a>
-            </div>
-
-            <div class="project-item">
-                <h3>OurBigKitchen App (OBK)</h3>
-                <h4>Community Volunteer and Food Rescue Platform</h4>
-                <p>A full-stack web and iOS application connecting volunteers with meaningful community service opportunities and facilitating food rescue operations.</p>
-                <ul>
-                    <li>Developed user registration, event coordination, and real-time impact tracking features for individuals and groups.</li>
-                    <li>Built a matching system to connect surplus food from donors with local recipients, reducing food waste and supporting food-insecure families.</li>
-                    <li>Enabled organizations to manage volunteer shifts, communicate with teams, and report on community impact.</li>
-                    <li>Technologies used: React, Node.js, Express, SwiftUI, REST APIs, and cloud-based data storage.</li>
-                </ul>
-                <a href="https://github.com/S-Slavin/ourbigkitchen" target="_blank" class="github-link">
-                    <i class="fab fa-github"></i> View on GitHub
-                </a>
-            </div>
-        </section>
-
-        <!-- Languages Section -->
-        <section class="resume-section">
-            <h2>Languages</h2>
-            <p>English, Hebrew (fluent); Yiddish (conversational)</p>
-        </section>
-
-        <!-- Portfolio Section -->
-        <section class="resume-section">
-            <h2>Portfolio</h2>
-            <p>s-slavin.github.io</p>
-        </section>
-
-        <!-- Navigation -->
-        <nav class="main-nav">
-            <a href="index.html" class="nav-button">Back to Portfolio</a>
-        </nav>
-    </div>
-
-    <script src="script.js"></script>
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 Shaina Slavin. All rights reserved.</p>
+        </div>
+    </footer>
 </body>
 </html> 
