@@ -70,52 +70,52 @@ body {
 
 .container {
     width: var(--content-width);
-    margin: 2.5rem auto 0;
+    margin: 5rem auto 0;
     padding: 2rem 1rem;
     background-color: var(--background-color);
 }
 
 .hero {
     text-align: center;
-    padding: 2rem 0;
+    padding: 4rem 0;
     background-color: var(--background-color);
 }
 
 .hero h1 {
-    font-size: 2.5rem;
+    font-size: 3rem;
     font-weight: 700;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
     color: var(--text-color);
 }
 
 .subtitle {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     color: var(--primary-color);
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
 }
 
 section {
-    margin-bottom: 4rem;
+    margin-bottom: 6rem;
     padding: 0 1rem;
 }
 
 h2 {
-    font-size: 1.8rem;
-    margin-bottom: 1.5rem;
+    font-size: 2rem;
+    margin-bottom: 2rem;
     color: var(--text-color);
 }
 
 .project-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-    margin-top: 2rem;
+    gap: 2.5rem;
+    margin-top: 2.5rem;
 }
 
 .project-card {
     background-color: var(--secondary-background);
-    padding: 1.5rem;
-    border-radius: 8px;
+    padding: 2rem;
+    border-radius: 12px;
     transition: transform 0.3s ease;
     height: 100%;
 }
