@@ -6,17 +6,19 @@
 }
 
 :root {
-    --primary-color: #2563eb;
-    --secondary-color: #1d4ed8;
+    --primary-color: #3b82f6;
+    --secondary-color: #2563eb;
+    --accent-color: #60a5fa;
     --text-color: #1f2937;
     --light-text: #4b5563;
     --border-color: #e5e7eb;
     --card-bg: #ffffff;
-    --transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
     --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
     --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-    --gradient-primary: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+    --gradient-primary: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+    --gradient-hover: linear-gradient(135deg, #60a5fa 0%, #3b82f6 100%);
     --safe-area-inset-top: env(safe-area-inset-top, 0px);
 }
 
@@ -66,7 +68,7 @@ body {
     left: 0;
     right: 0;
     z-index: 1000;
-    background: var(--card-bg);
+    background: rgba(255, 255, 255, 0.95);
     padding: calc(0.75rem + var(--safe-area-inset-top)) 0.75rem 0.75rem;
     box-shadow: var(--shadow-md);
     display: flex;
@@ -74,7 +76,8 @@ body {
     gap: 0.5rem;
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    background-color: rgba(255, 255, 255, 0.95);
+    will-change: transform;
+    transform: translateZ(0);
 }
 
 .top-nav a {
@@ -126,14 +129,17 @@ body {
 .header {
     text-align: center;
     margin: calc(3.5rem + var(--safe-area-inset-top)) 0 1rem;
-    padding: 1.5rem 1rem;
+    padding: 2rem 1.5rem;
     background: var(--card-bg);
-    border-radius: 1rem;
-    box-shadow: var(--shadow-md);
+    border-radius: 1.5rem;
+    box-shadow: var(--shadow-lg);
     position: relative;
     overflow: hidden;
     transition: var(--transition);
     animation: fadeIn 0.5s ease-out;
+    will-change: transform;
+    transform: translateZ(0);
+    border: 1px solid rgba(59, 130, 246, 0.1);
 }
 
 .header::before {
@@ -153,43 +159,49 @@ body {
 }
 
 .header h1 {
-    font-size: 1.5rem;
+    font-size: 1.75rem;
     font-weight: 800;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.75rem;
     color: var(--text-color);
     line-height: 1.2;
     letter-spacing: -0.02em;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .header h2 {
-    font-size: 1rem;
+    font-size: 1.1rem;
     font-weight: 500;
     color: var(--light-text);
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
     line-height: 1.4;
 }
 
 .profile-picture {
-    width: 100px;
-    height: 100px;
+    width: 120px;
+    height: 120px;
     border-radius: 50%;
-    margin: 0 auto 1rem;
+    margin: 0 auto 1.5rem;
     object-fit: cover;
-    border: 3px solid var(--primary-color);
-    box-shadow: var(--shadow-lg);
+    border: 4px solid var(--primary-color);
+    box-shadow: var(--shadow-lg), 0 0 0 4px rgba(59, 130, 246, 0.1);
     transition: var(--transition);
     position: relative;
+    will-change: transform;
+    transform: translateZ(0);
+    background: var(--gradient-primary);
 }
 
 .profile-picture::after {
     content: '';
     position: absolute;
-    top: -3px;
-    left: -3px;
-    right: -3px;
-    bottom: -3px;
+    top: -4px;
+    left: -4px;
+    right: -4px;
+    bottom: -4px;
     border-radius: 50%;
-    border: 3px solid transparent;
+    border: 4px solid transparent;
     background: var(--gradient-primary) border-box;
     -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
     -webkit-mask-composite: destination-out;
@@ -206,7 +218,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 0.75rem;
+    gap: 1rem;
     width: 100%;
     padding: 0 0.5rem;
 }
@@ -214,17 +226,20 @@ body {
 .contact-info p {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.75rem;
     color: var(--light-text);
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     transition: var(--transition);
     width: 100%;
     justify-content: center;
-    padding: 0.75rem;
-    border-radius: 0.75rem;
-    background: rgba(37, 99, 235, 0.05);
+    padding: 1rem;
+    border-radius: 1rem;
+    background: rgba(59, 130, 246, 0.05);
     position: relative;
     overflow: hidden;
+    will-change: transform;
+    transform: translateZ(0);
+    border: 1px solid rgba(59, 130, 246, 0.1);
 }
 
 .contact-info p::before {
@@ -250,7 +265,7 @@ body {
 
 .contact-info i {
     color: var(--primary-color);
-    font-size: 1.1rem;
+    font-size: 1.25rem;
     width: 1.5rem;
     text-align: center;
     position: relative;
@@ -262,29 +277,33 @@ body {
     text-decoration: none;
     transition: var(--transition);
     padding: 0.25rem 0.5rem;
-    border-radius: 0.25rem;
+    border-radius: 0.5rem;
     position: relative;
     z-index: 1;
 }
 
 .contact-info a:active {
     color: var(--primary-color);
+    background: rgba(59, 130, 246, 0.1);
 }
 
 /* Summary Section */
 .summary {
     background: var(--card-bg);
-    padding: 1.25rem;
-    border-radius: 1rem;
-    margin-bottom: 1rem;
-    box-shadow: var(--shadow-md);
+    padding: 1.5rem;
+    border-radius: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: var(--shadow-lg);
     animation: fadeIn 0.5s ease-out;
+    will-change: transform;
+    transform: translateZ(0);
+    border: 1px solid rgba(59, 130, 246, 0.1);
 }
 
 .summary p {
     color: var(--text-color);
-    font-size: 1rem;
-    line-height: 1.6;
+    font-size: 1.05rem;
+    line-height: 1.7;
 }
 
 /* Skills Section */
@@ -296,14 +315,17 @@ body {
 
 .skills h2 {
     text-align: center;
-    margin-bottom: 1rem;
-    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
     color: var(--text-color);
     font-weight: 700;
     position: relative;
     display: inline-block;
     left: 50%;
     transform: translateX(-50%);
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .skills h2::after {
@@ -327,22 +349,24 @@ body {
 .skills-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 0.75rem;
+    gap: 1rem;
     width: 100%;
 }
 
 .skill-card {
     background: var(--card-bg);
-    padding: 1rem;
-    border-radius: 1rem;
+    padding: 1.5rem;
+    border-radius: 1.25rem;
     text-align: center;
     transition: var(--transition);
-    border: 1px solid var(--border-color);
-    box-shadow: var(--shadow-sm);
+    border: 1px solid rgba(59, 130, 246, 0.1);
+    box-shadow: var(--shadow-md);
     -webkit-tap-highlight-color: transparent;
     position: relative;
     overflow: hidden;
     cursor: pointer;
+    will-change: transform;
+    transform: translateZ(0);
 }
 
 .skill-card::before {
@@ -363,9 +387,9 @@ body {
 }
 
 .skill-card i {
-    font-size: 2rem;
+    font-size: 2.25rem;
     color: var(--primary-color);
-    margin-bottom: 0.75rem;
+    margin-bottom: 1rem;
     position: relative;
     z-index: 1;
     transition: var(--transition);
@@ -376,9 +400,9 @@ body {
 }
 
 .skill-card h3 {
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.75rem;
     color: var(--text-color);
-    font-size: 1rem;
+    font-size: 1.1rem;
     font-weight: 600;
     position: relative;
     z-index: 1;
@@ -386,8 +410,8 @@ body {
 
 .skill-card p {
     color: var(--light-text);
-    font-size: 0.85rem;
-    line-height: 1.4;
+    font-size: 0.9rem;
+    line-height: 1.5;
     position: relative;
     z-index: 1;
 }
@@ -401,13 +425,16 @@ body {
 
 .projects h2 {
     text-align: center;
-    margin-bottom: 1rem;
-    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
     font-weight: 700;
     position: relative;
     display: inline-block;
     left: 50%;
     transform: translateX(-50%);
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .projects h2::after {
@@ -430,16 +457,18 @@ body {
 
 .project-card {
     background: var(--card-bg);
-    padding: 1.25rem;
-    border-radius: 1rem;
-    margin-bottom: 1rem;
-    border: 1px solid var(--border-color);
+    padding: 1.5rem;
+    border-radius: 1.25rem;
+    margin-bottom: 1.5rem;
+    border: 1px solid rgba(59, 130, 246, 0.1);
     transition: var(--transition);
-    box-shadow: var(--shadow-sm);
+    box-shadow: var(--shadow-md);
     -webkit-tap-highlight-color: transparent;
     position: relative;
     overflow: hidden;
     animation: fadeIn 0.5s ease-out;
+    will-change: transform;
+    transform: translateZ(0);
 }
 
 .project-card::before {
@@ -461,8 +490,8 @@ body {
 
 .project-card h3 {
     color: var(--primary-color);
-    font-size: 1.1rem;
-    margin-bottom: 0.5rem;
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
     font-weight: 600;
     position: relative;
     z-index: 1;
@@ -470,8 +499,8 @@ body {
 
 .project-card h4 {
     color: var(--light-text);
-    font-size: 0.9rem;
-    margin-bottom: 0.75rem;
+    font-size: 1rem;
+    margin-bottom: 1rem;
     font-weight: 500;
     position: relative;
     z-index: 1;
@@ -479,54 +508,57 @@ body {
 
 .project-card p {
     color: var(--text-color);
-    font-size: 0.95rem;
-    line-height: 1.5;
-    margin-bottom: 1rem;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1.25rem;
     position: relative;
     z-index: 1;
 }
 
 .project-card ul {
     list-style-position: outside;
-    margin-left: 1.25rem;
-    margin-bottom: 1rem;
+    margin-left: 1.5rem;
+    margin-bottom: 1.25rem;
     position: relative;
     z-index: 1;
 }
 
 .project-card li {
     color: var(--text-color);
-    font-size: 0.9rem;
-    line-height: 1.5;
-    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 0.75rem;
 }
 
 .github-link {
     display: inline-flex;
     align-items: center;
-    gap: 0.5rem;
-    padding: 0.75rem 1.5rem;
+    gap: 0.75rem;
+    padding: 0.875rem 1.75rem;
     background: var(--gradient-primary);
     color: white;
     text-decoration: none;
-    border-radius: 0.75rem;
+    border-radius: 1rem;
     transition: var(--transition);
-    font-size: 0.9rem;
+    font-size: 1rem;
     font-weight: 500;
-    box-shadow: var(--shadow-sm);
+    box-shadow: var(--shadow-md);
     position: relative;
     z-index: 1;
+    will-change: transform;
+    transform: translateZ(0);
 }
 
 .github-link:active {
     transform: scale(0.98);
-    box-shadow: var(--shadow-md);
+    box-shadow: var(--shadow-lg);
+    background: var(--gradient-hover);
 }
 
 /* Navigation */
 .main-nav {
     text-align: center;
-    margin: 1.5rem 0;
+    margin: 2rem 0;
     padding: 0 1rem;
 }
 
@@ -534,18 +566,20 @@ body {
     display: inline-block;
     background: var(--gradient-primary);
     color: white;
-    padding: 1rem 2rem;
-    border-radius: 0.75rem;
+    padding: 1.25rem 2.5rem;
+    border-radius: 1rem;
     text-decoration: none;
     font-weight: 600;
     transition: var(--transition);
-    font-size: 1rem;
+    font-size: 1.1rem;
     box-shadow: var(--shadow-md);
     width: 100%;
     text-align: center;
     -webkit-tap-highlight-color: transparent;
     position: relative;
     overflow: hidden;
+    will-change: transform;
+    transform: translateZ(0);
 }
 
 .nav-button::before {
@@ -567,6 +601,7 @@ body {
 .nav-button:active {
     transform: scale(0.98);
     box-shadow: var(--shadow-lg);
+    background: var(--gradient-hover);
 }
 
 /* Media Queries */

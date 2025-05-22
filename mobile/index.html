@@ -21,7 +21,12 @@
 
         <!-- Header Section -->
         <header class="header">
-            <img src="../images/profile.jpg" alt="Shaina Slavin" class="profile-picture" onerror="this.onerror=null; this.src='https://via.placeholder.com/200x200/2563eb/ffffff?text=SS'">
+            <div class="profile-picture-container">
+                <img src="../images/profile.jpg" 
+                     alt="Shaina Slavin" 
+                     class="profile-picture" 
+                     onerror="this.onerror=null; this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjIwMCIgaGVpZ2h0PSIyMDAiIGZpbGw9IiMyNTYzZWIiLz48dGV4dCB4PSI1MCUiIHk9IjUwJSIgZG9taW5hbnQtYmFzZWxpbmU9Im1pZGRsZSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0id2hpdGUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSI4MCIgZm9udC13ZWlnaHQ9ImJvbGQiPlNTPC90ZXh0Pjwvc3ZnPg=='">
+            </div>
             <h1>Shaina Slavin</h1>
             <h2>Computer Science Student | Full-Stack & Front-End Developer</h2>
             <div class="contact-info">
@@ -124,10 +129,13 @@
                     <li>Integrated child safety features, including parental controls and activity monitoring.</li>
                     <li>Emphasized security best practices and user education about digital privacy.</li>
                 </ul>
+                <a href="https://github.com/S-Slavin/FinePrint" target="_blank" class="github-link">
+                    <i class="fab fa-github"></i> View on GitHub
+                </a>
             </div>
 
             <div class="project-card">
-                <h3>OurBigKitchen App</h3>
+                <h3>OurBigKitchen App (OBK)</h3>
                 <h4>Community Volunteer and Food Rescue Platform</h4>
                 <p>A full-stack web and iOS application connecting volunteers with meaningful community service opportunities and facilitating food rescue operations.</p>
                 <ul>
@@ -136,6 +144,9 @@
                     <li>Enabled organizations to manage volunteer shifts, communicate with teams, and report on community impact.</li>
                     <li>Technologies used: React, Node.js, Express, SwiftUI, REST APIs, and cloud-based data storage.</li>
                 </ul>
+                <a href="https://github.com/S-Slavin/OurBigKitchen" target="_blank" class="github-link">
+                    <i class="fab fa-github"></i> View on GitHub
+                </a>
             </div>
         </section>
 
@@ -144,5 +155,16 @@
             <a href="../desktop/resume.html" class="nav-button">View Resume</a>
         </nav>
     </div>
+
+    <script>
+        // Add bounce animation to skill cards
+        document.querySelectorAll('.skill-card').forEach(card => {
+            card.addEventListener('click', function() {
+                this.style.animation = 'none';
+                this.offsetHeight; // Trigger reflow
+                this.style.animation = 'bounce 0.5s ease';
+            });
+        });
+    </script>
 </body>
 </html> 
