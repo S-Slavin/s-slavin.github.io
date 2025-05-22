@@ -546,4 +546,38 @@ a:hover {
     transform: translateY(-2px);
     box-shadow: var(--shadow-md);
     text-decoration: none !important;
+}
+
+/* Top Navigation */
+.top-nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: var(--card-bg);
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 1rem;
+    box-shadow: var(--shadow-md);
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.top-nav a {
+    color: var(--text-color);
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    transition: var(--transition);
+    font-weight: 500;
+}
+
+.top-nav a:hover {
+    background: var(--primary-color);
+    color: white;
+}
+
+.top-nav a.active {
+    background: var(--gradient-primary);
+    color: white;
 } 
