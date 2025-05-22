@@ -3,31 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="HandheldFriendly" content="true">
-    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-    <meta http-equiv="Pragma" content="no-cache">
-    <meta http-equiv="Expires" content="0">
-    <!-- Force GitHub Pages rebuild -->
     <title>Shaina Slavin - Portfolio</title>
     <script>
-        // Function to detect mobile devices
-        function isMobile() {
-            const isMobileWidth = window.innerWidth <= 900; // Only use width detection
-            console.log('Device width:', window.innerWidth);
-            console.log('Is mobile width:', isMobileWidth);
-            return isMobileWidth;
-        }
-
-        // Function to handle redirection
-        function redirect() {
-            const timestamp = new Date().getTime();
-            const path = isMobile() ? 'mobile/index.html' : 'desktop/index.html';
-            console.log('Redirecting to:', path);
-            window.location.href = path + '?v=' + timestamp;
-        }
-
-        // Execute redirection immediately
-        redirect();
+        window.location.href = 'desktop/index.html';
     </script>
     <style>
         body {
@@ -48,6 +26,6 @@
     </style>
 </head>
 <body>
-    <p>Redirecting to the appropriate version...</p>
+    <p>Redirecting to portfolio...</p>
 </body>
 </html> 
