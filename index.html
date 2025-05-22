@@ -12,17 +12,18 @@
     <script>
         // Function to detect mobile devices
         function isMobile() {
-            return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || window.innerWidth <= 600;
+            const isMobileWidth = window.innerWidth <= 900; // Only use width detection
+            console.log('Device width:', window.innerWidth);
+            console.log('Is mobile width:', isMobileWidth);
+            return isMobileWidth;
         }
 
         // Function to handle redirection
         function redirect() {
             const timestamp = new Date().getTime();
-            if (isMobile()) {
-                window.location.href = 'mobile/index.html?v=' + timestamp;
-            } else {
-                window.location.href = 'desktop/index.html?v=' + timestamp;
-            }
+            const path = isMobile() ? 'mobile/index.html' : 'desktop/index.html';
+            console.log('Redirecting to:', path);
+            window.location.href = path + '?v=' + timestamp;
         }
 
         // Execute redirection immediately
