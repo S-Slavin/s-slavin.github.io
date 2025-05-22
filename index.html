@@ -8,18 +8,13 @@
     <meta http-equiv="Expires" content="0">
     <title>Shaina Slavin - Portfolio</title>
     <script>
-        // Force reload if cached
-        if (window.performance && window.performance.navigation.type === window.performance.navigation.TYPE_BACK_FORWARD) {
-            window.location.reload();
-        }
-        
-        // Use window width to detect mobile devices
-        const isMobile = window.innerWidth <= 600;
-        // Redirect based on device type with cache busting
-        if (isMobile) {
-            window.location.href = 'mobile/index.html?v=' + new Date().getTime();
+        // Immediate redirect for mobile devices
+        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+            window.location.replace('mobile/index.html?v=' + new Date().getTime());
+        } else if (window.innerWidth <= 600) {
+            window.location.replace('mobile/index.html?v=' + new Date().getTime());
         } else {
-            window.location.href = 'desktop/index.html?v=' + new Date().getTime();
+            window.location.replace('desktop/index.html?v=' + new Date().getTime());
         }
     </script>
     <style>

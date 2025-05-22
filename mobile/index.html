@@ -7,6 +7,12 @@
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
     <title>Shaina Slavin - Portfolio</title>
+    <script>
+        // Prevent redirection loops
+        if (window.location.pathname.includes('/desktop/')) {
+            window.location.replace('/S-slavin.github.io/mobile/index.html?v=' + new Date().getTime());
+        }
+    </script>
     <style>
         :root {
             --primary-color: #2c3e50;
