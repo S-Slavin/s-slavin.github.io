@@ -8,7 +8,18 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <script>
-        window.location.href = 'desktop/index.html';
+        // Check if it's a desktop device
+        function isDesktop() {
+            return window.innerWidth >= 1024;
+        }
+
+        // Redirect to appropriate version
+        if (isDesktop()) {
+            window.location.href = 'desktop/index.html';
+        } else {
+            // Keep mobile version
+            window.location.href = 'mobile/index.html';
+        }
     </script>
     <style>
         body {
