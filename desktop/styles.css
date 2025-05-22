@@ -72,8 +72,8 @@ body {
 }
 
 .container {
-    width: var(--content-width);
-    max-width: 100%;
+    width: 100%;
+    max-width: var(--content-width);
     margin: 5rem auto 0;
     padding: 2rem 1rem;
     background-color: var(--background-color);
@@ -87,6 +87,7 @@ body {
     padding: 4rem 0;
     background-color: var(--background-color);
     width: 100%;
+    max-width: var(--content-width);
 }
 
 .hero h1 {
@@ -107,6 +108,9 @@ section {
     padding: 0 1rem;
     width: 100%;
     max-width: var(--content-width);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 h2 {
@@ -121,6 +125,7 @@ h2 {
     gap: 2.5rem;
     margin-top: 2.5rem;
     width: 100%;
+    max-width: var(--content-width);
 }
 
 .project-card {
@@ -154,6 +159,7 @@ h2 {
     border-radius: 8px;
     margin: 0 auto;
     width: 100%;
+    max-width: var(--content-width);
 }
 
 .cta-button {
