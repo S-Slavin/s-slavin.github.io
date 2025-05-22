@@ -21,8 +21,8 @@ body {
     min-width: 1200px;
     overflow-x: hidden;
     margin: 0 auto;
-    padding: 0 32rem;
-    font-size: 0.7rem;
+    padding: 0 40rem;
+    font-size: 0.6rem;
     max-width: 100%;
     transform-origin: top center;
 }
@@ -52,14 +52,14 @@ body {
 }
 
 .nav-logo {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     font-weight: 700;
     color: var(--primary-color);
     text-decoration: none;
 }
 
 .nav-links a {
-    font-size: 0.7rem;
+    font-size: 0.6rem;
     color: var(--text-color);
     text-decoration: none;
     margin-left: 1.5rem;
@@ -87,14 +87,14 @@ body {
 }
 
 .hero h1 {
-    font-size: 1rem;
+    font-size: 0.9rem;
     font-weight: 700;
     margin-bottom: 0.75rem;
     color: var(--text-color);
 }
 
 .subtitle {
-    font-size: 0.7rem;
+    font-size: 0.6rem;
     color: var(--primary-color);
     margin-bottom: 1.5rem;
 }
@@ -105,7 +105,7 @@ section {
 }
 
 h2 {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     margin-bottom: 0.75rem;
     color: var(--text-color);
 }
@@ -154,7 +154,7 @@ h2 {
     font-weight: 500;
     margin-top: 1.5rem;
     transition: background-color 0.3s ease;
-    font-size: 0.7rem;
+    font-size: 0.6rem;
 }
 
 .cta-button:hover {
