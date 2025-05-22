@@ -10,10 +10,23 @@
 </head>
 <body>
     <div class="container">
+        <!-- Top Navigation -->
+        <nav class="top-nav">
+            <a href="index.html">Portfolio</a>
+            <a href="resume.html" class="active">Resume</a>
+        </nav>
+
         <!-- Header Section -->
         <header class="header">
+            <div class="profile-picture">SS</div>
             <h1>Shaina Slavin</h1>
-            <h2>Resume</h2>
+            <h2>Computer Science Student | Full-Stack & Front-End Developer</h2>
+            <div class="contact-info">
+                <p><i class="fas fa-envelope"></i> shaina.slavin@gmail.com</p>
+                <p><i class="fas fa-phone"></i> +972-50-3071261</p>
+                <p><i class="fab fa-github"></i> <a href="https://github.com/S-Slavin" target="_blank">github.com/S-Slavin</a></p>
+                <p><i class="fas fa-globe"></i> s-slavin.github.io</p>
+            </div>
         </header>
 
         <!-- Download Button -->
@@ -26,7 +39,7 @@
         <!-- Summary Section -->
         <section class="resume-section">
             <h2>Summary</h2>
-            <p>Creative and impact-driven developer with hands-on experience in React, JavaScript, Swift, and Python. Passionate about building accessible, user-centric web and mobile applications. Strong foundation in algorithms, data structures, and modern software development. Experienced in leading diverse teams, contributing to open-source, and leveraging technology for social good.</p>
+            <p>Creative and impact-driven developer with hands-on experience in React, JavaScript, Swift, and Python. Passionate about building accessible, user-centric web and mobile applications. Strong foundation in algorithms, data structures, and modern software development.</p>
         </section>
 
         <!-- Education Section -->
@@ -42,41 +55,12 @@
             </div>
             <div class="education-item">
                 <h3>Mechina (Preparatory Program)</h3>
-                <p class="institution">The Open University of Israel | 2023–2024</p>
+                <p class="institution">The Open University of Israel | 2021–2023</p>
                 <ul>
-                    <li>Intensive preparation for Computer Science degree</li>
-                    <li>Completed advanced mathematics and physics courses</li>
-                    <li>Developed strong foundation in programming fundamentals</li>
-                </ul>
-            </div>
-        </section>
-
-        <!-- Experience Section -->
-        <section class="resume-section">
-            <h2>Experience</h2>
-            <div class="project-item">
-                <h3>Program Coordinator, Support for Israel War Effort</h3>
-                <h4>Israel | Oct 2023–Present</h4>
-                <ul>
-                    <li>Coordinated academic and social support programs for over 200 displaced children and children of reserve duty soldiers during the Israel–Hamas war.</li>
-                    <li>Organized tutoring, enrichment activities, and emotional support to help children rebuild their lives and maintain educational progress.</li>
-                    <li>Provided direct assistance to families, fostering resilience and community rebuilding in a time of crisis.</li>
-                </ul>
-            </div>
-            <div class="project-item">
-                <h3>Ambassador, Gift of Life Marrow Registry</h3>
-                <h4>Israel | 2023–Present</h4>
-                <ul>
-                    <li>Recruited over 2,000 bone marrow swabs, focusing on minority groups; directly contributed to six matches for patients in need.</li>
-                    <li>Led public awareness campaigns and facilitated donor drives at community events.</li>
-                </ul>
-            </div>
-            <div class="project-item">
-                <h3>Curriculum Developer, Jean Schottenstein Oryah Institute</h3>
-                <h4>Jerusalem, Israel | 2021–2022</h4>
-                <ul>
-                    <li>Collaborated with principals, teachers, and professionals to design and implement a modern, student-centered curriculum.</li>
-                    <li>Integrated technology and emotional support strategies to enhance student outcomes.</li>
+                    <li>Intensive preparatory program supplementing advanced mathematics and physics</li>
+                    <li>Excelled in advanced mathematics and physics courses</li>
+                    <li>Completed foundational studies to bridge from religious high school without secular studies</li>
+                    <li>Developed strong programming fundamentals</li>
                 </ul>
             </div>
         </section>
@@ -91,7 +75,11 @@
                 </div>
                 <div class="skill-category">
                     <h3>Frameworks & Libraries</h3>
-                    <p>React, Node.js, Express, REST APIs, Git, GitHub, Xcode, VS Code, Salesforce, Figma</p>
+                    <p>React, Node.js, Express, SwiftUI</p>
+                </div>
+                <div class="skill-category">
+                    <h3>Tools & Platforms</h3>
+                    <p>REST APIs, Git, GitHub, Xcode, VS Code, Salesforce, Figma</p>
                 </div>
                 <div class="skill-category">
                     <h3>Core Concepts</h3>
@@ -104,31 +92,6 @@
         <section class="resume-section">
             <h2>Software Projects</h2>
             <div class="project-item">
-                <h3>Smart Context Companion</h3>
-                <h4>Principal Architect & Lead Engineer | Cross-Platform AI Productivity Suite</h4>
-                <p>Smart Context Companion is a next-generation, cross-platform productivity solution engineered to empower users with seamless, privacy-centric access to Google's suite of services across both iOS and Android ecosystems.</p>
-                <ul>
-                    <li>Holistic Google Service Orchestration: Unified interface for Google Drive, Calendar, Gmail, Maps, Translate, and Tasks.</li>
-                    <li>Privacy-First Architecture: On-device data processing by default, with opt-in cloud AI augmentation.</li>
-                    <li>Modular Extensibility: "Action Packs" system for rapid deployment of new features.</li>
-                    <li>Universal Accessibility: Full support for accessibility and internationalization.</li>
-                    <li>Technical Stack: Flutter, KMM, Swift/SwiftUI, Kotlin/Jetpack Compose, OAuth 2.0, Core ML, TensorFlow Lite, ML Kit, Google APIs, CI/CD, GitHub Actions, Bitrise.</li>
-                </ul>
-            </div>
-
-            <div class="project-item">
-                <h3>Anti-Hallucination AI System</h3>
-                <h4>AI Platform for Minimizing Hallucinations in Language Models</h4>
-                <p>Designed and implemented a robust AI platform to minimize hallucinations in language model outputs.</p>
-                <ul>
-                    <li>Developed and fine-tuned advanced language models with RAG and RLHF.</li>
-                    <li>Built cross-platform clients using Xcode (iOS/macOS) and Cursor for AI-powered development.</li>
-                    <li>Implemented real-time fact-checking and citation systems.</li>
-                    <li>Created explainable AI modules with confidence scoring.</li>
-                </ul>
-            </div>
-
-            <div class="project-item">
                 <h3>FinePrint</h3>
                 <h4>Privacy Management Web and Mobile Application</h4>
                 <p>A cross-platform application (React for web, SwiftUI for iOS) that empowers users and families to manage their digital privacy settings across multiple online accounts.</p>
@@ -138,10 +101,13 @@
                     <li>Integrated child safety features, including parental controls and activity monitoring.</li>
                     <li>Emphasized security best practices and user education about digital privacy.</li>
                 </ul>
+                <a href="https://github.com/S-Slavin/fineprint" target="_blank" class="github-link">
+                    <i class="fab fa-github"></i> View on GitHub
+                </a>
             </div>
 
             <div class="project-item">
-                <h3>OurBigKitchen App</h3>
+                <h3>OurBigKitchen App (OBK)</h3>
                 <h4>Community Volunteer and Food Rescue Platform</h4>
                 <p>A full-stack web and iOS application connecting volunteers with meaningful community service opportunities and facilitating food rescue operations.</p>
                 <ul>
@@ -150,49 +116,22 @@
                     <li>Enabled organizations to manage volunteer shifts, communicate with teams, and report on community impact.</li>
                     <li>Technologies used: React, Node.js, Express, SwiftUI, REST APIs, and cloud-based data storage.</li>
                 </ul>
+                <a href="https://github.com/S-Slavin/ourbigkitchen" target="_blank" class="github-link">
+                    <i class="fab fa-github"></i> View on GitHub
+                </a>
             </div>
         </section>
 
-        <!-- Volunteering Section -->
+        <!-- Languages Section -->
         <section class="resume-section">
-            <h2>Volunteering & Leadership</h2>
-            <div class="project-item">
-                <h3>Our Big Kitchen (OBK), Sydney, Australia</h3>
-                <h4>Volunteer Administration & Leadership | 2020–2021</h4>
-                <ul>
-                    <li>Connected community members with meaningful volunteer opportunities, fostering belonging and social responsibility.</li>
-                    <li>Coordinated and led diverse volunteer groups—including corporate, interfaith, and youth teams—in impactful service activities.</li>
-                    <li>Implemented Salesforce to streamline operations, manage bookings, and track engagement.</li>
-                </ul>
-            </div>
-            <div class="project-item">
-                <h3>Step Up Ethiopia</h3>
-                <h4>Volunteer | 2020</h4>
-                <ul>
-                    <li>Recruited volunteers and partnered with the UN to provide education and therapy for South Sudanese refugees.</li>
-                    <li>Delivered informal education and trauma support to empower children and reduce dependency on aid.</li>
-                </ul>
-            </div>
-            <div class="project-item">
-                <h3>Camp YEKA (Ukraine)</h3>
-                <h4>Fundraiser & Counselor | 2019</h4>
-                <ul>
-                    <li>Organized and facilitated therapeutic programs for Ukrainian Jewish orphans, providing a safe and nurturing environment.</li>
-                    <li>Led fundraising efforts to ensure adequate resources for children's needs.</li>
-                </ul>
-            </div>
+            <h2>Languages</h2>
+            <p>English, Hebrew (fluent); Yiddish (conversational)</p>
         </section>
 
-        <!-- Awards Section -->
+        <!-- Portfolio Section -->
         <section class="resume-section">
-            <h2>Awards & Additional</h2>
-            <ul>
-                <li>VATAT Scholarship for preparatory studies, The Hebrew University (2021)</li>
-                <li>Second Place, International Essay Competition (2020)</li>
-                <li>Community Service Award, Jewish Life and Education, Sydney (2016)</li>
-                <li>Languages: English, Hebrew (fluent); Yiddish (conversational)</li>
-                <li>References available upon request</li>
-            </ul>
+            <h2>Portfolio</h2>
+            <p>s-slavin.github.io</p>
         </section>
 
         <!-- Navigation -->
