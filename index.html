@@ -10,6 +10,8 @@
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="HandheldFriendly" content="true">
   <meta name="MobileOptimized" content="width">
+  <!-- Force desktop mode -->
+  <meta name="viewport" content="width=1024, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <meta name="description" content="Shaina Slavin - Computer Science Student and Full-Stack Developer specializing in React, JavaScript, Swift, and Python. View my portfolio and projects.">
   <meta name="keywords" content="Shaina Slavin, Full-Stack Developer, React, JavaScript, Swift, Python, Portfolio">
   <meta name="author" content="Shaina Slavin">
@@ -53,6 +55,30 @@
           });
       });
     }
+  </script>
+  
+  <!-- Debug Script -->
+  <script>
+    window.addEventListener('load', function() {
+      console.log('=== Debug Information ===');
+      console.log('Viewport Width:', window.innerWidth);
+      console.log('Device Pixel Ratio:', window.devicePixelRatio);
+      console.log('User Agent:', navigator.userAgent);
+      
+      // Check active media queries
+      const mediaQueries = window.matchMedia('(min-width: 768px)');
+      console.log('Desktop Media Query Active:', mediaQueries.matches);
+      
+      // Log all stylesheets
+      console.log('=== Loaded Stylesheets ===');
+      Array.from(document.styleSheets).forEach(sheet => {
+        try {
+          console.log(sheet.href || 'Inline Stylesheet');
+        } catch (e) {
+          console.log('Error accessing stylesheet:', e);
+        }
+      });
+    });
   </script>
   
   <title>Shaina Slavin | Portfolio</title>
