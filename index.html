@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=1024, initial-scale=1.0">
+  <!-- Single viewport meta tag with desktop settings -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <meta name="theme-color" content="#2563EB">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -10,8 +11,6 @@
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="HandheldFriendly" content="true">
   <meta name="MobileOptimized" content="width">
-  <!-- Force desktop mode -->
-  <meta name="viewport" content="width=1024, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <meta name="description" content="Shaina Slavin - Computer Science Student and Full-Stack Developer specializing in React, JavaScript, Swift, and Python. View my portfolio and projects.">
   <meta name="keywords" content="Shaina Slavin, Full-Stack Developer, React, JavaScript, Swift, Python, Portfolio">
   <meta name="author" content="Shaina Slavin">
@@ -79,6 +78,29 @@
         }
       });
     });
+  </script>
+  
+  <!-- Cache busting script -->
+  <script>
+    // Force cache refresh
+    if (window.performance && window.performance.navigation.type === window.performance.navigation.TYPE_BACK_FORWARD) {
+      window.location.reload(true);
+    }
+    
+    // Add cache-busting parameter to CSS
+    const cssLink = document.querySelector('link[rel="stylesheet"]');
+    if (cssLink) {
+      cssLink.href = cssLink.href.split('?')[0] + '?v=' + new Date().getTime();
+    }
+    
+    // Clear browser cache
+    if ('caches' in window) {
+      caches.keys().then(function(names) {
+        for (let name of names) {
+          caches.delete(name);
+        }
+      });
+    }
   </script>
   
   <title>Shaina Slavin | Portfolio</title>
