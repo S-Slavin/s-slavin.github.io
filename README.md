@@ -1,81 +1,66 @@
-# Portfolio Site Structure
+# Portfolio Site
 
-## Build Requirements
-1. Desktop-only portfolio site
-2. Single column layout (no columns)
-3. Clean, minimal, and modern design
-4. Vertical stacking of all content
-5. No mobile version needed
-6. Must include:
-   - Navigation bar with Portfolio and Resume links
-   - Headshot section at the top
-   - Contact information
-   - Summary section
-   - Technical Skills section with icons
-   - Project Highlights section
-   - Footer with resume link
+A modern, responsive portfolio website built with HTML, CSS, and Node.js, deployed on GitHub Pages.
 
-## File Structure
+## Features
+- Responsive design for all devices
+- Modern, clean interface
+- Optimized performance
+- SEO friendly
+- Accessible design
+- Mobile-first approach
+
+## Tech Stack
+- HTML5
+- CSS3
+- Node.js
+- GitHub Pages
+- GitHub Actions for CI/CD
+
+## Project Structure
 ```
 S-slavin.github.io/
 ├── index.html          # Main portfolio page
+├── resume.html         # Resume page
 ├── styles.css          # Main stylesheet
-├── js-icon.svg         # JavaScript icon for skills section
-└── headshot.jpg        # Profile picture (to be added)
+├── server.js           # Development server
+├── package.json        # Node.js dependencies
+├── .github/           # GitHub Actions workflow
+├── assets/            # Icons and images
+└── *.svg              # SVG icons for skills
 ```
 
-## Page Structure
-1. Navigation Bar
-   - Portfolio link (index.html)
-   - Resume link (resume.html)
+## Development
+1. Clone the repository
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Start the development server:
+   ```bash
+   npm start
+   ```
 
-2. Main Content
-   - Headshot section
-   - Header with name and title
-   - Contact information
-   - Summary section
-   - Technical Skills section
-   - Project Highlights section
-   - Footer with resume link
+## Deployment
+The site is automatically deployed to GitHub Pages when changes are pushed to the main branch. The deployment process includes:
+- Image optimization
+- Asset compression
+- Security headers
+- CORS configuration
+- Cache optimization
 
-## Styling Guidelines
-- Desktop-only layout (width: 1200px)
-- Clean, minimal design
-- Single column layout
-- Modern typography using Inter font
-- Color scheme:
-  - Background: #fafbfc
-  - Text: #23272f
-  - Accent: #007aff
-  - Subtle shadows for depth
-
-## Components
-1. Navigation
-   - Fixed at top
-   - White background
-   - Subtle shadow
-   - Active state highlighting
-
-2. Headshot
-   - Circular shape
-   - 200x200px
-   - White border
-   - Subtle shadow
-
-3. Project Cards
-   - Light gray background
-   - Rounded corners
-   - Subtle shadow
-   - GitHub link at bottom
-
-4. Skills Section
-   - Interactive buttons
-   - Icons with descriptions
-   - Hover effects
+## Configuration Files
+- `.nojekyll` - Prevents GitHub Pages from processing with Jekyll
+- `robots.txt` - Search engine crawling instructions
+- `sitemap.xml` - SEO sitemap
+- `.gitignore` - Git ignore rules
 
 ## To Do
 - [ ] Add headshot.jpg
-- [ ] Create resume.html
-- [ ] Add more skill icons
-- [ ] Add GitHub links to projects
-- [ ] Add favicon 
+- [ ] Add more project details
+- [ ] Enhance mobile responsiveness
+- [ ] Add dark mode support
+- [ ] Add more interactive features
+
+## License
+MIT License - See LICENSE file for details 

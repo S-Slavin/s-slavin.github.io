@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://s-slavin.github.io/sitemap.xml 
