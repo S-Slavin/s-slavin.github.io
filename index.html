@@ -112,6 +112,38 @@
     }
   </script>
   
+  <!-- Force refresh script -->
+  <script>
+    // Function to clear cache and reload
+    function forceRefresh() {
+      // Clear browser cache
+      if ('caches' in window) {
+        caches.keys().then(function(names) {
+          for (let name of names) {
+            caches.delete(name);
+          }
+        });
+      }
+      
+      // Clear localStorage
+      localStorage.clear();
+      
+      // Clear sessionStorage
+      sessionStorage.clear();
+      
+      // Add timestamp to force reload
+      const timestamp = new Date().getTime();
+      const currentUrl = window.location.href.split('?')[0];
+      window.location.href = `${currentUrl}?v=${timestamp}`;
+    }
+
+    // Run on page load
+    window.addEventListener('load', function() {
+      console.log('Forcing refresh...');
+      forceRefresh();
+    });
+  </script>
+  
   <title>Shaina Slavin | Portfolio</title>
 </head>
 <body>
