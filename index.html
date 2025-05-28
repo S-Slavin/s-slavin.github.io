@@ -2,15 +2,15 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <!-- Force desktop viewport -->
-  <meta name="viewport" content="width=1200, initial-scale=1.0">
+  <!-- Responsive viewport -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#2563EB">
-  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="no">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="format-detection" content="telephone=no">
-  <meta name="mobile-web-app-capable" content="yes">
-  <meta name="HandheldFriendly" content="true">
-  <meta name="MobileOptimized" content="width">
+  <meta name="mobile-web-app-capable" content="no">
+  <meta name="HandheldFriendly" content="false">
+  <meta name="MobileOptimized" content="false">
   <meta name="description" content="Shaina Slavin - Computer Science Student and Full-Stack Developer specializing in React, JavaScript, Swift, and Python. View my portfolio and projects.">
   <meta name="keywords" content="Shaina Slavin, Full-Stack Developer, React, JavaScript, Swift, Python, Portfolio">
   <meta name="author" content="Shaina Slavin">
@@ -24,6 +24,7 @@
   
   <!-- Preload critical resources -->
   <link rel="preload" href="./styles.css" as="style">
+  <link rel="preload" href="./mobile.css" as="style">
   <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" as="style">
   
   <!-- Favicon -->
@@ -37,111 +38,170 @@
   
   <!-- Styles -->
   <link rel="stylesheet" href="./styles.css" />
+  <link rel="stylesheet" href="./mobile.css" media="(max-width: 1023px)" />
   
   <!-- Add theme toggle icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   
-  <!-- Add service worker -->
+  <!-- Main application script -->
   <script>
-    if ('serviceWorker' in navigator) {
-      window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/sw.js')
-          .then(registration => {
-            console.log('ServiceWorker registration successful');
-          })
-          .catch(err => {
-            console.log('ServiceWorker registration failed: ', err);
-          });
-      });
-    }
-  </script>
-  
-  <!-- Debug Script -->
-  <script>
-    window.addEventListener('load', function() {
-      console.log('=== Debug Information ===');
-      console.log('Viewport Width:', window.innerWidth);
-      console.log('Device Pixel Ratio:', window.devicePixelRatio);
-      console.log('User Agent:', navigator.userAgent);
-      
-      // Check active media queries
-      const mediaQueries = window.matchMedia('(min-width: 1024px)');
-      console.log('Desktop Media Query Active:', mediaQueries.matches);
-      
-      // Log all stylesheets
-      console.log('=== Loaded Stylesheets ===');
-      Array.from(document.styleSheets).forEach(sheet => {
-        try {
-          console.log(sheet.href || 'Inline Stylesheet');
-        } catch (e) {
-          console.log('Error accessing stylesheet:', e);
-        }
-      });
-
-      // Force desktop mode
-      if (window.innerWidth < 1024) {
-        console.log('Forcing desktop mode...');
-        const meta = document.querySelector('meta[name="viewport"]');
-        if (meta) {
-          meta.setAttribute('content', 'width=1200, initial-scale=1.0');
+    (function() {
+      // Theme management
+      function initTheme() {
+        const savedTheme = localStorage.getItem('theme');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        
+        if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+          document.documentElement.classList.add('dark-theme');
+          updateThemeIcon(true);
         }
       }
-    });
-  </script>
-  
-  <!-- Cache busting script -->
-  <script>
-    // Force cache refresh
-    if (window.performance && window.performance.navigation.type === window.performance.navigation.TYPE_BACK_FORWARD) {
-      window.location.reload(true);
-    }
-    
-    // Add cache-busting parameter to CSS
-    const cssLink = document.querySelector('link[rel="stylesheet"]');
-    if (cssLink) {
-      cssLink.href = cssLink.href.split('?')[0] + '?v=' + new Date().getTime();
-    }
-    
-    // Clear browser cache
-    if ('caches' in window) {
-      caches.keys().then(function(names) {
-        for (let name of names) {
-          caches.delete(name);
+
+      function updateThemeIcon(isDark) {
+        const themeIcon = document.querySelector('.theme-toggle i');
+        if (themeIcon) {
+          themeIcon.className = isDark ? 'fas fa-sun' : 'fas fa-moon';
         }
-      });
-    }
-  </script>
-  
-  <!-- Force refresh script -->
-  <script>
-    // Function to clear cache and reload
-    function forceRefresh() {
-      // Clear browser cache
-      if ('caches' in window) {
-        caches.keys().then(function(names) {
-          for (let name of names) {
-            caches.delete(name);
+      }
+
+      // Debug panel
+      function createDebugPanel() {
+        const debugPanel = document.createElement('div');
+        debugPanel.id = 'debug-panel';
+        debugPanel.style.cssText = `
+          position: fixed;
+          top: 10px;
+          left: 10px;
+          background: rgba(0, 0, 0, 0.8);
+          color: white;
+          padding: 10px;
+          border-radius: 5px;
+          font-family: monospace;
+          font-size: 12px;
+          z-index: 9999;
+          max-width: 300px;
+          display: none;
+        `;
+        document.body.appendChild(debugPanel);
+        return debugPanel;
+      }
+
+      function updateDebugInfo() {
+        const debugPanel = document.getElementById('debug-panel') || createDebugPanel();
+        const viewportWidth = window.innerWidth;
+        const devicePixelRatio = window.devicePixelRatio;
+        const isDesktop = viewportWidth >= 1024;
+        const activeMediaQueries = Array.from(document.styleSheets)
+          .flatMap(sheet => {
+            try {
+              return Array.from(sheet.cssRules)
+                .filter(rule => rule instanceof CSSMediaRule)
+                .map(rule => ({
+                  condition: rule.conditionText,
+                  matches: window.matchMedia(rule.conditionText).matches
+                }));
+            } catch (e) {
+              return [];
+            }
+          });
+
+        const debugInfo = `
+          Viewport Width: ${viewportWidth}px
+          Device Pixel Ratio: ${devicePixelRatio}
+          View Mode: ${isDesktop ? 'Desktop' : 'Mobile'}
+          Active Media Queries:
+          ${activeMediaQueries.map(mq => `- ${mq.condition}: ${mq.matches}`).join('\n')}
+          Body Width: ${document.body.offsetWidth}px
+          Body Transform: ${document.body.style.transform}
+          Desktop View Class: ${document.documentElement.classList.contains('desktop-view')}
+          Mobile View Class: ${document.documentElement.classList.contains('mobile-view')}
+        `;
+
+        debugPanel.textContent = debugInfo;
+        debugPanel.style.display = 'block';
+      }
+
+      // Device detection and zoom
+      function setDesktopZoom() {
+        if (window.innerWidth >= 1024) {
+          const zoom = Math.min(window.innerWidth / 1200, 1.2); // Cap zoom at 1.2x
+          document.body.style.transform = `scale(${zoom})`;
+          document.body.style.transformOrigin = 'top center';
+          document.body.style.width = '1200px';
+          document.body.style.margin = '0 auto';
+          
+          // Force desktop styles
+          document.documentElement.classList.add('desktop-view');
+          document.documentElement.classList.remove('mobile-view');
+        } else {
+          // Reset zoom for mobile
+          document.body.style.transform = 'none';
+          document.body.style.width = '100%';
+          document.body.style.margin = '0';
+          
+          // Force mobile styles
+          document.documentElement.classList.add('mobile-view');
+          document.documentElement.classList.remove('desktop-view');
+        }
+        
+        // Update debug info
+        updateDebugInfo();
+      }
+
+      // Initialize everything
+      function init() {
+        // Set up theme toggle
+        const themeToggle = document.querySelector('.theme-toggle');
+        if (themeToggle) {
+          themeToggle.addEventListener('click', () => {
+            const isDark = document.documentElement.classList.toggle('dark-theme');
+            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+            updateThemeIcon(isDark);
+          });
+        }
+
+        // Initialize theme
+        initTheme();
+
+        // Set initial zoom and view mode
+        setDesktopZoom();
+
+        // Update zoom on resize with debounce
+        let resizeTimeout;
+        window.addEventListener('resize', function() {
+          clearTimeout(resizeTimeout);
+          resizeTimeout = setTimeout(() => {
+            setDesktopZoom();
+            updateDebugInfo();
+          }, 100);
+        });
+
+        // Listen for system theme changes
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+          if (!localStorage.getItem('theme')) {
+            document.documentElement.classList.toggle('dark-theme', e.matches);
+            updateThemeIcon(e.matches);
+          }
+        });
+
+        // Add keyboard shortcut to toggle debug panel
+        document.addEventListener('keydown', (e) => {
+          if (e.ctrlKey && e.shiftKey && e.key === 'D') {
+            const debugPanel = document.getElementById('debug-panel');
+            if (debugPanel) {
+              debugPanel.style.display = debugPanel.style.display === 'none' ? 'block' : 'none';
+            }
           }
         });
       }
-      
-      // Clear localStorage
-      localStorage.clear();
-      
-      // Clear sessionStorage
-      sessionStorage.clear();
-      
-      // Add timestamp to force reload
-      const timestamp = new Date().getTime();
-      const currentUrl = window.location.href.split('?')[0];
-      window.location.href = `${currentUrl}?v=${timestamp}`;
-    }
 
-    // Run on page load
-    window.addEventListener('load', function() {
-      console.log('Forcing refresh...');
-      forceRefresh();
-    });
+      // Run initialization when DOM is ready
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+      } else {
+        init();
+      }
+    })();
   </script>
   
   <title>Shaina Slavin | Portfolio</title>

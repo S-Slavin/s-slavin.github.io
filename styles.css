@@ -1,4 +1,4 @@
-/* Base styles */
+/* Desktop-specific styles */
 :root {
   --max-width: 1200px;
   --primary-color: #2563eb;
@@ -6,7 +6,6 @@
   --background-color: #f8fafc;
   --card-background: #ffffff;
   --border-color: #e2e8f0;
-  /* Light theme (default) */
   --bg-color: #fafbfc;
   --accent-color: #007aff;
   --card-bg: #ffffff;
@@ -15,6 +14,7 @@
   --hover-color: #f6f8fa;
 }
 
+/* Dark theme - shared between mobile and desktop */
 @media (prefers-color-scheme: dark) {
   :root {
     --bg-color: #0d1117;
@@ -28,18 +28,174 @@
   }
 }
 
-body {
-  background-color: var(--bg-color);
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-  color: var(--text-color);
-  margin: 0;
-  font-size: 18px;
-  line-height: 1.6;
-  min-height: 100vh;
-  width: 100%;
-  overflow-x: hidden;
-  min-width: 1200px;
-  overflow-x: auto;
+/* Desktop-only styles */
+@media screen and (min-width: 1024px) {
+  body {
+    background-color: var(--bg-color);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    color: var(--text-color);
+    margin: 0;
+    font-size: 18px;
+    line-height: 1.6;
+    min-height: 100vh;
+    width: 1200px !important;
+    margin: 0 auto !important;
+    transform: none !important;
+  }
+
+  .main-container {
+    width: var(--max-width) !important;
+    margin: 0 auto !important;
+    padding: 60px !important;
+    background: var(--card-background);
+    min-height: 100vh;
+    box-sizing: border-box;
+  }
+
+  header {
+    text-align: center;
+    margin-bottom: 48px;
+    width: 100%;
+  }
+
+  header h1 {
+    font-size: 56px;
+    margin-bottom: 16px;
+    color: #0f172a;
+    font-weight: 700;
+  }
+
+  .subtitle {
+    font-size: 28px;
+    color: #475569;
+    margin-bottom: 32px;
+  }
+
+  .contact-info {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    gap: 32px;
+    margin-bottom: 48px;
+    padding: 32px;
+    background: #f1f5f9;
+    border-radius: 16px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .contact-info p {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 20px;
+    white-space: nowrap;
+  }
+
+  .skills {
+    margin-bottom: 48px;
+    background: #f8fafc;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 2px 12px rgba(30,40,60,0.04);
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .skills h2 {
+    font-size: 36px;
+    margin-bottom: 32px;
+    color: #0f172a;
+    text-align: center;
+    font-weight: 700;
+  }
+
+  .skills-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+  .skill-btn {
+    width: 100%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    padding: 12px 20px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--text-color);
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 8px rgba(30,40,60,0.04);
+  }
+
+  .project-card {
+    background-color: var(--card-bg);
+    border-radius: 16px;
+    padding: 40px;
+    margin-bottom: 40px;
+    box-shadow: 0 2px 5px var(--shadow-color);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border: 1px solid var(--border-color);
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .project-card h3 {
+    font-size: 32px;
+    margin-bottom: 12px;
+  }
+
+  .navbar {
+    width: 100% !important;
+    background-color: var(--nav-bg);
+    padding: 20px 0 !important;
+    box-shadow: 0 2px 5px var(--shadow-color);
+    display: flex !important;
+    justify-content: center !important;
+    gap: 48px !important;
+    margin-bottom: 32px !important;
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 100;
+    bottom: auto !important;
+  }
+
+  .navbar a {
+    font-size: 20px !important;
+    font-weight: 600 !important;
+    color: #334155 !important;
+    text-decoration: none !important;
+    transition: all 0.2s !important;
+    padding: 10px 20px !important;
+    border-radius: 10px !important;
+  }
+
+  .theme-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 2px 5px var(--shadow-color);
+    z-index: 1000;
+  }
 }
 
 /* Skip link for accessibility */
@@ -59,9 +215,11 @@ body {
 }
 
 .main-container {
-  width: var(--max-width);
-  margin: 0 auto;
-  padding: 60px;
+  width: var(--max-width) !important;
+  min-width: var(--max-width) !important;
+  max-width: var(--max-width) !important;
+  margin: 0 auto !important;
+  padding: 60px !important;
   background: var(--card-background);
   min-height: 100vh;
   box-sizing: border-box;
@@ -130,14 +288,6 @@ header h1 {
   box-shadow: 0 2px 12px rgba(30,40,60,0.04);
   width: 100%;
   box-sizing: border-box;
-}
-
-.skills h2 {
-  font-size: 36px;
-  margin-bottom: 32px;
-  color: #0f172a;
-  text-align: center;
-  font-weight: 700;
 }
 
 .skills-category {
@@ -292,30 +442,6 @@ header h1 {
   box-shadow: 0 4px 12px rgba(37,99,235,0.3);
 }
 
-.navbar {
-  width: 100%;
-  background-color: var(--nav-bg);
-  padding: 20px 0;
-  box-shadow: 0 2px 5px var(--shadow-color);
-  display: flex;
-  justify-content: center;
-  gap: 48px;
-  margin-bottom: 32px;
-  position: sticky;
-  top: 0;
-  z-index: 100;
-}
-
-.navbar a {
-  font-size: 20px;
-  font-weight: 600;
-  color: #334155;
-  text-decoration: none;
-  transition: all 0.2s;
-  padding: 10px 20px;
-  border-radius: 10px;
-}
-
 .navbar a:hover {
   background: #f1f5f9;
   color: #2563eb;
@@ -354,33 +480,59 @@ header h1 {
   }
 }
 
-/* Add theme toggle button styles */
+/* Theme toggle button */
 .theme-toggle {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  background: var(--card-bg);
-  border: 1px solid var(--border-color);
-  border-radius: 50%;
   width: 40px;
   height: 40px;
+  border-radius: 50%;
+  background: var(--primary-color);
+  border: none;
+  color: white;
+  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
-  box-shadow: 0 2px 5px var(--shadow-color);
-  z-index: 1000;
+  font-size: 1.2rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease;
+  z-index: 1000;
 }
 
 .theme-toggle:hover {
   transform: scale(1.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
-.theme-toggle svg {
-  width: 20px;
-  height: 20px;
-  fill: var(--text-color);
+.theme-toggle:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.3);
+}
+
+/* Dark theme styles */
+.dark-theme {
+  --bg-color: #1a1a1a;
+  --text-color: #ffffff;
+  --card-bg: #2d2d2d;
+  --border-color: #404040;
+  --hover-color: #3b82f6;
+  --shadow-color: rgba(0, 0, 0, 0.3);
+}
+
+.dark-theme body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+.dark-theme .card {
+  background-color: var(--card-bg);
+  border-color: var(--border-color);
+}
+
+.dark-theme .theme-toggle {
+  background: var(--hover-color);
 }
 
 /* Add loading animation */
@@ -401,4 +553,29 @@ header h1 {
 
 .lazy-load.loaded {
   opacity: 1;
+}
+
+/* Remove all mobile-specific media queries */
+@media screen {
+  .main-container {
+    width: var(--max-width);
+    margin: 0 auto;
+    padding: 60px;
+    background: var(--card-background);
+    min-height: 100vh;
+    box-sizing: border-box;
+  }
+  
+  .skills-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+  }
+  
+  .contact-info {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    gap: 32px;
+  }
 } 
