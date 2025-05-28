@@ -2,13 +2,7 @@
 @media screen and (max-width: 1023px) {
   :root {
     --max-width: 100%;
-    --primary-color: #2563EB;
-    --bg-color: #ffffff;
-    --text-color: #1a1a1a;
-    --card-bg: #ffffff;
-    --border-color: #e5e7eb;
-    --hover-color: #1d4ed8;
-    --shadow-color: rgba(0, 0, 0, 0.1);
+    --container-padding: 1rem;
   }
 
   body {
@@ -17,44 +11,77 @@
     padding: 0 !important;
     background-color: var(--bg-color) !important;
     color: var(--text-color) !important;
+    max-width: none !important;
     transform: none !important;
   }
 
   .main-container {
     width: 100% !important;
-    max-width: var(--max-width) !important;
-    margin: 0 auto !important;
-    padding: 1rem !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: var(--container-padding) !important;
+    transform: none !important;
   }
 
-  /* Mobile-specific card styles */
-  .card {
-    width: 100%;
-    margin: 1rem 0;
-    padding: 1rem;
-    background-color: var(--card-bg);
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
-    box-shadow: 0 2px 4px var(--shadow-color);
+  header h1 {
+    font-size: 36px !important;
+    margin-bottom: var(--spacing-sm) !important;
   }
 
-  /* Mobile-specific navigation */
+  .subtitle {
+    font-size: 20px !important;
+    margin-bottom: var(--spacing-md) !important;
+  }
+
+  .contact-info {
+    flex-direction: column !important;
+    gap: var(--spacing-sm) !important;
+    padding: var(--spacing-md) !important;
+    flex-wrap: wrap !important;
+  }
+
+  .contact-info p {
+    font-size: 16px !important;
+    white-space: normal !important;
+  }
+
+  .skills {
+    padding: var(--spacing-md) !important;
+  }
+
+  .skills h2 {
+    font-size: 28px !important;
+  }
+
+  .skills-list {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  .project-card {
+    padding: var(--spacing-md) !important;
+  }
+
+  .project-card h3 {
+    font-size: 24px !important;
+  }
+
+  /* Force mobile layout */
   .navbar {
     position: fixed !important;
     bottom: 0 !important;
     left: 0 !important;
     right: 0 !important;
+    top: auto !important;
     background-color: var(--card-bg) !important;
     border-top: 1px solid var(--border-color) !important;
-    padding: 0.5rem !important;
+    padding: var(--spacing-xs) !important;
     display: flex !important;
     justify-content: space-around !important;
     z-index: 1000 !important;
-    top: auto !important;
   }
 
   .navbar a {
-    padding: 0.5rem 1rem !important;
+    padding: var(--spacing-xs) var(--spacing-sm) !important;
     color: var(--text-color) !important;
     text-decoration: none !important;
     border-radius: 4px !important;
@@ -63,24 +90,73 @@
 
   .navbar a:hover,
   .navbar a.active {
-    background-color: var(--hover-color);
-    color: white;
+    background-color: var(--hover-color) !important;
+    color: white !important;
   }
 
-  /* Mobile-specific theme toggle */
+  /* Force mobile theme toggle position */
   .theme-toggle {
-    bottom: 80px !important; /* Position above mobile navbar */
+    position: fixed !important;
+    bottom: 80px !important;
+    right: 20px !important;
+    top: auto !important;
+    width: 40px !important;
+    height: 40px !important;
+    background: var(--card-bg) !important;
+    border: 1px solid var(--border-color) !important;
+    border-radius: 50% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    cursor: pointer !important;
+    box-shadow: 0 2px 5px var(--shadow-color) !important;
+    z-index: 1000 !important;
+    color: var(--text-color) !important;
+    transition: var(--transition-base) !important;
+  }
+
+  .theme-toggle:hover {
+    transform: scale(1.1) !important;
+    box-shadow: 0 4px 8px var(--shadow-color) !important;
+  }
+
+  .theme-toggle:focus {
+    outline: none !important;
+    box-shadow: 0 0 0 2px var(--primary-color) !important;
+  }
+
+  .theme-toggle i {
+    font-size: 18px !important;
+    transition: var(--transition-slow) !important;
+  }
+
+  .theme-toggle:hover i {
+    transform: rotate(15deg) !important;
   }
 }
 
 /* Dark theme overrides for mobile */
 @media screen and (max-width: 1023px) {
   .dark-theme {
-    --bg-color: #1a1a1a;
-    --text-color: #ffffff;
-    --card-bg: #2d2d2d;
-    --border-color: #404040;
-    --hover-color: #3b82f6;
-    --shadow-color: rgba(0, 0, 0, 0.3);
+    --bg-color: #1a1a1a !important;
+    --text-color: #ffffff !important;
+    --card-bg: #2d2d2d !important;
+    --border-color: #404040 !important;
+    --hover-color: #3b82f6 !important;
+    --shadow-color: rgba(0, 0, 0, 0.3) !important;
+  }
+
+  .dark-theme .theme-toggle {
+    background: var(--card-bg) !important;
+    border-color: var(--border-color) !important;
+    color: var(--text-color) !important;
+  }
+
+  .dark-theme .theme-toggle:hover {
+    background: var(--hover-color) !important;
+  }
+
+  .dark-theme .theme-toggle:focus {
+    box-shadow: 0 0 0 2px var(--accent-color) !important;
   }
 } 
