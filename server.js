@@ -62,10 +62,8 @@ const server = http.createServer((req, res) => {
 
   // Set cache headers with more granular control
   const cacheControl = (() => {
-    if (extname.match(/\.(html)$/)) {
-      return 'no-cache'; // Don't cache HTML files
-    } else if (extname.match(/\.(css|js)$/)) {
-      return 'public, max-age=86400'; // Cache for 24 hours
+    if (extname.match(/\.(html|css|js)$/)) {
+      return 'no-cache, no-store, must-revalidate'; // Don't cache HTML, CSS, or JS files
     } else if (extname.match(/\.(png|jpg|gif|svg|ico|webp)$/)) {
       return 'public, max-age=31536000'; // Cache for 1 year
     }
@@ -73,6 +71,8 @@ const server = http.createServer((req, res) => {
   })();
   
   res.setHeader('Cache-Control', cacheControl);
+  res.setHeader('Pragma', 'no-cache');
+  res.setHeader('Expires', '0');
 
   fs.readFile(filePath, (err, content) => {
     if (err) {
