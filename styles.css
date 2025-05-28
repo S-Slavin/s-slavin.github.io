@@ -6,10 +6,30 @@
   --background-color: #f8fafc;
   --card-background: #ffffff;
   --border-color: #e2e8f0;
+  /* Light theme (default) */
+  --bg-color: #fafbfc;
+  --accent-color: #007aff;
+  --card-bg: #ffffff;
+  --nav-bg: #ffffff;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+  --hover-color: #f6f8fa;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-color: #0d1117;
+    --text-color: #c9d1d9;
+    --accent-color: #58a6ff;
+    --card-bg: #161b22;
+    --nav-bg: #161b22;
+    --shadow-color: rgba(0, 0, 0, 0.3);
+    --border-color: #30363d;
+    --hover-color: #21262d;
+  }
 }
 
 body {
-  background: var(--background-color);
+  background-color: var(--bg-color);
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
   color: var(--text-color);
   margin: 0;
@@ -142,8 +162,8 @@ header h1 {
   align-items: center;
   justify-content: center;
   gap: 8px;
-  background: var(--card-background);
-  border: 2px solid var(--border-color);
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
   padding: 12px 20px;
   border-radius: 30px;
   cursor: pointer;
@@ -155,7 +175,7 @@ header h1 {
 }
 
 .skill-btn:hover {
-  background: #f1f5f9;
+  background-color: var(--hover-color);
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(30,40,60,0.08);
   border-color: #cbd5e1;
@@ -183,12 +203,13 @@ header h1 {
 
 /* Project cards improvements */
 .project-card {
-  background: var(--background-color);
+  background-color: var(--card-bg);
   border-radius: 16px;
   padding: 32px;
   margin-bottom: 32px;
-  box-shadow: 0 2px 12px rgba(30,40,60,0.04);
+  box-shadow: 0 2px 5px var(--shadow-color);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border: 1px solid var(--border-color);
 }
 
 .project-card:hover {
@@ -261,9 +282,9 @@ header h1 {
 
 .navbar {
   width: 100%;
-  background: #fff;
+  background-color: var(--nav-bg);
   padding: 20px 0;
-  box-shadow: 0 1px 8px rgba(30,40,60,0.06);
+  box-shadow: 0 2px 5px var(--shadow-color);
   display: flex;
   justify-content: center;
   gap: 48px;
@@ -395,4 +416,53 @@ header h1 {
     box-shadow: none;
     border: 1px solid #ccc;
   }
+}
+
+/* Add theme toggle button styles */
+.theme-toggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 5px var(--shadow-color);
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+.theme-toggle:hover {
+  transform: scale(1.1);
+}
+
+.theme-toggle svg {
+  width: 20px;
+  height: 20px;
+  fill: var(--text-color);
+}
+
+/* Add loading animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+/* Add lazy loading styles */
+.lazy-load {
+  opacity: 0;
+  transition: opacity 0.3s ease-in;
+}
+
+.lazy-load.loaded {
+  opacity: 1;
 } 
