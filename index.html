@@ -2,14 +2,20 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
   <title>Shaina Slavin | Portfolio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css" />
 </head>
 <body>
   <nav class="navbar">
-    <a href="index.html" class="active">Portfolio</a>
-    <a href="resume.html">Resume</a>
+    <a href="./index.html" class="active">Portfolio</a>
+    <a href="./resume.html">Resume</a>
   </nav>
   <main class="main-container">
     <header>
@@ -17,59 +23,218 @@
       <p class="subtitle">Computer Science Student | Full-Stack & Front-End Developer</p>
     </header>
     <section class="contact-info">
-      <p>Email: shaina.slavin@gmail.com</p>
-      <p>Phone: +972-50-3071261</p>
-      <p>GitHub: <a href="https://github.com/S-Slavin">github.com/S-Slavin</a></p>
-      <p>Portfolio: <a href="https://s-slavin.github.io">s-slavin.github.io</a></p>
+      <p>📧 <a href="mailto:shaina.slavin@gmail.com">shaina.slavin@gmail.com</a></p>
+      <p>📱 <a href="tel:+972503071261">+972-50-3071261</a></p>
+      <p>🌐 <a href="https://github.com/S-Slavin">github.com/S-Slavin</a></p>
+      <p>🔗 <a href="https://linkedin.com/in/shaina-slavin">linkedin.com/in/shaina-slavin</a></p>
+      <p>🌍 <a href="https://s-slavin.github.io">s-slavin.github.io</a></p>
+    </section>
+    <section class="skills">
+      <h2>Skills</h2>
+      
+      <div class="skills-category">
+        <h3>Frontend Development</h3>
+        <ul class="skills-list">
+          <li>
+            <button class="skill-btn">
+              <img src="js-icon.svg" alt="JavaScript" width="24" height="24">
+              JavaScript
+            </button>
+          </li>
+          <li>
+            <button class="skill-btn">
+              <img src="typescript-icon.svg" alt="TypeScript" width="24" height="24">
+              TypeScript
+            </button>
+          </li>
+          <li>
+            <button class="skill-btn">
+              <img src="react-icon.svg" alt="React" width="24" height="24">
+              React
+            </button>
+          </li>
+          <li>
+            <button class="skill-btn">
+              <img src="redux-icon.svg" alt="Redux" width="24" height="24">
+              Redux
+            </button>
+          </li>
+          <li>
+            <button class="skill-btn">
+              <img src="html-icon.svg" alt="HTML" width="24" height="24">
+              HTML
+            </button>
+          </li>
+          <li>
+            <button class="skill-btn">
+              <img src="css-icon.svg" alt="CSS" width="24" height="24">
+              CSS
+            </button>
+          </li>
+        </ul>
+      </div>
+
+      <div class="skills-category">
+        <h3>Backend Development</h3>
+        <ul class="skills-list">
+          <li>
+            <button class="skill-btn">
+              <img src="node-icon.svg" alt="Node.js" width="24" height="24">
+              Node.js
+            </button>
+          </li>
+          <li>
+            <button class="skill-btn">
+              <img src="express-icon.svg" alt="Express" width="24" height="24">
+              Express
+            </button>
+          </li>
+          <li>
+            <button class="skill-btn">
+              <img src="python-icon.svg" alt="Python" width="24" height="24">
+              Python
+            </button>
+          </li>
+          <li>
+            <button class="skill-btn">
+              <img src="mongodb-icon.svg" alt="MongoDB" width="24" height="24">
+              MongoDB
+            </button>
+          </li>
+          <li>
+            <button class="skill-btn">
+              <img src="sql-icon.svg" alt="SQL" width="24" height="24">
+              SQL
+            </button>
+          </li>
+        </ul>
+      </div>
+
+      <div class="skills-category">
+        <h3>Mobile Development</h3>
+        <ul class="skills-list">
+          <li>
+            <button class="skill-btn">
+              <img src="swift-icon.svg" alt="Swift" width="24" height="24">
+              Swift
+            </button>
+          </li>
+          <li>
+            <button class="skill-btn">
+              <img src="mobile-icon.svg" alt="Mobile Development" width="24" height="24">
+              Mobile Development
+            </button>
+          </li>
+        </ul>
+      </div>
+
+      <div class="skills-category">
+        <h3>Computer Science</h3>
+        <ul class="skills-list">
+          <li>
+            <button class="skill-btn">
+              <img src="algo-icon.svg" alt="Algorithms" width="24" height="24">
+              Algorithms
+            </button>
+          </li>
+          <li>
+            <button class="skill-btn">
+              <img src="data-icon.svg" alt="Data Structures" width="24" height="24">
+              Data Structures
+            </button>
+          </li>
+        </ul>
+      </div>
+
+      <div class="skills-category">
+        <h3>Tools & Version Control</h3>
+        <ul class="skills-list">
+          <li>
+            <button class="skill-btn">
+              <img src="git-icon.svg" alt="Git" width="24" height="24">
+              Git
+            </button>
+          </li>
+          <li>
+            <button class="skill-btn">
+              <img src="testing-icon.svg" alt="Testing" width="24" height="24">
+              Testing (Jest, RTL)
+            </button>
+          </li>
+          <li>
+            <button class="skill-btn">
+              <img src="cicd-icon.svg" alt="CI/CD" width="24" height="24">
+              CI/CD
+            </button>
+          </li>
+          <li>
+            <button class="skill-btn">
+              <img src="docker-icon.svg" alt="Docker" width="24" height="24">
+              Docker
+            </button>
+          </li>
+        </ul>
+      </div>
     </section>
     <section class="summary">
       <p>
         Creative and impact-driven developer passionate about building accessible, user-centric web and mobile applications. Skilled in React, JavaScript, Swift, and Python with a strong foundation in algorithms, data structures, and modern software development.
       </p>
     </section>
-    <section class="skills">
-      <h2>Technical Skills</h2>
-      <ul class="skills-list">
-        <li>
-          <button class="skill-btn">
-            <img src="js-icon.svg" alt="JavaScript" width="36" height="36" />
-            <span>
-              <strong>JavaScript</strong><br>
-              <small>Dynamic scripting language for interactive web applications.</small>
-            </span>
-          </button>
-        </li>
-      </ul>
-    </section>
     <section class="projects">
       <h2>Project Highlights</h2>
       <div class="project-card">
+        <h3>Smart Context Companion</h3>
+        <p><em>Cross-Platform AI Productivity Suite</em></p>
+        <p>A next-generation, cross-platform productivity solution engineered to empower users with seamless, privacy-centric access to Google's suite of services across both iOS and Android ecosystems.</p>
+        <ul>
+          <li>Holistic Google Service Orchestration: Unified interface for Google Drive, Calendar, Gmail, Maps, Translate, and Tasks</li>
+          <li>Privacy-First Architecture: On-device data processing by default, with opt-in cloud AI augmentation</li>
+          <li>Modular Extensibility: "Action Packs" system for rapid deployment of new features</li>
+          <li>Universal Accessibility: Full support for accessibility and internationalization</li>
+          <li>Technical Stack: Flutter, KMM, Swift/SwiftUI, Kotlin/Jetpack Compose, OAuth 2.0, Core ML, TensorFlow Lite, ML Kit, Google APIs, CI/CD, GitHub Actions, Bitrise</li>
+        </ul>
+        <a href="https://github.com/S-Slavin/SmartContextCompanion" class="github-link">View on GitHub</a>
+      </div>
+
+      <div class="project-card">
+        <h3>Anti-Hallucination AI System</h3>
+        <p><em>Advanced AI Platform for Language Model Accuracy</em></p>
+        <p>Designed and implemented a robust AI platform to minimize hallucinations in language model outputs.</p>
+        <ul>
+          <li>Developed and fine-tuned advanced language models with RAG and RLHF</li>
+          <li>Built cross-platform clients using Xcode (iOS/macOS) and Cursor for AI-powered development</li>
+          <li>Implemented real-time fact-checking and citation systems</li>
+          <li>Created explainable AI modules with confidence scoring</li>
+        </ul>
+        <a href="https://github.com/S-Slavin/AntiHallucinationAI" class="github-link">View on GitHub</a>
+      </div>
+
+      <div class="project-card">
         <h3>FinePrint</h3>
         <p><em>Privacy Management Web and Mobile Application</em></p>
-        <p>A cross-platform application (React for web, SwiftUI for iOS) that empowers users and families to manage their digital privacy settings across multiple online accounts.</p>
+        <p>A cross-platform application that helps users manage their digital privacy settings across multiple online accounts.</p>
         <ul>
-          <li>Designed and implemented tools for secure data handling, granular privacy controls, and robust account management.</li>
-          <li>Built intuitive interfaces prioritizing accessibility and ease of use for all ages.</li>
-          <li>Integrated child safety features, including parental controls and activity monitoring.</li>
-          <li>Emphasized security best practices and user education about digital privacy.</li>
+          <li>Developed a React and SwiftUI application enabling users to manage digital privacy settings and family accounts</li>
+          <li>Implemented secure data handling, child controls, and robust account management</li>
+          <li>Prioritized accessibility and intuitive user experience</li>
         </ul>
-        <a href="#" class="github-link">View on GitHub</a>
+        <a href="https://github.com/S-Slavin/FinePrint" class="github-link">View on GitHub</a>
       </div>
+
       <div class="project-card">
-        <h3>OurBigKitchen App (OBK)</h3>
+        <h3>OurBigKitchen App</h3>
         <p><em>Community Volunteer and Food Rescue Platform</em></p>
-        <p>A full-stack web and iOS application connecting volunteers with meaningful community service opportunities and facilitating food rescue operations.</p>
+        <p>A full-stack web and iOS application connecting volunteers with meaningful community service opportunities.</p>
         <ul>
-          <li>Developed user registration, event coordination, and real-time impact tracking features for individuals and groups.</li>
-          <li>Built a matching system to connect surplus food from donors with local recipients, reducing food waste and supporting food-insecure families.</li>
-          <li>Enabled organizations to manage volunteer shifts, communicate with teams, and report on community impact.</li>
-          <li>Technologies used: React, Node.js, Express, SwiftUI, REST APIs, and cloud-based data storage.</li>
+          <li>Developed a full-stack web and iOS application to connect volunteers with meaningful community service opportunities</li>
+          <li>Supports food rescue by matching surplus food with those in need, reducing waste and providing dignity to recipients</li>
         </ul>
-        <a href="#" class="github-link">View on GitHub</a>
+        <a href="https://github.com/S-Slavin/OBK" class="github-link">View on GitHub</a>
       </div>
     </section>
     <footer>
-      <a href="resume.html" class="button">View Resume</a>
+      <a href="./resume.html" class="button">View Resume</a>
     </footer>
   </main>
 </body>
