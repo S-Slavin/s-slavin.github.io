@@ -7,6 +7,9 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="format-detection" content="telephone=no">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="HandheldFriendly" content="true">
+  <meta name="MobileOptimized" content="width">
   <meta name="description" content="Shaina Slavin - Computer Science Student and Full-Stack Developer specializing in React, JavaScript, Swift, and Python. View my portfolio and projects.">
   <meta name="keywords" content="Shaina Slavin, Full-Stack Developer, React, JavaScript, Swift, Python, Portfolio">
   <meta name="author" content="Shaina Slavin">
@@ -288,6 +291,30 @@
 
   <!-- Add JavaScript for theme toggle and lazy loading -->
   <script>
+    // Debug information
+    console.log('Viewport width:', window.innerWidth);
+    console.log('Device pixel ratio:', window.devicePixelRatio);
+    console.log('User agent:', navigator.userAgent);
+    
+    // Check if any styles are being overridden
+    const styleSheets = Array.from(document.styleSheets);
+    console.log('Loaded stylesheets:', styleSheets.map(sheet => sheet.href));
+    
+    // Check for any media queries that might be active
+    const mediaQueries = styleSheets.flatMap(sheet => {
+      try {
+        return Array.from(sheet.cssRules)
+          .filter(rule => rule instanceof CSSMediaRule)
+          .map(rule => ({
+            condition: rule.conditionText,
+            matches: window.matchMedia(rule.conditionText).matches
+          }));
+      } catch (e) {
+        return [];
+      }
+    });
+    console.log('Active media queries:', mediaQueries);
+
     // Theme toggle
     const themeToggle = document.querySelector('.theme-toggle');
     const themeIcon = themeToggle.querySelector('i');
