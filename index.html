@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <!-- Responsive viewport -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
   <meta name="theme-color" content="#2563EB">
   <meta name="description" content="Shaina Slavin - Computer Science Student and Full-Stack Developer specializing in React, JavaScript, Swift, and Python. View my portfolio and projects.">
   <meta name="keywords" content="Shaina Slavin, Full-Stack Developer, React, JavaScript, Swift, Python, Portfolio">
@@ -42,8 +42,10 @@
     (function() {
       // Device detection
       function isMobileDevice() {
-        // Only use viewport width for device detection
-        return window.innerWidth < 1024;
+        const viewportWidth = window.innerWidth;
+        const devicePixelRatio = window.devicePixelRatio;
+        const effectiveWidth = viewportWidth * devicePixelRatio;
+        return effectiveWidth < 1024;
       }
 
       // Theme management
@@ -332,6 +334,14 @@ Media: ${sheet.media}
 
         // Show debug panel by default
         updateDebugInfo();
+
+        // Add theme toggle button
+        const themeToggle = document.createElement('button');
+        themeToggle.className = 'theme-toggle';
+        themeToggle.setAttribute('aria-label', 'Toggle theme');
+        themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+        themeToggle.onclick = toggleTheme;
+        document.body.appendChild(themeToggle);
       }
 
       // Run initialization when DOM is ready
