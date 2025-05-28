@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <!-- Single viewport meta tag with desktop settings -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <!-- Force desktop viewport -->
+  <meta name="viewport" content="width=1200, initial-scale=1.0">
   <meta name="theme-color" content="#2563EB">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -65,7 +65,7 @@
       console.log('User Agent:', navigator.userAgent);
       
       // Check active media queries
-      const mediaQueries = window.matchMedia('(min-width: 768px)');
+      const mediaQueries = window.matchMedia('(min-width: 1024px)');
       console.log('Desktop Media Query Active:', mediaQueries.matches);
       
       // Log all stylesheets
@@ -77,6 +77,15 @@
           console.log('Error accessing stylesheet:', e);
         }
       });
+
+      // Force desktop mode
+      if (window.innerWidth < 1024) {
+        console.log('Forcing desktop mode...');
+        const meta = document.querySelector('meta[name="viewport"]');
+        if (meta) {
+          meta.setAttribute('content', 'width=1200, initial-scale=1.0');
+        }
+      }
     });
   </script>
   
