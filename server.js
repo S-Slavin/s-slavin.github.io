@@ -1,8 +1,9 @@
 const http = require('http');
 const fs = require('fs');
 const path = require('path');
+const zlib = require('zlib');
 
-const PORT = 6000;
+const PORT = process.env.PORT || 6000;
 
 const MIME_TYPES = {
   '.html': 'text/html',
@@ -13,17 +14,65 @@ const MIME_TYPES = {
   '.jpg': 'image/jpeg',
   '.gif': 'image/gif',
   '.svg': 'image/svg+xml',
-  '.ico': 'image/x-icon'
+  '.ico': 'image/x-icon',
+  '.webp': 'image/webp'
+};
+
+// Compression options
+const compressionOptions = {
+  threshold: 1024, // Only compress responses larger than 1KB
+  level: 6 // Compression level (0-9)
+};
+
+// Security headers
+const securityHeaders = {
+  'X-Content-Type-Options': 'nosniff',
+  'X-Frame-Options': 'DENY',
+  'X-XSS-Protection': '1; mode=block',
+  'Referrer-Policy': 'strict-origin-when-cross-origin',
+  'Permissions-Policy': 'camera=(), microphone=(), geolocation=()',
+  'Content-Security-Policy': "default-src 'self'; script-src 'self' 'unsafe-inline' https://fonts.googleapis.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self'"
 };
 
 const server = http.createServer((req, res) => {
   console.log(`${req.method} ${req.url}`);
+
+  // Set CORS headers
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+
+  // Set security headers
+  Object.entries(securityHeaders).forEach(([key, value]) => {
+    res.setHeader(key, value);
+  });
+
+  // Handle OPTIONS request
+  if (req.method === 'OPTIONS') {
+    res.writeHead(204);
+    res.end();
+    return;
+  }
 
   // Handle root URL
   let filePath = req.url === '/' ? './index.html' : '.' + req.url;
 
   const extname = path.extname(filePath);
   let contentType = MIME_TYPES[extname] || 'application/octet-stream';
+
+  // Set cache headers with more granular control
+  const cacheControl = (() => {
+    if (extname.match(/\.(html)$/)) {
+      return 'no-cache'; // Don't cache HTML files
+    } else if (extname.match(/\.(css|js)$/)) {
+      return 'public, max-age=86400'; // Cache for 24 hours
+    } else if (extname.match(/\.(png|jpg|gif|svg|ico|webp)$/)) {
+      return 'public, max-age=31536000'; // Cache for 1 year
+    }
+    return 'no-cache';
+  })();
+  
+  res.setHeader('Cache-Control', cacheControl);
 
   fs.readFile(filePath, (err, content) => {
     if (err) {
@@ -39,9 +88,26 @@ const server = http.createServer((req, res) => {
         res.end(`Server Error: ${err.code}`);
       }
     } else {
-      // Success
-      res.writeHead(200, { 'Content-Type': contentType });
-      res.end(content, 'utf-8');
+      // Set content type
+      res.setHeader('Content-Type', contentType);
+
+      // Compress response if client accepts it
+      const acceptEncoding = req.headers['accept-encoding'];
+      if (acceptEncoding && acceptEncoding.includes('gzip')) {
+        res.setHeader('Content-Encoding', 'gzip');
+        zlib.gzip(content, compressionOptions, (err, result) => {
+          if (err) {
+            res.writeHead(500);
+            res.end('Compression error');
+            return;
+          }
+          res.writeHead(200);
+          res.end(result);
+        });
+      } else {
+        res.writeHead(200);
+        res.end(content, 'utf-8');
+      }
     }
   });
 });

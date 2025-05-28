@@ -1,17 +1,43 @@
+/* Base styles */
+:root {
+  --max-width: 1200px;
+  --primary-color: #2563eb;
+  --text-color: #1e293b;
+  --background-color: #f8fafc;
+  --card-background: #ffffff;
+  --border-color: #e2e8f0;
+}
+
 body {
-  background: #f8fafc;
-  font-family: 'Inter', Arial, sans-serif;
-  color: #1e293b;
+  background: var(--background-color);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  color: var(--text-color);
   margin: 0;
   font-size: 18px;
   line-height: 1.6;
 }
 
+/* Skip link for accessibility */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--primary-color);
+  color: white;
+  padding: 8px;
+  z-index: 100;
+  transition: top 0.2s;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
 .main-container {
-  max-width: 1000px;
+  max-width: var(--max-width);
   margin: 24px auto;
   padding: 32px;
-  background: #fff;
+  background: var(--card-background);
   border-radius: 20px;
   box-shadow: 0 4px 24px rgba(30,40,60,0.08);
 }
@@ -34,6 +60,7 @@ header h1 {
   margin-bottom: 24px;
 }
 
+/* Contact info improvements */
 .contact-info {
   display: flex;
   flex-wrap: wrap;
@@ -51,6 +78,7 @@ header h1 {
   align-items: center;
   gap: 8px;
   font-size: 18px;
+  white-space: nowrap;
 }
 
 .contact-info a {
@@ -65,6 +93,7 @@ header h1 {
   text-decoration: underline;
 }
 
+/* Skills section improvements */
 .skills {
   margin-bottom: 40px;
   background: #f8fafc;
@@ -99,26 +128,28 @@ header h1 {
 }
 
 .skills-list {
-  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 12px;
   padding: 0;
   margin: 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
+  list-style: none;
 }
 
 .skill-btn {
+  width: 100%;
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
-  background: #ffffff;
-  border: 2px solid #e2e8f0;
-  padding: 8px 16px;
+  background: var(--card-background);
+  border: 2px solid var(--border-color);
+  padding: 12px 20px;
   border-radius: 30px;
   cursor: pointer;
   font-size: 16px;
   font-weight: 500;
-  color: #0f172a;
+  color: var(--text-color);
   transition: all 0.2s ease;
   box-shadow: 0 2px 8px rgba(30,40,60,0.04);
 }
@@ -150,13 +181,14 @@ header h1 {
   color: #334155;
 }
 
+/* Project cards improvements */
 .project-card {
-  background: #f8fafc;
+  background: var(--background-color);
   border-radius: 16px;
-  padding: 28px;
-  margin-bottom: 28px;
+  padding: 32px;
+  margin-bottom: 32px;
   box-shadow: 0 2px 12px rgba(30,40,60,0.04);
-  transition: transform 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .project-card:hover {
@@ -261,10 +293,22 @@ header h1 {
   color: #fff;
 }
 
-@media (max-width: 768px) {
+/* Responsive improvements */
+@media (max-width: 1200px) {
   .main-container {
     margin: 16px;
     padding: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    font-size: 16px;
+  }
+
+  .main-container {
+    margin: 12px;
+    padding: 20px;
   }
 
   header h1 {
@@ -277,43 +321,21 @@ header h1 {
 
   .contact-info {
     padding: 16px;
-    gap: 12px;
   }
 
-  .skills {
-    padding: 24px;
-  }
-
-  .skills h2 {
-    font-size: 28px;
-  }
-
-  .skills-category h3 {
-    font-size: 20px;
+  .skills-list {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
   }
 
   .project-card {
     padding: 24px;
   }
-
-  .project-card h3 {
-    font-size: 24px;
-  }
-
-  .navbar {
-    padding: 16px 0;
-    gap: 24px;
-  }
-
-  .navbar a {
-    font-size: 18px;
-  }
 }
 
 @media (max-width: 480px) {
   .main-container {
-    margin: 12px;
-    padding: 20px;
+    margin: 8px;
+    padding: 16px;
   }
 
   header h1 {
@@ -324,6 +346,10 @@ header h1 {
     font-size: 18px;
   }
 
+  .contact-info p {
+    font-size: 16px;
+  }
+
   .skills-list {
     grid-template-columns: 1fr;
   }
@@ -332,7 +358,41 @@ header h1 {
     padding: 20px;
   }
 
-  .project-card h3 {
-    font-size: 22px;
+  .navbar {
+    padding: 16px 0;
+    gap: 24px;
+  }
+
+  .navbar a {
+    font-size: 18px;
+    padding: 8px 16px;
+  }
+}
+
+/* Print styles */
+@media print {
+  body {
+    background: white;
+  }
+
+  .main-container {
+    margin: 0;
+    padding: 20px;
+    box-shadow: none;
+  }
+
+  .navbar {
+    display: none;
+  }
+
+  .skill-btn {
+    border: 1px solid #ccc;
+    box-shadow: none;
+  }
+
+  .project-card {
+    break-inside: avoid;
+    box-shadow: none;
+    border: 1px solid #ccc;
   }
 } 

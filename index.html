@@ -2,174 +2,199 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <meta http-equiv="Pragma" content="no-cache">
-  <meta http-equiv="Expires" content="0">
-  <title>Shaina Slavin | Portfolio</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#2563EB">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="description" content="Shaina Slavin - Computer Science Student and Full-Stack Developer specializing in React, JavaScript, Swift, and Python. View my portfolio and projects.">
+  <meta name="keywords" content="Shaina Slavin, Full-Stack Developer, React, JavaScript, Swift, Python, Portfolio">
+  <meta name="author" content="Shaina Slavin">
+  
+  <!-- Open Graph / Social Media Meta Tags -->
+  <meta property="og:title" content="Shaina Slavin | Portfolio">
+  <meta property="og:description" content="Computer Science Student and Full-Stack Developer specializing in React, JavaScript, Swift, and Python.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://s-slavin.github.io">
+  <meta property="og:image" content="https://s-slavin.github.io/apple-touch-icon.svg">
+  
+  <!-- Preload critical resources -->
+  <link rel="preload" href="./styles.css" as="style">
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" as="style">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="apple-touch-icon" href="apple-touch-icon.svg">
+  
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  
+  <!-- Styles -->
   <link rel="stylesheet" href="./styles.css" />
+  
+  <title>Shaina Slavin | Portfolio</title>
 </head>
 <body>
-  <nav class="navbar">
-    <a href="./index.html" class="active">Portfolio</a>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <a href="./index.html" class="active" aria-current="page">Portfolio</a>
     <a href="./resume.html">Resume</a>
   </nav>
-  <main class="main-container">
+  <main id="main-content" class="main-container" role="main">
     <header>
       <h1>Shaina Slavin</h1>
       <p class="subtitle">Computer Science Student | Full-Stack & Front-End Developer</p>
     </header>
-    <section class="contact-info">
-      <p>📧 <a href="mailto:shaina.slavin@gmail.com">shaina.slavin@gmail.com</a></p>
-      <p>📱 <a href="tel:+972503071261">+972-50-3071261</a></p>
-      <p>🌐 <a href="https://github.com/S-Slavin">github.com/S-Slavin</a></p>
-      <p>🔗 <a href="https://linkedin.com/in/shaina-slavin">linkedin.com/in/shaina-slavin</a></p>
-      <p>🌍 <a href="https://s-slavin.github.io">s-slavin.github.io</a></p>
+    <section class="contact-info" aria-label="Contact information">
+      <p>📧 <a href="mailto:shaina.slavin@gmail.com" aria-label="Email me at shaina.slavin@gmail.com">shaina.slavin@gmail.com</a></p>
+      <p>📱 <a href="tel:+972503071261" aria-label="Call me at +972-50-3071261">+972-50-3071261</a></p>
+      <p>🌐 <a href="https://github.com/S-Slavin" aria-label="Visit my GitHub profile">github.com/S-Slavin</a></p>
+      <p>🔗 <a href="https://linkedin.com/in/shaina-slavin" aria-label="Visit my LinkedIn profile">linkedin.com/in/shaina-slavin</a></p>
+      <p>🌍 <a href="https://s-slavin.github.io" aria-label="Visit my website">s-slavin.github.io</a></p>
     </section>
-    <section class="skills">
-      <h2>Skills</h2>
+    <section class="skills" aria-labelledby="skills-heading">
+      <h2 id="skills-heading">Skills</h2>
       
-      <div class="skills-category">
-        <h3>Frontend Development</h3>
-        <ul class="skills-list">
+      <div class="skills-category" aria-labelledby="frontend-heading">
+        <h3 id="frontend-heading">Frontend Development</h3>
+        <ul class="skills-list" role="list">
           <li>
-            <button class="skill-btn">
-              <img src="js-icon.svg" alt="JavaScript" width="24" height="24">
+            <button class="skill-btn" aria-label="JavaScript skill">
+              <img src="js-icon.svg" alt="" width="24" height="24" aria-hidden="true">
               JavaScript
             </button>
           </li>
           <li>
-            <button class="skill-btn">
-              <img src="typescript-icon.svg" alt="TypeScript" width="24" height="24">
+            <button class="skill-btn" aria-label="TypeScript skill">
+              <img src="typescript-icon.svg" alt="" width="24" height="24" aria-hidden="true">
               TypeScript
             </button>
           </li>
           <li>
-            <button class="skill-btn">
-              <img src="react-icon.svg" alt="React" width="24" height="24">
+            <button class="skill-btn" aria-label="React skill">
+              <img src="react-icon.svg" alt="" width="24" height="24" aria-hidden="true">
               React
             </button>
           </li>
           <li>
-            <button class="skill-btn">
-              <img src="redux-icon.svg" alt="Redux" width="24" height="24">
+            <button class="skill-btn" aria-label="Redux skill">
+              <img src="redux-icon.svg" alt="" width="24" height="24" aria-hidden="true">
               Redux
             </button>
           </li>
           <li>
-            <button class="skill-btn">
-              <img src="html-icon.svg" alt="HTML" width="24" height="24">
+            <button class="skill-btn" aria-label="HTML skill">
+              <img src="html-icon.svg" alt="" width="24" height="24" aria-hidden="true">
               HTML
             </button>
           </li>
           <li>
-            <button class="skill-btn">
-              <img src="css-icon.svg" alt="CSS" width="24" height="24">
+            <button class="skill-btn" aria-label="CSS skill">
+              <img src="css-icon.svg" alt="" width="24" height="24" aria-hidden="true">
               CSS
             </button>
           </li>
         </ul>
       </div>
 
-      <div class="skills-category">
-        <h3>Backend Development</h3>
-        <ul class="skills-list">
+      <div class="skills-category" aria-labelledby="backend-heading">
+        <h3 id="backend-heading">Backend Development</h3>
+        <ul class="skills-list" role="list">
           <li>
-            <button class="skill-btn">
-              <img src="node-icon.svg" alt="Node.js" width="24" height="24">
+            <button class="skill-btn" aria-label="Node.js skill">
+              <img src="node-icon.svg" alt="" width="24" height="24" aria-hidden="true">
               Node.js
             </button>
           </li>
           <li>
-            <button class="skill-btn">
-              <img src="express-icon.svg" alt="Express" width="24" height="24">
+            <button class="skill-btn" aria-label="Express skill">
+              <img src="express-icon.svg" alt="" width="24" height="24" aria-hidden="true">
               Express
             </button>
           </li>
           <li>
-            <button class="skill-btn">
-              <img src="python-icon.svg" alt="Python" width="24" height="24">
+            <button class="skill-btn" aria-label="Python skill">
+              <img src="python-icon.svg" alt="" width="24" height="24" aria-hidden="true">
               Python
             </button>
           </li>
           <li>
-            <button class="skill-btn">
-              <img src="mongodb-icon.svg" alt="MongoDB" width="24" height="24">
+            <button class="skill-btn" aria-label="MongoDB skill">
+              <img src="mongodb-icon.svg" alt="" width="24" height="24" aria-hidden="true">
               MongoDB
             </button>
           </li>
           <li>
-            <button class="skill-btn">
-              <img src="sql-icon.svg" alt="SQL" width="24" height="24">
+            <button class="skill-btn" aria-label="SQL skill">
+              <img src="sql-icon.svg" alt="" width="24" height="24" aria-hidden="true">
               SQL
             </button>
           </li>
         </ul>
       </div>
 
-      <div class="skills-category">
-        <h3>Mobile Development</h3>
-        <ul class="skills-list">
+      <div class="skills-category" aria-labelledby="mobile-heading">
+        <h3 id="mobile-heading">Mobile Development</h3>
+        <ul class="skills-list" role="list">
           <li>
-            <button class="skill-btn">
-              <img src="swift-icon.svg" alt="Swift" width="24" height="24">
+            <button class="skill-btn" aria-label="Swift skill">
+              <img src="swift-icon.svg" alt="" width="24" height="24" aria-hidden="true">
               Swift
             </button>
           </li>
           <li>
-            <button class="skill-btn">
-              <img src="mobile-icon.svg" alt="Mobile Development" width="24" height="24">
+            <button class="skill-btn" aria-label="Mobile Development skill">
+              <img src="mobile-icon.svg" alt="" width="24" height="24" aria-hidden="true">
               Mobile Development
             </button>
           </li>
         </ul>
       </div>
 
-      <div class="skills-category">
-        <h3>Computer Science</h3>
-        <ul class="skills-list">
+      <div class="skills-category" aria-labelledby="cs-heading">
+        <h3 id="cs-heading">Computer Science</h3>
+        <ul class="skills-list" role="list">
           <li>
-            <button class="skill-btn">
-              <img src="algo-icon.svg" alt="Algorithms" width="24" height="24">
+            <button class="skill-btn" aria-label="Algorithms skill">
+              <img src="algo-icon.svg" alt="" width="24" height="24" aria-hidden="true">
               Algorithms
             </button>
           </li>
           <li>
-            <button class="skill-btn">
-              <img src="data-icon.svg" alt="Data Structures" width="24" height="24">
+            <button class="skill-btn" aria-label="Data Structures skill">
+              <img src="data-icon.svg" alt="" width="24" height="24" aria-hidden="true">
               Data Structures
             </button>
           </li>
         </ul>
       </div>
 
-      <div class="skills-category">
-        <h3>Tools & Version Control</h3>
-        <ul class="skills-list">
+      <div class="skills-category" aria-labelledby="tools-heading">
+        <h3 id="tools-heading">Tools & Version Control</h3>
+        <ul class="skills-list" role="list">
           <li>
-            <button class="skill-btn">
-              <img src="git-icon.svg" alt="Git" width="24" height="24">
+            <button class="skill-btn" aria-label="Git skill">
+              <img src="git-icon.svg" alt="" width="24" height="24" aria-hidden="true">
               Git
             </button>
           </li>
           <li>
-            <button class="skill-btn">
-              <img src="testing-icon.svg" alt="Testing" width="24" height="24">
+            <button class="skill-btn" aria-label="Testing skill">
+              <img src="testing-icon.svg" alt="" width="24" height="24" aria-hidden="true">
               Testing (Jest, RTL)
             </button>
           </li>
           <li>
-            <button class="skill-btn">
-              <img src="cicd-icon.svg" alt="CI/CD" width="24" height="24">
+            <button class="skill-btn" aria-label="CI/CD skill">
+              <img src="cicd-icon.svg" alt="" width="24" height="24" aria-hidden="true">
               CI/CD
             </button>
           </li>
           <li>
-            <button class="skill-btn">
-              <img src="docker-icon.svg" alt="Docker" width="24" height="24">
+            <button class="skill-btn" aria-label="Docker skill">
+              <img src="docker-icon.svg" alt="" width="24" height="24" aria-hidden="true">
               Docker
             </button>
           </li>
