@@ -6,157 +6,91 @@
   }
 
   body {
-    width: 100% !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    background-color: var(--bg-color) !important;
-    color: var(--text-color) !important;
-    max-width: none !important;
-    transform: none !important;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    max-width: none;
+    transform: none;
   }
 
   .main-container {
-    width: 100% !important;
-    max-width: 100% !important;
-    margin: 0 !important;
-    padding: var(--container-padding) !important;
-    transform: none !important;
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: var(--container-padding);
+    transform: none;
   }
 
   header h1 {
-    font-size: 36px !important;
-    margin-bottom: var(--spacing-sm) !important;
+    font-size: 36px;
+    margin-bottom: var(--spacing-sm);
   }
 
   .subtitle {
-    font-size: 20px !important;
-    margin-bottom: var(--spacing-md) !important;
+    font-size: 20px;
+    margin-bottom: var(--spacing-md);
   }
 
   .contact-info {
-    flex-direction: column !important;
-    gap: var(--spacing-sm) !important;
-    padding: var(--spacing-md) !important;
-    flex-wrap: wrap !important;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-md);
+    flex-wrap: wrap;
   }
 
   .contact-info p {
-    font-size: 16px !important;
-    white-space: normal !important;
+    font-size: 16px;
+    white-space: normal;
   }
 
   .skills {
-    padding: var(--spacing-md) !important;
+    padding: var(--spacing-md);
   }
 
   .skills h2 {
-    font-size: 28px !important;
+    font-size: 28px;
   }
 
   .skills-list {
-    grid-template-columns: repeat(2, 1fr) !important;
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .project-card {
-    padding: var(--spacing-md) !important;
+    padding: var(--spacing-md);
   }
 
   .project-card h3 {
-    font-size: 24px !important;
+    font-size: 24px;
   }
 
-  /* Force mobile layout */
+  /* Mobile layout */
   .navbar {
-    position: fixed !important;
-    bottom: 0 !important;
-    left: 0 !important;
-    right: 0 !important;
-    top: auto !important;
-    background-color: var(--card-bg) !important;
-    border-top: 1px solid var(--border-color) !important;
-    padding: var(--spacing-xs) !important;
-    display: flex !important;
-    justify-content: space-around !important;
-    z-index: 1000 !important;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: auto;
+    background-color: var(--card-bg);
+    border-top: 1px solid var(--border-color);
+    padding: var(--spacing-xs);
+    display: flex;
+    justify-content: space-around;
+    z-index: 1000;
   }
 
   .navbar a {
-    padding: var(--spacing-xs) var(--spacing-sm) !important;
-    color: var(--text-color) !important;
-    text-decoration: none !important;
-    border-radius: 4px !important;
-    font-size: 16px !important;
+    padding: var(--spacing-xs) var(--spacing-sm);
+    color: var(--text-color);
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 16px;
   }
 
   .navbar a:hover,
   .navbar a.active {
-    background-color: var(--hover-color) !important;
-    color: white !important;
-  }
-
-  /* Force mobile theme toggle position */
-  .theme-toggle {
-    position: fixed !important;
-    bottom: 80px !important;
-    right: 20px !important;
-    top: auto !important;
-    width: 40px !important;
-    height: 40px !important;
-    background: var(--card-bg) !important;
-    border: 1px solid var(--border-color) !important;
-    border-radius: 50% !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    cursor: pointer !important;
-    box-shadow: 0 2px 5px var(--shadow-color) !important;
-    z-index: 1000 !important;
-    color: var(--text-color) !important;
-    transition: var(--transition-base) !important;
-  }
-
-  .theme-toggle:hover {
-    transform: scale(1.1) !important;
-    box-shadow: 0 4px 8px var(--shadow-color) !important;
-  }
-
-  .theme-toggle:focus {
-    outline: none !important;
-    box-shadow: 0 0 0 2px var(--primary-color) !important;
-  }
-
-  .theme-toggle i {
-    font-size: 18px !important;
-    transition: var(--transition-slow) !important;
-  }
-
-  .theme-toggle:hover i {
-    transform: rotate(15deg) !important;
-  }
-}
-
-/* Dark theme overrides for mobile */
-@media screen and (max-width: 1023px) {
-  .dark-theme {
-    --bg-color: #1a1a1a !important;
-    --text-color: #ffffff !important;
-    --card-bg: #2d2d2d !important;
-    --border-color: #404040 !important;
-    --hover-color: #3b82f6 !important;
-    --shadow-color: rgba(0, 0, 0, 0.3) !important;
-  }
-
-  .dark-theme .theme-toggle {
-    background: var(--card-bg) !important;
-    border-color: var(--border-color) !important;
-    color: var(--text-color) !important;
-  }
-
-  .dark-theme .theme-toggle:hover {
-    background: var(--hover-color) !important;
-  }
-
-  .dark-theme .theme-toggle:focus {
-    box-shadow: 0 0 0 2px var(--accent-color) !important;
+    background-color: var(--hover-color);
+    color: var(--text-color);
   }
 } 
