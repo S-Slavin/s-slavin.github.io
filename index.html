@@ -114,7 +114,8 @@
       }
 
       function updateDebugInfo() {
-        const debugPanel = document.getElementById('debug-panel') || createDebugPanel();
+        let debugPanel = document.getElementById('debug-panel');
+        if (!debugPanel) debugPanel = createDebugPanel();
         const viewportWidth = window.innerWidth;
         const devicePixelRatio = window.devicePixelRatio;
         const isDesktop = !isMobileDevice();
@@ -300,42 +301,31 @@ Media: ${sheet.media}
           
           console.log('Mobile styles applied');
         }
-        
-        updateDebugInfo();
       }
 
       // Initialize everything
       function init() {
-        // Initialize theme
         initTheme();
-
-        // Set initial zoom and view mode
         setDesktopZoom();
-
-        // Update zoom on resize with debounce
         let resizeTimeout;
         window.addEventListener('resize', function() {
           clearTimeout(resizeTimeout);
           resizeTimeout = setTimeout(() => {
             setDesktopZoom();
-            updateDebugInfo();
           }, 100);
         });
-
-        // Add keyboard shortcut to toggle debug panel
         document.addEventListener('keydown', (e) => {
           if (e.ctrlKey && e.shiftKey && e.key === 'D') {
             const debugPanel = document.getElementById('debug-panel');
-            if (debugPanel) {
-              debugPanel.style.display = debugPanel.style.display === 'none' ? 'block' : 'none';
+            if (debugPanel && debugPanel.style.display !== 'block') {
+              updateDebugInfo();
+            } else if (debugPanel) {
+              debugPanel.style.display = 'none';
+            } else {
+              updateDebugInfo();
             }
           }
         });
-
-        // Show debug panel by default
-        updateDebugInfo();
-
-        // Add theme toggle button
         const themeToggle = document.createElement('button');
         themeToggle.className = 'theme-toggle';
         themeToggle.setAttribute('aria-label', 'Toggle theme');

@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <link rel="stylesheet" href="./styles.css" />
   <link rel="stylesheet" href="./mobile.css" media="(max-width: 1023px)" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
   <nav class="navbar">
@@ -160,5 +161,247 @@
       <a href="./index.html" class="button">Back to Portfolio</a>
     </footer>
   </main>
+  <script>
+    (function() {
+      function isMobileDevice() {
+        const viewportWidth = window.innerWidth;
+        const devicePixelRatio = window.devicePixelRatio;
+        const effectiveWidth = viewportWidth * devicePixelRatio;
+        return effectiveWidth < 1024;
+      }
+      function initTheme() {
+        const savedTheme = localStorage.getItem('theme');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+          document.documentElement.classList.add('dark-theme');
+          updateThemeIcon(true);
+        } else {
+          document.documentElement.classList.remove('dark-theme');
+          updateThemeIcon(false);
+        }
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+          if (!localStorage.getItem('theme')) {
+            if (e.matches) {
+              document.documentElement.classList.add('dark-theme');
+              updateThemeIcon(true);
+            } else {
+              document.documentElement.classList.remove('dark-theme');
+              updateThemeIcon(false);
+            }
+          }
+        });
+      }
+      function toggleTheme() {
+        const isDark = document.documentElement.classList.toggle('dark-theme');
+        localStorage.setItem('theme', isDark ? 'dark' : 'light');
+        updateThemeIcon(isDark);
+      }
+      function updateThemeIcon(isDark) {
+        const themeIcon = document.querySelector('.theme-toggle i');
+        if (themeIcon) {
+          themeIcon.className = isDark ? 'fas fa-sun' : 'fas fa-moon';
+          themeIcon.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+        }
+      }
+      function createDebugPanel() {
+        const debugPanel = document.createElement('div');
+        debugPanel.id = 'debug-panel';
+        debugPanel.style.cssText = `
+          position: fixed;
+          top: 10px;
+          left: 10px;
+          background: rgba(0, 0, 0, 0.9);
+          color: #00ff00;
+          padding: 15px 15px 15px 40px;
+          border-radius: 5px;
+          font-family: monospace;
+          font-size: 12px;
+          z-index: 9999;
+          max-width: 400px;
+          max-height: 60vh;
+          overflow-y: auto;
+          display: block;
+          border: 2px solid #00ff00;
+          box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+        `;
+        const closeBtn = document.createElement('button');
+        closeBtn.textContent = '×';
+        closeBtn.setAttribute('aria-label', 'Close debug panel');
+        closeBtn.style.cssText = `
+          position: absolute;
+          top: 5px;
+          left: 8px;
+          width: 24px;
+          height: 24px;
+          background: #111;
+          color: #00ff00;
+          border: none;
+          border-radius: 50%;
+          font-size: 18px;
+          cursor: pointer;
+          z-index: 10000;
+        `;
+        closeBtn.onclick = () => {
+          debugPanel.style.display = 'none';
+        };
+        debugPanel.appendChild(closeBtn);
+        document.body.appendChild(debugPanel);
+        return debugPanel;
+      }
+      function updateDebugInfo() {
+        let debugPanel = document.getElementById('debug-panel');
+        if (!debugPanel) debugPanel = createDebugPanel();
+        const viewportWidth = window.innerWidth;
+        const devicePixelRatio = window.devicePixelRatio;
+        const isDesktop = !isMobileDevice();
+        const bodyStyles = window.getComputedStyle(document.body);
+        const htmlStyles = window.getComputedStyle(document.documentElement);
+        const debugInfo = {
+          viewport: {
+            width: viewportWidth,
+            devicePixelRatio,
+            screenWidth: window.screen.width,
+            screenHeight: window.screen.height,
+            innerWidth: window.innerWidth,
+            outerWidth: window.outerWidth
+          },
+          device: {
+            userAgent: navigator.userAgent,
+            isMobile: isMobileDevice(),
+            platform: navigator.platform,
+            viewMode: isDesktop ? 'Desktop' : 'Mobile'
+          },
+          bodyStyles: {
+            width: bodyStyles.width,
+            maxWidth: bodyStyles.maxWidth,
+            transform: bodyStyles.transform,
+            transformOrigin: bodyStyles.transformOrigin,
+            margin: bodyStyles.margin,
+            padding: bodyStyles.padding,
+            display: bodyStyles.display,
+            position: bodyStyles.position
+          },
+          htmlStyles: {
+            width: htmlStyles.width,
+            maxWidth: htmlStyles.maxWidth,
+            transform: htmlStyles.transform,
+            transformOrigin: htmlStyles.transformOrigin,
+            margin: htmlStyles.margin,
+            padding: htmlStyles.padding,
+            display: htmlStyles.display,
+            position: htmlStyles.position
+          },
+          classes: {
+            htmlClasses: document.documentElement.className,
+            bodyClasses: document.body.className,
+            hasDesktopView: document.documentElement.classList.contains('desktop-view'),
+            hasMobileView: document.documentElement.classList.contains('mobile-view')
+          }
+        };
+        const displayInfo = `
+=== VIEWPORT INFO ===
+Viewport Width: ${debugInfo.viewport.width}px
+Device Pixel Ratio: ${debugInfo.viewport.devicePixelRatio}
+Screen Width: ${debugInfo.viewport.screenWidth}px
+Screen Height: ${debugInfo.viewport.screenHeight}px
+Window Inner Width: ${debugInfo.viewport.innerWidth}px
+Window Outer Width: ${debugInfo.viewport.outerWidth}px
+
+=== DEVICE INFO ===
+User Agent: ${debugInfo.device.userAgent}
+Is Mobile Device: ${debugInfo.device.isMobile}
+Platform: ${debugInfo.device.platform}
+View Mode: ${debugInfo.device.viewMode}
+
+=== BODY STYLES ===
+Width: ${debugInfo.bodyStyles.width}
+Max Width: ${debugInfo.bodyStyles.maxWidth}
+Transform: ${debugInfo.bodyStyles.transform}
+Transform Origin: ${debugInfo.bodyStyles.transformOrigin}
+Margin: ${debugInfo.bodyStyles.margin}
+Padding: ${debugInfo.bodyStyles.padding}
+Display: ${debugInfo.bodyStyles.display}
+Position: ${debugInfo.bodyStyles.position}
+
+=== HTML STYLES ===
+Width: ${debugInfo.htmlStyles.width}
+Max Width: ${debugInfo.htmlStyles.maxWidth}
+Transform: ${debugInfo.htmlStyles.transform}
+Transform Origin: ${debugInfo.htmlStyles.transformOrigin}
+Margin: ${debugInfo.htmlStyles.margin}
+Padding: ${debugInfo.htmlStyles.padding}
+Display: ${debugInfo.htmlStyles.display}
+Position: ${debugInfo.htmlStyles.position}
+
+=== CLASSES ===
+HTML Classes: ${debugInfo.classes.htmlClasses}
+Body Classes: ${debugInfo.classes.bodyClasses}
+Desktop View Class: ${debugInfo.classes.hasDesktopView}
+Mobile View Class: ${debugInfo.classes.hasMobileView}
+        `;
+        debugPanel.textContent = displayInfo;
+        debugPanel.style.display = 'block';
+      }
+      function setDesktopZoom() {
+        if (!isMobileDevice()) {
+          document.body.style.transform = 'none';
+          document.body.style.transformOrigin = 'top center';
+          document.body.style.width = '100%';
+          document.body.style.maxWidth = '1200px';
+          document.body.style.margin = '0 auto';
+          document.documentElement.classList.add('desktop-view');
+          document.documentElement.classList.remove('mobile-view');
+          const mobileStylesheet = document.querySelector('link[href="./mobile.css"]');
+          if (mobileStylesheet) {
+            mobileStylesheet.media = 'none';
+          }
+        } else {
+          document.body.style.transform = 'none';
+          document.body.style.width = '100%';
+          document.body.style.margin = '0';
+          document.documentElement.classList.add('mobile-view');
+          document.documentElement.classList.remove('desktop-view');
+          const mobileStylesheet = document.querySelector('link[href="./mobile.css"]');
+          if (mobileStylesheet) {
+            mobileStylesheet.media = '(max-width: 1023px)';
+          }
+        }
+      }
+      function init() {
+        initTheme();
+        setDesktopZoom();
+        let resizeTimeout;
+        window.addEventListener('resize', function() {
+          clearTimeout(resizeTimeout);
+          resizeTimeout = setTimeout(() => {
+            setDesktopZoom();
+          }, 100);
+        });
+        document.addEventListener('keydown', (e) => {
+          if (e.ctrlKey && e.shiftKey && e.key === 'D') {
+            const debugPanel = document.getElementById('debug-panel');
+            if (debugPanel && debugPanel.style.display !== 'block') {
+              updateDebugInfo();
+            } else if (debugPanel) {
+              debugPanel.style.display = 'none';
+            } else {
+              updateDebugInfo();
+            }
+          }
+        });
+        const themeToggle = document.createElement('button');
+        themeToggle.className = 'theme-toggle';
+        themeToggle.setAttribute('aria-label', 'Toggle theme');
+        themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+        themeToggle.onclick = toggleTheme;
+        document.body.appendChild(themeToggle);
+      }
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+      } else {
+        init();
+      }
+    })();
+  </script>
 </body>
 </html> 
