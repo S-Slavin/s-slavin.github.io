@@ -4,8 +4,7 @@
   <meta charset="UTF-8" />
   <title>Shaina Slavin | Resume</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <link rel="stylesheet" href="./styles.css" />
-  <link rel="stylesheet" href="./mobile.css" media="(max-width: 1023px)" />
+  <link rel="stylesheet" href="./styles.css?v=2" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
@@ -351,9 +350,9 @@ Mobile View Class: ${debugInfo.classes.hasMobileView}
           document.body.style.margin = '0 auto';
           document.documentElement.classList.add('desktop-view');
           document.documentElement.classList.remove('mobile-view');
-          const mobileStylesheet = document.querySelector('link[href="./mobile.css"]');
-          if (mobileStylesheet) {
-            mobileStylesheet.media = 'none';
+          const stylesheet = document.querySelector('link[href="./styles.css?v=2"]');
+          if (stylesheet) {
+            stylesheet.media = 'none';
           }
         } else {
           document.body.style.transform = 'none';
@@ -361,9 +360,9 @@ Mobile View Class: ${debugInfo.classes.hasMobileView}
           document.body.style.margin = '0';
           document.documentElement.classList.add('mobile-view');
           document.documentElement.classList.remove('desktop-view');
-          const mobileStylesheet = document.querySelector('link[href="./mobile.css"]');
-          if (mobileStylesheet) {
-            mobileStylesheet.media = '(max-width: 1023px)';
+          const stylesheet = document.querySelector('link[href="./styles.css?v=2"]');
+          if (stylesheet) {
+            stylesheet.media = '(max-width: 1023px)';
           }
         }
       }
