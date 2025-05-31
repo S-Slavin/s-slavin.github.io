@@ -4,8 +4,11 @@
   <meta charset="UTF-8" />
   <title>Shaina Slavin | Resume</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <meta http-equiv="cache-control" content="no-cache">
+  <meta http-equiv="expires" content="0">
+  <meta http-equiv="pragma" content="no-cache">
   <!-- Preload critical resources -->
-  <link rel="preload" href="./styles.css?v=5" as="style">
+  <link rel="preload" href="./styles.css?v=7" as="style">
   <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" as="style">
   
   <!-- Favicon -->
@@ -18,7 +21,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   
   <!-- Styles -->
-  <link rel="stylesheet" href="./styles.css?v=5" />
+  <link rel="stylesheet" href="./styles.css?v=7" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
@@ -364,7 +367,7 @@ Mobile View Class: ${debugInfo.classes.hasMobileView}
           document.body.style.margin = '0 auto';
           document.documentElement.classList.add('desktop-view');
           document.documentElement.classList.remove('mobile-view');
-          const stylesheet = document.querySelector('link[href="./styles.css?v=5"]');
+          const stylesheet = document.querySelector('link[href="./styles.css?v=7"]');
           if (stylesheet) {
             stylesheet.media = 'none';
           }
@@ -374,7 +377,7 @@ Mobile View Class: ${debugInfo.classes.hasMobileView}
           document.body.style.margin = '0';
           document.documentElement.classList.add('mobile-view');
           document.documentElement.classList.remove('desktop-view');
-          const stylesheet = document.querySelector('link[href="./styles.css?v=5"]');
+          const stylesheet = document.querySelector('link[href="./styles.css?v=7"]');
           if (stylesheet) {
             stylesheet.media = '(max-width: 1023px)';
           }
