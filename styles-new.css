@@ -102,7 +102,7 @@ header {
 }
 
 header h1 {
-  font-size: 3rem;
+  font-size: 3.5rem;
   font-weight: 700;
   color: var(--text);
   margin-bottom: var(--space-3);
@@ -110,7 +110,7 @@ header h1 {
 }
 
 .subtitle {
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   color: var(--text-light);
   margin-bottom: var(--space-4);
 }
@@ -131,7 +131,7 @@ header h1 {
   display: flex;
   align-items: center;
   gap: var(--space-2);
-  font-size: 1rem;
+  font-size: 1.1rem;
   color: var(--text);
 }
 
@@ -151,7 +151,7 @@ header h1 {
 }
 
 .skills h2 {
-  font-size: 2rem;
+  font-size: 2.5rem;
   margin-bottom: var(--space-4);
   text-align: center;
 }
@@ -161,14 +161,14 @@ header h1 {
 }
 
 .skills-category h3 {
-  font-size: 1.5rem;
+  font-size: 1.75rem;
   margin-bottom: var(--space-3);
   color: var(--text);
 }
 
 .skills-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: var(--space-3);
   list-style: none;
   padding: 0;
@@ -186,7 +186,7 @@ header h1 {
   transition: all 0.2s ease;
   width: 100%;
   text-align: left;
-  font-size: 1rem;
+  font-size: 1.1rem;
   color: var(--text);
 }
 
@@ -197,8 +197,8 @@ header h1 {
 }
 
 .skill-btn img {
-  width: 24px;
-  height: 24px;
+  width: 28px;
+  height: 28px;
 }
 
 /* Projects Section */
@@ -294,12 +294,11 @@ footer {
   margin-top: var(--space-6);
 }
 
-/* Responsive Design */
+/* Mobile Styles */
 @media (max-width: 768px) {
   :root {
     --container-width: 100%;
     --space-4: 1rem;
-    --space-5: 1.5rem;
     --space-6: 2rem;
   }
 
@@ -308,23 +307,22 @@ footer {
   }
 
   .navbar a {
-    padding: var(--space-2);
+    padding: var(--space-2) var(--space-3);
     margin: 0 var(--space-1);
-    font-size: 0.9rem;
   }
 
   header h1 {
-    font-size: 2rem;
+    font-size: 2.5rem;
   }
 
   .subtitle {
-    font-size: 1.1rem;
+    font-size: 1.25rem;
   }
 
   .contact-info {
     flex-direction: column;
     align-items: center;
-    text-align: center;
+    gap: var(--space-2);
   }
 
   .skills-list {
@@ -343,19 +341,18 @@ footer {
   }
 
   .main-container {
-    max-width: none;
-    padding: 0;
     box-shadow: none;
+    padding: 0;
   }
 
   .navbar {
-    display: none;
+    position: static;
+    border-bottom: none;
   }
 
   .project-card {
     break-inside: avoid;
     page-break-inside: avoid;
-    border: 1px solid #000;
   }
 
   .button {
