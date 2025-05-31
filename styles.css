@@ -4,14 +4,14 @@
 /* Modern CSS Reset and Base Styles */
 :root {
   /* Colors */
-  --primary: #2563eb;
-  --primary-dark: #1d4ed8;
-  --text: #1e293b;
-  --text-light: #64748b;
+  --primary: #2c5282;  /* Professional navy blue */
+  --primary-dark: #1a365d;
+  --text: #2d3748;     /* Dark gray for text */
+  --text-light: #4a5568; /* Medium gray for secondary text */
   --background: #ffffff;
-  --background-alt: #f8fafc;
+  --background-alt: #f7fafc; /* Very light gray for subtle contrast */
   --border: #e2e8f0;
-  --shadow: rgba(0, 0, 0, 0.1);
+  --shadow: rgba(0, 0, 0, 0.08);
   
   /* Typography */
   --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -29,11 +29,11 @@
   /* Layout */
   --container-width: 1200px;
   --header-height: 4rem;
-  --border-radius: 12px;
+  --border-radius: 8px;  /* Slightly reduced for more professional look */
   
   /* New variables */
-  --accent: #a21caf;
-  --gradient: linear-gradient(135deg, #2563eb 0%, #a21caf 100%);
+  --accent: #4a5568;    /* Professional gray accent */
+  --gradient: linear-gradient(135deg, #2c5282 0%, #4a5568 100%); /* Subtle blue to gray gradient */
 }
 
 /* Reset & Base Styles */
