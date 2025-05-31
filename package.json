@@ -4,9 +4,7 @@
   "description": "Personal portfolio website",
   "private": true,
   "scripts": {
-    "start": "python3 -m http.server 8000"
-  },
-  "dependencies": {
-    "svgo": "^3.2.0"
+    "start": "python3 -m http.server 8000",
+    "clean": "lsof -ti:8000 | xargs kill -9 2>/dev/null || true"
   }
 } 

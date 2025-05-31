@@ -1,3 +1,6 @@
+/* Google Fonts Import */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@700&display=swap');
+
 /* Modern CSS Reset and Base Styles */
 :root {
   /* Colors */
@@ -26,7 +29,11 @@
   /* Layout */
   --container-width: 1200px;
   --header-height: 4rem;
-  --border-radius: 8px;
+  --border-radius: 12px;
+  
+  /* New variables */
+  --accent: #a21caf;
+  --gradient: linear-gradient(135deg, #2563eb 0%, #a21caf 100%);
 }
 
 /* Reset & Base Styles */
@@ -49,6 +56,13 @@ body {
   background: var(--background-alt);
   min-height: 100vh;
   overflow-x: hidden;
+  transition: background 0.3s;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Playfair Display', serif;
+  color: var(--primary);
+  letter-spacing: 0.5px;
 }
 
 /* Layout */
@@ -68,30 +82,38 @@ body {
   left: 0;
   right: 0;
   height: var(--header-height);
-  background: var(--background);
-  border-bottom: 1px solid var(--border);
+  background: var(--gradient);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-bottom: none;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 0 var(--space-4);
   z-index: 1000;
-  box-shadow: 0 2px 4px var(--shadow);
+  box-shadow: 0 4px 16px var(--shadow);
 }
 
 .navbar a {
-  color: var(--text);
+  color: #fff;
   text-decoration: none;
   padding: var(--space-2) var(--space-4);
   margin: 0 var(--space-2);
   border-radius: var(--border-radius);
   font-weight: 500;
-  transition: all 0.2s ease;
+  transition: background 0.2s, color 0.2s, transform 0.2s;
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .navbar a:hover,
 .navbar a.active {
-  background: var(--background-alt);
-  color: var(--primary);
+  background: rgba(255,255,255,0.2);
+  color: var(--accent);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 /* Header */
@@ -121,8 +143,9 @@ header h1 {
   flex-wrap: wrap;
   justify-content: center;
   gap: var(--space-4);
-  padding: var(--space-4);
-  background: var(--background-alt);
+  padding: var(--space-5);
+  background: var(--gradient);
+  color: white;
   border-radius: var(--border-radius);
   margin: var(--space-4) 0;
 }
@@ -136,13 +159,15 @@ header h1 {
 }
 
 .contact-info a {
-  color: var(--primary);
+  color: white;
   text-decoration: none;
-  transition: color 0.2s ease;
+  transition: all 0.3s ease;
+  border-bottom: 2px solid transparent;
 }
 
 .contact-info a:hover {
-  color: var(--primary-dark);
+  border-bottom-color: white;
+  transform: translateY(-2px);
 }
 
 /* Skills Section */
@@ -178,12 +203,12 @@ header h1 {
   display: flex;
   align-items: center;
   gap: var(--space-2);
-  padding: var(--space-3);
+  padding: var(--space-3) var(--space-4);
   background: var(--background);
   border: 1px solid var(--border);
   border-radius: var(--border-radius);
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: all 0.3s ease;
   width: 100%;
   text-align: left;
   font-size: 1.1rem;
@@ -191,14 +216,20 @@ header h1 {
 }
 
 .skill-btn:hover {
-  background: var(--background-alt);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 6px var(--shadow);
+  background: var(--gradient);
+  color: white;
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 4px 12px var(--shadow);
 }
 
 .skill-btn img {
   width: 28px;
   height: 28px;
+  transition: transform 0.3s ease;
+}
+
+.skill-btn:hover img {
+  transform: scale(1.1);
 }
 
 /* Projects Section */
@@ -216,14 +247,15 @@ header h1 {
   background: var(--background);
   border: 1px solid var(--border);
   border-radius: var(--border-radius);
-  padding: var(--space-4);
+  padding: var(--space-5);
   margin-bottom: var(--space-4);
-  transition: all 0.2s ease;
+  transition: all 0.3s ease;
 }
 
 .project-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 8px 16px var(--shadow);
+  box-shadow: 0 8px 24px var(--shadow);
+  border-color: var(--primary);
 }
 
 .project-card h3 {
@@ -257,34 +289,36 @@ header h1 {
 .github-link {
   display: inline-block;
   padding: var(--space-2) var(--space-4);
-  background: var(--primary);
+  background: var(--gradient);
   color: white;
   text-decoration: none;
   border-radius: var(--border-radius);
-  transition: background 0.2s ease;
+  margin-top: var(--space-3);
+  transition: all 0.3s ease;
 }
 
 .github-link:hover {
-  background: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px var(--shadow);
 }
 
 /* Buttons */
-.button {
-  display: inline-block;
-  padding: var(--space-3) var(--space-5);
-  background: var(--primary);
-  color: white;
-  text-decoration: none;
+.button, button, input[type="submit"] {
+  background: var(--gradient);
+  color: #fff;
+  border: none;
   border-radius: var(--border-radius);
-  font-weight: 500;
-  transition: all 0.2s ease;
-  text-align: center;
+  padding: 0.75em 2em;
+  font-weight: 600;
+  font-size: 1.1rem;
+  cursor: pointer;
+  box-shadow: 0 2px 8px var(--shadow);
+  transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
 }
-
-.button:hover {
-  background: var(--primary-dark);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 6px var(--shadow);
+.button:hover, button:hover, input[type="submit"]:hover {
+  background: linear-gradient(90deg, #a21caf 0%, #2563eb 100%);
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 4px 16px var(--shadow);
 }
 
 /* Footer */
@@ -358,4 +392,73 @@ footer {
   .button {
     display: none;
   }
+}
+
+/* Section Cards */
+.section-card {
+  background: var(--background);
+  border-radius: var(--border-radius);
+  padding: var(--space-5);
+  margin: var(--space-4) 0;
+  box-shadow: 0 4px 6px var(--shadow);
+  transition: all 0.3s ease;
+  border: 1px solid var(--border);
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.section-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px var(--shadow);
+  border-color: var(--primary);
+}
+
+/* Alternate Section Backgrounds */
+section:nth-child(even) {
+  background: var(--background-alt);
+}
+section:nth-child(odd) {
+  background: #fff;
+}
+
+/* Subtle Section Animations */
+section, .section-card {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 0.8s forwards;
+}
+section:nth-child(even), .section-card:nth-child(even) {
+  animation-delay: 0.2s;
+}
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Icon Styles */
+svg, .icon {
+  width: 2em;
+  height: 2em;
+  vertical-align: middle;
+  fill: var(--primary);
+  margin-right: 0.5em;
+  transition: fill 0.2s;
+}
+svg:hover, .icon:hover {
+  fill: var(--accent);
+}
+
+/* Links */
+a {
+  color: var(--primary);
+  text-decoration: underline;
+  transition: color 0.2s;
+}
+a:hover {
+  color: var(--accent);
 } 

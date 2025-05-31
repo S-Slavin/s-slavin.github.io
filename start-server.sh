@@ -1,13 +1,23 @@
 #!/bin/bash
 
-# Kill any existing processes on port 5500 (Live Server's default port)
-lsof -ti:5500 | xargs kill -9 2>/dev/null || true
+# Kill any existing processes on port 8000
+lsof -ti:8000 | xargs kill -9 2>/dev/null || true
 
-# Open VS Code with the index.html file
-code --new-window index.html
+# Start the Python HTTP server
+echo "Starting HTTP server on port 8000..."
+python3 -m http.server 8000 &
 
-echo "Live Server is starting..."
-echo "1. Press Cmd+Shift+P (on Mac)"
-echo "2. Type 'Live Server: Open with Live Server'"
-echo "3. Press Enter"
-echo "Your website will open in your default browser at http://127.0.0.1:5500" 
+# Wait for server to start
+sleep 2
+
+# Open the default browser
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    open http://localhost:8000
+elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
+    xdg-open http://localhost:8000
+elif [[ "$OSTYPE" == "msys" ]]; then
+    start http://localhost:8000
+fi
+
+echo "Server is running at http://localhost:8000"
+echo "Press Ctrl+C to stop the server" 
