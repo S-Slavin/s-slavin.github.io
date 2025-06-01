@@ -54,6 +54,16 @@
       <h1>Shaina Slavin</h1>
       <p class="subtitle">Full-Stack & Front-End Developer</p>
     </header>
+    
+    <!-- About / Career Focus Section -->
+    <section class="about section-card" aria-label="About and Career Focus">
+      <h2>About Me & Career Focus</h2>
+      <p>
+        I am a creative and impact-driven developer with hands-on experience in React, JavaScript, Swift, and Python. My passion is building accessible, user-centric web and mobile applications that make a difference. I have a strong foundation in algorithms, data structures, and modern software development, and I thrive in collaborative, diverse teams. <br><br>
+        <strong>Career Focus:</strong> I am seeking opportunities as a Front-End or Full-Stack Developer, with a special interest in cross-platform and AI-powered applications. My goal is to leverage technology for social good, privacy, and accessibility.<br><br>
+        <strong>Personal Story:</strong> My journey in tech began with a fascination for how software can empower people and solve real-world problems. From leading volunteer projects to developing privacy-first apps, I am driven by curiosity, empathy, and a desire to create positive impact. I love collaborating on open-source projects and believe in the power of community.
+      </p>
+    </section>
     <div class="profile-picture-container">
       <img src="profile.jpg" alt="Profile picture of Shaina Slavin" class="profile-picture" />
     </div>
@@ -268,11 +278,49 @@
         <a href="https://github.com/S-Slavin/OBK" class="github-link">View on GitHub</a>
       </div>
     </section>
+    <!-- Open Source & Community Section -->
+    <section class="community section-card" aria-label="Open Source and Community">
+      <h2>Open Source & Community</h2>
+      <p>
+        Proud open-source contributor. Explore my public projects and contributions on <a href="https://github.com/S-Slavin" target="_blank" rel="noopener">GitHub</a>.<br>
+        I am passionate about collaborating with others and giving back to the tech community through mentorship, volunteering, and open-source work.
+      </p>
+    </section>
+    <!-- Feedback Section -->
+    <section class="feedback section-card" aria-label="Feedback">
+      <h2>Feedback</h2>
+      <p>
+        I welcome feedback and suggestions! Please <a href="mailto:shaina.slavin@gmail.com?subject=Portfolio%20Feedback">email me</a> with your thoughts or connect with me on <a href="https://linkedin.com/in/shaina-slavin" target="_blank" rel="noopener">LinkedIn</a>.
+      </p>
+    </section>
     <footer>
-      <p>© 2024 Shaina Slavin. All rights reserved.</p>
+      <p>© 2024 Shaina Slavin. All rights reserved.<br><small>Last updated: June 2025</small></p>
     </footer>
   </main>
+  <button class="theme-toggle" aria-label="Toggle dark mode">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+    </svg>
+  </button>
   <script>
+    // Theme toggle functionality
+    const themeToggle = document.querySelector('.theme-toggle');
+    const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+    
+    // Check for saved theme preference or use system preference
+    const currentTheme = localStorage.getItem('theme') || 
+      (prefersDarkScheme.matches ? 'dark' : 'light');
+    
+    if (currentTheme === 'dark') {
+      document.documentElement.setAttribute('data-theme', 'dark');
+    }
+    
+    themeToggle.addEventListener('click', () => {
+      const newTheme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', newTheme);
+      localStorage.setItem('theme', newTheme);
+    });
+
     // Navbar scroll effect
     const navbar = document.querySelector('.navbar');
     window.addEventListener('scroll', () => {
