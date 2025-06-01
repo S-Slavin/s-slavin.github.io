@@ -6,24 +6,24 @@
   /* Colors */
   --primary: #0f172a;
   --primary-light: #1e293b;
-  --accent: #3b82f6;
-  --accent-hover: #2563eb;
-  --accent-light: #60a5fa;
+  --accent: #4f46e5;
+  --accent-hover: #4338ca;
+  --accent-light: #818cf8;
   --text: #1e293b;
   --text-light: #64748b;
   --background: #ffffff;
   --background-alt: #f8fafc;
   --border: #e2e8f0;
-  --gradient-primary: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
-  --gradient-hover: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
-  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --gradient-primary: linear-gradient(135deg, #4f46e5 0%, #4338ca 100%);
+  --gradient-hover: linear-gradient(135deg, #4338ca 0%, #3730a3 100%);
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
   --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
   --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
   --shadow-hover: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
   
   /* Typography */
-  --font-sans: 'Inter', Arial, sans-serif;
-  --font-display: 'Inter', Arial, sans-serif;
+  --font-sans: 'Outfit', system-ui, -apple-system, sans-serif;
+  --font-display: 'Space Grotesk', system-ui, -apple-system, sans-serif;
   --font-size-base: 16px;
   --line-height: 1.7;
   --letter-spacing-tight: -0.02em;
@@ -41,7 +41,7 @@
   /* Layout */
   --container-width: 1200px;
   --header-height: 5rem;
-  --border-radius: 12px;
+  --border-radius: 16px;
   --border-radius-sm: 8px;
 }
 
@@ -68,9 +68,9 @@ body {
   color: var(--text);
   background: var(--background);
   background-image: 
-    radial-gradient(at 40% 20%, hsla(244, 100%, 95%, 1) 0px, transparent 50%),
-    radial-gradient(at 80% 0%, hsla(244, 100%, 95%, 1) 0px, transparent 50%),
-    radial-gradient(at 0% 50%, hsla(244, 100%, 95%, 1) 0px, transparent 50%);
+    radial-gradient(at 40% 20%, hsla(244, 100%, 97%, 1) 0px, transparent 50%),
+    radial-gradient(at 80% 0%, hsla(244, 100%, 97%, 1) 0px, transparent 50%),
+    radial-gradient(at 0% 50%, hsla(244, 100%, 97%, 1) 0px, transparent 50%);
   min-height: 100vh;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
@@ -179,12 +179,12 @@ h1, h2, h3, h4, h5, h6 {
 /* Header Styles */
 header {
   text-align: center;
-  padding: var(--space-4) 0;
+  padding: var(--space-8) 0;
   margin-top: calc(var(--header-height) + var(--space-4));
   background: var(--background);
   position: relative;
   overflow: hidden;
-  min-height: 30vh;
+  min-height: 40vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -198,12 +198,12 @@ header::before {
   left: 0;
   right: 0;
   height: 100%;
-  background: linear-gradient(180deg, rgba(59, 130, 246, 0.05) 0%, rgba(255, 255, 255, 0) 100%);
+  background: linear-gradient(180deg, rgba(79, 70, 229, 0.03) 0%, rgba(255, 255, 255, 0) 100%);
   z-index: -1;
 }
 
 header h1 {
-  font-size: 3.5rem;
+  font-size: 4rem;
   font-weight: 700;
   letter-spacing: -0.03em;
   line-height: 1.1;
@@ -212,14 +212,16 @@ header h1 {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .subtitle {
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   color: var(--text-light);
   max-width: 600px;
   margin: 0 auto;
   line-height: 1.6;
+  font-weight: 500;
 }
 
 /* Section Card Styles */
@@ -230,12 +232,31 @@ header h1 {
   padding: var(--space-6);
   margin: var(--space-6) 0;
   box-shadow: var(--shadow);
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.section-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--gradient-primary);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .section-card:hover {
   transform: translateY(-4px);
   box-shadow: var(--shadow-hover);
+}
+
+.section-card:hover::before {
+  transform: scaleX(1);
 }
 
 .section-card h2 {
@@ -256,6 +277,11 @@ header h1 {
   height: 4px;
   background: var(--gradient-primary);
   border-radius: 2px;
+  transition: width 0.3s ease;
+}
+
+.section-card:hover h2::after {
+  width: 100px;
 }
 
 /* Resume Section Styles */
@@ -304,17 +330,53 @@ header h1 {
   border-radius: var(--border-radius-sm);
   color: var(--text);
   font-weight: 500;
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   cursor: pointer;
   width: 100%;
   text-align: left;
+  position: relative;
+  overflow: hidden;
+}
+
+.skill-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--gradient-primary);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: 0;
 }
 
 .skill-btn:hover {
-  background: var(--background);
-  border-color: var(--accent);
   transform: translateY(-2px);
   box-shadow: var(--shadow);
+  border-color: transparent;
+  color: white;
+}
+
+.skill-btn:hover::before {
+  opacity: 1;
+}
+
+.skill-btn img {
+  width: 24px;
+  height: 24px;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  z-index: 1;
+}
+
+.skill-btn span {
+  position: relative;
+  z-index: 1;
+}
+
+.skill-btn:hover img {
+  transform: scale(1.1) rotate(5deg);
 }
 
 /* Project Card Styles */
@@ -322,10 +384,10 @@ header h1 {
   background: var(--background);
   border: 1px solid var(--border);
   border-radius: var(--border-radius);
-  padding: var(--space-5);
+  padding: var(--space-6);
   margin: var(--space-4) 0;
   box-shadow: var(--shadow);
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   overflow: hidden;
 }
@@ -340,7 +402,7 @@ header h1 {
   background: var(--gradient-primary);
   transform: scaleY(0);
   transform-origin: top;
-  transition: transform 0.3s ease;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .project-card:hover {
@@ -357,12 +419,115 @@ header h1 {
   font-weight: 700;
   margin-bottom: 0.5em;
   color: var(--primary);
+  position: relative;
+  display: inline-block;
+}
+
+.project-card h3::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 40px;
+  height: 3px;
+  background: var(--gradient-primary);
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+
+.project-card:hover h3::after {
+  width: 100%;
 }
 
 .project-card em {
   font-style: normal;
   color: var(--accent);
   font-weight: 500;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.project-card p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--text);
+  margin-bottom: 1.5rem;
+}
+
+.project-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0;
+}
+
+.project-card li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--text);
+  transition: transform 0.3s ease;
+}
+
+.project-card li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-weight: bold;
+  transition: transform 0.3s ease;
+}
+
+.project-card li:hover {
+  transform: translateX(4px);
+}
+
+.project-card li:hover::before {
+  transform: translateX(4px);
+}
+
+.github-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-5);
+  background: var(--gradient-primary);
+  color: white;
+  text-decoration: none;
+  border-radius: var(--border-radius-sm);
+  font-weight: 600;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  margin-top: var(--space-4);
+  box-shadow: var(--shadow);
+  position: relative;
+  overflow: hidden;
+}
+
+.github-link::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--gradient-hover);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.github-link:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-hover);
+}
+
+.github-link:hover::before {
+  opacity: 1;
+}
+
+.github-link span {
+  position: relative;
+  z-index: 1;
 }
 
 /* Contact Section Styles */
@@ -371,13 +536,13 @@ header h1 {
   flex-wrap: wrap;
   justify-content: center;
   gap: var(--space-4);
-  padding: var(--space-5);
+  padding: var(--space-6);
   background: var(--background);
   border: 1px solid var(--border);
   border-radius: var(--border-radius);
   margin: var(--space-4) 0;
   box-shadow: var(--shadow);
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .contact-info:hover {
@@ -388,25 +553,32 @@ header h1 {
 .contact-info a {
   color: var(--accent);
   text-decoration: none;
-  transition: all 0.2s ease;
+  transition: all 0.3s ease;
   font-weight: 500;
   position: relative;
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--border-radius-sm);
+}
+
+.contact-info a:hover {
+  background: var(--background-alt);
+  color: var(--accent-hover);
 }
 
 .contact-info a::after {
   content: '';
   position: absolute;
-  bottom: -2px;
-  left: 0;
-  width: 100%;
-  height: 1px;
-  background: var(--accent);
-  transform: scaleX(0);
-  transition: transform 0.2s ease;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: var(--gradient-primary);
+  transform: translateX(-50%);
+  transition: width 0.3s ease;
 }
 
 .contact-info a:hover::after {
-  transform: scaleX(1);
+  width: 80%;
 }
 
 /* Media Queries */
@@ -813,24 +985,48 @@ a:hover {
 }
 
 .profile-picture-container {
-  width: 200px;
-  height: 200px;
-  margin: var(--space-4) auto;
+  width: 220px;
+  height: 220px;
+  margin: 2rem auto;
   border-radius: 50%;
   overflow: hidden;
-  border: 4px solid var(--accent);
-  box-shadow: var(--shadow);
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--background);
   position: relative;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.profile-picture-container::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  padding: 4px;
+  background: var(--gradient-primary);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.profile-picture-container:hover::before {
+  opacity: 1;
 }
 
 .profile-picture {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.3s ease;
+  object-position: center;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.profile-picture:hover {
+.profile-picture-container:hover .profile-picture {
   transform: scale(1.05);
 }
 
