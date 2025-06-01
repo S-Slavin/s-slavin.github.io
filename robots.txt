@@ -1,3 +1,11 @@
 User-agent: *
 Allow: /
-Sitemap: https://s-slavin.github.io/sitemap.xml 
+Sitemap: https://s-slavin.github.io/sitemap.xml
+
+# Disallow development files
+Disallow: /node_modules/
+Disallow: /package.json
+Disallow: /package-lock.json
+Disallow: /server.js
+Disallow: /start-server.sh
+Disallow: /server.sh 
