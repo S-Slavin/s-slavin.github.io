@@ -92,9 +92,12 @@ h1, h2, h3, h4, h5, h6 {
 .main-container {
   max-width: var(--container-width);
   margin: 0 auto;
-  padding: var(--space-4);
+  padding: var(--space-4) var(--space-6);
   background: var(--background);
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
 }
 
 /* Navigation Styles */
@@ -184,11 +187,12 @@ header {
   background: var(--background);
   position: relative;
   overflow: hidden;
-  min-height: 40vh;
+  min-height: 30vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: var(--space-4);
 }
 
 header::before {
@@ -230,7 +234,7 @@ header h1 {
   border: 1px solid var(--border);
   border-radius: var(--border-radius);
   padding: var(--space-6);
-  margin: var(--space-6) 0;
+  margin: 0;
   box-shadow: var(--shadow);
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
@@ -381,37 +385,15 @@ header h1 {
 
 /* Project Card Styles */
 .project-card {
-  background: var(--background);
-  border: 1px solid var(--border);
+  background: var(--background-alt);
+  padding: var(--space-4);
   border-radius: var(--border-radius);
-  padding: var(--space-6);
-  margin: var(--space-4) 0;
-  box-shadow: var(--shadow);
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  position: relative;
-  overflow: hidden;
+  margin-bottom: var(--space-4);
+  transition: all 0.3s ease;
 }
 
-.project-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 4px;
-  height: 100%;
-  background: var(--gradient-primary);
-  transform: scaleY(0);
-  transform-origin: top;
-  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.project-card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-hover);
-}
-
-.project-card:hover::before {
-  transform: scaleY(1);
+.project-card:last-child {
+  margin-bottom: 0;
 }
 
 .project-card h3 {
@@ -532,22 +514,20 @@ header h1 {
 
 /* Contact Section Styles */
 .contact-info {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: var(--space-4);
-  padding: var(--space-6);
-  background: var(--background);
-  border: 1px solid var(--border);
+  padding: var(--space-4);
+  background: var(--background-alt);
   border-radius: var(--border-radius);
   margin: var(--space-4) 0;
-  box-shadow: var(--shadow);
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.contact-info:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-hover);
+.contact-info p {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin: 0;
 }
 
 .contact-info a {
@@ -583,48 +563,30 @@ header h1 {
 
 /* Media Queries */
 @media (max-width: 768px) {
-  :root {
-    --space-4: 1rem;
-    --space-5: 1.5rem;
-    --space-6: 2rem;
-    --space-8: 3rem;
-  }
-  
-  header h1 {
-    font-size: 2.5rem;
-  }
-  
-  .subtitle {
-    font-size: 1.1rem;
-  }
-  
-  .nav-container {
-    flex-direction: column;
-    gap: var(--space-4);
+  .main-container {
     padding: var(--space-4);
   }
-  
-  .nav-links {
-    flex-direction: column;
-    width: 100%;
+
+  header {
+    min-height: 25vh;
+    padding: var(--space-6) 0;
   }
-  
-  .navbar a {
-    width: 100%;
-    text-align: center;
-  }
-  
-  .section-card {
-    padding: var(--space-4);
-  }
-  
-  .section-card h2 {
-    font-size: 2rem;
-  }
-  
+
   .profile-picture-container {
     width: 150px;
     height: 150px;
+  }
+
+  .contact-info {
+    grid-template-columns: 1fr;
+  }
+
+  .skills {
+    grid-template-columns: 1fr;
+  }
+
+  .skills-list {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
   }
 }
 
@@ -657,11 +619,9 @@ header h1 {
 
 /* Skills Section */
 .skills {
-  padding: var(--space-6);
-  background: var(--background);
-  border-radius: var(--border-radius);
-  box-shadow: var(--shadow);
-  margin: var(--space-6) 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--space-4);
 }
 
 .skills h2 {
@@ -684,8 +644,10 @@ header h1 {
 }
 
 .skills-category {
-  margin-bottom: var(--space-6);
-  animation: fadeInUp 0.8s ease backwards;
+  background: var(--background-alt);
+  padding: var(--space-4);
+  border-radius: var(--border-radius);
+  transition: all 0.3s ease;
 }
 
 .skills-category:nth-child(2) { animation-delay: 0.1s; }
@@ -702,9 +664,10 @@ header h1 {
 
 .skills-list {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: var(--space-4);
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: var(--space-2);
   list-style: none;
+  padding: 0;
 }
 
 .skill-btn img {
@@ -985,18 +948,21 @@ a:hover {
 }
 
 .profile-picture-container {
-  width: 220px;
-  height: 220px;
-  margin: 2rem auto;
+  width: 200px;
+  height: 200px;
+  margin: var(--space-4) auto;
+  position: relative;
   border-radius: 50%;
   overflow: hidden;
   box-shadow: var(--shadow-lg);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: var(--background);
-  position: relative;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.3s ease;
+}
+
+.profile-picture {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
 }
 
 .profile-picture-container::before {
@@ -1016,14 +982,6 @@ a:hover {
 
 .profile-picture-container:hover::before {
   opacity: 1;
-}
-
-.profile-picture {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .profile-picture-container:hover .profile-picture {
