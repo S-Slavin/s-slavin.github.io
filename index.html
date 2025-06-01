@@ -16,25 +16,30 @@
   <meta property="og:url" content="https://s-slavin.github.io">
   <meta property="og:image" content="https://s-slavin.github.io/apple-touch-icon.svg">
   
+  <!-- Preconnect to external domains -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://github.com">
+  <link rel="preconnect" href="https://linkedin.com">
+  
   <!-- Preload critical resources -->
-  <link rel="preload" href="./styles.css?v=10" as="style">
-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" as="style">
+  <link rel="preload" href="./styles.css?v=17" as="style">
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" as="style">
+  <link rel="preload" href="profile.jpg" as="image">
   
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="apple-touch-icon" href="apple-touch-icon.svg">
   
   <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   
   <!-- Styles -->
   <link rel="stylesheet" href="./styles.css?v=17" />
   
-  <meta http-equiv="cache-control" content="no-cache, no-store, must-revalidate">
-  <meta http-equiv="expires" content="0">
-  <meta http-equiv="pragma" content="no-cache">
+  <!-- Cache Control -->
+  <meta http-equiv="cache-control" content="public, max-age=31536000">
+  <meta http-equiv="expires" content="31536000">
   
   <title>Shaina Slavin | Portfolio</title>
 </head>
@@ -44,236 +49,307 @@
     <div class="nav-container">
       <a href="./index.html" class="nav-logo">SS</a>
       <div class="nav-links">
-        <a href="./index.html" class="active" aria-current="page">Portfolio</a>
-        <a href="./resume.html">Resume</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="./resume.html" class="nav-link">Resume</a>
+        <a href="#contact" class="nav-link">Contact</a>
       </div>
     </div>
   </nav>
   <main id="main-content" class="main-container" role="main">
-    <header>
+    <header class="hero-section">
       <div class="header-content">
-        <h1>Shaina Slavin</h1>
-        <img src="profile.jpg" alt="Profile picture of Shaina Slavin" class="profile-image">
-        <p class="subtitle">Full-Stack & Front-End Developer</p>
+        <div class="header-text">
+          <h1>Shaina Slavin</h1>
+          <p class="subtitle">Full-Stack & Front-End Developer</p>
+          <p class="tagline">Building accessible, user-centric applications with modern technologies</p>
+          <a href="#projects" class="cta-button">See My Work</a>
+        </div>
+        <img src="profile.jpg" alt="Profile picture of Shaina Slavin" class="profile-image" loading="lazy">
       </div>
     </header>
     
-    <!-- About / Career Focus Section -->
-    <section class="about section-card" aria-label="About and Career Focus">
-      <h2>About Me & Career Focus</h2>
-      <p>
-        I am a creative and impact-driven developer with hands-on experience in React, JavaScript, Swift, and Python. My passion is building accessible, user-centric web and mobile applications that make a difference. I have a strong foundation in algorithms, data structures, and modern software development, and I thrive in collaborative, diverse teams. <br><br>
-        <strong>Career Focus:</strong> I am seeking opportunities as a Front-End or Full-Stack Developer, with a special interest in cross-platform and AI-powered applications. My goal is to leverage technology for social good, privacy, and accessibility.<br><br>
-        <strong>Personal Story:</strong> My journey in tech began with a fascination for how software can empower people and solve real-world problems. From leading volunteer projects to developing privacy-first apps, I am driven by curiosity, empathy, and a desire to create positive impact. I love collaborating on open-source projects and believe in the power of community.
-      </p>
+    <!-- About Section -->
+    <section id="about" class="about section-card" aria-label="About and Career Focus">
+      <h2>About Me</h2>
+      <div class="about-content">
+        <p>
+          I am a creative and impact-driven developer with hands-on experience in React, JavaScript, Swift, and Python. My passion is building accessible, user-centric web and mobile applications that make a difference. I have a strong foundation in algorithms, data structures, and modern software development, and I thrive in collaborative, diverse teams.
+        </p>
+        <div class="core-skills">
+          <h3>Core Skills</h3>
+          <ul>
+            <li>Full-stack development with React, Node.js, and Python</li>
+            <li>Mobile app development using Swift and Flutter</li>
+            <li>Building accessible and responsive web applications</li>
+            <li>Test-driven development and CI/CD implementation</li>
+          </ul>
+        </div>
+      </div>
     </section>
 
     <!-- Skills Section -->
     <section class="skills section-card" aria-labelledby="skills-heading">
       <h2 id="skills-heading">Skills</h2>
-      
-      <div class="skills-category" aria-labelledby="frontend-heading">
-        <h3 id="frontend-heading">Frontend Development</h3>
-        <ul class="skills-list" role="list">
-          <li>
-            <button class="skill-btn" aria-label="JavaScript skill">
-              <img src="js-icon.svg" alt="" width="24" height="24" aria-hidden="true">
-              JavaScript
-            </button>
-          </li>
-          <li>
-            <button class="skill-btn" aria-label="TypeScript skill">
-              <img src="typescript-icon.svg" alt="" width="24" height="24" aria-hidden="true">
-              TypeScript
-            </button>
-          </li>
-          <li>
-            <button class="skill-btn" aria-label="React skill">
-              <img src="react-icon.svg" alt="" width="24" height="24" aria-hidden="true">
-              React
-            </button>
-          </li>
-          <li>
-            <button class="skill-btn" aria-label="Redux skill">
-              <img src="redux-icon.svg" alt="" width="24" height="24" aria-hidden="true">
-              Redux
-            </button>
-          </li>
-          <li>
-            <button class="skill-btn" aria-label="HTML skill">
-              <img src="html-icon.svg" alt="" width="24" height="24" aria-hidden="true">
-              HTML
-            </button>
-          </li>
-          <li>
-            <button class="skill-btn" aria-label="CSS skill">
-              <img src="css-icon.svg" alt="" width="24" height="24" aria-hidden="true">
-              CSS
-            </button>
-          </li>
-        </ul>
-      </div>
+      <div class="skills-grid">
+        <div class="skills-category" aria-labelledby="frontend-heading">
+          <h3 id="frontend-heading">Frontend Development</h3>
+          <ul class="skills-list" role="list">
+            <li>
+              <button class="skill-btn" aria-label="JavaScript skill">
+                <img src="js-icon.svg" alt="JavaScript logo" width="24" height="24" loading="lazy" aria-hidden="true">
+                JavaScript
+              </button>
+            </li>
+            <li>
+              <button class="skill-btn" aria-label="TypeScript skill">
+                <img src="typescript-icon.svg" alt="TypeScript logo" width="24" height="24" loading="lazy" aria-hidden="true">
+                TypeScript
+              </button>
+            </li>
+            <li>
+              <button class="skill-btn" aria-label="React skill">
+                <img src="react-icon.svg" alt="React logo" width="24" height="24" loading="lazy" aria-hidden="true">
+                React
+              </button>
+            </li>
+            <li>
+              <button class="skill-btn" aria-label="Redux skill">
+                <img src="redux-icon.svg" alt="Redux logo" width="24" height="24" loading="lazy" aria-hidden="true">
+                Redux
+              </button>
+            </li>
+            <li>
+              <button class="skill-btn" aria-label="HTML skill">
+                <img src="html-icon.svg" alt="HTML logo" width="24" height="24" loading="lazy" aria-hidden="true">
+                HTML
+              </button>
+            </li>
+            <li>
+              <button class="skill-btn" aria-label="CSS skill">
+                <img src="css-icon.svg" alt="CSS logo" width="24" height="24" loading="lazy" aria-hidden="true">
+                CSS
+              </button>
+            </li>
+          </ul>
+        </div>
 
-      <div class="skills-category" aria-labelledby="backend-heading">
-        <h3 id="backend-heading">Backend Development</h3>
-        <ul class="skills-list" role="list">
-          <li>
-            <button class="skill-btn" aria-label="Node.js skill">
-              <img src="node-icon.svg" alt="" width="24" height="24" aria-hidden="true">
-              Node.js
-            </button>
-          </li>
-          <li>
-            <button class="skill-btn" aria-label="Express skill">
-              <img src="express-icon.svg" alt="" width="24" height="24" aria-hidden="true">
-              Express
-            </button>
-          </li>
-          <li>
-            <button class="skill-btn" aria-label="Python skill">
-              <img src="python-icon.svg" alt="" width="24" height="24" aria-hidden="true">
-              Python
-            </button>
-          </li>
-          <li>
-            <button class="skill-btn" aria-label="MongoDB skill">
-              <img src="mongodb-icon.svg" alt="" width="24" height="24" aria-hidden="true">
-              MongoDB
-            </button>
-          </li>
-          <li>
-            <button class="skill-btn" aria-label="SQL skill">
-              <img src="sql-icon.svg" alt="" width="24" height="24" aria-hidden="true">
-              SQL
-            </button>
-          </li>
-        </ul>
-      </div>
+        <div class="skills-category" aria-labelledby="backend-heading">
+          <h3 id="backend-heading">Backend Development</h3>
+          <ul class="skills-list" role="list">
+            <li>
+              <button class="skill-btn" aria-label="Node.js skill">
+                <img src="node-icon.svg" alt="Node.js logo" width="24" height="24" loading="lazy" aria-hidden="true">
+                Node.js
+              </button>
+            </li>
+            <li>
+              <button class="skill-btn" aria-label="Express skill">
+                <img src="express-icon.svg" alt="Express logo" width="24" height="24" loading="lazy" aria-hidden="true">
+                Express
+              </button>
+            </li>
+            <li>
+              <button class="skill-btn" aria-label="Python skill">
+                <img src="python-icon.svg" alt="Python logo" width="24" height="24" loading="lazy" aria-hidden="true">
+                Python
+              </button>
+            </li>
+            <li>
+              <button class="skill-btn" aria-label="MongoDB skill">
+                <img src="mongodb-icon.svg" alt="MongoDB logo" width="24" height="24" loading="lazy" aria-hidden="true">
+                MongoDB
+              </button>
+            </li>
+            <li>
+              <button class="skill-btn" aria-label="SQL skill">
+                <img src="sql-icon.svg" alt="SQL logo" width="24" height="24" loading="lazy" aria-hidden="true">
+                SQL
+              </button>
+            </li>
+          </ul>
+        </div>
 
-      <div class="skills-category" aria-labelledby="mobile-heading">
-        <h3 id="mobile-heading">Mobile Development</h3>
-        <ul class="skills-list" role="list">
-          <li>
-            <button class="skill-btn" aria-label="Swift skill">
-              <img src="swift-icon.svg" alt="" width="24" height="24" aria-hidden="true">
-              Swift
-            </button>
-          </li>
-          <li>
-            <button class="skill-btn" aria-label="Mobile Development skill">
-              <img src="mobile-icon.svg" alt="" width="24" height="24" aria-hidden="true">
-              Mobile Development
-            </button>
-          </li>
-        </ul>
-      </div>
+        <div class="skills-category" aria-labelledby="mobile-heading">
+          <h3 id="mobile-heading">Mobile Development</h3>
+          <ul class="skills-list" role="list">
+            <li>
+              <button class="skill-btn" aria-label="Swift skill">
+                <img src="swift-icon.svg" alt="Swift logo" width="24" height="24" loading="lazy" aria-hidden="true">
+                Swift
+              </button>
+            </li>
+            <li>
+              <button class="skill-btn" aria-label="Mobile Development skill">
+                <img src="mobile-icon.svg" alt="Mobile Development icon" width="24" height="24" loading="lazy" aria-hidden="true">
+                Mobile Development
+              </button>
+            </li>
+          </ul>
+        </div>
 
-      <div class="skills-category" aria-labelledby="cs-heading">
-        <h3 id="cs-heading">Computer Science</h3>
-        <ul class="skills-list" role="list">
-          <li>
-            <button class="skill-btn" aria-label="Algorithms skill">
-              <img src="algo-icon.svg" alt="" width="24" height="24" aria-hidden="true">
-              Algorithms
-            </button>
-          </li>
-          <li>
-            <button class="skill-btn" aria-label="Data Structures skill">
-              <img src="data-icon.svg" alt="" width="24" height="24" aria-hidden="true">
-              Data Structures
-            </button>
-          </li>
-        </ul>
-      </div>
+        <div class="skills-category" aria-labelledby="cs-heading">
+          <h3 id="cs-heading">Computer Science</h3>
+          <ul class="skills-list" role="list">
+            <li>
+              <button class="skill-btn" aria-label="Algorithms skill">
+                <img src="algo-icon.svg" alt="Algorithms icon" width="24" height="24" loading="lazy" aria-hidden="true">
+                Algorithms
+              </button>
+            </li>
+            <li>
+              <button class="skill-btn" aria-label="Data Structures skill">
+                <img src="data-icon.svg" alt="Data Structures icon" width="24" height="24" loading="lazy" aria-hidden="true">
+                Data Structures
+              </button>
+            </li>
+          </ul>
+        </div>
 
-      <div class="skills-category" aria-labelledby="tools-heading">
-        <h3 id="tools-heading">Tools & Version Control</h3>
-        <ul class="skills-list" role="list">
-          <li>
-            <button class="skill-btn" aria-label="Git skill">
-              <img src="git-icon.svg" alt="" width="24" height="24" aria-hidden="true">
-              Git
-            </button>
-          </li>
-          <li>
-            <button class="skill-btn" aria-label="Testing skill">
-              <img src="testing-icon.svg" alt="" width="24" height="24" aria-hidden="true">
-              Testing (Jest, RTL)
-            </button>
-          </li>
-          <li>
-            <button class="skill-btn" aria-label="CI/CD skill">
-              <img src="cicd-icon.svg" alt="" width="24" height="24" aria-hidden="true">
-              CI/CD
-            </button>
-          </li>
-          <li>
-            <button class="skill-btn" aria-label="Docker skill">
-              <img src="docker-icon.svg" alt="" width="24" height="24" aria-hidden="true">
-              Docker
-            </button>
-          </li>
-        </ul>
+        <div class="skills-category" aria-labelledby="tools-heading">
+          <h3 id="tools-heading">Tools & Version Control</h3>
+          <ul class="skills-list" role="list">
+            <li>
+              <button class="skill-btn" aria-label="Git skill">
+                <img src="git-icon.svg" alt="Git logo" width="24" height="24" loading="lazy" aria-hidden="true">
+                Git
+              </button>
+            </li>
+            <li>
+              <button class="skill-btn" aria-label="Testing skill">
+                <img src="testing-icon.svg" alt="Testing icon" width="24" height="24" loading="lazy" aria-hidden="true">
+                Testing (Jest, RTL)
+              </button>
+            </li>
+            <li>
+              <button class="skill-btn" aria-label="CI/CD skill">
+                <img src="cicd-icon.svg" alt="CI/CD icon" width="24" height="24" loading="lazy" aria-hidden="true">
+                CI/CD
+              </button>
+            </li>
+            <li>
+              <button class="skill-btn" aria-label="Docker skill">
+                <img src="docker-icon.svg" alt="Docker logo" width="24" height="24" loading="lazy" aria-hidden="true">
+                Docker
+              </button>
+            </li>
+          </ul>
+        </div>
       </div>
     </section>
 
     <!-- Projects Section -->
-    <section class="projects section-card">
+    <section id="projects" class="projects section-card">
       <h2>Project Highlights</h2>
-      <div class="project-card">
-        <h3>Smart Context Companion</h3>
-        <p><em>Cross-Platform AI Productivity Suite</em></p>
-        <p>A next-generation, cross-platform productivity solution engineered to empower users with seamless, privacy-centric access to Google's suite of services across both iOS and Android ecosystems.</p>
-        <ul>
-          <li>Holistic Google Service Orchestration: Unified interface for Google Drive, Calendar, Gmail, Maps, Translate, and Tasks</li>
-          <li>Privacy-First Architecture: On-device data processing by default, with opt-in cloud AI augmentation</li>
-          <li>Modular Extensibility: "Action Packs" system for rapid deployment of new features</li>
-          <li>Universal Accessibility: Full support for accessibility and internationalization</li>
-          <li>Technical Stack: Flutter, KMM, Swift/SwiftUI, Kotlin/Jetpack Compose, OAuth 2.0, Core ML, TensorFlow Lite, ML Kit, Google APIs, CI/CD, GitHub Actions, Bitrise</li>
-        </ul>
-        <a href="https://github.com/S-Slavin/SmartContextCompanion" class="github-link">View on GitHub</a>
-      </div>
+      <div class="projects-grid">
+        <div class="project-card">
+          <h3>Smart Context Companion</h3>
+          <p><em>Cross-Platform AI Productivity Suite</em></p>
+          <p>A next-generation, cross-platform productivity solution engineered to empower users with seamless, privacy-centric access to Google's suite of services across both iOS and Android ecosystems.</p>
+          <ul>
+            <li>Holistic Google Service Orchestration: Unified interface for Google Drive, Calendar, Gmail, Maps, Translate, and Tasks</li>
+            <li>Privacy-First Architecture: On-device data processing by default, with opt-in cloud AI augmentation</li>
+            <li>Modular Extensibility: "Action Packs" system for rapid deployment of new features</li>
+            <li>Universal Accessibility: Full support for accessibility and internationalization</li>
+            <li>Technical Stack: Flutter, KMM, Swift/SwiftUI, Kotlin/Jetpack Compose, OAuth 2.0, Core ML, TensorFlow Lite, ML Kit, Google APIs, CI/CD, GitHub Actions, Bitrise</li>
+          </ul>
+          <a href="https://github.com/S-Slavin/SmartContextCompanion" class="github-link">View on GitHub</a>
+        </div>
 
-      <div class="project-card">
-        <h3>Anti-Hallucination AI System</h3>
-        <p><em>Advanced AI Platform for Language Model Accuracy</em></p>
-        <p>Designed and implemented a robust AI platform to minimize hallucinations in language model outputs.</p>
-        <ul>
-          <li>Developed and fine-tuned advanced language models with RAG and RLHF</li>
-          <li>Built cross-platform clients using Xcode (iOS/macOS) and Cursor for AI-powered development</li>
-          <li>Implemented real-time fact-checking and citation systems</li>
-          <li>Created explainable AI modules with confidence scoring</li>
-        </ul>
-        <a href="https://github.com/S-Slavin/AntiHallucinationAI" class="github-link">View on GitHub</a>
-      </div>
+        <div class="project-card">
+          <h3>Anti-Hallucination AI System</h3>
+          <p><em>Advanced AI Platform for Language Model Accuracy</em></p>
+          <p>Designed and implemented a robust AI platform to minimize hallucinations in language model outputs.</p>
+          <ul>
+            <li>Developed and fine-tuned advanced language models with RAG and RLHF</li>
+            <li>Built cross-platform clients using Xcode (iOS/macOS) and Cursor for AI-powered development</li>
+            <li>Implemented real-time fact-checking and citation systems</li>
+            <li>Created explainable AI modules with confidence scoring</li>
+          </ul>
+          <a href="https://github.com/S-Slavin/AntiHallucinationAI" class="github-link">View on GitHub</a>
+        </div>
 
-      <div class="project-card">
-        <h3>FinePrint</h3>
-        <p><em>Privacy Management Web and Mobile Application</em></p>
-        <p>A cross-platform application that helps users manage their digital privacy settings across multiple online accounts.</p>
-        <ul>
-          <li>Developed a React and SwiftUI application enabling users to manage digital privacy settings and family accounts</li>
-          <li>Implemented secure data handling, child controls, and robust account management</li>
-          <li>Prioritized accessibility and intuitive user experience</li>
-        </ul>
-        <a href="https://github.com/S-Slavin/FinePrint" class="github-link">View on GitHub</a>
-      </div>
+        <div class="project-card">
+          <h3>FinePrint</h3>
+          <p><em>Privacy Management Web and Mobile Application</em></p>
+          <p>A cross-platform application that helps users manage their digital privacy settings across multiple online accounts.</p>
+          <ul>
+            <li>Developed a React and SwiftUI application enabling users to manage digital privacy settings and family accounts</li>
+            <li>Implemented secure data handling, child controls, and robust account management</li>
+            <li>Prioritized accessibility and intuitive user experience</li>
+          </ul>
+          <a href="https://github.com/S-Slavin/FinePrint" class="github-link">View on GitHub</a>
+        </div>
 
-      <div class="project-card">
-        <h3>OurBigKitchen App</h3>
-        <p><em>Community Volunteer and Food Rescue Platform</em></p>
-        <p>A full-stack web and iOS application connecting volunteers with meaningful community service opportunities.</p>
-        <ul>
-          <li>Developed a full-stack web and iOS application to connect volunteers with meaningful community service opportunities</li>
-          <li>Supports food rescue by matching surplus food with those in need, reducing waste and providing dignity to recipients</li>
-        </ul>
-        <a href="https://github.com/S-Slavin/OBK" class="github-link">View on GitHub</a>
+        <div class="project-card">
+          <h3>OurBigKitchen App</h3>
+          <p><em>Community Volunteer and Food Rescue Platform</em></p>
+          <p>A full-stack web and iOS application connecting volunteers with meaningful community service opportunities.</p>
+          <ul>
+            <li>Developed a full-stack web and iOS application to connect volunteers with meaningful community service opportunities</li>
+            <li>Supports food rescue by matching surplus food with those in need, reducing waste and providing dignity to recipients</li>
+          </ul>
+          <a href="https://github.com/S-Slavin/OBK" class="github-link">View on GitHub</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Elements Section -->
+    <section id="interactive" class="interactive section-card" aria-labelledby="interactive-heading">
+      <h2 id="interactive-heading">Interactive Elements</h2>
+      
+      <!-- Interactive Elements -->
+      <div class="interactive-elements">
+        <div class="interactive-card">
+          <h3>Live Code Editor</h3>
+          <div class="code-editor">
+            <div class="editor-header">
+              <span class="editor-title">Try it yourself</span>
+              <div class="editor-actions">
+                <button class="run-btn">Run</button>
+                <button class="reset-btn">Reset</button>
+              </div>
+            </div>
+            <pre><code class="language-javascript">// Write your code here
+function greet(name) {
+  return `Hello, ${name}!`;
+}
+
+console.log(greet('World'));</code></pre>
+          </div>
+        </div>
+
+        <div class="interactive-card">
+          <h3>Development Workflow</h3>
+          <div class="workflow-diagram">
+            <div class="workflow-step">
+              <div class="step-icon">📝</div>
+              <h4>Planning</h4>
+              <p>Requirements gathering and architecture design</p>
+            </div>
+            <div class="workflow-step">
+              <div class="step-icon">💻</div>
+              <h4>Development</h4>
+              <p>Clean code and test-driven development</p>
+            </div>
+            <div class="workflow-step">
+              <div class="step-icon">🔍</div>
+              <h4>Testing</h4>
+              <p>Unit tests and integration testing</p>
+            </div>
+            <div class="workflow-step">
+              <div class="step-icon">🚀</div>
+              <h4>Deployment</h4>
+              <p>CI/CD and monitoring</p>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
     <!-- Contact Section -->
-    <section class="contact-info section-card" aria-label="Contact information">
-      <h2>Contact</h2>
+    <section id="contact" class="contact-info section-card" aria-label="Contact information">
+      <h2>Get in Touch</h2>
       <div class="contact-grid">
         <p>📧 <a href="mailto:shaina.slavin@gmail.com" aria-label="Email me at shaina.slavin@gmail.com">shaina.slavin@gmail.com</a></p>
         <p>📱 <a href="tel:+972503071261" aria-label="Call me at +972-50-3071261">+972-50-3071261</a></p>
@@ -293,7 +369,15 @@
     </section>
 
     <footer>
-      <p>© 2024 Shaina Slavin. All rights reserved.<br><small>Last updated: June 2025</small></p>
+      <div class="footer-content">
+        <p>© 2024 Shaina Slavin. All rights reserved.</p>
+        <div class="footer-links">
+          <a href="./resume.html">Resume</a>
+          <a href="#contact">Contact</a>
+          <a href="https://github.com/S-Slavin">GitHub</a>
+          <a href="https://linkedin.com/in/shaina-slavin">LinkedIn</a>
+        </div>
+      </div>
     </footer>
   </main>
   <button class="theme-toggle" aria-label="Toggle dark mode">
@@ -302,23 +386,30 @@
     </svg>
   </button>
   <script>
-    // Theme toggle functionality
-    const themeToggle = document.querySelector('.theme-toggle');
-    const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
-    
-    // Check for saved theme preference or use system preference
-    const currentTheme = localStorage.getItem('theme') || 
-      (prefersDarkScheme.matches ? 'dark' : 'light');
-    
-    if (currentTheme === 'dark') {
-      document.documentElement.setAttribute('data-theme', 'dark');
-    }
-    
-    themeToggle.addEventListener('click', () => {
-      const newTheme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-      document.documentElement.setAttribute('data-theme', newTheme);
-      localStorage.setItem('theme', newTheme);
+    // Code Editor Functionality
+    const codeEditor = document.querySelector('.code-editor pre code');
+    const runButton = document.querySelector('.run-btn');
+    const resetButton = document.querySelector('.reset-btn');
+    const originalCode = codeEditor.textContent;
+
+    runButton.addEventListener('click', () => {
+      try {
+        const code = codeEditor.textContent;
+        const result = eval(code);
+        console.log(result);
+        alert('Code executed! Check console for output.');
+      } catch (error) {
+        alert('Error: ' + error.message);
+      }
     });
+
+    resetButton.addEventListener('click', () => {
+      codeEditor.textContent = originalCode;
+    });
+
+    // Make code editor editable
+    codeEditor.contentEditable = true;
+    codeEditor.spellcheck = false;
 
     // Navbar scroll effect
     const navbar = document.querySelector('.navbar');
