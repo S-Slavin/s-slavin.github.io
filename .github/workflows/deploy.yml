@@ -4,25 +4,26 @@ on:
   push:
     branches:
       - main
+      - development
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout
+        uses: actions/checkout@v4
       
       - name: Setup Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
-          node-version: '18'
-          
-      - name: Install dependencies
-        run: |
-          npm install -g serve
+          node-version: '20'
           
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           folder: .
           branch: gh-pages
-          clean: true 
+          clean: true
+          commit-message: "Deploy to GitHub Pages" 
