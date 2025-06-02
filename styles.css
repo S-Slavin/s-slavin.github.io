@@ -186,7 +186,13 @@ h1, h2, h3, h4, h5, h6 {
   padding: var(--space-4);
   margin-bottom: var(--space-4);
   border: 1px solid var(--border);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.section-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
 .section-card h2 {
@@ -330,28 +336,42 @@ h1, h2, h3, h4, h5, h6 {
 /* Contact Section */
 .contact-info {
   background: white;
-  padding: var(--space-4);
   border-radius: 12px;
+  padding: var(--space-4);
   margin-bottom: var(--space-4);
+  border: 1px solid var(--border);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .contact-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: var(--space-3);
-  margin-top: var(--space-3);
+  gap: var(--space-4);
+  padding: var(--space-3);
+  background: var(--background);
+  border-radius: 8px;
 }
 
 .contact-grid p {
   display: flex;
   align-items: center;
   gap: var(--space-2);
-  margin: 0;
+  padding: var(--space-3);
+  background: white;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.contact-grid p:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .contact-grid a {
   color: var(--primary);
   text-decoration: none;
+  font-weight: 500;
   transition: color 0.2s ease;
 }
 
