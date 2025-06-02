@@ -1,111 +1,305 @@
-/* Mobile-specific styles */
-@media (max-width: 768px) {
-  /* Navigation */
-  .nav-container {
-    padding: 0 var(--space-2);
-    flex-direction: column;
-    gap: var(--space-2);
-  }
+/* Mobile-specific styles - completely separate from desktop */
 
-  .nav-links {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: var(--space-2);
-    width: 100%;
-    padding: var(--space-2) 0;
-  }
-
-  .nav-links a {
-    font-size: 0.9rem;
-    padding: var(--space-1) var(--space-2);
-    white-space: nowrap;
-  }
-
-  /* Hero Section */
-  .header-content {
-    flex-direction: column;
-    text-align: center;
-    gap: var(--space-4);
-  }
-
-  .header-text h1 {
-    font-size: 2.5rem;
-  }
-
-  .header-text .subtitle {
-    font-size: 1.25rem;
-  }
-
-  .profile-image {
-    width: 200px;
-    height: 200px;
-  }
-
-  /* Skills Section */
-  .skills-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .skills-list {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  /* Projects Section */
-  .projects-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .project-card {
-    padding: var(--space-3);
-  }
-
-  /* Contact Section */
-  .contact-grid {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
-
-  .contact-grid p {
-    justify-content: center;
-  }
-
-  /* Footer */
-  .footer-content {
-    flex-direction: column;
-    gap: var(--space-3);
-    text-align: center;
-  }
-
-  .footer-links {
-    justify-content: center;
-  }
+/* Base mobile styles */
+body {
+  font-size: 16px;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  color: var(--text-color);
+  background: var(--background-color);
 }
 
-/* Additional mobile optimizations */
-@media (max-width: 480px) {
+/* Navigation - Improved for mobile */
+.nav-container {
+  padding: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--background-color);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.nav-logo {
+  font-size: 1.75rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: var(--accent-color);
+}
+
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 0.5rem 0;
+}
+
+.nav-link {
+  font-size: 0.95rem;
+  padding: 0.6rem 1rem;
+  text-decoration: none;
+  color: var(--text-color);
+  border-radius: 20px;
+  background: var(--card-background);
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.nav-link:active {
+  background: var(--accent-color);
+  color: white;
+}
+
+/* Add padding to main content to account for fixed nav */
+.main-container {
+  padding-top: 120px;
+}
+
+/* Hero Section - Improved spacing and readability */
+.header-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 1.5rem 1rem;
+  gap: 1.5rem;
+}
+
+.header-text h1 {
+  font-size: 2.25rem;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.header-text .subtitle {
+  font-size: 1.2rem;
+  color: var(--accent-color);
+  margin: 0.5rem 0;
+}
+
+.header-text .tagline {
+  font-size: 1rem;
+  color: var(--text-color);
+  opacity: 0.9;
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+.profile-image {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border: 3px solid var(--accent-color);
+}
+
+/* Section Cards - Improved spacing and readability */
+.section-card {
+  margin: 1.5rem 1rem;
+  padding: 1.5rem;
+  background: var(--card-background);
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.section-card h2 {
+  font-size: 1.75rem;
+  margin-top: 0;
+  margin-bottom: 1.25rem;
+  color: var(--accent-color);
+  text-align: center;
+}
+
+/* Skills Section - Improved grid and touch targets */
+.skills-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  padding: 0.5rem;
+}
+
+.skills-category {
+  background: var(--background-color);
+  padding: 1.25rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+}
+
+.skills-category h3 {
+  font-size: 1.25rem;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: var(--accent-color);
+}
+
+.skills-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.skill-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  background: var(--card-background);
+  width: 100%;
+  text-align: left;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+}
+
+.skill-btn:active {
+  transform: scale(0.98);
+  background: var(--accent-color);
+  color: white;
+}
+
+/* Projects Section - Improved card layout */
+.projects-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  padding: 0.5rem;
+}
+
+.project-card {
+  background: var(--background-color);
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.project-card h3 {
+  font-size: 1.35rem;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  color: var(--accent-color);
+}
+
+.project-card p {
+  margin: 0.5rem 0;
+  line-height: 1.5;
+}
+
+.project-card ul {
+  padding-left: 1.25rem;
+  margin: 0.75rem 0;
+}
+
+.project-card li {
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
+}
+
+.github-link {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.6rem 1.2rem;
+  background: var(--accent-color);
+  color: white;
+  text-decoration: none;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+}
+
+.github-link:active {
+  transform: scale(0.98);
+  opacity: 0.9;
+}
+
+/* Contact Section - Improved layout and touch targets */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  padding: 0.5rem;
+}
+
+.contact-grid p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  background: var(--background-color);
+  border-radius: 8px;
+  margin: 0;
+}
+
+.contact-grid a {
+  color: var(--accent-color);
+  text-decoration: none;
+  font-size: 1rem;
+  padding: 0.25rem 0;
+}
+
+/* Footer - Improved spacing and readability */
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 2rem 1rem;
+  text-align: center;
+  background: var(--card-background);
+  margin-top: 2rem;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.footer-links a {
+  color: var(--text-color);
+  text-decoration: none;
+  font-size: 0.95rem;
+  padding: 0.5rem;
+}
+
+/* Small screen optimizations */
+@media (max-width: 360px) {
   .header-text h1 {
     font-size: 2rem;
   }
-
+  
   .header-text .subtitle {
     font-size: 1.1rem;
   }
-
-  .section-card {
-    padding: var(--space-3);
-  }
-
-  .section-card h2 {
-    font-size: 1.75rem;
-  }
-
+  
   .nav-links {
-    gap: var(--space-1);
+    gap: 0.25rem;
   }
-
-  .nav-links a {
+  
+  .nav-link {
     font-size: 0.85rem;
-    padding: var(--space-1);
+    padding: 0.5rem 0.75rem;
+  }
+  
+  .skills-list {
+    grid-template-columns: 1fr;
+  }
+  
+  .section-card {
+    margin: 1rem 0.75rem;
+    padding: 1.25rem;
   }
 } 
