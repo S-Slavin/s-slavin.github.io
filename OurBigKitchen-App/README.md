@@ -1,134 +1,95 @@
 # OurBigKitchen App
 
-A full-stack web and iOS application connecting volunteers with meaningful community service opportunities, with a focus on food rescue and community engagement.
+A full-stack web and iOS application that connects volunteers with meaningful community service opportunities, focusing on food rescue and community engagement.
 
-## 🌟 Features
+## 🚀 Quick Start
 
-- Volunteer Management System
-- Food Rescue Coordination
-- Community Service Matching
-- Real-time Notifications
-- Location-based Service Opportunities
-- Secure User Authentication
-- Cross-platform Support (Web & iOS)
+1. Clone and install dependencies:
+```bash
+git clone https://github.com/S-Slavin/OurBigKitchen-App.git
+cd OurBigKitchen-App
+
+# Frontend
+cd frontend && npm install
+
+# Backend
+cd ../backend && npm install
+
+# iOS
+cd ../ios-app && pod install
+```
+
+2. Set up environment variables in `.env` files:
+```
+MONGODB_URI=your_mongodb_uri
+JWT_SECRET=your_jwt_secret
+API_URL=your_api_url
+PORT=your_port
+```
+
+3. Run the application:
+```bash
+# Backend
+cd backend && npm run dev
+
+# Frontend
+cd frontend && npm start
+
+# iOS: Open in Xcode and run simulator
+```
 
 ## 🛠 Tech Stack
 
 ### Frontend
-- React.js
-- TypeScript
-- Redux for State Management
-- Material-UI
-- React Router
-- Jest & React Testing Library
+- React.js with TypeScript for type-safe development
+- Redux for centralized state management
+- Material-UI components for consistent design
+- React Router for seamless navigation
+- Jest & React Testing Library for comprehensive testing
 
 ### Backend
-- Node.js
-- Express.js
-- MongoDB
-- JWT Authentication
-- Socket.io for Real-time Features
+- Node.js & Express.js for robust API development
+- MongoDB database for flexible data storage
+- JWT authentication for secure user sessions
+- Socket.io for real-time communication features
 
 ### iOS App
-- Swift
-- SwiftUI
-- Core Data
-- MapKit
-- Push Notifications
+- Swift & SwiftUI for native iOS development
+- Core Data for efficient local storage
+- MapKit integration for location services
+- Push notifications for real-time updates
 
-## 🚀 Getting Started
+## 🌟 Key Features
 
-### Prerequisites
-- Node.js (v16 or higher)
-- MongoDB
-- Xcode (for iOS development)
-- CocoaPods
+- **Volunteer Management**: Comprehensive system for tracking and managing volunteer activities
+- **Food Rescue**: Efficient coordination of food donation and distribution
+- **Real-time Updates**: Instant notifications for new opportunities and changes
+- **Location Services**: Find and navigate to nearby service opportunities
+- **Cross-platform**: Consistent experience across web and iOS platforms
+- **Offline Support**: Full functionality without internet connection
+- **QR Code Integration**: Streamlined check-ins and activity tracking
 
-### Installation
+## 🔒 Security
 
-1. Clone the repository:
-```bash
-git clone https://github.com/S-Slavin/OurBigKitchen-App.git
-cd OurBigKitchen-App
-```
-
-2. Install Frontend Dependencies:
-```bash
-cd frontend
-npm install
-```
-
-3. Install Backend Dependencies:
-```bash
-cd ../backend
-npm install
-```
-
-4. Install iOS Dependencies:
-```bash
-cd ../ios-app
-pod install
-```
-
-### Environment Setup
-
-1. Create `.env` files in both frontend and backend directories
-2. Configure the following environment variables:
-   - MONGODB_URI
-   - JWT_SECRET
-   - API_URL
-   - PORT
-
-### Running the Application
-
-1. Start the Backend:
-```bash
-cd backend
-npm run dev
-```
-
-2. Start the Frontend:
-```bash
-cd frontend
-npm start
-```
-
-3. Open the iOS project in Xcode and run the simulator
-
-## 📱 Mobile App Features
-
-- Push Notifications for new opportunities
-- Offline Mode Support
-- Location Services
-- Camera Integration for Food Donation Documentation
-- QR Code Scanning for Quick Check-ins
-
-## 🔒 Security Features
-
-- End-to-end Encryption
-- Secure Authentication
-- Data Privacy Compliance
-- Regular Security Audits
+- End-to-end encryption for data protection
+- Secure authentication with JWT tokens
+- GDPR compliance for data privacy
+- Regular security audits and updates
 
 ## 🤝 Contributing
 
 1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
+2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit changes (`git commit -m 'Add AmazingFeature'`)
+4. Push to branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 👥 Team
-
-- Shaina Slavin - Full Stack Developer
-- [Add other team members]
 
 ## 📞 Contact
 
 - Email: shaina.slavin@gmail.com
 - LinkedIn: [linkedin.com/in/shaina-slavin](https://linkedin.com/in/shaina-slavin)
-- GitHub: [github.com/S-Slavin](https://github.com/S-Slavin) 
+- GitHub: [github.com/S-Slavin](https://github.com/S-Slavin)
+
+## 📄 License
+
+MIT License - See [LICENSE](LICENSE) file for details 
