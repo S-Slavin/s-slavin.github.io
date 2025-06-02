@@ -1,0 +1,26 @@
+name: SmartContextCompanion
+options:
+  bundleIdPrefix: com.slavin
+  deploymentTarget:
+    iOS: 15.0
+targets:
+  SmartContextCompanion:
+    type: application
+    platform: iOS
+    sources: 
+      - path: SmartContextCompanion
+    settings:
+      base:
+        INFOPLIST_FILE: SmartContextCompanion/Info.plist
+        PRODUCT_BUNDLE_IDENTIFIER: com.slavin.smartcontextcompanion
+    info:
+      path: SmartContextCompanion/Info.plist
+      properties:
+        CFBundleDisplayName: Smart Context Companion
+        UILaunchStoryboardName: LaunchScreen
+        UIApplicationSceneManifest:
+          UIApplicationSupportsMultipleScenes: false
+          UISceneConfigurations:
+            UIWindowSceneSessionRoleApplication:
+              - UISceneConfigurationName: Default Configuration
+                UISceneDelegateClassName: $(PRODUCT_MODULE_NAME).SceneDelegate 
