@@ -184,7 +184,7 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: var(--space-3);
+  gap: var(--space-2);
   position: relative;
   z-index: 1;
   padding: var(--space-2);
@@ -195,7 +195,7 @@ h1, h2, h3, h4, h5, h6 {
 .header-text {
   flex: 1;
   max-width: 600px;
-  margin-right: var(--space-3);
+  margin-right: var(--space-2);
 }
 
 .header-text h1 {
