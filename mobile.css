@@ -1,6 +1,14 @@
 /* Mobile-specific styles - completely separate from desktop */
 
 /* Base mobile styles */
+:root {
+  --text-color: #1e3a8a;
+  --background-color: #f0f7ff;
+  --accent-color: #2563eb;
+  --card-background: #ffffff;
+  --border-color: #bfdbfe;
+}
+
 body {
   font-size: 16px;
   line-height: 1.6;
@@ -302,4 +310,45 @@ body {
     margin: 1rem 0.75rem;
     padding: 1.25rem;
   }
+}
+
+/* Core Skills Section - Mobile */
+.core-skills {
+  margin-top: 1rem;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.core-skills h3 {
+  font-size: 1.2rem;
+  color: var(--accent-color);
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.core-skills ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.5rem;
+}
+
+.core-skills li {
+  position: relative;
+  padding-left: 1.25rem;
+  line-height: 1.4;
+  margin-bottom: 0.5rem;
+}
+
+.core-skills li::before {
+  content: "•";
+  color: var(--accent-color);
+  position: absolute;
+  left: 0;
+  font-size: 1.2em;
 } 
