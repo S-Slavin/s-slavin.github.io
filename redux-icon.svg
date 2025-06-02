@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="36" height="36" rx="4" fill="#764ABC"/>
-  <path d="M8 8h20v20H8z" fill="white"/>
-  <path d="M12 12h12v12H12z" fill="#764ABC"/>
-  <path d="M16 16h4v4h-4z" fill="white"/>
-</svg> 

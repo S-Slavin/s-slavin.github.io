@@ -1,66 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <!-- Responsive viewport -->
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#2563EB">
-  <meta name="description" content="Shaina Slavin - Computer Science Student and Full-Stack Developer specializing in React, JavaScript, Swift, and Python. View my portfolio and projects.">
-  <meta name="keywords" content="Shaina Slavin, Full-Stack Developer, React, JavaScript, Swift, Python, Portfolio">
-  <meta name="author" content="Shaina Slavin">
-  
-  <!-- Open Graph / Social Media Meta Tags -->
-  <meta property="og:title" content="Shaina Slavin | Portfolio">
-  <meta property="og:description" content="Computer Science Student and Full-Stack Developer specializing in React, JavaScript, Swift, and Python.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://s-slavin.github.io">
-  <meta property="og:image" content="https://s-slavin.github.io/apple-touch-icon.svg">
-  
-  <!-- Preload critical resources -->
-  <link rel="preload" href="./styles.css?v=17" as="style">
-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" as="style">
-  <link rel="preload" href="profile.jpg" as="image">
-  
-  <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="favicon.svg">
-  <link rel="apple-touch-icon" href="apple-touch-icon.svg">
-  
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  
-  <!-- Styles -->
-  <link rel="stylesheet" href="./styles.css?v=17" />
-  
-  <title>Shaina Slavin | Portfolio</title>
+  <title>Shaina Slavin - Full Stack Developer</title>
+  <meta name="description" content="Portfolio of Shaina Slavin, a Full Stack Developer specializing in web development and software engineering.">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
-  <a href="#main-content" class="skip-link">Skip to main content</a>
-  <nav class="navbar" role="navigation" aria-label="Main navigation">
+  <nav class="navbar">
     <div class="nav-container">
       <a href="./index.html" class="nav-logo">SS</a>
       <div class="nav-links">
         <a href="#about" class="nav-link">About</a>
+        <a href="#skills" class="nav-link">Skills</a>
         <a href="#projects" class="nav-link">Projects</a>
         <a href="./resume.html" class="nav-link">Resume</a>
         <a href="#contact" class="nav-link">Contact</a>
       </div>
     </div>
   </nav>
-  <main id="main-content" class="main-container" role="main">
+  <main class="main-container">
     <header class="hero-section">
       <div class="header-content">
         <div class="header-text">
           <h1>Shaina Slavin</h1>
           <p class="subtitle">Full-Stack & Front-End Developer</p>
           <p class="tagline">Building accessible, user-centric applications with modern technologies</p>
-          <a href="#projects" class="cta-button">See My Work</a>
         </div>
         <img src="profile.jpg" alt="Profile picture of Shaina Slavin" class="profile-image" loading="lazy">
       </div>
     </header>
     
     <!-- About Section -->
-    <section id="about" class="about section-card" aria-label="About and Career Focus">
+    <section id="about" class="about section-card">
       <h2>About Me</h2>
       <div class="about-content">
         <p>
@@ -79,147 +53,147 @@
     </section>
 
     <!-- Skills Section -->
-    <section class="skills section-card" aria-labelledby="skills-heading">
-      <h2 id="skills-heading">Skills</h2>
+    <section class="skills section-card">
+      <h2>Skills</h2>
       <div class="skills-grid">
-        <div class="skills-category" aria-labelledby="frontend-heading">
-          <h3 id="frontend-heading">Frontend Development</h3>
-          <ul class="skills-list" role="list">
+        <div class="skills-category">
+          <h3>Frontend Development</h3>
+          <ul class="skills-list">
             <li>
-              <button class="skill-btn" aria-label="JavaScript skill">
-                <img src="js-icon.svg" alt="JavaScript logo" width="24" height="24" loading="lazy" aria-hidden="true">
+              <button class="skill-btn">
+                <img src="assets/icons/js-icon.svg" alt="JavaScript logo" width="24" height="24" loading="lazy">
                 JavaScript
               </button>
             </li>
             <li>
-              <button class="skill-btn" aria-label="TypeScript skill">
-                <img src="typescript-icon.svg" alt="TypeScript logo" width="24" height="24" loading="lazy" aria-hidden="true">
+              <button class="skill-btn">
+                <img src="assets/icons/typescript-icon.svg" alt="TypeScript logo" width="24" height="24" loading="lazy">
                 TypeScript
               </button>
             </li>
             <li>
-              <button class="skill-btn" aria-label="React skill">
-                <img src="react-icon.svg" alt="React logo" width="24" height="24" loading="lazy" aria-hidden="true">
+              <button class="skill-btn">
+                <img src="assets/icons/react-icon.svg" alt="React logo" width="24" height="24" loading="lazy">
                 React
               </button>
             </li>
             <li>
-              <button class="skill-btn" aria-label="Redux skill">
-                <img src="redux-icon.svg" alt="Redux logo" width="24" height="24" loading="lazy" aria-hidden="true">
+              <button class="skill-btn">
+                <img src="assets/icons/redux-icon.svg" alt="Redux logo" width="24" height="24" loading="lazy">
                 Redux
               </button>
             </li>
             <li>
-              <button class="skill-btn" aria-label="HTML skill">
-                <img src="html-icon.svg" alt="HTML logo" width="24" height="24" loading="lazy" aria-hidden="true">
+              <button class="skill-btn">
+                <img src="assets/icons/html-icon.svg" alt="HTML logo" width="24" height="24" loading="lazy">
                 HTML
               </button>
             </li>
             <li>
-              <button class="skill-btn" aria-label="CSS skill">
-                <img src="css-icon.svg" alt="CSS logo" width="24" height="24" loading="lazy" aria-hidden="true">
+              <button class="skill-btn">
+                <img src="assets/icons/css-icon.svg" alt="CSS logo" width="24" height="24" loading="lazy">
                 CSS
               </button>
             </li>
           </ul>
         </div>
 
-        <div class="skills-category" aria-labelledby="backend-heading">
-          <h3 id="backend-heading">Backend Development</h3>
-          <ul class="skills-list" role="list">
+        <div class="skills-category">
+          <h3>Backend Development</h3>
+          <ul class="skills-list">
             <li>
-              <button class="skill-btn" aria-label="Node.js skill">
-                <img src="node-icon.svg" alt="Node.js logo" width="24" height="24" loading="lazy" aria-hidden="true">
+              <button class="skill-btn">
+                <img src="assets/icons/node-icon.svg" alt="Node.js logo" width="24" height="24" loading="lazy">
                 Node.js
               </button>
             </li>
             <li>
-              <button class="skill-btn" aria-label="Express skill">
-                <img src="express-icon.svg" alt="Express logo" width="24" height="24" loading="lazy" aria-hidden="true">
+              <button class="skill-btn">
+                <img src="assets/icons/express-icon.svg" alt="Express logo" width="24" height="24" loading="lazy">
                 Express
               </button>
             </li>
             <li>
-              <button class="skill-btn" aria-label="Python skill">
-                <img src="python-icon.svg" alt="Python logo" width="24" height="24" loading="lazy" aria-hidden="true">
+              <button class="skill-btn">
+                <img src="assets/icons/python-icon.svg" alt="Python logo" width="24" height="24" loading="lazy">
                 Python
               </button>
             </li>
             <li>
-              <button class="skill-btn" aria-label="MongoDB skill">
-                <img src="mongodb-icon.svg" alt="MongoDB logo" width="24" height="24" loading="lazy" aria-hidden="true">
+              <button class="skill-btn">
+                <img src="assets/icons/mongodb-icon.svg" alt="MongoDB logo" width="24" height="24" loading="lazy">
                 MongoDB
               </button>
             </li>
             <li>
-              <button class="skill-btn" aria-label="SQL skill">
-                <img src="sql-icon.svg" alt="SQL logo" width="24" height="24" loading="lazy" aria-hidden="true">
+              <button class="skill-btn">
+                <img src="assets/icons/sql-icon.svg" alt="SQL logo" width="24" height="24" loading="lazy">
                 SQL
               </button>
             </li>
           </ul>
         </div>
 
-        <div class="skills-category" aria-labelledby="mobile-heading">
-          <h3 id="mobile-heading">Mobile Development</h3>
-          <ul class="skills-list" role="list">
+        <div class="skills-category">
+          <h3>Mobile Development</h3>
+          <ul class="skills-list">
             <li>
-              <button class="skill-btn" aria-label="Swift skill">
-                <img src="swift-icon.svg" alt="Swift logo" width="24" height="24" loading="lazy" aria-hidden="true">
+              <button class="skill-btn">
+                <img src="assets/icons/swift-icon.svg" alt="Swift logo" width="24" height="24" loading="lazy">
                 Swift
               </button>
             </li>
             <li>
-              <button class="skill-btn" aria-label="Mobile Development skill">
-                <img src="mobile-icon.svg" alt="Mobile Development icon" width="24" height="24" loading="lazy" aria-hidden="true">
+              <button class="skill-btn">
+                <img src="assets/icons/mobile-icon.svg" alt="Mobile Development icon" width="24" height="24" loading="lazy">
                 Mobile Development
               </button>
             </li>
           </ul>
         </div>
 
-        <div class="skills-category" aria-labelledby="cs-heading">
-          <h3 id="cs-heading">Computer Science</h3>
-          <ul class="skills-list" role="list">
+        <div class="skills-category">
+          <h3>Computer Science</h3>
+          <ul class="skills-list">
             <li>
-              <button class="skill-btn" aria-label="Algorithms skill">
-                <img src="algo-icon.svg" alt="Algorithms icon" width="24" height="24" loading="lazy" aria-hidden="true">
+              <button class="skill-btn">
+                <img src="assets/icons/algo-icon.svg" alt="Algorithms icon" width="24" height="24" loading="lazy">
                 Algorithms
               </button>
             </li>
             <li>
-              <button class="skill-btn" aria-label="Data Structures skill">
-                <img src="data-icon.svg" alt="Data Structures icon" width="24" height="24" loading="lazy" aria-hidden="true">
+              <button class="skill-btn">
+                <img src="assets/icons/data-icon.svg" alt="Data Structures icon" width="24" height="24" loading="lazy">
                 Data Structures
               </button>
             </li>
           </ul>
         </div>
 
-        <div class="skills-category" aria-labelledby="tools-heading">
-          <h3 id="tools-heading">Tools & Version Control</h3>
-          <ul class="skills-list" role="list">
+        <div class="skills-category">
+          <h3>Tools & Version Control</h3>
+          <ul class="skills-list">
             <li>
-              <button class="skill-btn" aria-label="Git skill">
-                <img src="git-icon.svg" alt="Git logo" width="24" height="24" loading="lazy" aria-hidden="true">
+              <button class="skill-btn">
+                <img src="assets/icons/git-icon.svg" alt="Git logo" width="24" height="24" loading="lazy">
                 Git
               </button>
             </li>
             <li>
-              <button class="skill-btn" aria-label="Testing skill">
-                <img src="testing-icon.svg" alt="Testing icon" width="24" height="24" loading="lazy" aria-hidden="true">
+              <button class="skill-btn">
+                <img src="assets/icons/testing-icon.svg" alt="Testing icon" width="24" height="24" loading="lazy">
                 Testing (Jest, RTL)
               </button>
             </li>
             <li>
-              <button class="skill-btn" aria-label="CI/CD skill">
-                <img src="cicd-icon.svg" alt="CI/CD icon" width="24" height="24" loading="lazy" aria-hidden="true">
+              <button class="skill-btn">
+                <img src="assets/icons/cicd-icon.svg" alt="CI/CD icon" width="24" height="24" loading="lazy">
                 CI/CD
               </button>
             </li>
             <li>
-              <button class="skill-btn" aria-label="Docker skill">
-                <img src="docker-icon.svg" alt="Docker logo" width="24" height="24" loading="lazy" aria-hidden="true">
+              <button class="skill-btn">
+                <img src="assets/icons/docker-icon.svg" alt="Docker logo" width="24" height="24" loading="lazy">
                 Docker
               </button>
             </li>
@@ -284,78 +258,16 @@
       </div>
     </section>
 
-    <!-- Interactive Elements Section -->
-    <section id="interactive" class="interactive section-card" aria-labelledby="interactive-heading">
-      <h2 id="interactive-heading">Interactive Elements</h2>
-      
-      <!-- Interactive Elements -->
-      <div class="interactive-elements">
-        <div class="interactive-card">
-          <h3>Live Code Editor</h3>
-          <div class="code-editor">
-            <div class="editor-header">
-              <span class="editor-title">Try it yourself</span>
-              <div class="editor-actions">
-                <button class="run-btn">Run</button>
-                <button class="reset-btn">Reset</button>
-              </div>
-            </div>
-            <pre><code class="language-javascript">// Write your code here
-function greet(name) {
-  return `Hello, ${name}!`;
-}
-
-console.log(greet('World'));</code></pre>
-          </div>
-        </div>
-
-        <div class="interactive-card">
-          <h3>Development Workflow</h3>
-          <div class="workflow-diagram">
-            <div class="workflow-step">
-              <div class="step-icon">📝</div>
-              <h4>Planning</h4>
-              <p>Requirements gathering and architecture design</p>
-            </div>
-            <div class="workflow-step">
-              <div class="step-icon">💻</div>
-              <h4>Development</h4>
-              <p>Clean code and test-driven development</p>
-            </div>
-            <div class="workflow-step">
-              <div class="step-icon">🔍</div>
-              <h4>Testing</h4>
-              <p>Unit tests and integration testing</p>
-            </div>
-            <div class="workflow-step">
-              <div class="step-icon">🚀</div>
-              <h4>Deployment</h4>
-              <p>CI/CD and monitoring</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- Contact Section -->
-    <section id="contact" class="contact-info section-card" aria-label="Contact information">
+    <section id="contact" class="contact-info section-card">
       <h2>Get in Touch</h2>
       <div class="contact-grid">
-        <p>📧 <a href="mailto:shaina.slavin@gmail.com" aria-label="Email me at shaina.slavin@gmail.com">shaina.slavin@gmail.com</a></p>
-        <p>📱 <a href="tel:+972503071261" aria-label="Call me at +972-50-3071261">+972-50-3071261</a></p>
-        <p>🌐 <a href="https://github.com/S-Slavin" aria-label="Visit my GitHub profile">github.com/S-Slavin</a></p>
-        <p>🔗 <a href="https://linkedin.com/in/shaina-slavin" aria-label="Visit my LinkedIn profile">linkedin.com/in/shaina-slavin</a></p>
-        <p>🌍 <a href="https://s-slavin.github.io" aria-label="Visit my website">s-slavin.github.io</a></p>
+        <p>📧 <a href="mailto:shaina.slavin@gmail.com">shaina.slavin@gmail.com</a></p>
+        <p>📱 <a href="tel:+972503071261">+972-50-3071261</a></p>
+        <p>🌐 <a href="https://github.com/S-Slavin">github.com/S-Slavin</a></p>
+        <p>🔗 <a href="https://linkedin.com/in/shaina-slavin">linkedin.com/in/shaina-slavin</a></p>
+        <p>🌍 <a href="https://s-slavin.github.io">s-slavin.github.io</a></p>
       </div>
-    </section>
-
-    <!-- Open Source & Community Section -->
-    <section class="community section-card" aria-label="Open Source and Community">
-      <h2>Open Source & Community</h2>
-      <p>
-        Proud open-source contributor. Explore my public projects and contributions on <a href="https://github.com/S-Slavin" target="_blank" rel="noopener">GitHub</a>.<br>
-        I am passionate about collaborating with others and giving back to the tech community through mentorship, volunteering, and open-source work.
-      </p>
     </section>
 
     <footer>
@@ -370,99 +282,5 @@ console.log(greet('World'));</code></pre>
       </div>
     </footer>
   </main>
-  <button class="theme-toggle" aria-label="Toggle dark mode">
-    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
-    </svg>
-  </button>
-  <script>
-    // Code Editor Functionality
-    const codeEditor = document.querySelector('.code-editor pre code');
-    const runButton = document.querySelector('.run-btn');
-    const resetButton = document.querySelector('.reset-btn');
-    const originalCode = codeEditor.textContent;
-
-    runButton.addEventListener('click', () => {
-      try {
-        const code = codeEditor.textContent;
-        const result = eval(code);
-        console.log(result);
-        alert('Code executed! Check console for output.');
-      } catch (error) {
-        alert('Error: ' + error.message);
-      }
-    });
-
-    resetButton.addEventListener('click', () => {
-      codeEditor.textContent = originalCode;
-    });
-
-    // Make code editor editable
-    codeEditor.contentEditable = true;
-    codeEditor.spellcheck = false;
-
-    // Navbar scroll effect
-    const navbar = document.querySelector('.navbar');
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 50) {
-        navbar.classList.add('scrolled');
-      } else {
-        navbar.classList.remove('scrolled');
-      }
-    });
-
-    // Intersection Observer for fade-in animations
-    const observerOptions = {
-      root: null,
-      rootMargin: '0px',
-      threshold: 0.1
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('fade-in');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, observerOptions);
-
-    // Observe all section cards
-    document.querySelectorAll('.section-card').forEach(card => {
-      card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-      observer.observe(card);
-    });
-
-    // Add fade-in class
-    document.addEventListener('DOMContentLoaded', () => {
-      document.querySelectorAll('.section-card').forEach(card => {
-        card.classList.add('fade-in');
-      });
-    });
-
-    // Smooth scroll for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          target.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-          });
-        }
-      });
-    });
-
-    // Skill button hover effect
-    document.querySelectorAll('.skill-btn').forEach(btn => {
-      btn.addEventListener('mouseenter', () => {
-        btn.style.transform = 'translateY(-2px)';
-      });
-      btn.addEventListener('mouseleave', () => {
-        btn.style.transform = 'translateY(0)';
-      });
-    });
-  </script>
 </body>
 </html> 
