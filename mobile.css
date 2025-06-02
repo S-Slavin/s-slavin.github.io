@@ -1,0 +1,111 @@
+/* Mobile-specific styles */
+@media (max-width: 768px) {
+  /* Navigation */
+  .nav-container {
+    padding: 0 var(--space-2);
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+
+  .nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-2);
+    width: 100%;
+    padding: var(--space-2) 0;
+  }
+
+  .nav-links a {
+    font-size: 0.9rem;
+    padding: var(--space-1) var(--space-2);
+    white-space: nowrap;
+  }
+
+  /* Hero Section */
+  .header-content {
+    flex-direction: column;
+    text-align: center;
+    gap: var(--space-4);
+  }
+
+  .header-text h1 {
+    font-size: 2.5rem;
+  }
+
+  .header-text .subtitle {
+    font-size: 1.25rem;
+  }
+
+  .profile-image {
+    width: 200px;
+    height: 200px;
+  }
+
+  /* Skills Section */
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .skills-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Projects Section */
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-card {
+    padding: var(--space-3);
+  }
+
+  /* Contact Section */
+  .contact-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .contact-grid p {
+    justify-content: center;
+  }
+
+  /* Footer */
+  .footer-content {
+    flex-direction: column;
+    gap: var(--space-3);
+    text-align: center;
+  }
+
+  .footer-links {
+    justify-content: center;
+  }
+}
+
+/* Additional mobile optimizations */
+@media (max-width: 480px) {
+  .header-text h1 {
+    font-size: 2rem;
+  }
+
+  .header-text .subtitle {
+    font-size: 1.1rem;
+  }
+
+  .section-card {
+    padding: var(--space-3);
+  }
+
+  .section-card h2 {
+    font-size: 1.75rem;
+  }
+
+  .nav-links {
+    gap: var(--space-1);
+  }
+
+  .nav-links a {
+    font-size: 0.85rem;
+    padding: var(--space-1);
+  }
+} 

@@ -11,6 +11,12 @@
   --background: #f0f7ff;
   --border: #bfdbfe;
   
+  /* Shadows */
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.12);
+  --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.15);
+  --shadow-xl: 0 12px 24px rgba(0, 0, 0, 0.18);
+  
   /* Typography */
   --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
   --font-size-base: 16px;
@@ -106,7 +112,8 @@ h1, h2, h3, h4, h5, h6 {
   border-bottom: 1px solid var(--border);
   z-index: 1000;
   backdrop-filter: blur(8px);
-  background-color: rgba(240, 247, 255, 0.9);
+  background-color: rgba(240, 247, 255, 0.95);
+  box-shadow: var(--shadow-md);
 }
 
 .navbar a {
@@ -186,13 +193,13 @@ h1, h2, h3, h4, h5, h6 {
   padding: var(--space-4);
   margin-bottom: var(--space-4);
   border: 1px solid var(--border);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--shadow-lg);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .section-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+  box-shadow: var(--shadow-xl);
 }
 
 .section-card h2 {
@@ -215,13 +222,13 @@ h1, h2, h3, h4, h5, h6 {
   padding: var(--space-3);
   border-radius: 8px;
   border: 1px solid var(--border);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+  box-shadow: var(--shadow-md);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .skills-category:hover {
   transform: translateY(-4px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+  box-shadow: var(--shadow-lg);
 }
 
 .skills-category h3 {
@@ -248,15 +255,15 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 6px;
   background: white;
   cursor: pointer;
-  transition: all 0.2s ease;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
   width: 100%;
   text-align: left;
 }
 
 .skill-btn:hover {
-  background: var(--background);
-  border-color: var(--primary-light);
-  transform: translateY(-1px);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
 }
 
 .skill-btn img {
@@ -277,13 +284,13 @@ h1, h2, h3, h4, h5, h6 {
   padding: var(--space-4);
   border-radius: 12px;
   border: 1px solid var(--border);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+  box-shadow: var(--shadow-lg);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .project-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+  box-shadow: var(--shadow-xl);
 }
 
 .project-card h3 {
@@ -342,7 +349,7 @@ h1, h2, h3, h4, h5, h6 {
   padding: var(--space-4);
   margin-bottom: var(--space-4);
   border: 1px solid var(--border);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--shadow-lg);
 }
 
 .contact-grid {
@@ -359,16 +366,16 @@ h1, h2, h3, h4, h5, h6 {
   align-items: center;
   gap: var(--space-2);
   padding: var(--space-3);
-  background: white;
+  background: var(--background);
   border-radius: 8px;
   border: 1px solid var(--border);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .contact-grid p:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
 }
 
 .contact-grid a {
@@ -508,9 +515,11 @@ h1, h2, h3, h4, h5, h6 {
 /* Footer */
 footer {
   text-align: center;
-  padding: var(--space-4);
+  padding: var(--space-4) 0;
   margin-top: var(--space-5);
+  background: white;
   border-top: 1px solid var(--border);
+  box-shadow: var(--shadow-md);
 }
 
 .footer-content {
