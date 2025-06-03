@@ -534,14 +534,34 @@
 
   /* Close Button - Mobile */
   .close-button {
-    top: 0.5rem;
-    right: 0.5rem;
-    width: 2rem;
-    height: 2rem;
-    font-size: 1.25rem;
+    position: fixed !important;
+    top: 0.75rem !important;
+    right: 0.75rem !important;
+    width: 2.25rem !important;
+    height: 2.25rem !important;
+    border-radius: 50% !important;
+    background: var(--card-background) !important;
+    border: 1px solid var(--border-color) !important;
+    color: var(--text-color) !important;
+    font-size: 1.25rem !important;
+    line-height: 1 !important;
+    cursor: pointer !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    transition: all 0.3s ease !important;
+    box-shadow: var(--card-shadow) !important;
+    z-index: 1000 !important;
+    padding: 0 !important;
+  }
+
+  .close-button:hover {
+    background: var(--accent-color) !important;
+    color: var(--card-background) !important;
+    transform: scale(1.05) !important;
   }
 
   .close-button:active {
-    transform: scale(0.95);
+    transform: scale(0.95) !important;
   }
 } 
