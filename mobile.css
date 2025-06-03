@@ -214,41 +214,35 @@
 
   /* Hero Section - Mobile Optimized */
   .header-content {
-    display: flex;
     flex-direction: column;
-    align-items: center;
     text-align: center;
-    padding: 2rem 1rem;
-    gap: 2rem;
+    gap: 1.5rem;
+    padding: 1rem;
+  }
+
+  .header-text {
+    max-width: 100%;
   }
 
   .header-text h1 {
-    font-size: 2.5rem;
-    margin: 0;
-    line-height: 1.2;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
   }
 
   .header-text .subtitle {
-    font-size: 1.3rem;
-    color: var(--accent-color);
-    margin: 0.75rem 0;
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
   }
 
   .header-text .tagline {
-    font-size: 1.1rem;
-    color: var(--text-color);
-    opacity: 0.9;
-    max-width: 90%;
-    margin: 0 auto;
+    font-size: 1rem;
+    margin-bottom: 1rem;
   }
 
   .profile-image {
     width: 200px;
     height: 200px;
-    border-radius: 50%;
-    object-fit: cover;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    border: 3px solid var(--accent-color);
+    margin: 0 auto;
   }
 
   /* Section Cards - Mobile Optimized */
@@ -270,91 +264,33 @@
 
   /* Skills Section - Mobile Only */
   .skills-grid {
-    display: grid;
     grid-template-columns: 1fr;
     gap: 1rem;
-    padding: 0.75rem;
+    padding: 0.5rem;
   }
 
   .skills-category {
-    background: var(--card-background);
-    border-radius: 12px;
-    padding: 1.25rem;
-    margin-bottom: 0.75rem;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    border: 1px solid var(--border-color);
-    position: relative;
-    overflow: hidden;
-  }
-
-  .skills-category::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 3px;
-    background: linear-gradient(to right, var(--primary), var(--primary-light));
-    opacity: 0.8;
+    padding: 1rem;
   }
 
   .skills-category h3 {
-    font-size: 1.2rem;
+    font-size: 1.25rem;
     margin-bottom: 1rem;
-    padding-bottom: 0.5rem;
-    color: var(--accent-color);
-    text-align: center;
-    border-bottom: 2px solid var(--border-color);
-    font-weight: 600;
   }
 
   .skills-list {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 0.75rem;
-    padding: 0.5rem;
+    gap: 0.5rem;
   }
 
   .skill-btn {
-    padding: 0.75rem;
+    padding: 0.5rem;
     font-size: 0.9rem;
-    min-height: 2.75rem;
+    min-height: 2.5rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: var(--card-background);
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
-    color: var(--text-color);
-    position: relative;
-    overflow: hidden;
-  }
-
-  .skill-btn::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
-    opacity: 0;
-    transition: opacity 0.3s ease;
-  }
-
-  .skill-btn:hover,
-  .skill-btn:active {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-    border-color: var(--accent-color);
-    color: var(--accent-color);
-  }
-
-  .skill-btn:hover::before,
-  .skill-btn:active::before {
-    opacity: 1;
   }
 
   /* Close Button - Mobile Only */
@@ -362,12 +298,12 @@
     position: fixed;
     top: 1rem;
     right: 1rem;
-    width: 3rem;
-    height: 3rem;
+    width: 2.5rem;
+    height: 2.5rem;
     border-radius: 50%;
     background: var(--card-background);
-    border: 2px solid var(--accent-color);
-    color: var(--accent-color);
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
     font-size: 1.5rem;
     line-height: 1;
     cursor: pointer;
@@ -375,164 +311,111 @@
     align-items: center;
     justify-content: center;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-    z-index: 9999;
-    padding: 0;
-    font-weight: bold;
+    box-shadow: var(--card-shadow);
+    z-index: 1000;
   }
 
-  .close-button:hover,
-  .close-button:active {
+  .close-button:hover {
     background: var(--accent-color);
-    color: white;
+    color: var(--card-background);
     transform: scale(1.1);
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
   }
 
   /* Dark Mode - Mobile Only */
   [data-theme="dark"] .skills-category {
     background: var(--card-background);
     border-color: var(--border-color);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
   }
 
   [data-theme="dark"] .skill-btn {
-    background: rgba(96, 165, 250, 0.1);
+    background: var(--card-background);
     border-color: var(--border-color);
     color: var(--text-color);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
   }
 
-  [data-theme="dark"] .skill-btn:hover,
-  [data-theme="dark"] .skill-btn:active {
+  [data-theme="dark"] .skill-btn:hover {
     background: var(--accent-color);
     color: var(--card-background);
-    box-shadow: 0 4px 12px rgba(96, 165, 250, 0.3);
-  }
-
-  [data-theme="dark"] .skill-btn::before {
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0));
   }
 
   [data-theme="dark"] .close-button {
     background: var(--card-background);
-    border-color: var(--accent-color);
-    color: var(--accent-color);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    border-color: var(--border-color);
+    color: var(--text-color);
   }
 
-  [data-theme="dark"] .close-button:hover,
-  [data-theme="dark"] .close-button:active {
+  [data-theme="dark"] .close-button:hover {
     background: var(--accent-color);
     color: var(--card-background);
-    box-shadow: 0 6px 16px rgba(96, 165, 250, 0.3);
   }
 
   /* Projects Section - Mobile Optimized */
   .projects-grid {
-    display: grid;
     grid-template-columns: 1fr;
-    gap: 1.5rem;
-    padding: 1rem;
+    gap: 1rem;
   }
 
   .project-card {
-    background: var(--card-background);
-    border-radius: 16px;
-    padding: 1.5rem;
-    box-shadow: var(--card-shadow);
-    transition: all 0.3s ease;
+    padding: 1rem;
   }
 
   .project-card h3 {
-    font-size: 1.3rem;
-    margin-bottom: 0.75rem;
-    color: var(--accent-color);
+    font-size: 1.25rem;
   }
 
   .project-card p {
-    font-size: 0.95rem;
-    margin-bottom: 1rem;
-    color: var(--text-color);
+    font-size: 0.9rem;
   }
 
   .project-card ul {
-    padding-left: 1.25rem;
-    margin: 0.75rem 0;
+    padding-left: 1rem;
   }
 
   .project-card li {
     font-size: 0.9rem;
     margin-bottom: 0.5rem;
-    color: var(--text-color);
   }
 
   .github-link {
-    display: inline-block;
-    margin-top: 1rem;
-    padding: 0.75rem 1.5rem;
-    background: var(--accent-color);
-    color: white;
-    text-decoration: none;
-    border-radius: 12px;
+    width: 100%;
+    text-align: center;
+    padding: 0.75rem;
     font-size: 0.9rem;
-    transition: all 0.3s ease;
-  }
-
-  .github-link:active {
-    transform: scale(0.98);
-    background: var(--primary);
   }
 
   /* Contact Section - Mobile Optimized */
   .contact-grid {
-    display: grid;
     grid-template-columns: 1fr;
     gap: 1rem;
-    padding: 1rem;
   }
 
   .contact-grid p {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
     padding: 1rem;
-    background: var(--card-background);
-    border-radius: 12px;
-    box-shadow: var(--card-shadow);
-    font-size: 0.95rem;
+    font-size: 0.9rem;
   }
 
   .contact-grid a {
-    color: var(--accent-color);
-    text-decoration: none;
-    transition: all 0.3s ease;
+    font-size: 0.9rem;
   }
 
   /* Footer - Mobile Optimized */
   .footer-content {
-    padding: 1.5rem 1rem;
-    text-align: center;
+    padding: 1rem;
   }
 
   .footer-links {
-    display: flex;
     flex-wrap: wrap;
-    justify-content: center;
     gap: 1rem;
-    margin-top: 1rem;
   }
 
   .footer-links a {
-    color: var(--accent-color);
-    text-decoration: none;
     font-size: 0.9rem;
   }
 
   /* Extra small devices */
   @media (max-width: 360px) {
     .header-text h1 {
-      font-size: 2rem;
+      font-size: 1.75rem;
     }
     
     .header-text .subtitle {
@@ -546,6 +429,7 @@
     .nav-link {
       font-size: 0.8rem;
       padding: 0.4rem 0.8rem;
+      min-width: 70px;
     }
     
     .resume {
@@ -563,11 +447,11 @@
     }
 
     .skills-grid {
-      padding: 0.5rem;
+      gap: 0.75rem;
     }
 
     .skills-category {
-      padding: 1rem;
+      padding: 0.75rem;
     }
 
     .skills-list {
@@ -575,7 +459,6 @@
     }
 
     .skill-btn {
-      min-height: 2.5rem;
       font-size: 0.85rem;
     }
   }
