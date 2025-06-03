@@ -1113,34 +1113,47 @@ footer {
 
   /* Close Button - Desktop */
   .close-button {
-    position: fixed;
-    top: 1.5rem;
-    right: 1.5rem;
-    width: 3.5rem;
-    height: 3.5rem;
-    border-radius: 50%;
-    background: var(--card-background);
-    border: 1px solid var(--border-color);
-    color: var(--text-color);
-    font-size: 1.75rem;
-    line-height: 1;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease;
-    box-shadow: var(--shadow-lg);
-    z-index: 1000;
-    padding: 0;
+    position: fixed !important;
+    top: 1.5rem !important;
+    right: 1.5rem !important;
+    width: 3.5rem !important;
+    height: 3.5rem !important;
+    border-radius: 50% !important;
+    background: var(--card-background) !important;
+    border: 1px solid var(--border-color) !important;
+    color: var(--text-color) !important;
+    font-size: 1.75rem !important;
+    line-height: 1 !important;
+    cursor: pointer !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    transition: all 0.3s ease !important;
+    box-shadow: var(--shadow-lg) !important;
+    z-index: 9999 !important;
+    padding: 0 !important;
   }
 
   .close-button:hover {
-    background: var(--accent-color);
-    color: var(--card-background);
-    transform: scale(1.1);
+    background: var(--accent-color) !important;
+    color: var(--card-background) !important;
+    transform: scale(1.1) !important;
   }
 
   .close-button:active {
-    transform: scale(0.95);
+    transform: scale(0.95) !important;
+  }
+
+  /* Ensure close button is visible in dark mode */
+  [data-theme="dark"] .close-button {
+    background: var(--card-background) !important;
+    border-color: var(--border-color) !important;
+    color: var(--text-color) !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
+  }
+
+  [data-theme="dark"] .close-button:hover {
+    background: var(--accent-color) !important;
+    color: var(--card-background) !important;
   }
 } 

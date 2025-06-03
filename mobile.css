@@ -321,7 +321,7 @@
     justify-content: center !important;
     transition: all 0.3s ease !important;
     box-shadow: var(--card-shadow) !important;
-    z-index: 1000 !important;
+    z-index: 9999 !important;
     padding: 0 !important;
   }
 
@@ -330,6 +330,20 @@
     background: var(--accent-color) !important;
     color: var(--card-background) !important;
     transform: scale(1.1) !important;
+  }
+
+  /* Ensure close button is visible in dark mode */
+  [data-theme="dark"] .close-button {
+    background: var(--card-background) !important;
+    border-color: var(--border-color) !important;
+    color: var(--text-color) !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
+  }
+
+  [data-theme="dark"] .close-button:hover,
+  [data-theme="dark"] .close-button:active {
+    background: var(--accent-color) !important;
+    color: var(--card-background) !important;
   }
 
   /* Dark Mode - Mobile Optimizations */
