@@ -381,7 +381,7 @@ h1, h2, h3, h4, h5, h6 {
   background: var(--card-background) !important;
   border-radius: 16px !important;
   padding: 2rem !important;
-  box-shadow: var(--shadow-lg) !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15) !important;
   transition: all 0.3s ease !important;
   border: 1px solid var(--border-color) !important;
   position: relative !important;
@@ -401,7 +401,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .skills-category:hover {
   transform: translateY(-4px) !important;
-  box-shadow: var(--shadow-xl) !important;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2) !important;
   border-color: var(--accent-color) !important;
 }
 
@@ -441,7 +441,7 @@ h1, h2, h3, h4, h5, h6 {
   padding: 1rem 1.25rem !important;
   font-size: 1rem !important;
   font-weight: 500 !important;
-  background: var(--background-color) !important;
+  background: var(--card-background) !important;
   border: 1px solid var(--border-color) !important;
   border-radius: 12px !important;
   color: var(--text-color) !important;
@@ -449,19 +449,19 @@ h1, h2, h3, h4, h5, h6 {
   transition: all 0.3s ease !important;
   overflow: hidden !important;
   text-align: center !important;
-  box-shadow: var(--shadow-sm) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
 }
 
 .skill-btn:hover {
   transform: translateY(-2px) !important;
   border-color: var(--accent-color) !important;
   color: var(--accent-color) !important;
-  box-shadow: var(--shadow-md) !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15) !important;
 }
 
 .skill-btn:active {
   transform: translateY(0) !important;
-  box-shadow: var(--shadow-sm) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
 }
 
 /* Category-specific colors */
@@ -485,17 +485,24 @@ h1, h2, h3, h4, h5, h6 {
 [data-theme="dark"] .skills-category {
   background: var(--card-background) !important;
   border-color: var(--border-color) !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3) !important;
+}
+
+[data-theme="dark"] .skills-category:hover {
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4) !important;
 }
 
 [data-theme="dark"] .skill-btn {
   background: var(--background-color) !important;
   border-color: var(--border-color) !important;
   color: var(--text-color) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2) !important;
 }
 
 [data-theme="dark"] .skill-btn:hover {
   border-color: var(--accent-color) !important;
   color: var(--accent-color) !important;
+  box-shadow: 0 8px 24px rgba(96, 165, 250, 0.2) !important;
 }
 
 /* Projects Section */
@@ -991,31 +998,20 @@ footer {
   }
 
   .skills-category {
-    background: var(--card-background);
-    border-radius: 16px;
-    padding: 2rem;
-    box-shadow: var(--shadow-md);
-    transition: all 0.3s ease;
-    border: 1px solid var(--border-color);
-    position: relative;
-    overflow: hidden;
-  }
-
-  .skills-category::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 4px;
-    background: linear-gradient(to right, var(--primary), var(--primary-light));
-    opacity: 0.8;
+    background: var(--card-background) !important;
+    border-radius: 16px !important;
+    padding: 2rem !important;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15) !important;
+    transition: all 0.3s ease !important;
+    border: 1px solid var(--border-color) !important;
+    position: relative !important;
+    overflow: hidden !important;
   }
 
   .skills-category:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-lg);
-    border-color: var(--accent-color);
+    transform: translateY(-4px) !important;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2) !important;
+    border-color: var(--accent-color) !important;
   }
 
   .skills-category h3 {
@@ -1049,32 +1045,32 @@ footer {
   }
 
   .skill-btn {
-    position: relative;
-    width: 100%;
-    padding: 1rem 1.25rem;
-    font-size: 1rem;
-    font-weight: 500;
-    background: var(--background-color);
-    border: 1px solid var(--border-color);
-    border-radius: 12px;
-    color: var(--text-color);
-    cursor: pointer;
-    transition: all 0.3s ease;
-    overflow: hidden;
-    text-align: center;
-    box-shadow: var(--shadow-sm);
+    position: relative !important;
+    width: 100% !important;
+    padding: 1rem 1.25rem !important;
+    font-size: 1rem !important;
+    font-weight: 500 !important;
+    background: var(--card-background) !important;
+    border: 1px solid var(--border-color) !important;
+    border-radius: 12px !important;
+    color: var(--text-color) !important;
+    cursor: pointer !important;
+    transition: all 0.3s ease !important;
+    overflow: hidden !important;
+    text-align: center !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
   }
 
   .skill-btn:hover {
-    transform: translateY(-2px);
-    border-color: var(--accent-color);
-    color: var(--accent-color);
-    box-shadow: var(--shadow-md);
+    transform: translateY(-2px) !important;
+    border-color: var(--accent-color) !important;
+    color: var(--accent-color) !important;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15) !important;
   }
 
   .skill-btn:active {
-    transform: translateY(0);
-    box-shadow: var(--shadow-sm);
+    transform: translateY(0) !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
   }
 
   /* Category-specific colors */
@@ -1096,19 +1092,26 @@ footer {
 
   /* Dark theme adjustments */
   [data-theme="dark"] .skills-category {
-    background: var(--card-background);
-    border-color: var(--border-color);
+    background: var(--card-background) !important;
+    border-color: var(--border-color) !important;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3) !important;
+  }
+
+  [data-theme="dark"] .skills-category:hover {
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4) !important;
   }
 
   [data-theme="dark"] .skill-btn {
-    background: var(--background-color);
-    border-color: var(--border-color);
-    color: var(--text-color);
+    background: var(--background-color) !important;
+    border-color: var(--border-color) !important;
+    color: var(--text-color) !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2) !important;
   }
 
   [data-theme="dark"] .skill-btn:hover {
-    border-color: var(--accent-color);
-    color: var(--accent-color);
+    border-color: var(--accent-color) !important;
+    color: var(--accent-color) !important;
+    box-shadow: 0 8px 24px rgba(96, 165, 250, 0.2) !important;
   }
 
   /* Close Button - Desktop */

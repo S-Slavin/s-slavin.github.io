@@ -278,6 +278,10 @@
   .skills-category {
     padding: 1rem !important;
     margin-bottom: 0.5rem !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+    border: 1px solid var(--border-color) !important;
+    background: var(--card-background) !important;
+    border-radius: 12px !important;
   }
 
   .skills-category h3 {
@@ -300,6 +304,18 @@
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
+    background: var(--card-background) !important;
+    border: 1px solid var(--border-color) !important;
+    border-radius: 8px !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
+    transition: all 0.3s ease !important;
+  }
+
+  .skill-btn:hover,
+  .skill-btn:active {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2) !important;
+    border-color: var(--accent-color) !important;
   }
 
   /* Close Button - Mobile Optimizations */
@@ -350,18 +366,21 @@
   [data-theme="dark"] .skills-category {
     background: var(--card-background) !important;
     border-color: var(--border-color) !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
   }
 
   [data-theme="dark"] .skill-btn {
     background: rgba(96, 165, 250, 0.1) !important;
     border-color: var(--border-color) !important;
     color: var(--text-color) !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2) !important;
   }
 
   [data-theme="dark"] .skill-btn:hover,
   [data-theme="dark"] .skill-btn:active {
     background: var(--accent-color) !important;
     color: var(--card-background) !important;
+    box-shadow: 0 4px 12px rgba(96, 165, 250, 0.3) !important;
   }
 
   /* Projects Section - Mobile Optimized */
