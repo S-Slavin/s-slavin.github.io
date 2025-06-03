@@ -151,6 +151,39 @@
         display: none;
       }
     }
+
+    .close-button {
+      position: fixed;
+      top: 1rem;
+      right: 1rem;
+      width: 2.5rem;
+      height: 2.5rem;
+      border-radius: 50%;
+      background: var(--card-background);
+      border: 1px solid var(--border-color);
+      color: var(--text-color);
+      font-size: 1.5rem;
+      line-height: 1;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+      box-shadow: var(--card-shadow);
+      z-index: 1000;
+    }
+
+    .close-button:hover {
+      background: var(--accent-color);
+      color: var(--card-background);
+      transform: scale(1.1);
+    }
+
+    @media print {
+      .close-button {
+        display: none;
+      }
+    }
   </style>
 </head>
 <body>
@@ -186,7 +219,7 @@
         <p class="subtitle">Computer Science | Full-Stack & Front-End Developer</p>
         <div class="resume-actions">
           <a href="./resume.pdf" class="download-button" download>Download PDF</a>
-          <a href="./index.html" class="back-button">Back to Portfolio</a>
+          <button class="close-button" aria-label="Close PDF view">×</button>
         </div>
       </header>
       
@@ -332,5 +365,11 @@
       <p>© 2024 Shaina Slavin. All rights reserved.</p>
     </footer>
   </main>
+
+  <script>
+    document.querySelector('.close-button').addEventListener('click', () => {
+      window.close();
+    });
+  </script>
 </body>
 </html> 
