@@ -855,4 +855,30 @@ footer {
   .download-button {
     display: none;
   }
+}
+
+/* Force styles with maximum specificity */
+body .main-container .hero-section {
+  background: #c7d2fe !important;
+  border: 5px solid red !important;
+}
+
+body .main-container .hero-section .header-content {
+  background: #e2e8f0 !important;
+  border: 5px solid blue !important;
+}
+
+body .main-container .hero-section .header-content .header-text h1 {
+  color: #1a365d !important;
+  border: 5px solid green !important;
+}
+
+body .main-container .hero-section .header-content .header-text .subtitle {
+  color: #1d4ed8 !important;
+  border: 5px solid purple !important;
+}
+
+body .main-container .hero-section .header-content .profile-image {
+  border: 5px solid orange !important;
+  background: #e2e8f0 !important;
 } 
