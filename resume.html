@@ -7,8 +7,8 @@
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
   <title>Shaina Slavin - Full-Stack & Front-End Developer</title>
-  <link rel="stylesheet" href="./styles.css?v=18">
-  <link rel="stylesheet" href="./mobile.css?v=18">
+  <link rel="stylesheet" href="./styles.css?v=20">
+  <link rel="stylesheet" href="./mobile.css?v=20" media="(max-width: 768px)">
   <script src="script.js?v=3" defer></script>
   <style>
     @media print {
@@ -44,6 +44,7 @@
         border-bottom: 1px solid #1e3a8a;
         margin-bottom: 1.5rem;
         padding-bottom: 0.75rem;
+        position: relative;
       }
       
       .resume header h1 {
@@ -60,6 +61,33 @@
       
       .download-button {
         display: none;
+      }
+
+      .close-button {
+        display: block !important;
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 2rem;
+        height: 2rem;
+        border-radius: 50%;
+        background: #1e3a8a;
+        border: 2px solid #1e3a8a;
+        color: white;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      .close-button:hover {
+        background: #2563eb;
+        border-color: #2563eb;
       }
       
       .resume-section {
@@ -152,36 +180,75 @@
       }
     }
 
+    .pdf-viewer {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--background-color);
+      z-index: 1000;
+      display: none;
+    }
+
+    .pdf-viewer.active {
+      display: block;
+    }
+
+    .pdf-viewer iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
     .close-button {
       position: fixed;
-      top: 1rem;
-      right: 1rem;
-      width: 2.5rem;
-      height: 2.5rem;
+      top: 1.5rem;
+      right: 1.5rem;
+      width: 3rem;
+      height: 3rem;
       border-radius: 50%;
       background: var(--card-background);
-      border: 1px solid var(--border-color);
+      border: 2px solid var(--border-color);
       color: var(--text-color);
-      font-size: 1.5rem;
+      font-size: 2rem;
+      font-weight: bold;
       line-height: 1;
       cursor: pointer;
-      display: flex;
+      display: none;
       align-items: center;
       justify-content: center;
       transition: all 0.3s ease;
-      box-shadow: var(--card-shadow);
-      z-index: 1000;
+      box-shadow: var(--shadow-lg);
+      z-index: 1001;
+      padding: 0;
+      margin: 0;
+      text-decoration: none;
+    }
+
+    .close-button.active {
+      display: flex;
     }
 
     .close-button:hover {
       background: var(--accent-color);
       color: var(--card-background);
-      transform: scale(1.1);
+      transform: scale(1.1) rotate(90deg);
+      box-shadow: var(--shadow-xl);
+      border-color: var(--accent-color);
     }
 
-    @media print {
+    .close-button:active {
+      transform: scale(0.95);
+    }
+
+    @media screen and (max-width: 768px) {
       .close-button {
-        display: none;
+        top: 1rem;
+        right: 1rem;
+        width: 2.5rem;
+        height: 2.5rem;
+        font-size: 1.75rem;
       }
     }
   </style>
@@ -218,8 +285,7 @@
         <h1>Shaina Slavin</h1>
         <p class="subtitle">Computer Science | Full-Stack & Front-End Developer</p>
         <div class="resume-actions">
-          <a href="./resume.pdf" class="download-button" download>Download PDF</a>
-          <button class="close-button" aria-label="Close PDF view">×</button>
+          <a href="#" class="download-button" id="viewPdfBtn">View PDF</a>
         </div>
       </header>
       
@@ -366,9 +432,32 @@
     </footer>
   </main>
 
+  <div class="pdf-viewer" id="pdfViewer">
+    <iframe id="pdfFrame" src="" title="Resume PDF"></iframe>
+  </div>
+  <button class="close-button" id="closePdfBtn" aria-label="Close PDF view">×</button>
+
   <script>
-    document.querySelector('.close-button').addEventListener('click', () => {
-      window.close();
+    document.addEventListener('DOMContentLoaded', () => {
+      const viewPdfBtn = document.getElementById('viewPdfBtn');
+      const closePdfBtn = document.getElementById('closePdfBtn');
+      const pdfViewer = document.getElementById('pdfViewer');
+      const pdfFrame = document.getElementById('pdfFrame');
+
+      viewPdfBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        pdfFrame.src = './resume.pdf';
+        pdfViewer.classList.add('active');
+        closePdfBtn.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      });
+
+      closePdfBtn.addEventListener('click', () => {
+        pdfViewer.classList.remove('active');
+        closePdfBtn.classList.remove('active');
+        pdfFrame.src = '';
+        document.body.style.overflow = '';
+      });
     });
   </script>
 </body>
