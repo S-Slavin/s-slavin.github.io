@@ -160,21 +160,24 @@ body {
 .skill-btn {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 0.75rem;
+  justify-content: center;
+  padding: 0.75rem 1.25rem;
   border: 1px solid var(--border-color);
   border-radius: 8px;
-  background: var(--card-background);
+  background: var(--background-color);
+  color: var(--text-color);
+  font-weight: 500;
+  transition: all 0.3s ease;
+  text-decoration: none;
   width: 100%;
-  text-align: left;
-  font-size: 0.9rem;
-  transition: all 0.2s ease;
+  text-align: center;
 }
 
 .skill-btn:active {
-  transform: scale(0.98);
-  background: var(--accent-color);
-  color: white;
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-color: var(--accent-color);
+  color: var(--accent-color);
 }
 
 /* Projects Section - Improved card layout */
