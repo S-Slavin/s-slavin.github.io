@@ -22,22 +22,10 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
-      - name: Build with Jekyll
-        run: |
-          echo "No build step needed - using static site"
-
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: |
-            index.html
-            resume.html
-            styles.css
-            mobile.css
-            script.js
-            assets/
-            projects/
-            .nojekyll
+          path: .
 
   deploy:
     environment:
