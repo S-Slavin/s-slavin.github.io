@@ -4,31 +4,41 @@
 /* Theme Variables */
 :root {
   /* Light theme (default) */
-  --text-color: #1a365d;
-  --background-color: #c7d2fe;  /* Much darker blue */
-  --accent-color: #1d4ed8;
-  --card-background: #e2e8f0;  /* Light gray */
-  --border-color: #93c5fd;
-  --nav-background: rgba(226, 232, 240, 0.95);
-  --nav-text: #1a365d;
-  --nav-hover: #1d4ed8;
-  --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  --text-secondary: #4a5568;
+  --text-color: #1a365d;  /* Deep navy blue */
+  --background-color: #ebf8ff;  /* Very light blue */
+  --accent-color: #2b6cb0;  /* Medium blue */
+  --card-background: #ffffff;  /* Pure white */
+  --border-color: #90cdf4;  /* Light blue */
+  --nav-background: #ffffff;  /* Pure white */
+  --nav-text: #1a365d;  /* Deep navy blue */
+  --nav-hover: #2b6cb0;  /* Medium blue */
+  --card-shadow: 0 4px 6px rgba(26, 54, 93, 0.08);  /* Blue shadow */
+  --text-secondary: #2c5282;  /* Medium-dark blue */
   
   /* Colors */
-  --primary: #1a365d;
-  --primary-light: #1d4ed8;
-  --accent: #2563eb;
-  --text: #1a365d;
-  --background: #e0e7ff;
-  --border: #93c5fd;
+  --primary: #1a365d;  /* Deep navy blue */
+  --primary-light: #2b6cb0;  /* Medium blue */
+  --accent: #3182ce;  /* Bright blue */
+  --text: #1a365d;  /* Deep navy blue */
+  --background: #ebf8ff;  /* Very light blue */
+  --border: #90cdf4;  /* Light blue */
   
   /* Enhanced Shadows */
-  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
-  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.12);
-  --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.15);
-  --shadow-xl: 0 12px 24px rgba(0, 0, 0, 0.18);
-  --shadow-2xl: 0 16px 32px rgba(0, 0, 0, 0.2);
+  --shadow-sm: 0 2px 4px rgba(26, 54, 93, 0.05),
+               0 1px 2px rgba(26, 54, 93, 0.1);
+  --shadow-md: 0 4px 6px rgba(26, 54, 93, 0.07),
+               0 2px 4px rgba(26, 54, 93, 0.12),
+               0 1px 3px rgba(26, 54, 93, 0.15);
+  --shadow-lg: 0 10px 15px rgba(26, 54, 93, 0.08),
+               0 4px 6px rgba(26, 54, 93, 0.12),
+               0 2px 4px rgba(26, 54, 93, 0.15);
+  --shadow-xl: 0 20px 25px rgba(26, 54, 93, 0.1),
+               0 10px 10px rgba(26, 54, 93, 0.12),
+               0 4px 6px rgba(26, 54, 93, 0.15);
+  --shadow-2xl: 0 25px 50px rgba(26, 54, 93, 0.12),
+                0 15px 20px rgba(26, 54, 93, 0.15),
+                0 5px 10px rgba(26, 54, 93, 0.18);
+  --shadow-inner: inset 0 2px 4px rgba(26, 54, 93, 0.1);
   
   /* Typography */
   --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
@@ -48,16 +58,16 @@
 }
 
 [data-theme="dark"] {
-  --text-color: #e2e8f0;
-  --background-color: #0f172a;
-  --accent-color: #60a5fa;
-  --card-background: #1e293b;
-  --border-color: #334155;
-  --nav-background: rgba(30, 41, 59, 0.95);
-  --nav-text: #e2e8f0;
-  --nav-hover: #60a5fa;
-  --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-  --text-secondary: #94a3b8;
+  --text-color: #e2e8f0;  /* Light blue-gray */
+  --background-color: #1a365d;  /* Deep navy blue */
+  --accent-color: #4299e1;  /* Bright blue */
+  --card-background: #2c5282;  /* Medium-dark blue */
+  --border-color: #4299e1;  /* Bright blue */
+  --nav-background: #2c5282;  /* Medium-dark blue */
+  --nav-text: #e2e8f0;  /* Light blue-gray */
+  --nav-hover: #4299e1;  /* Bright blue */
+  --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  --text-secondary: #90cdf4;  /* Light blue */
 }
 
 /* Reset & Base Styles */
@@ -84,42 +94,49 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  color: var(--primary);
+  color: var(--text-color);
   line-height: 1.2;
   font-weight: 700;
   margin-bottom: 1em;
 }
 
-/* Theme Toggle */
+/* Theme Toggle - Complete Overhaul */
 .theme-toggle {
-  position: fixed;
-  top: 1rem;
-  right: 1rem;
-  background: var(--card-background);
-  border: 1px solid var(--border-color);
-  color: var(--text-color);
-  width: 2.5rem;
-  height: 2.5rem;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  z-index: 1001;
-  box-shadow: var(--shadow-md);
-}
-
-.theme-toggle:hover {
-  transform: scale(1.05);
-  box-shadow: var(--shadow-lg);
-  border-color: var(--accent-color);
+  position: fixed !important;
+  top: 1.5rem !important;
+  right: 2rem !important;
+  width: 3rem !important;
+  height: 3rem !important;
+  background: var(--card-background) !important;
+  border: 2px solid var(--border-color) !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  cursor: pointer !important;
+  z-index: 9999 !important;
+  box-shadow: var(--shadow-md) !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  overflow: visible !important;
 }
 
 .theme-toggle svg {
-  width: 1.5rem;
-  height: 1.5rem;
-  transition: transform 0.3s ease;
+  width: 1.5rem !important;
+  height: 1.5rem !important;
+  color: var(--text-color) !important;
+  stroke: currentColor !important;
+  stroke-width: 2 !important;
+  fill: none !important;
+  display: block !important;
+  margin: auto !important;
+}
+
+.theme-toggle:hover {
+  transform: scale(1.1) !important;
+  background: var(--accent-color) !important;
+  border-color: var(--accent-color) !important;
+  color: white !important;
 }
 
 /* PDF Viewer */
@@ -188,65 +205,63 @@ h1, h2, h3, h4, h5, h6 {
   padding: var(--space-3);
 }
 
-/* Navigation */
+/* Navigation - Complete Overhaul */
 .navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: var(--header-height);
-  background: var(--nav-background);
-  z-index: 1000;
-  box-shadow: var(--shadow-md);
-  display: flex;
-  align-items: center;
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  height: var(--header-height) !important;
+  background: var(--nav-background) !important;
+  z-index: 1000 !important;
+  box-shadow: var(--shadow-lg) !important;
+  border-bottom: 1px solid var(--border-color) !important;
 }
 
 .nav-container {
-  max-width: var(--container-width);
-  margin: 0 auto;
-  padding: 0 var(--space-3);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  height: 100%;
+  max-width: var(--container-width) !important;
+  margin: 0 auto !important;
+  padding: 0 var(--space-3) !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  width: 100% !important;
+  height: 100% !important;
 }
 
 .nav-logo {
-  font-size: 1.75rem;
-  font-weight: bold;
-  color: var(--accent-color);
-  text-decoration: none;
-  padding: 0.5rem;
-  transition: all 0.3s ease;
-}
-
-.nav-logo:hover {
-  transform: scale(1.05);
-  color: var(--nav-hover);
+  color: var(--accent-color) !important;
+  font-size: 1.75rem !important;
+  font-weight: bold !important;
+  text-decoration: none !important;
 }
 
 .nav-links {
-  display: flex;
-  gap: 2rem;
-  align-items: center;
+  display: flex !important;
+  gap: 2rem !important;
+  align-items: center !important;
 }
 
 .navbar a {
-  color: var(--nav-text);
-  text-decoration: none;
-  font-weight: 500;
-  padding: 0.5rem 1rem;
-  border-radius: 8px;
-  transition: all 0.3s ease;
-  font-size: 1.1rem;
+  color: var(--nav-text) !important;
+  text-decoration: none !important;
+  font-weight: 500 !important;
+  padding: 0.5rem 1rem !important;
+  border-radius: 8px !important;
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+  position: relative !important;
+  overflow: hidden !important;
 }
 
 .navbar a:hover {
-  color: var(--nav-hover);
-  background: var(--background-color);
-  transform: translateY(-2px);
+  transform: translateY(-5px) !important;
+  background: var(--accent-color) !important;
+  color: white !important;
+  box-shadow: var(--shadow-lg) !important;
+}
+
+.navbar a:active {
+  transform: translateY(-2px) !important;
 }
 
 .navbar a.active {
@@ -263,8 +278,8 @@ h1, h2, h3, h4, h5, h6 {
   justify-content: center;
   padding: var(--space-5) var(--space-3);
   position: relative;
-  background: #c7d2fe !important; /* Force the background color */
-  border: 5px solid red !important; /* Debug border */
+  background: var(--background-color) !important;
+  border: none !important;
 }
 
 .header-content {
@@ -275,10 +290,15 @@ h1, h2, h3, h4, h5, h6 {
   justify-content: space-between;
   gap: var(--space-5);
   padding: var(--space-4);
-  background: #e2e8f0 !important; /* Force the background color */
+  background: var(--card-background) !important;
   border-radius: 1rem;
-  box-shadow: var(--shadow-xl);
-  border: 5px solid blue !important; /* Debug border */
+  box-shadow: var(--shadow-xl) !important;
+  border: 1px solid var(--border-color) !important;
+  transition: box-shadow 0.3s ease !important;
+}
+
+.header-content:hover {
+  box-shadow: var(--shadow-2xl) !important;
 }
 
 .header-text {
@@ -289,19 +309,19 @@ h1, h2, h3, h4, h5, h6 {
 .header-text h1 {
   font-size: 3.5rem;
   margin-bottom: var(--space-3);
-  color: #1a365d !important; /* Force the text color */
+  color: var(--primary) !important;
   line-height: 1.1;
   font-weight: 800;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  border: 5px solid green !important; /* Debug border */
+  border: none !important;
 }
 
 .header-text .subtitle {
   font-size: 1.5rem;
-  color: #1d4ed8 !important; /* Force the accent color */
+  color: var(--accent-color) !important;
   margin-bottom: var(--space-2);
   font-weight: 600;
-  border: 5px solid purple !important; /* Debug border */
+  border: none !important;
 }
 
 .header-text .tagline {
@@ -315,16 +335,16 @@ h1, h2, h3, h4, h5, h6 {
   height: 300px;
   border-radius: 50%;
   object-fit: cover;
-  border: 5px solid orange !important; /* Debug border */
-  box-shadow: var(--shadow-lg);
-  transition: all 0.3s ease;
-  background: #e2e8f0 !important; /* Force the background color */
+  border: 3px solid var(--border-color) !important;
+  box-shadow: var(--shadow-xl) !important;
+  transition: all 0.3s ease !important;
+  background: var(--card-background) !important;
 }
 
 .profile-image:hover {
-  transform: scale(1.02);
+  transform: scale(1.02) !important;
+  box-shadow: var(--shadow-2xl) !important;
   border-color: var(--accent-color);
-  box-shadow: var(--shadow-xl);
 }
 
 @media (max-width: 768px) {
@@ -355,11 +375,13 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 24px;
   padding: var(--space-5);
   margin: var(--space-4) auto;
-  box-shadow: var(--shadow-lg);
+  box-shadow: var(--shadow-lg) !important;
   border: 1px solid var(--border-color);
   position: relative;
   overflow: hidden;
   max-width: var(--container-width);
+  transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+  transform-origin: center !important;
 }
 
 .section-card::before {
@@ -370,8 +392,9 @@ h1, h2, h3, h4, h5, h6 {
   right: 0;
   bottom: 0;
   background: linear-gradient(135deg, var(--accent-color) 0%, var(--primary) 100%);
-  opacity: 0.03;
+  opacity: 0.02;
   z-index: 0;
+  box-shadow: var(--shadow-inner) !important;
 }
 
 .section-card > * {
@@ -399,54 +422,94 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 2px;
 }
 
+.section-card:hover {
+  transform: translateY(-12px) scale(1.02) !important;
+  box-shadow: var(--shadow-2xl) !important;
+}
+
 /* About Section */
 .about-content {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: var(--space-4);
   align-items: start;
-  padding: 0;
+  padding: var(--space-4);
+  background: var(--card-background);
+  border-radius: 16px;
+  box-shadow: var(--shadow-md);
 }
 
 .about-content p {
   font-size: 1.2rem;
   line-height: 1.8;
   color: var(--text-color);
+  margin-bottom: var(--space-4);
 }
 
 .core-skills {
   background: var(--background-color);
   padding: var(--space-4);
   border-radius: 12px;
-  box-shadow: var(--shadow-md);
-  margin: 0;
+  box-shadow: var(--shadow-md) !important;
+  border: 1px solid var(--border-color);
+  transition: box-shadow 0.3s ease !important;
+}
+
+.core-skills:hover {
+  box-shadow: var(--shadow-lg) !important;
 }
 
 .core-skills h3 {
   font-size: 1.5rem;
   color: var(--primary);
   margin-bottom: 1.5rem;
+  text-align: center;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--accent-color);
+}
+
+.core-skills:hover h3 {
+  transform: translateY(-2px) !important;
+  color: var(--accent-color) !important;
 }
 
 .core-skills ul {
   list-style: none;
   padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-3);
 }
 
 .core-skills li {
   font-size: 1.1rem;
   color: var(--text-color);
-  margin-bottom: 1rem;
-  padding-left: 1.5rem;
-  position: relative;
+  margin-bottom: 0.5rem;
+  padding: 0.75rem;
+  background: var(--card-background);
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+  cursor: pointer !important;
+}
+
+.core-skills li:hover {
+  transform: translateY(-6px) scale(1.05) !important;
+  box-shadow: var(--shadow-xl) !important;
+  border-color: var(--accent-color) !important;
+  background: var(--accent-color) !important;
+  color: white !important;
+}
+
+.core-skills li:active {
+  transform: translateY(-3px) scale(0.98) !important;
 }
 
 .core-skills li::before {
   content: "•";
-  position: absolute;
-  left: 0;
   color: var(--accent-color);
   font-weight: bold;
+  margin-right: 0.5rem;
 }
 
 /* Skills Section */
@@ -462,10 +525,15 @@ h1, h2, h3, h4, h5, h6 {
   background: var(--background-color);
   padding: var(--space-4);
   border-radius: 16px;
-  box-shadow: var(--shadow-md);
+  box-shadow: var(--shadow-md) !important;
   position: relative;
   overflow: hidden;
   margin: 0;
+  transition: box-shadow 0.3s ease !important;
+}
+
+.skills-category:hover {
+  box-shadow: var(--shadow-lg) !important;
 }
 
 .skills-category::before {
@@ -516,18 +584,24 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--text-color);
   font-weight: 500;
   font-size: 1.1rem;
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
   cursor: pointer;
   text-align: center;
   margin: 0;
+  box-shadow: var(--shadow-sm) !important;
+  position: relative !important;
+  overflow: hidden !important;
 }
 
 .skill-btn:hover {
-  background: var(--accent-color);
-  color: white;
-  border-color: var(--accent-color);
-  transform: translateY(-3px);
-  box-shadow: var(--shadow-lg);
+  transform: translateY(-6px) scale(1.05) !important;
+  box-shadow: var(--shadow-xl) !important;
+  background: var(--accent-color) !important;
+  color: white !important;
+}
+
+.skill-btn:active {
+  transform: translateY(-3px) scale(0.98) !important;
 }
 
 /* Projects Section */
@@ -543,12 +617,13 @@ h1, h2, h3, h4, h5, h6 {
   background: var(--card-background);
   border-radius: 16px;
   padding: var(--space-4);
-  box-shadow: var(--shadow-md);
+  box-shadow: var(--shadow-md) !important;
   border: 1px solid var(--border-color);
-  transition: all 0.3s ease;
+  transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
   position: relative;
   overflow: hidden;
   margin: 0;
+  cursor: pointer !important;
 }
 
 .project-card::before {
@@ -569,15 +644,24 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .project-card:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--shadow-xl);
-  border-color: var(--accent-color);
+  transform: translateY(-12px) scale(1.03) !important;
+  box-shadow: var(--shadow-2xl) !important;
+  border-color: var(--accent-color) !important;
+}
+
+.project-card:active {
+  transform: translateY(-6px) scale(0.98) !important;
 }
 
 .project-card h3 {
   font-size: 1.75rem;
   color: var(--primary);
   margin-bottom: 1rem;
+}
+
+.project-card:hover h3 {
+  transform: translateY(-4px) !important;
+  color: var(--accent-color) !important;
 }
 
 .project-card p {
@@ -623,14 +707,21 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 8px;
   text-decoration: none;
   font-weight: 600;
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
   margin-top: 1rem;
+  box-shadow: var(--shadow-md) !important;
+  position: relative !important;
+  overflow: hidden !important;
 }
 
 .github-link:hover {
-  background: var(--primary);
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-md);
+  transform: translateY(-6px) scale(1.05) !important;
+  box-shadow: var(--shadow-xl) !important;
+  background: var(--primary) !important;
+}
+
+.github-link:active {
+  transform: translateY(-3px) scale(0.98) !important;
 }
 
 /* Contact Section */
@@ -646,19 +737,27 @@ h1, h2, h3, h4, h5, h6 {
   background: var(--background-color);
   padding: var(--space-4);
   border-radius: 16px;
-  box-shadow: var(--shadow-md);
+  box-shadow: var(--shadow-md) !important;
   display: flex;
   align-items: center;
   gap: var(--space-3);
   font-size: 1.2rem;
   color: var(--text-color);
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+  cursor: pointer !important;
   margin: 0;
 }
 
 .contact-grid p:hover {
-  transform: translateY(-3px);
-  box-shadow: var(--shadow-lg);
+  transform: translateY(-6px) scale(1.05) !important;
+  box-shadow: var(--shadow-xl) !important;
+  border-color: var(--accent-color) !important;
+  background: var(--accent-color) !important;
+  color: white !important;
+}
+
+.contact-grid p:active {
+  transform: translateY(-3px) scale(0.98) !important;
 }
 
 .contact-grid span[role="img"] {
@@ -669,11 +768,17 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--accent-color);
   text-decoration: none;
   font-weight: 500;
-  transition: color 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+  position: relative !important;
 }
 
 .contact-grid a:hover {
-  color: var(--primary);
+  transform: translateY(-3px) !important;
+  color: var(--primary) !important;
+}
+
+.contact-grid a:active {
+  transform: translateY(-1px) !important;
 }
 
 /* Footer */
@@ -702,13 +807,18 @@ footer {
   color: var(--text-secondary);
   text-decoration: none;
   font-size: 1.1rem;
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
   padding: 0.5rem;
+  position: relative !important;
 }
 
 .footer-links a:hover {
-  color: var(--accent-color);
-  transform: translateY(-2px);
+  transform: translateY(-4px) !important;
+  color: var(--accent-color) !important;
+}
+
+.footer-links a:active {
+  transform: translateY(-2px) !important;
 }
 
 /* Resume */
@@ -753,13 +863,19 @@ footer {
   border-radius: 8px;
   text-decoration: none;
   font-weight: 600;
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+  position: relative !important;
+  overflow: hidden !important;
 }
 
 .download-button:hover {
-  background: var(--primary);
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-md);
+  transform: translateY(-6px) scale(1.05) !important;
+  box-shadow: var(--shadow-xl) !important;
+  background: var(--primary) !important;
+}
+
+.download-button:active {
+  transform: translateY(-3px) scale(0.98) !important;
 }
 
 .resume-section {
@@ -859,26 +975,783 @@ footer {
 
 /* Force styles with maximum specificity */
 body .main-container .hero-section {
-  background: #c7d2fe !important;
-  border: 5px solid red !important;
+  background: var(--background-color) !important;
+  border: none !important;
 }
 
 body .main-container .hero-section .header-content {
-  background: #e2e8f0 !important;
-  border: 5px solid blue !important;
+  background: var(--card-background) !important;
+  border: 1px solid var(--border-color) !important;
 }
 
 body .main-container .hero-section .header-content .header-text h1 {
-  color: #1a365d !important;
-  border: 5px solid green !important;
+  color: var(--primary) !important;
+  border: none !important;
 }
 
 body .main-container .hero-section .header-content .header-text .subtitle {
-  color: #1d4ed8 !important;
-  border: 5px solid purple !important;
+  color: var(--accent-color) !important;
+  border: none !important;
 }
 
 body .main-container .hero-section .header-content .profile-image {
-  border: 5px solid orange !important;
-  background: #e2e8f0 !important;
+  border: 3px solid var(--border-color) !important;
+  background: var(--card-background) !important;
+}
+
+/* Add theme indicator */
+.theme-indicator {
+  position: fixed;
+  top: 1.5rem;
+  right: 5.5rem;
+  background: var(--card-background);
+  border: 2px solid var(--border-color);
+  color: var(--text-color);
+  padding: 0.5rem 1rem;
+  border-radius: 2rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  z-index: 1001;
+  box-shadow: var(--shadow-md);
+  transition: all 0.3s ease;
+}
+
+.theme-indicator:hover {
+  border-color: var(--accent-color);
+  transform: translateY(-2px);
+}
+
+.theme-indicator svg {
+  width: 1rem;
+  height: 1rem;
+}
+
+@media (max-width: 768px) {
+  .theme-toggle {
+    top: 1rem;
+    right: 1rem;
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+  
+  .theme-indicator {
+    display: none;
+  }
+}
+
+/* Force theme colors */
+body {
+  background-color: var(--background-color) !important;
+  color: var(--text-color) !important;
+}
+
+.navbar {
+  background-color: var(--nav-background) !important;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.nav-logo {
+  color: var(--accent-color) !important;
+}
+
+.navbar a {
+  color: var(--nav-text) !important;
+}
+
+.navbar a:hover {
+  color: var(--nav-hover) !important;
+  background: var(--background-color) !important;
+}
+
+.section-card {
+  background-color: var(--card-background) !important;
+  border: 1px solid var(--border-color) !important;
+}
+
+.section-card h2 {
+  color: var(--text-color) !important;
+}
+
+.section-card h2::after {
+  background: var(--accent-color) !important;
+}
+
+.core-skills {
+  background-color: var(--background-color) !important;
+  border: 1px solid var(--border-color) !important;
+}
+
+.core-skills h3 {
+  color: var(--text-color) !important;
+  border-bottom: 2px solid var(--accent-color) !important;
+}
+
+.core-skills li {
+  color: var(--text-color) !important;
+  background-color: var(--card-background) !important;
+  border: 1px solid var(--border-color) !important;
+}
+
+.skill-btn {
+  background-color: var(--card-background) !important;
+  color: var(--text-color) !important;
+  border: 1px solid var(--border-color) !important;
+}
+
+.skill-btn:hover {
+  background-color: var(--accent-color) !important;
+  color: white !important;
+  border-color: var(--accent-color) !important;
+}
+
+.project-card {
+  background-color: var(--card-background) !important;
+  border: 1px solid var(--border-color) !important;
+}
+
+.project-card h3 {
+  color: var(--text-color) !important;
+}
+
+.project-card p {
+  color: var(--text-color) !important;
+}
+
+.project-card p em {
+  color: var(--accent-color) !important;
+}
+
+.github-link {
+  background-color: var(--accent-color) !important;
+  color: white !important;
+}
+
+.github-link:hover {
+  background-color: var(--primary) !important;
+}
+
+.contact-grid p {
+  background-color: var(--background-color) !important;
+  color: var(--text-color) !important;
+}
+
+.contact-grid a {
+  color: var(--accent-color) !important;
+}
+
+.contact-grid a:hover {
+  color: var(--primary) !important;
+}
+
+footer {
+  background-color: var(--card-background) !important;
+  border-top: 1px solid var(--border-color) !important;
+}
+
+.footer-links a {
+  color: var(--text-secondary) !important;
+}
+
+.footer-links a:hover {
+  color: var(--accent-color) !important;
+}
+
+/* Add ripple effect to buttons */
+.skill-btn::after,
+.github-link::after,
+.navbar a::after,
+.download-button::after {
+  content: '' !important;
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  width: 5px !important;
+  height: 5px !important;
+  background: rgba(255, 255, 255, 0.5) !important;
+  opacity: 0 !important;
+  border-radius: 100% !important;
+  transform: scale(1, 1) translate(-50%, -50%) !important;
+  transform-origin: 50% 50% !important;
+}
+
+.skill-btn:hover::after,
+.github-link:hover::after,
+.navbar a:hover::after,
+.download-button:hover::after {
+  animation: ripple 1s ease-out !important;
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(0, 0) !important;
+    opacity: 0.5 !important;
+  }
+  100% {
+    transform: scale(20, 20) !important;
+    opacity: 0 !important;
+  }
+}
+
+/* Add hover effect to section headings */
+.section-card h2 {
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+}
+
+.section-card:hover h2 {
+  transform: translateY(-4px) !important;
+  color: var(--accent-color) !important;
+}
+
+/* Add hover effect to project titles */
+.project-card h3 {
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+}
+
+.project-card:hover h3 {
+  transform: translateY(-4px) !important;
+  color: var(--accent-color) !important;
+}
+
+/* Add hover effect to core skills headings */
+.core-skills h3 {
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+}
+
+.core-skills:hover h3 {
+  transform: translateY(-4px) !important;
+  color: var(--accent-color) !important;
+}
+
+/* Add hover effect to profile image */
+.profile-image {
+  transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+}
+
+.profile-image:hover {
+  transform: scale(1.08) rotate(3deg) !important;
+  box-shadow: var(--shadow-2xl) !important;
+}
+
+.profile-image:active {
+  transform: scale(0.98) !important;
+}
+
+/* Add hover effect to footer links */
+.footer-links a {
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+  position: relative !important;
+}
+
+.footer-links a:hover {
+  transform: translateY(-4px) !important;
+  color: var(--accent-color) !important;
+}
+
+.footer-links a:active {
+  transform: translateY(-2px) !important;
+}
+
+/* Add hover effect to resume items */
+.resume-item {
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+  padding: 1rem !important;
+  border-radius: 8px !important;
+}
+
+.resume-item:hover {
+  transform: translateX(12px) !important;
+  background: var(--background-color) !important;
+  box-shadow: var(--shadow-lg) !important;
+}
+
+/* Add hover effect to languages list */
+.languages-list li {
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+}
+
+.languages-list li:hover {
+  transform: translateY(-4px) !important;
+  background: var(--accent-color) !important;
+  color: white !important;
+  box-shadow: var(--shadow-lg) !important;
+}
+
+/* Add hover effect to download button */
+.download-button {
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+.download-button:hover {
+  transform: translateY(-6px) scale(1.05) !important;
+  box-shadow: var(--shadow-xl) !important;
+  background: var(--primary) !important;
+}
+
+.download-button:active {
+  transform: translateY(-3px) scale(0.98) !important;
+}
+
+/* Add hover effect to close button */
+.close-button {
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+}
+
+.close-button:hover {
+  transform: scale(1.15) rotate(90deg) !important;
+  box-shadow: var(--shadow-xl) !important;
+  border-color: var(--accent-color) !important;
+}
+
+.close-button:active {
+  transform: scale(0.95) rotate(90deg) !important;
+}
+
+/* Force interactive effects with maximum specificity */
+body .main-container .section-card {
+  transform: translateY(0) !important;
+  transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+  will-change: transform !important;
+}
+
+body .main-container .section-card:hover {
+  transform: translateY(-20px) scale(1.03) !important;
+  box-shadow: 0 30px 60px rgba(43, 108, 176, 0.2) !important;
+}
+
+body .main-container .project-card {
+  transform: translateY(0) !important;
+  transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+  will-change: transform !important;
+}
+
+body .main-container .project-card:hover {
+  transform: translateY(-20px) scale(1.05) !important;
+  box-shadow: 0 30px 60px rgba(43, 108, 176, 0.2) !important;
+}
+
+body .main-container .core-skills li {
+  transform: translateY(0) !important;
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+  will-change: transform !important;
+}
+
+body .main-container .core-skills li:hover {
+  transform: translateY(-10px) scale(1.1) !important;
+  box-shadow: 0 20px 40px rgba(43, 108, 176, 0.2) !important;
+  background: var(--accent-color) !important;
+  color: white !important;
+}
+
+body .main-container .skill-btn {
+  transform: translateY(0) !important;
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+  will-change: transform !important;
+}
+
+body .main-container .skill-btn:hover {
+  transform: translateY(-10px) scale(1.1) !important;
+  box-shadow: 0 20px 40px rgba(43, 108, 176, 0.2) !important;
+  background: var(--accent-color) !important;
+  color: white !important;
+}
+
+body .main-container .contact-grid p {
+  transform: translateY(0) !important;
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+  will-change: transform !important;
+}
+
+body .main-container .contact-grid p:hover {
+  transform: translateY(-10px) scale(1.1) !important;
+  box-shadow: 0 20px 40px rgba(43, 108, 176, 0.2) !important;
+  background: var(--accent-color) !important;
+  color: white !important;
+}
+
+body .main-container .github-link {
+  transform: translateY(0) !important;
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+  will-change: transform !important;
+}
+
+body .main-container .github-link:hover {
+  transform: translateY(-10px) scale(1.1) !important;
+  box-shadow: 0 20px 40px rgba(43, 108, 176, 0.2) !important;
+  background: var(--primary) !important;
+}
+
+body .main-container .profile-image {
+  transform: translateY(0) !important;
+  transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+  will-change: transform !important;
+}
+
+body .main-container .profile-image:hover {
+  transform: scale(1.15) rotate(5deg) !important;
+  box-shadow: 0 30px 60px rgba(43, 108, 176, 0.3) !important;
+}
+
+body .main-container .theme-toggle {
+  transform: translateY(0) !important;
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+  will-change: transform !important;
+}
+
+body .main-container .theme-toggle:hover {
+  transform: scale(1.2) rotate(15deg) !important;
+  box-shadow: 0 20px 40px rgba(43, 108, 176, 0.2) !important;
+}
+
+/* Add active states */
+body .main-container .section-card:active,
+body .main-container .project-card:active,
+body .main-container .core-skills li:active,
+body .main-container .skill-btn:active,
+body .main-container .contact-grid p:active,
+body .main-container .github-link:active {
+  transform: translateY(-5px) scale(0.98) !important;
+  transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+}
+
+/* Add hover effect to headings */
+body .main-container .section-card:hover h2,
+body .main-container .project-card:hover h3,
+body .main-container .core-skills:hover h3 {
+  transform: translateY(-8px) !important;
+  color: var(--accent-color) !important;
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+}
+
+/* Add hover effect to footer links */
+body .main-container .footer-links a {
+  transform: translateY(0) !important;
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+  will-change: transform !important;
+}
+
+body .main-container .footer-links a:hover {
+  transform: translateY(-8px) !important;
+  color: var(--accent-color) !important;
+}
+
+/* Add hover effect to resume items */
+body .main-container .resume-item {
+  transform: translateX(0) !important;
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+  will-change: transform !important;
+}
+
+body .main-container .resume-item:hover {
+  transform: translateX(20px) !important;
+  background: var(--background-color) !important;
+  box-shadow: 0 20px 40px rgba(43, 108, 176, 0.2) !important;
+}
+
+/* Add hover effect to languages list */
+body .main-container .languages-list li {
+  transform: translateY(0) !important;
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+  will-change: transform !important;
+}
+
+body .main-container .languages-list li:hover {
+  transform: translateY(-8px) !important;
+  background: var(--accent-color) !important;
+  color: white !important;
+  box-shadow: 0 20px 40px rgba(43, 108, 176, 0.2) !important;
+}
+
+/* Add hover effect to download button */
+body .main-container .download-button {
+  transform: translateY(0) !important;
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+  will-change: transform !important;
+}
+
+body .main-container .download-button:hover {
+  transform: translateY(-10px) scale(1.1) !important;
+  box-shadow: 0 20px 40px rgba(43, 108, 176, 0.2) !important;
+  background: var(--primary) !important;
+}
+
+/* Add hover effect to close button */
+body .main-container .close-button {
+  transform: translateY(0) !important;
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+  will-change: transform !important;
+}
+
+body .main-container .close-button:hover {
+  transform: scale(1.2) rotate(90deg) !important;
+  box-shadow: 0 20px 40px rgba(43, 108, 176, 0.2) !important;
+  border-color: var(--accent-color) !important;
+}
+
+/* Add ripple effect to buttons */
+body .main-container .skill-btn::after,
+body .main-container .github-link::after,
+body .main-container .navbar a::after,
+body .main-container .download-button::after {
+  content: '' !important;
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  width: 5px !important;
+  height: 5px !important;
+  background: rgba(255, 255, 255, 0.5) !important;
+  opacity: 0 !important;
+  border-radius: 100% !important;
+  transform: scale(1, 1) translate(-50%, -50%) !important;
+  transform-origin: 50% 50% !important;
+}
+
+body .main-container .skill-btn:hover::after,
+body .main-container .github-link:hover::after,
+body .main-container .navbar a:hover::after,
+body .main-container .download-button:hover::after {
+  animation: ripple 1s ease-out !important;
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(0, 0) !important;
+    opacity: 0.5 !important;
+  }
+  100% {
+    transform: scale(20, 20) !important;
+    opacity: 0 !important;
+  }
+}
+
+/* Core Interactive Elements */
+.section-card,
+.project-card,
+.core-skills,
+.skill-btn,
+.contact-grid p,
+.github-link,
+.profile-image,
+.theme-toggle,
+.footer-links a,
+.resume-item,
+.languages-list li,
+.download-button,
+.close-button {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  will-change: transform, box-shadow !important;
+  transform: translateY(0) !important;
+}
+
+/* Hover Effects */
+.section-card:hover,
+.project-card:hover,
+.core-skills:hover,
+.skill-btn:hover,
+.contact-grid p:hover,
+.github-link:hover,
+.profile-image:hover,
+.theme-toggle:hover,
+.footer-links a:hover,
+.resume-item:hover,
+.languages-list li:hover,
+.download-button:hover,
+.close-button:hover {
+  transform: translateY(-8px) !important;
+  box-shadow: var(--shadow-lg) !important;
+}
+
+/* Active States */
+.section-card:active,
+.project-card:active,
+.core-skills:active,
+.skill-btn:active,
+.contact-grid p:active,
+.github-link:active,
+.profile-image:active,
+.theme-toggle:active,
+.footer-links a:active,
+.resume-item:active,
+.languages-list li:active,
+.download-button:active,
+.close-button:active {
+  transform: translateY(-4px) !important;
+  box-shadow: var(--shadow-md) !important;
+}
+
+/* Card Specific Styles */
+.section-card,
+.project-card {
+  background: var(--card-background) !important;
+  border: 1px solid var(--border-color) !important;
+  border-radius: 12px !important;
+  padding: 1.5rem !important;
+  box-shadow: var(--shadow-md) !important;
+}
+
+/* Button Specific Styles */
+.skill-btn,
+.download-button,
+.close-button {
+  background: var(--accent-color) !important;
+  color: white !important;
+  border: none !important;
+  border-radius: 8px !important;
+  padding: 0.75rem 1.5rem !important;
+  font-weight: 600 !important;
+  cursor: pointer !important;
+  box-shadow: var(--shadow-md) !important;
+}
+
+/* Link Specific Styles */
+.github-link,
+.footer-links a {
+  color: var(--accent-color) !important;
+  text-decoration: none !important;
+  font-weight: 500 !important;
+  position: relative !important;
+}
+
+.github-link::after,
+.footer-links a::after {
+  content: '' !important;
+  position: absolute !important;
+  bottom: -2px !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 2px !important;
+  background: var(--accent-color) !important;
+  transform: scaleX(0) !important;
+  transition: transform 0.3s ease !important;
+}
+
+.github-link:hover::after,
+.footer-links a:hover::after {
+  transform: scaleX(1) !important;
+}
+
+/* Force all colors to use theme variables */
+* {
+  color: var(--text-color) !important;
+  background-color: var(--background-color) !important;
+  border-color: var(--border-color) !important;
+}
+
+/* Override specific elements */
+.section-card,
+.project-card,
+.core-skills,
+.skills-category {
+  background-color: var(--card-background) !important;
+  border: 1px solid var(--border-color) !important;
+}
+
+.skill-btn,
+.github-link,
+.download-button,
+.close-button {
+  background-color: var(--accent-color) !important;
+  color: white !important;
+  border: none !important;
+}
+
+.skill-btn:hover,
+.github-link:hover,
+.download-button:hover,
+.close-button:hover {
+  background-color: var(--primary) !important;
+  color: white !important;
+}
+
+.navbar {
+  background-color: var(--nav-background) !important;
+  border-bottom: 1px solid var(--border-color) !important;
+}
+
+.navbar a {
+  color: var(--nav-text) !important;
+}
+
+.navbar a:hover {
+  color: var(--nav-hover) !important;
+  background-color: var(--accent-color) !important;
+}
+
+.navbar a.active {
+  color: var(--accent-color) !important;
+  background-color: var(--background-color) !important;
+}
+
+/* Force text colors */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text-color) !important;
+}
+
+p, li, span {
+  color: var(--text-color) !important;
+}
+
+a {
+  color: var(--accent-color) !important;
+}
+
+a:hover {
+  color: var(--primary) !important;
+}
+
+/* Force shadows to use theme variables */
+* {
+  box-shadow: var(--shadow-sm) !important;
+}
+
+.section-card:hover,
+.project-card:hover,
+.core-skills:hover,
+.skills-category:hover {
+  box-shadow: var(--shadow-lg) !important;
+}
+
+/* Force borders */
+* {
+  border-color: var(--border-color) !important;
+}
+
+/* Force backgrounds */
+body {
+  background-color: var(--background-color) !important;
+}
+
+.main-container {
+  background-color: var(--background-color) !important;
+}
+
+/* Force hover states */
+.section-card:hover,
+.project-card:hover,
+.core-skills:hover,
+.skills-category:hover {
+  background-color: var(--card-background) !important;
+}
+
+.skill-btn:hover,
+.github-link:hover,
+.download-button:hover,
+.close-button:hover {
+  background-color: var(--primary) !important;
+}
+
+/* Force active states */
+.section-card:active,
+.project-card:active,
+.core-skills:active,
+.skills-category:active,
+.skill-btn:active,
+.github-link:active,
+.download-button:active,
+.close-button:active {
+  background-color: var(--accent-color) !important;
 } 

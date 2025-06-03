@@ -8,6 +8,16 @@
     width: 2.5rem;
     height: 2.5rem;
     z-index: 1001;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  }
+
+  .theme-toggle:hover {
+    transform: scale(1.1) !important;
+    box-shadow: var(--shadow-lg) !important;
+  }
+
+  .theme-toggle:active {
+    transform: scale(0.95) !important;
   }
 
   .theme-toggle svg {
@@ -73,17 +83,22 @@
     color: var(--text-color);
     border-radius: 8px;
     background: var(--background-color);
-    transition: all 0.3s ease;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
     white-space: nowrap;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
     min-width: 70px;
     text-align: center;
   }
 
+  .nav-link:hover {
+    transform: translateY(-2px) !important;
+    background: var(--accent-color) !important;
+    color: white !important;
+    box-shadow: var(--shadow-md) !important;
+  }
+
   .nav-link:active {
-    background: var(--accent-color);
-    color: white;
-    transform: scale(0.98);
+    transform: scale(0.95) !important;
   }
 
   .nav-link.active {
@@ -132,13 +147,16 @@
     border-radius: 8px;
     text-decoration: none;
     font-weight: 600;
-    transition: all 0.2s ease;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
   }
 
   .download-button:hover {
-    background: var(--primary);
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-md);
+    transform: translateY(-3px) !important;
+    box-shadow: var(--shadow-md) !important;
+  }
+
+  .download-button:active {
+    transform: scale(0.95) !important;
   }
 
   .resume-section {
@@ -214,6 +232,16 @@
     width: 200px;
     height: 200px;
     margin-bottom: 1rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  }
+
+  .profile-image:hover {
+    transform: scale(1.05) !important;
+    box-shadow: var(--shadow-lg) !important;
+  }
+
+  .profile-image:active {
+    transform: scale(0.98) !important;
   }
 
   /* Skills Section - Mobile */
@@ -241,6 +269,18 @@
     align-items: center;
     justify-content: center;
     gap: 0.25rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  }
+
+  .skill-btn:hover {
+    transform: translateY(-3px) !important;
+    background: var(--accent-color) !important;
+    color: white !important;
+    box-shadow: var(--shadow-md) !important;
+  }
+
+  .skill-btn:active {
+    transform: scale(0.95) !important;
   }
 
   .skill-btn svg {
@@ -255,6 +295,16 @@
 
   .project-card {
     padding: 1rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  }
+
+  .project-card:hover {
+    transform: translateY(-4px) !important;
+    box-shadow: var(--shadow-lg) !important;
+  }
+
+  .project-card:active {
+    transform: scale(0.98) !important;
   }
 
   .project-card h3 {
@@ -281,6 +331,16 @@
   .contact-grid p {
     font-size: 0.95rem;
     padding: 0.75rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  }
+
+  .contact-grid p:hover {
+    transform: translateY(-3px) !important;
+    box-shadow: var(--shadow-md) !important;
+  }
+
+  .contact-grid p:active {
+    transform: scale(0.98) !important;
   }
 
   .contact-grid a {
@@ -304,6 +364,16 @@
 
   .footer-links a {
     font-size: 0.9rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  }
+
+  .footer-links a:hover {
+    transform: translateY(-2px) !important;
+    color: var(--accent-color) !important;
+  }
+
+  .footer-links a:active {
+    transform: scale(0.95) !important;
   }
 
   /* PDF Viewer - Mobile */
@@ -313,6 +383,48 @@
     width: 2.5rem;
     height: 2.5rem;
     font-size: 1.5rem;
+  }
+
+  /* Core Skills - Mobile */
+  .core-skills li {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  }
+
+  .core-skills li:hover {
+    transform: translateY(-3px) !important;
+    box-shadow: var(--shadow-md) !important;
+  }
+
+  .core-skills li:active {
+    transform: scale(0.95) !important;
+  }
+
+  /* Section Cards - Mobile */
+  .section-card {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  }
+
+  .section-card:hover {
+    transform: translateY(-4px) !important;
+    box-shadow: var(--shadow-lg) !important;
+  }
+
+  .section-card:active {
+    transform: scale(0.98) !important;
+  }
+
+  /* GitHub Link - Mobile */
+  .github-link {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  }
+
+  .github-link:hover {
+    transform: translateY(-3px) !important;
+    box-shadow: var(--shadow-md) !important;
+  }
+
+  .github-link:active {
+    transform: scale(0.95) !important;
   }
 }
 
