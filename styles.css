@@ -372,7 +372,7 @@ h1, h2, h3, h4, h5, h6 {
 /* Skills Section - Enhanced Desktop */
 .skills-grid {
   display: grid !important;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
+  grid-template-columns: repeat(2, 1fr) !important;
   gap: 2rem !important;
   padding: 1.5rem !important;
 }
@@ -421,10 +421,10 @@ h1, h2, h3, h4, h5, h6 {
   bottom: 0 !important;
   left: 50% !important;
   transform: translateX(-50%) !important;
-  width: 50px !important;
-  height: 2px !important;
+  width: 60px !important;
+  height: 3px !important;
   background: var(--accent-color) !important;
-  border-radius: 2px !important;
+  border-radius: 3px !important;
 }
 
 .skills-list {
@@ -452,11 +452,27 @@ h1, h2, h3, h4, h5, h6 {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
 }
 
+.skill-btn::before {
+  content: '' !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0)) !important;
+  opacity: 0 !important;
+  transition: opacity 0.3s ease !important;
+}
+
 .skill-btn:hover {
   transform: translateY(-2px) !important;
   border-color: var(--accent-color) !important;
   color: var(--accent-color) !important;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15) !important;
+}
+
+.skill-btn:hover::before {
+  opacity: 1 !important;
 }
 
 .skill-btn:active {
@@ -466,19 +482,19 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Category-specific colors */
 .skills-category:nth-child(1) .skill-btn {
-  border-left: 3px solid var(--primary) !important;
+  border-left: 4px solid var(--primary) !important;
 }
 
 .skills-category:nth-child(2) .skill-btn {
-  border-left: 3px solid var(--primary-light) !important;
+  border-left: 4px solid var(--primary-light) !important;
 }
 
 .skills-category:nth-child(3) .skill-btn {
-  border-left: 3px solid var(--accent-color) !important;
+  border-left: 4px solid var(--accent-color) !important;
 }
 
 .skills-category:nth-child(4) .skill-btn {
-  border-left: 3px solid var(--primary) !important;
+  border-left: 4px solid var(--primary) !important;
 }
 
 /* Dark theme adjustments */
@@ -503,6 +519,10 @@ h1, h2, h3, h4, h5, h6 {
   border-color: var(--accent-color) !important;
   color: var(--accent-color) !important;
   box-shadow: 0 8px 24px rgba(96, 165, 250, 0.2) !important;
+}
+
+[data-theme="dark"] .skill-btn::before {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0)) !important;
 }
 
 /* Projects Section */
@@ -987,176 +1007,254 @@ footer {
   height: 1.5rem;
 }
 
-/* Desktop Styles */
+/* Desktop styles - completely separate from mobile */
 @media screen and (min-width: 769px) {
-  /* Skills Grid - Desktop Optimizations */
+  /* Base desktop styles */
+  :root {
+    --text-color: #1e3a8a;
+    --background-color: #f0f7ff;
+    --accent-color: #2563eb;
+    --card-background: #ffffff;
+    --border-color: #bfdbfe;
+    --nav-background: #ffffff;
+    --nav-text: #1e3a8a;
+    --nav-hover: #2563eb;
+    --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --text-secondary: #4b5563;
+  }
+
+  [data-theme="dark"] {
+    --text-color: #e2e8f0;
+    --background-color: #0f172a;
+    --accent-color: #60a5fa;
+    --card-background: #1e293b;
+    --border-color: #334155;
+    --nav-background: #1e293b;
+    --nav-text: #e2e8f0;
+    --nav-hover: #60a5fa;
+    --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    --text-secondary: #94a3b8;
+  }
+
+  /* Skills Section - Desktop Only */
   .skills-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
-    padding: 1.5rem;
+    padding: 2rem;
   }
 
   .skills-category {
-    background: var(--card-background) !important;
-    border-radius: 16px !important;
-    padding: 2rem !important;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15) !important;
-    transition: all 0.3s ease !important;
-    border: 1px solid var(--border-color) !important;
-    position: relative !important;
-    overflow: hidden !important;
+    background: var(--card-background);
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    border: 1px solid var(--border-color);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
   }
 
   .skills-category:hover {
-    transform: translateY(-4px) !important;
-    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2) !important;
-    border-color: var(--accent-color) !important;
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
+  }
+
+  .skills-category::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(to right, var(--primary), var(--primary-light));
+    opacity: 0.9;
   }
 
   .skills-category h3 {
-    color: var(--primary);
     font-size: 1.5rem;
     margin-bottom: 1.5rem;
-    position: relative;
     padding-bottom: 0.75rem;
-    font-weight: 600;
+    color: var(--accent-color);
     text-align: center;
+    border-bottom: 2px solid var(--border-color);
+    font-weight: 600;
+    position: relative;
   }
 
   .skills-category h3::after {
     content: '';
     position: absolute;
-    bottom: 0;
+    bottom: -2px;
     left: 50%;
     transform: translateX(-50%);
     width: 60px;
-    height: 3px;
+    height: 2px;
     background: var(--accent-color);
-    border-radius: 3px;
   }
 
   .skills-list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
-    list-style: none;
-    padding: 0;
+    padding: 0.75rem;
   }
 
   .skill-btn {
-    position: relative !important;
-    width: 100% !important;
-    padding: 1rem 1.25rem !important;
-    font-size: 1rem !important;
-    font-weight: 500 !important;
-    background: var(--card-background) !important;
-    border: 1px solid var(--border-color) !important;
-    border-radius: 12px !important;
-    color: var(--text-color) !important;
-    cursor: pointer !important;
-    transition: all 0.3s ease !important;
-    overflow: hidden !important;
-    text-align: center !important;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
+    padding: 1rem;
+    font-size: 1rem;
+    min-height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--card-background);
+    border: 2px solid var(--border-color);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    color: var(--text-color);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .skill-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
+    opacity: 0;
+    transition: opacity 0.3s ease;
   }
 
   .skill-btn:hover {
-    transform: translateY(-2px) !important;
-    border-color: var(--accent-color) !important;
-    color: var(--accent-color) !important;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15) !important;
+    transform: translateY(-4px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    border-color: var(--accent-color);
+    color: var(--accent-color);
+  }
+
+  .skill-btn:hover::before {
+    opacity: 1;
   }
 
   .skill-btn:active {
-    transform: translateY(0) !important;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
   }
 
   /* Category-specific colors */
   .skills-category:nth-child(1) .skill-btn {
-    border-left: 4px solid var(--primary);
+    border-color: #3b82f6;
+  }
+
+  .skills-category:nth-child(1) .skill-btn:hover {
+    background: #3b82f6;
+    color: white;
   }
 
   .skills-category:nth-child(2) .skill-btn {
-    border-left: 4px solid var(--primary-light);
+    border-color: #10b981;
+  }
+
+  .skills-category:nth-child(2) .skill-btn:hover {
+    background: #10b981;
+    color: white;
   }
 
   .skills-category:nth-child(3) .skill-btn {
-    border-left: 4px solid var(--accent-color);
+    border-color: #f59e0b;
+  }
+
+  .skills-category:nth-child(3) .skill-btn:hover {
+    background: #f59e0b;
+    color: white;
   }
 
   .skills-category:nth-child(4) .skill-btn {
-    border-left: 4px solid var(--primary);
+    border-color: #8b5cf6;
   }
 
-  /* Dark theme adjustments */
-  [data-theme="dark"] .skills-category {
-    background: var(--card-background) !important;
-    border-color: var(--border-color) !important;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3) !important;
+  .skills-category:nth-child(4) .skill-btn:hover {
+    background: #8b5cf6;
+    color: white;
   }
 
-  [data-theme="dark"] .skills-category:hover {
-    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4) !important;
-  }
-
-  [data-theme="dark"] .skill-btn {
-    background: var(--background-color) !important;
-    border-color: var(--border-color) !important;
-    color: var(--text-color) !important;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2) !important;
-  }
-
-  [data-theme="dark"] .skill-btn:hover {
-    border-color: var(--accent-color) !important;
-    color: var(--accent-color) !important;
-    box-shadow: 0 8px 24px rgba(96, 165, 250, 0.2) !important;
-  }
-
-  /* Close Button - Desktop */
+  /* Close Button - Desktop Only */
   .close-button {
-    position: fixed !important;
-    top: 1.5rem !important;
-    right: 1.5rem !important;
-    width: 3.5rem !important;
-    height: 3.5rem !important;
-    border-radius: 50% !important;
-    background: var(--card-background) !important;
-    border: 1px solid var(--border-color) !important;
-    color: var(--text-color) !important;
-    font-size: 1.75rem !important;
-    line-height: 1 !important;
-    cursor: pointer !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    transition: all 0.3s ease !important;
-    box-shadow: var(--shadow-lg) !important;
-    z-index: 9999 !important;
-    padding: 0 !important;
+    position: fixed;
+    top: 2rem;
+    right: 2rem;
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 50%;
+    background: var(--card-background);
+    border: 2px solid var(--accent-color);
+    color: var(--accent-color);
+    font-size: 1.75rem;
+    line-height: 1;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    z-index: 9999;
+    padding: 0;
+    font-weight: bold;
   }
 
   .close-button:hover {
-    background: var(--accent-color) !important;
-    color: var(--card-background) !important;
-    transform: scale(1.1) !important;
+    background: var(--accent-color);
+    color: white;
+    transform: scale(1.1);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
   }
 
   .close-button:active {
-    transform: scale(0.95) !important;
+    transform: scale(0.95);
   }
 
-  /* Ensure close button is visible in dark mode */
+  /* Dark Mode - Desktop Only */
+  [data-theme="dark"] .skills-category {
+    background: var(--card-background);
+    border-color: var(--border-color);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  }
+
+  [data-theme="dark"] .skills-category:hover {
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.5);
+  }
+
+  [data-theme="dark"] .skill-btn {
+    background: rgba(96, 165, 250, 0.1);
+    border-color: var(--border-color);
+    color: var(--text-color);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  }
+
+  [data-theme="dark"] .skill-btn:hover {
+    background: var(--accent-color);
+    color: var(--card-background);
+    box-shadow: 0 8px 16px rgba(96, 165, 250, 0.3);
+  }
+
+  [data-theme="dark"] .skill-btn::before {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+  }
+
   [data-theme="dark"] .close-button {
-    background: var(--card-background) !important;
-    border-color: var(--border-color) !important;
-    color: var(--text-color) !important;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
+    background: var(--card-background);
+    border-color: var(--accent-color);
+    color: var(--accent-color);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
   }
 
   [data-theme="dark"] .close-button:hover {
-    background: var(--accent-color) !important;
-    color: var(--card-background) !important;
+    background: var(--accent-color);
+    color: var(--card-background);
+    box-shadow: 0 12px 32px rgba(96, 165, 250, 0.4);
   }
 } 
