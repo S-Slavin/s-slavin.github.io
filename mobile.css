@@ -185,47 +185,35 @@
 
   /* Hero Section - Mobile Optimized */
   .hero-section {
-    margin: 0.5rem;
-    padding: 1.5rem 1rem;
-    border-radius: 16px;
+    padding: 1rem;
+    margin: 0;
   }
 
   .header-content {
-    flex-direction: column;
+    flex-direction: column-reverse;
     text-align: center;
     gap: 1.5rem;
-    padding: 0;
-  }
-
-  .header-text {
-    max-width: 100%;
+    padding: 1.5rem;
   }
 
   .header-text h1 {
-    font-size: 2.25rem;
-    margin-bottom: 0.5rem;
-    line-height: 1.2;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
   }
 
   .header-text .subtitle {
     font-size: 1.25rem;
-    margin-bottom: 0.75rem;
-    color: var(--accent-color);
+    margin-bottom: 0.5rem;
   }
 
   .header-text .tagline {
     font-size: 1rem;
-    margin-bottom: 1rem;
-    color: var(--text-secondary);
   }
 
   .profile-image {
     width: 200px;
     height: 200px;
-    margin: 0 auto;
-    border-radius: 50%;
-    border: 3px solid var(--card-background);
-    box-shadow: var(--shadow-lg);
+    margin-bottom: 1rem;
   }
 
   /* Skills Section - Mobile */
