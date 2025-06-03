@@ -268,133 +268,86 @@
     text-align: center;
   }
 
-  /* Skills Section - Mobile Optimized */
+  /* Skills Section - Mobile Optimizations */
   .skills-grid {
-    display: grid !important;
     grid-template-columns: 1fr !important;
-    gap: 1.5rem !important;
-    padding: 1rem !important;
+    gap: 1rem !important;
+    padding: 0.5rem !important;
   }
 
   .skills-category {
-    background: var(--card-background) !important;
-    border-radius: 12px !important;
-    padding: 1.5rem !important;
-    box-shadow: var(--shadow-md) !important;
-    transition: all 0.3s ease !important;
-    border: 1px solid var(--border-color) !important;
-    position: relative !important;
-    overflow: hidden !important;
-  }
-
-  .skills-category::before {
-    content: '' !important;
-    position: absolute !important;
-    top: 0 !important;
-    left: 0 !important;
-    right: 0 !important;
-    height: 3px !important;
-    background: linear-gradient(to right, var(--primary), var(--primary-light)) !important;
-    opacity: 0.8 !important;
-  }
-
-  .skills-category:hover {
-    transform: translateY(-2px) !important;
-    box-shadow: var(--shadow-lg) !important;
-    border-color: var(--accent-color) !important;
+    padding: 1rem !important;
+    margin-bottom: 0.5rem !important;
   }
 
   .skills-category h3 {
-    color: var(--primary) !important;
-    font-size: 1.25rem !important;
-    margin-bottom: 1.25rem !important;
-    position: relative !important;
+    font-size: 1.1rem !important;
+    margin-bottom: 0.75rem !important;
     padding-bottom: 0.5rem !important;
-    font-weight: 600 !important;
-    text-align: center !important;
-  }
-
-  .skills-category h3::after {
-    content: '' !important;
-    position: absolute !important;
-    bottom: 0 !important;
-    left: 50% !important;
-    transform: translateX(-50%) !important;
-    width: 40px !important;
-    height: 2px !important;
-    background: var(--accent-color) !important;
-    border-radius: 2px !important;
   }
 
   .skills-list {
     display: grid !important;
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)) !important;
-    gap: 0.75rem !important;
-    list-style: none !important;
-    padding: 0 !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 0.5rem !important;
+    padding: 0.5rem !important;
   }
 
   .skill-btn {
-    position: relative !important;
-    width: 100% !important;
-    padding: 0.75rem 1rem !important;
-    font-size: 0.95rem !important;
-    font-weight: 500 !important;
-    background: var(--background-color) !important;
+    padding: 0.75rem !important;
+    font-size: 0.9rem !important;
+    min-height: 2.5rem !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  /* Close Button - Mobile Optimizations */
+  .close-button {
+    position: fixed !important;
+    top: 1rem !important;
+    right: 1rem !important;
+    width: 3rem !important;
+    height: 3rem !important;
+    border-radius: 50% !important;
+    background: var(--card-background) !important;
     border: 1px solid var(--border-color) !important;
-    border-radius: 8px !important;
     color: var(--text-color) !important;
+    font-size: 1.5rem !important;
+    line-height: 1 !important;
     cursor: pointer !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
     transition: all 0.3s ease !important;
-    overflow: hidden !important;
-    text-align: center !important;
-    box-shadow: var(--shadow-sm) !important;
+    box-shadow: var(--card-shadow) !important;
+    z-index: 1000 !important;
+    padding: 0 !important;
   }
 
-  .skill-btn:hover {
-    transform: translateY(-2px) !important;
-    border-color: var(--accent-color) !important;
-    color: var(--accent-color) !important;
-    box-shadow: var(--shadow-md) !important;
+  .close-button:hover,
+  .close-button:active {
+    background: var(--accent-color) !important;
+    color: var(--card-background) !important;
+    transform: scale(1.1) !important;
   }
 
-  .skill-btn:active {
-    transform: translateY(0) !important;
-    box-shadow: var(--shadow-sm) !important;
-  }
-
-  /* Category-specific colors */
-  .skills-category:nth-child(1) .skill-btn {
-    border-left: 3px solid var(--primary) !important;
-  }
-
-  .skills-category:nth-child(2) .skill-btn {
-    border-left: 3px solid var(--primary-light) !important;
-  }
-
-  .skills-category:nth-child(3) .skill-btn {
-    border-left: 3px solid var(--accent-color) !important;
-  }
-
-  .skills-category:nth-child(4) .skill-btn {
-    border-left: 3px solid var(--primary) !important;
-  }
-
-  /* Dark theme adjustments */
+  /* Dark Mode - Mobile Optimizations */
   [data-theme="dark"] .skills-category {
     background: var(--card-background) !important;
     border-color: var(--border-color) !important;
   }
 
   [data-theme="dark"] .skill-btn {
-    background: var(--background-color) !important;
+    background: rgba(96, 165, 250, 0.1) !important;
     border-color: var(--border-color) !important;
     color: var(--text-color) !important;
   }
 
-  [data-theme="dark"] .skill-btn:hover {
-    border-color: var(--accent-color) !important;
-    color: var(--accent-color) !important;
+  [data-theme="dark"] .skill-btn:hover,
+  [data-theme="dark"] .skill-btn:active {
+    background: var(--accent-color) !important;
+    color: var(--card-background) !important;
   }
 
   /* Projects Section - Mobile Optimized */
@@ -530,38 +483,5 @@
     .back-button {
       padding: 0.4rem;
     }
-  }
-
-  /* Close Button - Mobile */
-  .close-button {
-    position: fixed !important;
-    top: 0.75rem !important;
-    right: 0.75rem !important;
-    width: 2.25rem !important;
-    height: 2.25rem !important;
-    border-radius: 50% !important;
-    background: var(--card-background) !important;
-    border: 1px solid var(--border-color) !important;
-    color: var(--text-color) !important;
-    font-size: 1.25rem !important;
-    line-height: 1 !important;
-    cursor: pointer !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    transition: all 0.3s ease !important;
-    box-shadow: var(--card-shadow) !important;
-    z-index: 1000 !important;
-    padding: 0 !important;
-  }
-
-  .close-button:hover {
-    background: var(--accent-color) !important;
-    color: var(--card-background) !important;
-    transform: scale(1.05) !important;
-  }
-
-  .close-button:active {
-    transform: scale(0.95) !important;
   }
 } 
