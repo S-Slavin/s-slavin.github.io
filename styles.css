@@ -5,11 +5,11 @@
 :root {
   /* Light theme (default) */
   --text-color: #1a365d;
-  --background-color: #eef2ff;
+  --background-color: #e0e7ff;
   --accent-color: #1d4ed8;
-  --card-background: #f8fafc;
+  --card-background: #f1f5f9;
   --border-color: #93c5fd;
-  --nav-background: rgba(248, 250, 252, 0.95);
+  --nav-background: rgba(241, 245, 249, 0.95);
   --nav-text: #1a365d;
   --nav-hover: #1d4ed8;
   --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -20,7 +20,7 @@
   --primary-light: #1d4ed8;
   --accent: #2563eb;
   --text: #1a365d;
-  --background: #eef2ff;
+  --background: #e0e7ff;
   --border: #93c5fd;
   
   /* Enhanced Shadows */
@@ -316,6 +316,7 @@ h1, h2, h3, h4, h5, h6 {
   border: 4px solid var(--border-color);
   box-shadow: var(--shadow-lg);
   transition: all 0.3s ease;
+  background: var(--card-background);
 }
 
 .profile-image:hover {
