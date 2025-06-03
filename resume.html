@@ -4,7 +4,149 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Shaina Slavin | Resume</title>
-  <link rel="stylesheet" href="./styles.css?v=7" />
+  <link rel="stylesheet" href="./styles.css?v=8" />
+  <style>
+    @media print {
+      @page {
+        margin: 0.5in;
+      }
+      
+      body {
+        background: white;
+        padding: 0;
+        margin: 0;
+        font-size: 11pt;
+        line-height: 1.4;
+      }
+      
+      .navbar {
+        display: none;
+      }
+      
+      .main-container {
+        padding: 0;
+        max-width: 100%;
+      }
+      
+      .resume {
+        box-shadow: none;
+        border: none;
+        padding: 0;
+      }
+      
+      .resume header {
+        text-align: left;
+        border-bottom: 1px solid #1e3a8a;
+        margin-bottom: 1.5rem;
+        padding-bottom: 0.75rem;
+      }
+      
+      .resume header h1 {
+        font-size: 18pt;
+        margin-bottom: 0.25rem;
+        color: #1e3a8a;
+      }
+      
+      .resume header .subtitle {
+        font-size: 12pt;
+        margin-bottom: 0.5rem;
+        color: #2563eb;
+      }
+      
+      .download-button {
+        display: none;
+      }
+      
+      .resume-section {
+        page-break-inside: avoid;
+        margin-bottom: 1rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 1px solid #bfdbfe;
+      }
+      
+      .resume-section h3 {
+        font-size: 14pt;
+        margin-bottom: 0.75rem;
+        color: #1e3a8a;
+        border-bottom: 1px solid #bfdbfe;
+        padding-bottom: 0.25rem;
+      }
+      
+      .resume-item {
+        box-shadow: none;
+        border: none;
+        padding: 0.25rem 0;
+        margin-bottom: 0.75rem;
+      }
+      
+      .resume-item:hover {
+        transform: none;
+        box-shadow: none;
+      }
+      
+      .resume-item h4 {
+        font-size: 12pt;
+        margin-bottom: 0.25rem;
+        color: #1e3a8a;
+      }
+      
+      .resume-item .institution {
+        font-size: 11pt;
+        margin-bottom: 0.25rem;
+        color: #2563eb;
+      }
+      
+      .resume-item .date {
+        font-size: 10pt;
+        margin-bottom: 0.5rem;
+        color: #4b5563;
+      }
+      
+      .resume-item ul {
+        margin-top: 0.25rem;
+        padding-left: 1rem;
+      }
+      
+      .resume-item li {
+        margin-bottom: 0.25rem;
+        font-size: 11pt;
+      }
+      
+      .resume-item li::before {
+        content: "•";
+        color: #2563eb;
+        position: absolute;
+        left: -1rem;
+      }
+      
+      .resume-item p {
+        font-size: 11pt;
+        line-height: 1.4;
+        margin-bottom: 0.5rem;
+      }
+      
+      .languages-list {
+        display: block;
+        padding-left: 0;
+      }
+      
+      .languages-list li {
+        box-shadow: none;
+        border: none;
+        padding: 0.25rem 0;
+        font-size: 11pt;
+      }
+      
+      .languages-list li:hover {
+        transform: none;
+        box-shadow: none;
+      }
+      
+      footer {
+        display: none;
+      }
+    }
+  </style>
 </head>
 <body>
   <nav class="navbar" role="navigation" aria-label="Main navigation">
@@ -23,30 +165,33 @@
     <section class="resume section-card" id="resume">
       <header>
         <h1>Shaina Slavin</h1>
-        <p class="subtitle">Computer Science Student | Full-Stack & Front-End Developer</p>
+        <p class="subtitle">Computer Science Student | Software Engineering</p>
+        <a href="./resume.pdf" class="download-button" download>Download Resume (PDF)</a>
       </header>
       
       <div class="resume-section">
-        <h2>Resume</h2>
-        
         <div class="resume-section">
           <h3>Summary</h3>
-          <p>Creative and impact-driven developer with hands-on experience in React, JavaScript, Swift, and Python. Passionate about building accessible, user-centric web and mobile applications. Strong foundation in algorithms, data structures, and modern software development. Experienced in leading diverse teams, contributing to open-source, and leveraging technology for social good.</p>
+          <p>Computer Science student with a strong foundation in software engineering principles and hands-on experience in full-stack development. Proficient in React, JavaScript, Swift, and Python, with a focus on building scalable, maintainable applications. Experienced in implementing algorithms, data structures, and modern software development practices. Passionate about creating efficient, user-centric solutions and contributing to open-source projects.</p>
         </div>
 
         <div class="resume-section">
           <h3>Technical Skills</h3>
           <div class="resume-item">
-            <h4>Languages</h4>
-            <p>JavaScript, Python, Java, Swift, HTML5, CSS3, C++ (learning), Go (learning)</p>
+            <h4>Programming Languages</h4>
+            <p>JavaScript (ES6+), Python, Java, Swift, TypeScript, HTML5, CSS3, C++ (learning), Go (learning)</p>
           </div>
           <div class="resume-item">
-            <h4>Frameworks & Tools</h4>
-            <p>React, Node.js, Express, REST APIs, Git, GitHub, Xcode, VS Code, Salesforce, Figma</p>
+            <h4>Frameworks & Technologies</h4>
+            <p>React, Node.js, Express, REST APIs, GraphQL, Redux, Flutter, SwiftUI, Git, GitHub, Docker, CI/CD</p>
           </div>
           <div class="resume-item">
-            <h4>Core Competencies</h4>
-            <p>Algorithms, Data Structures, OOP, UI/UX, Debugging & Testing, Cybersecurity Fundamentals</p>
+            <h4>Computer Science Fundamentals</h4>
+            <p>Data Structures, Algorithms, Object-Oriented Programming, Design Patterns, System Design, Database Design, Software Architecture</p>
+          </div>
+          <div class="resume-item">
+            <h4>Development Tools</h4>
+            <p>VS Code, Xcode, Git, GitHub Actions, Bitrise, JIRA, Figma, Postman, MongoDB, Firebase</p>
           </div>
         </div>
 
@@ -57,8 +202,8 @@
             <p class="institution">The Open University of Israel</p>
             <p class="date">2024 - Present</p>
             <ul>
-              <li>Advanced coursework: Data Structures, Algorithms, Web and Mobile App Development</li>
-              <li>Foundation in advanced mathematics and physics</li>
+              <li>Core coursework: Data Structures, Algorithms, Software Engineering, Web Development, Mobile App Development</li>
+              <li>Advanced mathematics and computer science fundamentals</li>
             </ul>
           </div>
           <div class="resume-item">
@@ -74,15 +219,59 @@
         </div>
 
         <div class="resume-section">
+          <h3>Technical Projects</h3>
+          <div class="resume-item">
+            <h4>Smart Context Companion</h4>
+            <p class="institution">Principal Architect & Lead Engineer</p>
+            <p>Cross-Platform AI Productivity Suite</p>
+            <ul>
+              <li>Designed and implemented a modular architecture for cross-platform development using Flutter and KMM</li>
+              <li>Developed secure OAuth 2.0 integration with Google Services API</li>
+              <li>Implemented on-device ML processing using Core ML and TensorFlow Lite</li>
+              <li>Built CI/CD pipeline using GitHub Actions and Bitrise for automated testing and deployment</li>
+              <li>Technologies: Flutter, KMM, Swift/SwiftUI, Kotlin/Jetpack Compose, OAuth 2.0, Core ML, TensorFlow Lite, ML Kit, Google APIs</li>
+            </ul>
+          </div>
+          <div class="resume-item">
+            <h4>Anti-Hallucination AI System</h4>
+            <p>Advanced AI Platform for Language Model Accuracy</p>
+            <ul>
+              <li>Implemented RAG (Retrieval-Augmented Generation) and RLHF (Reinforcement Learning from Human Feedback) for improved model accuracy</li>
+              <li>Developed real-time fact-checking system with citation tracking</li>
+              <li>Created explainable AI modules with confidence scoring and error analysis</li>
+              <li>Built cross-platform clients using Swift and modern development tools</li>
+            </ul>
+          </div>
+          <div class="resume-item">
+            <h4>FinePrint</h4>
+            <p>Privacy Management Web and Mobile Application</p>
+            <ul>
+              <li>Architected and developed full-stack application using React and SwiftUI</li>
+              <li>Implemented secure data handling and encryption for user privacy</li>
+              <li>Designed and built robust account management system with role-based access control</li>
+              <li>Ensured WCAG compliance and implemented comprehensive accessibility features</li>
+            </ul>
+          </div>
+          <div class="resume-item">
+            <h4>OurBigKitchen App</h4>
+            <p>Community Volunteer and Food Rescue Platform</p>
+            <ul>
+              <li>Developed a full-stack web and iOS application to connect volunteers with meaningful community service opportunities</li>
+              <li>Supports food rescue by matching surplus food with those in need, reducing waste and providing dignity to recipients</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="resume-section">
           <h3>Professional Experience</h3>
           <div class="resume-item">
             <h4>Program Coordinator, Support for Israel War Effort</h4>
             <p class="institution">Israel</p>
             <p class="date">Oct 2023 - Present</p>
             <ul>
-              <li>Coordinated academic and social support programs for over 200 displaced children and children of reserve duty soldiers during the Israel–Hamas war</li>
-              <li>Organized tutoring, enrichment activities, and emotional support to help children rebuild their lives and maintain educational progress</li>
-              <li>Provided direct assistance to families, fostering resilience and community rebuilding in a time of crisis</li>
+              <li>Developed and maintained database systems for tracking program participants and resources</li>
+              <li>Created automated reporting tools to streamline program management</li>
+              <li>Implemented data-driven decision making to optimize resource allocation</li>
             </ul>
           </div>
           <div class="resume-item">
@@ -106,84 +295,14 @@
         </div>
 
         <div class="resume-section">
-          <h3>Technical Projects</h3>
-          <div class="resume-item">
-            <h4>Smart Context Companion</h4>
-            <p class="institution">Principal Architect & Lead Engineer</p>
-            <p>Cross-Platform AI Productivity Suite</p>
-            <ul>
-              <li>Holistic Google Service Orchestration: Unified interface for Google Drive, Calendar, Gmail, Maps, Translate, and Tasks</li>
-              <li>Privacy-First Architecture: On-device data processing by default, with opt-in cloud AI augmentation</li>
-              <li>Modular Extensibility: "Action Packs" system for rapid deployment of new features</li>
-              <li>Universal Accessibility: Full support for accessibility and internationalization</li>
-              <li>Technical Stack: Flutter, KMM, Swift/SwiftUI, Kotlin/Jetpack Compose, OAuth 2.0, Core ML, TensorFlow Lite, ML Kit, Google APIs, CI/CD, GitHub Actions, Bitrise</li>
-            </ul>
-          </div>
-          <div class="resume-item">
-            <h4>Anti-Hallucination AI System</h4>
-            <p>Advanced AI Platform for Language Model Accuracy</p>
-            <ul>
-              <li>Developed and fine-tuned advanced language models with RAG and RLHF</li>
-              <li>Built cross-platform clients using Xcode (iOS/macOS) and Cursor for AI-powered development</li>
-              <li>Implemented real-time fact-checking and citation systems</li>
-              <li>Created explainable AI modules with confidence scoring</li>
-            </ul>
-          </div>
-          <div class="resume-item">
-            <h4>FinePrint</h4>
-            <p>Privacy Management Web and Mobile Application</p>
-            <ul>
-              <li>Developed a React and SwiftUI application enabling users to manage digital privacy settings and family accounts</li>
-              <li>Implemented secure data handling, child controls, and robust account management</li>
-              <li>Prioritized accessibility and intuitive user experience</li>
-            </ul>
-          </div>
-          <div class="resume-item">
-            <h4>OurBigKitchen App</h4>
-            <p>Community Volunteer and Food Rescue Platform</p>
-            <ul>
-              <li>Developed a full-stack web and iOS application to connect volunteers with meaningful community service opportunities</li>
-              <li>Supports food rescue by matching surplus food with those in need, reducing waste and providing dignity to recipients</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="resume-section">
-          <h3>Community Impact</h3>
-          <div class="resume-item">
-            <h4>Our Big Kitchen (OBK), Sydney, Australia</h4>
-            <p class="date">2020 - 2021</p>
-            <ul>
-              <li>Connected community members with meaningful volunteer opportunities, fostering belonging and social responsibility</li>
-              <li>Coordinated and led diverse volunteer groups—including corporate, interfaith, and youth teams—in impactful service activities</li>
-              <li>Implemented Salesforce to streamline operations, manage bookings, and track engagement</li>
-            </ul>
-          </div>
-          <div class="resume-item">
-            <h4>Step Up Ethiopia</h4>
-            <p class="date">2020</p>
-            <ul>
-              <li>Recruited volunteers and partnered with the UN to provide education and therapy for South Sudanese refugees</li>
-              <li>Delivered informal education and trauma support to empower children and reduce dependency on aid</li>
-            </ul>
-          </div>
-          <div class="resume-item">
-            <h4>Camp YEKA (Ukraine)</h4>
-            <p class="date">2019</p>
-            <ul>
-              <li>Organized and facilitated therapeutic programs for Ukrainian Jewish orphans, providing a safe and nurturing environment</li>
-              <li>Led fundraising efforts to ensure adequate resources for children's needs</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="resume-section">
           <h3>Additional Information</h3>
           <ul class="languages-list">
             <li>VATAT Scholarship for preparatory studies, The Hebrew University (2021)</li>
             <li>Second Place, International Essay Competition (2020)</li>
             <li>Community Service Award, Jewish Life and Education, Sydney (2016)</li>
-            <li>Languages: English, Hebrew (fluent); Yiddish (conversational)</li>
+            <li>Languages: English (Native), Hebrew (Fluent), Yiddish (Conversational)</li>
+            <li>GitHub: github.com/S-slavin</li>
+            <li>LinkedIn: linkedin.com/in/shaina-slavin</li>
           </ul>
         </div>
       </div>
