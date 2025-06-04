@@ -1,393 +1,309 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=1024, initial-scale=1.0">
-  <meta name="theme-color" content="#2563EB">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="format-detection" content="telephone=no">
-  <meta name="mobile-web-app-capable" content="yes">
-  <meta name="HandheldFriendly" content="true">
-  <meta name="MobileOptimized" content="width">
-  <!-- Force desktop mode -->
-  <meta name="viewport" content="width=1024, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <meta name="description" content="Shaina Slavin - Computer Science Student and Full-Stack Developer specializing in React, JavaScript, Swift, and Python. View my portfolio and projects.">
-  <meta name="keywords" content="Shaina Slavin, Full-Stack Developer, React, JavaScript, Swift, Python, Portfolio">
-  <meta name="author" content="Shaina Slavin">
-  
-  <!-- Open Graph / Social Media Meta Tags -->
-  <meta property="og:title" content="Shaina Slavin | Portfolio">
-  <meta property="og:description" content="Computer Science Student and Full-Stack Developer specializing in React, JavaScript, Swift, and Python.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://s-slavin.github.io">
-  <meta property="og:image" content="https://s-slavin.github.io/apple-touch-icon.svg">
-  
-  <!-- Preload critical resources -->
-  <link rel="preload" href="./styles.css" as="style">
-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" as="style">
-  
-  <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="favicon.svg">
-  <link rel="apple-touch-icon" href="apple-touch-icon.svg">
-  
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-  
-  <!-- Styles -->
-  <link rel="stylesheet" href="./styles.css" />
-  
-  <!-- Add theme toggle icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-  
-  <!-- Add service worker -->
-  <script>
-    if ('serviceWorker' in navigator) {
-      window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/sw.js')
-          .then(registration => {
-            console.log('ServiceWorker registration successful');
-          })
-          .catch(err => {
-            console.log('ServiceWorker registration failed: ', err);
-          });
-      });
-    }
-  </script>
-  
-  <!-- Debug Script -->
-  <script>
-    window.addEventListener('load', function() {
-      console.log('=== Debug Information ===');
-      console.log('Viewport Width:', window.innerWidth);
-      console.log('Device Pixel Ratio:', window.devicePixelRatio);
-      console.log('User Agent:', navigator.userAgent);
-      
-      // Check active media queries
-      const mediaQueries = window.matchMedia('(min-width: 768px)');
-      console.log('Desktop Media Query Active:', mediaQueries.matches);
-      
-      // Log all stylesheets
-      console.log('=== Loaded Stylesheets ===');
-      Array.from(document.styleSheets).forEach(sheet => {
-        try {
-          console.log(sheet.href || 'Inline Stylesheet');
-        } catch (e) {
-          console.log('Error accessing stylesheet:', e);
-        }
-      });
-    });
-  </script>
-  
-  <title>Shaina Slavin | Portfolio</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <title>Shaina Slavin - Full Stack Developer</title>
+  <meta name="description" content="Portfolio of Shaina Slavin, a Full Stack Developer specializing in web development and software engineering.">
+  <link rel="stylesheet" href="styles.css?v=9" media="screen and (min-width: 769px)">
+  <link rel="stylesheet" href="mobile.css?v=9" media="screen and (max-width: 768px)">
+  <script src="script.js" defer></script>
 </head>
 <body>
-  <a href="#main-content" class="skip-link">Skip to main content</a>
   <nav class="navbar" role="navigation" aria-label="Main navigation">
-    <a href="./index.html" class="active" aria-current="page">Portfolio</a>
-    <a href="./resume.html">Resume</a>
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo" aria-label="Home">SS</a>
+      <div class="nav-links">
+        <a href="#about" class="nav-link">About</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="resume.html" class="nav-link">Resume</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </div>
+    </div>
   </nav>
-  <main id="main-content" class="main-container" role="main">
-    <header>
-      <h1>Shaina Slavin</h1>
-      <p class="subtitle">Computer Science Student | Full-Stack & Front-End Developer</p>
+  <main class="main-container">
+    <header class="hero-section">
+      <div class="header-content">
+        <div class="header-text">
+          <h1>Shaina Slavin</h1>
+          <p class="subtitle">Full-Stack & Front-End Developer</p>
+          <p class="tagline">Building accessible solutions that solve real-world problems</p>
+        </div>
+        <img src="profile.jpg" alt="Profile picture of Shaina Slavin" class="profile-image" loading="lazy">
+      </div>
     </header>
-    <section class="contact-info" aria-label="Contact information">
-      <p>📧 <a href="mailto:shaina.slavin@gmail.com" aria-label="Email me at shaina.slavin@gmail.com">shaina.slavin@gmail.com</a></p>
-      <p>📱 <a href="tel:+972503071261" aria-label="Call me at +972-50-3071261">+972-50-3071261</a></p>
-      <p>🌐 <a href="https://github.com/S-Slavin" aria-label="Visit my GitHub profile">github.com/S-Slavin</a></p>
-      <p>🔗 <a href="https://linkedin.com/in/shaina-slavin" aria-label="Visit my LinkedIn profile">linkedin.com/in/shaina-slavin</a></p>
-      <p>🌍 <a href="https://s-slavin.github.io" aria-label="Visit my website">s-slavin.github.io</a></p>
-    </section>
-    <section class="skills" aria-labelledby="skills-heading">
-      <h2 id="skills-heading">Skills</h2>
-      
-      <div class="skills-category" aria-labelledby="frontend-heading">
-        <h3 id="frontend-heading">Frontend Development</h3>
-        <ul class="skills-list" role="list">
-          <li>
-            <button class="skill-btn" aria-label="JavaScript skill">
-              <img src="js-icon.svg" alt="" width="24" height="24" aria-hidden="true">
-              JavaScript
-            </button>
-          </li>
-          <li>
-            <button class="skill-btn" aria-label="TypeScript skill">
-              <img src="typescript-icon.svg" alt="" width="24" height="24" aria-hidden="true">
-              TypeScript
-            </button>
-          </li>
-          <li>
-            <button class="skill-btn" aria-label="React skill">
-              <img src="react-icon.svg" alt="" width="24" height="24" aria-hidden="true">
-              React
-            </button>
-          </li>
-          <li>
-            <button class="skill-btn" aria-label="Redux skill">
-              <img src="redux-icon.svg" alt="" width="24" height="24" aria-hidden="true">
-              Redux
-            </button>
-          </li>
-          <li>
-            <button class="skill-btn" aria-label="HTML skill">
-              <img src="html-icon.svg" alt="" width="24" height="24" aria-hidden="true">
-              HTML
-            </button>
-          </li>
-          <li>
-            <button class="skill-btn" aria-label="CSS skill">
-              <img src="css-icon.svg" alt="" width="24" height="24" aria-hidden="true">
-              CSS
-            </button>
-          </li>
-        </ul>
-      </div>
-
-      <div class="skills-category" aria-labelledby="backend-heading">
-        <h3 id="backend-heading">Backend Development</h3>
-        <ul class="skills-list" role="list">
-          <li>
-            <button class="skill-btn" aria-label="Node.js skill">
-              <img src="node-icon.svg" alt="" width="24" height="24" aria-hidden="true">
-              Node.js
-            </button>
-          </li>
-          <li>
-            <button class="skill-btn" aria-label="Express skill">
-              <img src="express-icon.svg" alt="" width="24" height="24" aria-hidden="true">
-              Express
-            </button>
-          </li>
-          <li>
-            <button class="skill-btn" aria-label="Python skill">
-              <img src="python-icon.svg" alt="" width="24" height="24" aria-hidden="true">
-              Python
-            </button>
-          </li>
-          <li>
-            <button class="skill-btn" aria-label="MongoDB skill">
-              <img src="mongodb-icon.svg" alt="" width="24" height="24" aria-hidden="true">
-              MongoDB
-            </button>
-          </li>
-          <li>
-            <button class="skill-btn" aria-label="SQL skill">
-              <img src="sql-icon.svg" alt="" width="24" height="24" aria-hidden="true">
-              SQL
-            </button>
-          </li>
-        </ul>
-      </div>
-
-      <div class="skills-category" aria-labelledby="mobile-heading">
-        <h3 id="mobile-heading">Mobile Development</h3>
-        <ul class="skills-list" role="list">
-          <li>
-            <button class="skill-btn" aria-label="Swift skill">
-              <img src="swift-icon.svg" alt="" width="24" height="24" aria-hidden="true">
-              Swift
-            </button>
-          </li>
-          <li>
-            <button class="skill-btn" aria-label="Mobile Development skill">
-              <img src="mobile-icon.svg" alt="" width="24" height="24" aria-hidden="true">
-              Mobile Development
-            </button>
-          </li>
-        </ul>
-      </div>
-
-      <div class="skills-category" aria-labelledby="cs-heading">
-        <h3 id="cs-heading">Computer Science</h3>
-        <ul class="skills-list" role="list">
-          <li>
-            <button class="skill-btn" aria-label="Algorithms skill">
-              <img src="algo-icon.svg" alt="" width="24" height="24" aria-hidden="true">
-              Algorithms
-            </button>
-          </li>
-          <li>
-            <button class="skill-btn" aria-label="Data Structures skill">
-              <img src="data-icon.svg" alt="" width="24" height="24" aria-hidden="true">
-              Data Structures
-            </button>
-          </li>
-        </ul>
-      </div>
-
-      <div class="skills-category" aria-labelledby="tools-heading">
-        <h3 id="tools-heading">Tools & Version Control</h3>
-        <ul class="skills-list" role="list">
-          <li>
-            <button class="skill-btn" aria-label="Git skill">
-              <img src="git-icon.svg" alt="" width="24" height="24" aria-hidden="true">
-              Git
-            </button>
-          </li>
-          <li>
-            <button class="skill-btn" aria-label="Testing skill">
-              <img src="testing-icon.svg" alt="" width="24" height="24" aria-hidden="true">
-              Testing (Jest, RTL)
-            </button>
-          </li>
-          <li>
-            <button class="skill-btn" aria-label="CI/CD skill">
-              <img src="cicd-icon.svg" alt="" width="24" height="24" aria-hidden="true">
-              CI/CD
-            </button>
-          </li>
-          <li>
-            <button class="skill-btn" aria-label="Docker skill">
-              <img src="docker-icon.svg" alt="" width="24" height="24" aria-hidden="true">
-              Docker
-            </button>
-          </li>
-        </ul>
+    
+    <!-- About Section -->
+    <section id="about" class="about section-card">
+      <h2>About Me</h2>
+      <div class="about-content">
+        <p>
+          I am a creative and impact-driven developer with hands-on experience in React, JavaScript, Swift, and Python. My passion is building accessible, user-centric web and mobile applications that make a difference. I have a strong foundation in algorithms, data structures, and modern software development, and I thrive in collaborative, diverse teams.
+        </p>
+        <div class="core-skills">
+          <h3>Core Skills</h3>
+          <ul>
+            <li>Full-stack development with React, Node.js, and Python</li>
+            <li>Mobile app development using Swift and Flutter</li>
+            <li>Building accessible and responsive web applications</li>
+            <li>Test-driven development and CI/CD implementation</li>
+          </ul>
+        </div>
       </div>
     </section>
-    <section class="summary">
-      <p>
-        Creative and impact-driven developer passionate about building accessible, user-centric web and mobile applications. Skilled in React, JavaScript, Swift, and Python with a strong foundation in algorithms, data structures, and modern software development.
-      </p>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills section-card">
+      <h2>Skills</h2>
+      <div class="skills-grid">
+        <div class="skills-category">
+          <h3>Frontend Development</h3>
+          <ul class="skills-list">
+            <li>
+              <button class="skill-btn">
+                <img src="assets/icons/js-icon.svg" alt="JavaScript logo" width="24" height="24" loading="lazy">
+                JavaScript
+              </button>
+            </li>
+            <li>
+              <button class="skill-btn">
+                <img src="assets/icons/typescript-icon.svg" alt="TypeScript logo" width="24" height="24" loading="lazy">
+                TypeScript
+              </button>
+            </li>
+            <li>
+              <button class="skill-btn">
+                <img src="assets/icons/react-icon.svg" alt="React logo" width="24" height="24" loading="lazy">
+                React
+              </button>
+            </li>
+            <li>
+              <button class="skill-btn">
+                <img src="assets/icons/redux-icon.svg" alt="Redux logo" width="24" height="24" loading="lazy">
+                Redux
+              </button>
+            </li>
+            <li>
+              <button class="skill-btn">
+                <img src="assets/icons/html-icon.svg" alt="HTML logo" width="24" height="24" loading="lazy">
+                HTML
+              </button>
+            </li>
+            <li>
+              <button class="skill-btn">
+                <img src="assets/icons/css-icon.svg" alt="CSS logo" width="24" height="24" loading="lazy">
+                CSS
+              </button>
+            </li>
+          </ul>
+        </div>
+
+        <div class="skills-category">
+          <h3>Backend Development</h3>
+          <ul class="skills-list">
+            <li>
+              <button class="skill-btn">
+                <img src="assets/icons/node-icon.svg" alt="Node.js logo" width="24" height="24" loading="lazy">
+                Node.js
+              </button>
+            </li>
+            <li>
+              <button class="skill-btn">
+                <img src="assets/icons/express-icon.svg" alt="Express logo" width="24" height="24" loading="lazy">
+                Express
+              </button>
+            </li>
+            <li>
+              <button class="skill-btn">
+                <img src="assets/icons/python-icon.svg" alt="Python logo" width="24" height="24" loading="lazy">
+                Python
+              </button>
+            </li>
+            <li>
+              <button class="skill-btn">
+                <img src="assets/icons/mongodb-icon.svg" alt="MongoDB logo" width="24" height="24" loading="lazy">
+                MongoDB
+              </button>
+            </li>
+            <li>
+              <button class="skill-btn">
+                <img src="assets/icons/sql-icon.svg" alt="SQL logo" width="24" height="24" loading="lazy">
+                SQL
+              </button>
+            </li>
+          </ul>
+        </div>
+
+        <div class="skills-category" aria-labelledby="mobile-heading">
+          <h3 id="mobile-heading">Mobile Development</h3>
+          <ul class="skills-list" role="list">
+            <li>
+              <button class="skill-btn" aria-label="Swift skill">
+                <img src="assets/icons/swift-icon.svg" alt="" width="24" height="24" aria-hidden="true">
+                Swift
+              </button>
+            </li>
+            <li>
+              <button class="skill-btn" aria-label="Flutter skill">
+                <img src="assets/icons/flutter-icon.svg" alt="" width="24" height="24" aria-hidden="true">
+                Flutter
+              </button>
+            </li>
+          </ul>
+        </div>
+
+        <div class="skills-category">
+          <h3>Computer Science</h3>
+          <ul class="skills-list">
+            <li>
+              <button class="skill-btn">
+                <img src="assets/icons/algo-icon.svg" alt="Algorithms icon" width="24" height="24" loading="lazy">
+                Algorithms
+              </button>
+            </li>
+            <li>
+              <button class="skill-btn">
+                <img src="assets/icons/data-icon.svg" alt="Data Structures icon" width="24" height="24" loading="lazy">
+                Data Structures
+              </button>
+            </li>
+          </ul>
+        </div>
+
+        <div class="skills-category">
+          <h3>Tools & Version Control</h3>
+          <ul class="skills-list">
+            <li>
+              <button class="skill-btn">
+                <img src="assets/icons/git-icon.svg" alt="Git logo" width="24" height="24" loading="lazy">
+                Git
+              </button>
+            </li>
+            <li>
+              <button class="skill-btn">
+                <img src="assets/icons/testing-icon.svg" alt="Testing icon" width="24" height="24" loading="lazy">
+                Testing (Jest, RTL)
+              </button>
+            </li>
+            <li>
+              <button class="skill-btn">
+                <img src="assets/icons/cicd-icon.svg" alt="CI/CD icon" width="24" height="24" loading="lazy">
+                CI/CD
+              </button>
+            </li>
+            <li>
+              <button class="skill-btn">
+                <img src="assets/icons/docker-icon.svg" alt="Docker logo" width="24" height="24" loading="lazy">
+                Docker
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
     </section>
-    <section class="projects">
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects section-card">
       <h2>Project Highlights</h2>
-      <div class="project-card">
-        <h3>Smart Context Companion</h3>
-        <p><em>Cross-Platform AI Productivity Suite</em></p>
-        <p>A next-generation, cross-platform productivity solution engineered to empower users with seamless, privacy-centric access to Google's suite of services across both iOS and Android ecosystems.</p>
-        <ul>
-          <li>Holistic Google Service Orchestration: Unified interface for Google Drive, Calendar, Gmail, Maps, Translate, and Tasks</li>
-          <li>Privacy-First Architecture: On-device data processing by default, with opt-in cloud AI augmentation</li>
-          <li>Modular Extensibility: "Action Packs" system for rapid deployment of new features</li>
-          <li>Universal Accessibility: Full support for accessibility and internationalization</li>
-          <li>Technical Stack: Flutter, KMM, Swift/SwiftUI, Kotlin/Jetpack Compose, OAuth 2.0, Core ML, TensorFlow Lite, ML Kit, Google APIs, CI/CD, GitHub Actions, Bitrise</li>
-        </ul>
-        <a href="https://github.com/S-Slavin/SmartContextCompanion" class="github-link">View on GitHub</a>
-      </div>
+      <div class="projects-grid">
+        <div class="project-card">
+          <h3>Smart Context Companion</h3>
+          <p><em>Cross-Platform AI Productivity Suite</em></p>
+          <p>A next-generation, cross-platform productivity solution engineered to empower users with seamless, privacy-centric access to Google's suite of services across both iOS and Android ecosystems.</p>
+          <ul>
+            <li>Holistic Google Service Orchestration: Unified interface for Google Drive, Calendar, Gmail, Maps, Translate, and Tasks</li>
+            <li>Privacy-First Architecture: On-device data processing by default, with opt-in cloud AI augmentation</li>
+            <li>Modular Extensibility: "Action Packs" system for rapid deployment of new features</li>
+            <li>Universal Accessibility: Full support for accessibility and internationalization</li>
+            <li>Technical Stack: Flutter, KMM, Swift/SwiftUI, Kotlin/Jetpack Compose, OAuth 2.0, Core ML, TensorFlow Lite, ML Kit, Google APIs, CI/CD, GitHub Actions, Bitrise</li>
+          </ul>
+          <a href="https://github.com/S-Slavin/Smart-Context-Companion" class="github-link" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+        </div>
 
-      <div class="project-card">
-        <h3>Anti-Hallucination AI System</h3>
-        <p><em>Advanced AI Platform for Language Model Accuracy</em></p>
-        <p>Designed and implemented a robust AI platform to minimize hallucinations in language model outputs.</p>
-        <ul>
-          <li>Developed and fine-tuned advanced language models with RAG and RLHF</li>
-          <li>Built cross-platform clients using Xcode (iOS/macOS) and Cursor for AI-powered development</li>
-          <li>Implemented real-time fact-checking and citation systems</li>
-          <li>Created explainable AI modules with confidence scoring</li>
-        </ul>
-        <a href="https://github.com/S-Slavin/AntiHallucinationAI" class="github-link">View on GitHub</a>
-      </div>
+        <div class="project-card">
+          <h3>Anti-Hallucination AI System</h3>
+          <p><em>Advanced AI Platform for Language Model Accuracy</em></p>
+          <p>Designed and implemented a robust AI platform to minimize hallucinations in language model outputs.</p>
+          <ul>
+            <li>Developed and fine-tuned advanced language models with RAG and RLHF</li>
+            <li>Built cross-platform clients using Xcode (iOS/macOS) and Cursor for AI-powered development</li>
+            <li>Implemented real-time fact-checking and citation systems</li>
+            <li>Created explainable AI modules with confidence scoring</li>
+          </ul>
+          <a href="https://github.com/S-Slavin/AIHallucination" class="github-link" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+        </div>
 
-      <div class="project-card">
-        <h3>FinePrint</h3>
-        <p><em>Privacy Management Web and Mobile Application</em></p>
-        <p>A cross-platform application that helps users manage their digital privacy settings across multiple online accounts.</p>
-        <ul>
-          <li>Developed a React and SwiftUI application enabling users to manage digital privacy settings and family accounts</li>
-          <li>Implemented secure data handling, child controls, and robust account management</li>
-          <li>Prioritized accessibility and intuitive user experience</li>
-        </ul>
-        <a href="https://github.com/S-Slavin/FinePrint" class="github-link">View on GitHub</a>
-      </div>
+        <div class="project-card">
+          <h3>Fine Print</h3>
+          <p><em>Privacy Management Web and Mobile Application</em></p>
+          <p>A cross-platform application that helps users manage their digital privacy settings across multiple online accounts.</p>
+          <ul>
+            <li>Developed a React and SwiftUI application enabling users to manage digital privacy settings and family accounts</li>
+            <li>Implemented secure data handling, child controls, and robust account management</li>
+            <li>Prioritized accessibility and intuitive user experience</li>
+          </ul>
+          <a href="https://github.com/S-Slavin/FinePrint" class="github-link" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+        </div>
 
-      <div class="project-card">
-        <h3>OurBigKitchen App</h3>
-        <p><em>Community Volunteer and Food Rescue Platform</em></p>
-        <p>A full-stack web and iOS application connecting volunteers with meaningful community service opportunities.</p>
-        <ul>
-          <li>Developed a full-stack web and iOS application to connect volunteers with meaningful community service opportunities</li>
-          <li>Supports food rescue by matching surplus food with those in need, reducing waste and providing dignity to recipients</li>
-        </ul>
-        <a href="https://github.com/S-Slavin/OBK" class="github-link">View on GitHub</a>
+        <div class="project-card">
+          <h3>Our Big Kitchen</h3>
+          <p><em>Community Volunteer and Food Rescue Platform</em></p>
+          <p>A full-stack web and iOS application connecting volunteers with meaningful community service opportunities and facilitating food rescue operations.</p>
+          <ul>
+            <li>Built a full-stack application using React, Node.js, Express, and MongoDB</li>
+            <li>Developed iOS client using Swift and SwiftUI for native mobile experience</li>
+            <li>Implemented real-time food rescue matching system with geolocation</li>
+            <li>Created volunteer scheduling and management system with automated notifications</li>
+            <li>Integrated secure authentication and role-based access control</li>
+            <li>Technical Stack: React, Node.js, Express, MongoDB, Swift/SwiftUI, Socket.IO, Google Maps API</li>
+          </ul>
+          <a href="https://github.com/S-Slavin/OurBigKitchen-Showcase" class="github-link" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+        </div>
       </div>
     </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-info section-card">
+      <h2>Get in Touch</h2>
+      <div class="contact-grid">
+        <p>
+          <span role="img" aria-label="Email">📧</span>
+          <a href="mailto:shaina.slavin@gmail.com">shaina.slavin@gmail.com</a>
+        </p>
+        <p>
+          <span role="img" aria-label="Phone">📱</span>
+          <a href="tel:+972503071261">+972-50-3071261</a>
+        </p>
+        <p>
+          <span role="img" aria-label="GitHub">🌐</span>
+          <a href="https://github.com/S-Slavin" target="_blank" rel="noopener noreferrer">github.com/S-Slavin</a>
+        </p>
+        <p>
+          <span role="img" aria-label="LinkedIn">🔗</span>
+          <a href="https://linkedin.com/in/shaina-slavin" target="_blank" rel="noopener noreferrer">linkedin.com/in/shaina-slavin</a>
+        </p>
+        <p>
+          <span role="img" aria-label="Location">📍</span>
+          <span>Tel Aviv, Israel</span>
+        </p>
+      </div>
+    </section>
+
     <footer>
-      <a href="./resume.html" class="button">View Resume</a>
+      <div class="footer-content">
+        <p>© 2024 Shaina Slavin. All rights reserved.</p>
+        <div class="footer-links">
+          <a href="./resume.html">Resume</a>
+          <a href="#contact">Contact</a>
+          <a href="https://github.com/S-Slavin">GitHub</a>
+          <a href="https://linkedin.com/in/shaina-slavin">LinkedIn</a>
+        </div>
+      </div>
     </footer>
   </main>
-
-  <!-- Add theme toggle button -->
-  <button class="theme-toggle" aria-label="Toggle dark mode">
-    <i class="fas fa-moon"></i>
-  </button>
-
-  <!-- Add JavaScript for theme toggle and lazy loading -->
-  <script>
-    // Debug information
-    console.log('Viewport width:', window.innerWidth);
-    console.log('Device pixel ratio:', window.devicePixelRatio);
-    console.log('User agent:', navigator.userAgent);
-    
-    // Check if any styles are being overridden
-    const styleSheets = Array.from(document.styleSheets);
-    console.log('Loaded stylesheets:', styleSheets.map(sheet => sheet.href));
-    
-    // Check for any media queries that might be active
-    const mediaQueries = styleSheets.flatMap(sheet => {
-      try {
-        return Array.from(sheet.cssRules)
-          .filter(rule => rule instanceof CSSMediaRule)
-          .map(rule => ({
-            condition: rule.conditionText,
-            matches: window.matchMedia(rule.conditionText).matches
-          }));
-      } catch (e) {
-        return [];
-      }
-    });
-    console.log('Active media queries:', mediaQueries);
-
-    // Theme toggle
-    const themeToggle = document.querySelector('.theme-toggle');
-    const themeIcon = themeToggle.querySelector('i');
-    
-    // Check for saved theme preference
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme === 'dark') {
-      document.documentElement.classList.add('dark-theme');
-      themeIcon.classList.replace('fa-moon', 'fa-sun');
-    }
-
-    themeToggle.addEventListener('click', () => {
-      document.documentElement.classList.toggle('dark-theme');
-      const isDark = document.documentElement.classList.contains('dark-theme');
-      localStorage.setItem('theme', isDark ? 'dark' : 'light');
-      themeIcon.classList.replace(isDark ? 'fa-moon' : 'fa-sun', isDark ? 'fa-sun' : 'fa-moon');
-    });
-
-    // Lazy loading
-    document.addEventListener('DOMContentLoaded', () => {
-      const lazyImages = document.querySelectorAll('img[data-src]');
-      
-      const imageObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            const img = entry.target;
-            img.src = img.dataset.src;
-            img.classList.add('loaded');
-            observer.unobserve(img);
-          }
-        });
-      });
-
-      lazyImages.forEach(img => imageObserver.observe(img));
-    });
-
-    // Add fade-in animation to sections
-    const sections = document.querySelectorAll('section');
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('fade-in');
-        }
-      });
-    }, { threshold: 0.1 });
-
-    sections.forEach(section => observer.observe(section));
-  </script>
 </body>
 </html> 
