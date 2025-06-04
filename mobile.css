@@ -1,0 +1,14 @@
+/* PDF Section Mobile Styles */
+.pdfs-grid {
+  grid-template-columns: 1fr;
+  gap: var(--space-3);
+}
+
+.pdf-card {
+  padding: var(--space-3);
+}
+
+.pdf-link {
+  width: 100%;
+  justify-content: center;
+} 

@@ -183,13 +183,16 @@ h1, h2, h3, h4, h5, h6 {
 .header-content {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: var(--space-2);
+  justify-content: flex-start;
+  gap: var(--space-3);
   position: relative;
   z-index: 1;
-  padding: var(--space-3);
+  padding: var(--space-4);
   max-width: 1200px;
   margin: 0 auto;
+  background: linear-gradient(135deg, rgba(240, 247, 255, 0.95) 0%, rgba(191, 219, 254, 0.3) 100%);
+  border-radius: 24px;
+  box-shadow: var(--shadow-2xl);
 }
 
 .header-text {
@@ -205,6 +208,7 @@ h1, h2, h3, h4, h5, h6 {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   line-height: 1.1;
+  text-shadow: var(--shadow-sm);
 }
 
 .header-text .subtitle {
@@ -248,6 +252,7 @@ h1, h2, h3, h4, h5, h6 {
   z-index: -1;
   opacity: 0.5;
   transition: opacity 0.4s ease;
+  filter: blur(8px);
 }
 
 .profile-image:hover {
@@ -257,6 +262,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .profile-image:hover::before {
   opacity: 0.8;
+  filter: blur(12px);
 }
 
 /* About Section */
@@ -349,65 +355,60 @@ h1, h2, h3, h4, h5, h6 {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: var(--space-4);
+  padding: var(--space-2);
 }
 
 .skills-category {
-  background: white;
+  background: linear-gradient(145deg, #ffffff, #f5f7fa);
   padding: var(--space-4);
-  border-radius: 12px;
-  border: 1px solid var(--border);
-  box-shadow: var(--shadow-xl);
+  border-radius: 20px;
+  border: none;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1),
+              -5px -5px 15px rgba(255, 255, 255, 0.8);
   transition: all 0.4s ease;
-  position: relative;
-  overflow: hidden;
-}
-
-.skills-category::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background: linear-gradient(to right, var(--primary), var(--primary-light));
-  opacity: 0.8;
 }
 
 .skills-category:hover {
-  transform: translateY(-6px);
-  box-shadow: var(--shadow-2xl);
+  transform: translateY(-8px);
+  box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.15),
+              -8px -8px 20px rgba(255, 255, 255, 0.9);
 }
 
 .skills-category h3 {
   color: var(--primary);
-  font-size: 1.25rem;
-  margin-bottom: var(--space-3);
+  font-size: 1.4rem;
+  margin-bottom: var(--space-4);
   padding-bottom: var(--space-2);
-  border-bottom: 1px solid var(--border);
+  border-bottom: 3px solid var(--primary-light);
+  text-align: center;
 }
 
 .skills-list {
   list-style: none;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-  gap: var(--space-2);
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: var(--space-3);
+  padding: var(--space-2);
 }
 
 .skill-btn {
   display: flex;
   align-items: center;
-  gap: var(--space-2);
-  padding: var(--space-2) var(--space-3);
-  border: 1px solid var(--border);
-  border-radius: 8px;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
   background: white;
+  border: none;
+  border-radius: 15px;
   width: 100%;
   text-align: left;
-  font-size: 1rem;
+  font-size: 1.1rem;
   transition: all 0.3s ease;
   position: relative;
-  overflow: visible;
+  overflow: hidden;
   color: var(--text);
+  cursor: pointer;
+  box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.1),
+              -3px -3px 8px rgba(255, 255, 255, 0.8);
 }
 
 .skill-btn::before {
@@ -423,37 +424,44 @@ h1, h2, h3, h4, h5, h6 {
   z-index: 0;
 }
 
-.skill-btn img {
-  width: 24px;
-  height: 24px;
+.skill-icon {
+  font-size: 1.6rem;
   position: relative;
   z-index: 1;
-  display: block;
-  flex-shrink: 0;
-  background: white;
-  padding: 2px;
-  border-radius: 4px;
-  object-fit: contain;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  padding: 6px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .skill-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-lg);
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.15),
+              -5px -5px 15px rgba(255, 255, 255, 0.9);
   color: white;
 }
 
 .skill-btn:hover::before {
-  opacity: 0.9;
+  opacity: 1;
 }
 
-.skill-btn:hover img {
+.skill-btn:hover .skill-icon {
+  transform: scale(1.2) rotate(10deg);
   background: transparent;
+  box-shadow: none;
 }
 
-.skill-btn span {
+.skill-btn span:not(.skill-icon) {
   position: relative;
   z-index: 1;
-  margin-left: 8px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
 }
 
 /* Projects Section */
@@ -537,9 +545,123 @@ h1, h2, h3, h4, h5, h6 {
 
 .github-link:hover {
   background: var(--primary-light);
+  color: white;
 }
 
-/* Contact Section */
+/* PDF Section Styles */
+.pdfs {
+  background: linear-gradient(135deg, rgba(240, 247, 255, 0.95) 0%, rgba(191, 219, 254, 0.3) 100%);
+  border-radius: 24px;
+  padding: var(--space-4);
+  margin-bottom: var(--space-5);
+  box-shadow: var(--shadow-2xl);
+  position: relative;
+  overflow: hidden;
+}
+
+.pdfs::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 20%, rgba(59, 130, 246, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(37, 99, 235, 0.15) 0%, transparent 50%);
+  z-index: 0;
+}
+
+.pdfs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--space-4);
+  position: relative;
+  z-index: 1;
+}
+
+.pdf-card {
+  background: white;
+  padding: var(--space-4);
+  border-radius: 16px;
+  box-shadow: var(--shadow-lg);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.pdf-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-xl);
+}
+
+.pdf-card h3 {
+  color: var(--primary);
+  margin-bottom: var(--space-1);
+}
+
+.pdf-card p {
+  color: var(--text);
+  opacity: 0.9;
+  margin-bottom: var(--space-2);
+}
+
+.pdf-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-top: auto;
+}
+
+.close-pdf {
+  background: none;
+  border: none;
+  color: var(--text);
+  cursor: pointer;
+  padding: var(--space-2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.close-pdf:hover {
+  background: rgba(0, 0, 0, 0.1);
+  transform: scale(1.1);
+}
+
+.close-icon {
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+.pdf-link {
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-3);
+  background: var(--primary);
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.pdf-link:hover {
+  background: var(--primary-light);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.pdf-icon {
+  font-size: 1.2rem;
+}
+
+/* Contact Section Styles */
 .contact-info {
   background: white;
   border-radius: 12px;
@@ -629,6 +751,31 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--primary-light);
   text-align: center;
   margin-bottom: var(--space-3);
+}
+
+.download-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-4);
+  background: var(--primary);
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  margin-top: var(--space-3);
+  border: 1px solid var(--primary);
+}
+
+.download-btn:hover {
+  background: var(--primary-light);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.download-btn span {
+  font-size: 1.2rem;
 }
 
 .resume-section {
@@ -760,11 +907,12 @@ footer {
     flex-direction: column;
     text-align: center;
     gap: var(--space-3);
+    padding: var(--space-3);
   }
 
   .profile-image {
-    width: 200px;
-    height: 200px;
+    width: 240px;
+    height: 240px;
     margin: var(--space-2) auto;
   }
 
@@ -825,4 +973,31 @@ footer {
   margin-top: 1rem;
   text-align: center;
   font-size: 0.9rem;
+}
+
+.close-btn {
+  position: fixed;
+  top: calc(var(--header-height) + var(--space-4));
+  right: var(--space-4);
+  width: 40px;
+  height: 40px;
+  background: var(--primary);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 24px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  z-index: 1000;
+  border: 2px solid white;
+  box-shadow: var(--shadow-md);
+}
+
+.close-btn:hover {
+  background: var(--primary-light);
+  transform: scale(1.1);
+  box-shadow: var(--shadow-lg);
 } 
