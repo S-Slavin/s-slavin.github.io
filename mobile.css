@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* Mobile-specific styles - completely separate from desktop */
 @media screen and (max-width: 768px) {
   /* Theme Toggle - Mobile */
@@ -481,4 +482,19 @@
   .contact-grid p {
     font-size: 0.85rem;
   }
+=======
+/* PDF Section Mobile Styles */
+.pdfs-grid {
+  grid-template-columns: 1fr;
+  gap: var(--space-3);
+}
+
+.pdf-card {
+  padding: var(--space-3);
+}
+
+.pdf-link {
+  width: 100%;
+  justify-content: center;
+>>>>>>> 37cc86e
 } 

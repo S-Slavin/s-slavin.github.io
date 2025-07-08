@@ -1,0 +1,12 @@
+{
+  "name": "portfolio-website",
+  "version": "1.0.0",
+  "description": "Personal portfolio website",
+  "private": true,
+  "scripts": {
+    "test": "echo 'No tests specified'"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+} 

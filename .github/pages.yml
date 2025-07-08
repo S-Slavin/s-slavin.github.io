@@ -1,0 +1,26 @@
+# GitHub Pages configuration
+# This file configures the GitHub Pages deployment
+
+# Build settings
+build:
+  # Use GitHub Actions for building
+  provider: github-actions
+  # The branch to deploy from
+  branch: gh-pages
+  # The directory to deploy
+  directory: /
+  # The build command (none needed for static site)
+  command: ""
+  # The output directory
+  output: .
+
+# Deployment settings
+deploy:
+  # Use GitHub Actions for deployment
+  provider: github-actions
+  # The branch to deploy to
+  branch: gh-pages
+  # The directory to deploy
+  directory: .
+  # The deployment command (none needed for static site)
+  command: "" 
