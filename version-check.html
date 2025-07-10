@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Version Check</title>
+    <style>
+        body { 
+            background: linear-gradient(135deg, #f0f7ff 0%, #bfdbfe 100%);
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            color: #1e3a8a;
+        }
+        .test-box {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            margin: 20px 0;
+            max-width: 600px;
+        }
+        .success { color: green; }
+        .error { color: red; }
+    </style>
+</head>
+<body>
+    <div class="test-box">
+        <h1>Deployment Test</h1>
+        <p><strong>Current Time:</strong> <span id="time"></span></p>
+        <p><strong>CSS Version:</strong> v6</p>
+        <p><strong>Background:</strong> Blue gradient</p>
+        <p><strong>Status:</strong> <span class="success">✅ DEPLOYMENT WORKING</span></p>
+        <p>If you see this page with blue gradient background, the deployment is working correctly.</p>
+        <p>If you see this page, your real version should also be working at the main site.</p>
+    </div>
+    <script>
+        document.getElementById('time').textContent = new Date().toLocaleString();
+    </script>
+</body>
+</html> 
