@@ -33,7 +33,7 @@
 
 /* Mobile Menu Toggle */
 .mobile-menu-toggle {
-  display: block;
+  display: block !important;
   background: none;
   border: none;
   color: var(--primary);
@@ -42,6 +42,7 @@
   padding: var(--space-2);
   border-radius: 6px;
   transition: all 0.3s ease;
+  z-index: 1001;
 }
 
 .mobile-menu-toggle:hover {
