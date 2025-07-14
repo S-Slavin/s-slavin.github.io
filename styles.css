@@ -924,6 +924,10 @@ footer {
     display: none;
   }
 
+  .mobile-menu-toggle {
+    display: block;
+  }
+
   .skills-grid,
   .projects-grid {
     grid-template-columns: 1fr;
@@ -935,6 +939,13 @@ footer {
 
   .languages-list {
     grid-template-columns: 1fr;
+  }
+}
+
+/* Desktop styles - hide mobile menu toggle */
+@media (min-width: 769px) {
+  .mobile-menu-toggle {
+    display: none;
   }
 }
 

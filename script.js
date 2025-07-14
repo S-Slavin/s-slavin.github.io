@@ -5,8 +5,42 @@ function handleResumePrint() {
   window.open('./resume-print.html', '_blank');
 }
 
+// Mobile menu toggle functionality
+function initMobileMenu() {
+  const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+  const navLinks = document.querySelector('.nav-links');
+  
+  if (mobileMenuToggle && navLinks) {
+    mobileMenuToggle.addEventListener('click', function() {
+      navLinks.classList.toggle('active');
+      // Change menu icon
+      this.textContent = navLinks.classList.contains('active') ? '✕' : '☰';
+    });
+    
+    // Close menu when clicking on a link
+    const mobileNavLinks = navLinks.querySelectorAll('.nav-link');
+    mobileNavLinks.forEach(link => {
+      link.addEventListener('click', function() {
+        navLinks.classList.remove('active');
+        mobileMenuToggle.textContent = '☰';
+      });
+    });
+    
+    // Close menu when clicking outside
+    document.addEventListener('click', function(e) {
+      if (!navLinks.contains(e.target) && !mobileMenuToggle.contains(e.target)) {
+        navLinks.classList.remove('active');
+        mobileMenuToggle.textContent = '☰';
+      }
+    });
+  }
+}
+
 // Smooth scrolling for navigation links
 document.addEventListener('DOMContentLoaded', function() {
+  // Initialize mobile menu
+  initMobileMenu();
+  
   // Get all navigation links
   const navLinks = document.querySelectorAll('.nav-link[href^="#"]');
   
