@@ -921,7 +921,7 @@ footer {
   }
 
   .nav-links {
-    display: none;
+    /* Mobile navigation is handled by mobile.css */
   }
 
   .mobile-menu-toggle {
