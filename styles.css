@@ -108,6 +108,8 @@ h1, h2, h3, h4, h5, h6 {
   align-items: center;
 }
 
+/* Mobile navigation is handled by mobile.css */
+
 .navbar {
   position: fixed;
   top: 0;
@@ -920,9 +922,7 @@ footer {
     margin-right: 0;
   }
 
-  .nav-links {
-    display: none;
-  }
+  /* Mobile navigation is handled by mobile.css */
 
   .mobile-menu-toggle {
     display: block;
